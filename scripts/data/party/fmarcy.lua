@@ -29,6 +29,8 @@ function character:init()
     self.weapon_icon = "ui/menu/equip/sword"
 
     self:setWeapon("liberator")
+	
+	self:addSpell("true_slash")
 
     self.lw_weapon_default = "light/rope_sling"
     self.lw_armor_default = "light/bandage"
@@ -66,14 +68,14 @@ function character:drawPowerStat(index, x, y, menu)
     if index == 1  then
         local icon = Assets.getTexture("ui/menu/icon/demon")
         love.graphics.draw(icon, x-26, y+6, 0, 2, 2)
-        love.graphics.print("Skills", x, y, 0, 0.7, 1)
-        love.graphics.print("Yes", x+130, y)
+        love.graphics.print("Heart", x, y, 0, 0.7, 1)
+        love.graphics.print("No", x+130, y)
         return true
     elseif index == 2 then
         local icon = Assets.getTexture("ui/menu/icon/magic")
         love.graphics.draw(icon, x-26, y+6, 0, 2, 2)
-        love.graphics.print("Father", x, y)
-        love.graphics.print("Yes", x+130, y, 0)
+        love.graphics.print("Years Alone", x, y)
+        love.graphics.print("10", x+130, y, 0)
         return true
     elseif index == 3 then
         local icon = Assets.getTexture("ui/menu/icon/fire")
