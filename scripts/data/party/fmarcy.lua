@@ -74,7 +74,7 @@ function character:drawPowerStat(index, x, y, menu)
     elseif index == 2 then
         local icon = Assets.getTexture("ui/menu/icon/magic")
         love.graphics.draw(icon, x-26, y+6, 0, 2, 2)
-        love.graphics.print("Years Alone", x, y)
+        love.graphics.print("Years Alone", x, y, 0, 0.7, 1)
         love.graphics.print("10", x+130, y, 0)
         return true
     elseif index == 3 then
