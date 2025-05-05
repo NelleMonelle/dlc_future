@@ -57,7 +57,7 @@ end
 function Mod:incoherent(cutscene)
 	if not Game:hasPartyMember("fmarcy") then	-- Add the other future characters when they get made
 		cutscene:text("* (It's written in a language you don't understand.)")
-		cutscene:endCutscene()
-		cutscene:wait()
+		return true
 	end
+	return false
 end
