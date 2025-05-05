@@ -90,4 +90,38 @@ function character:drawPowerStat(index, x, y, menu)
     end
 end
 
+function character:canEquip(item, slot_type, slot_index)
+    if slot_type == "weapon" then
+        return false
+    end
+    return super.canEquip(self, item, slot_type, slot_index)
+end
+
+function character:onEquip(item, item2) 
+	if item and item.id == "flowerbrace" then
+		if not Game:getFlag("fmarcy_flowerbrace") then
+			Game:setFlag("fmarcy_flowerbrace", true)
+			Game.world.menu:closeBox()
+			Kristal.Console:log("TEST 2")
+			Game.world.timer:after(1/60, function()
+				Game.world:closeMenu()
+				Assets.stopSound("ui_cant_select")
+				Game.world:startCutscene(function(cutscene)
+					cutscene:text("* Test")
+				end)
+			end)
+		end
+		return false
+	end
+	return true
+end
+
+function character:getReaction(item, user)
+    if ((item and item.type ~= "weapon") or not item) or user.id ~= self.id then
+        return super.getReaction(self, item, user)
+    else
+        return "Try it and your head comes off."
+    end
+end
+
 return character

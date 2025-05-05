@@ -36,3 +36,28 @@ end
 function Mod:getGlobalNextLv()
     return Utils.clamp(Kristal.callEvent("getGlobalNextLvRequiredEXP") - Game:getFlag("library_experience"), 0, 99999)
 end
+
+function Mod:getVariablePartyMember()	-- Assuming Jamm and Susie are the only other ones in the party
+	for _, value in ipairs(Game.party) do
+		if value.id ~= "jamm" and value.id ~= "susie" then
+			return value:getActor().id
+		end
+	end
+end
+
+function Mod:getVariableFuture(chara)
+	local list = {
+		ceroba = "fkanako",
+		brenda = "fcelestial",
+		celestial = "fbrenda",
+	}
+	return list[chara]
+end
+
+function Mod:incoherent(cutscene)
+	if not Game:hasPartyMember("fmarcy") then	-- Add the other future characters when they get made
+		cutscene:text("* (It's written in a language you don't understand.)")
+		cutscene:endCutscene()
+		cutscene:wait()
+	end
+end

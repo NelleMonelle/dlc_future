@@ -1,0 +1,12 @@
+local item, super = Class("amber_card", true)
+
+function item:init()
+    super.init(self)
+
+    -- Character reactions
+    self.reactions = Utils.merge(self.reactions, {
+		fmarcy = "I mean, it doesn't seem very..."
+    })
+end
+
+return item
