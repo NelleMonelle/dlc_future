@@ -10,8 +10,9 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 8,
-  nextobjectid = 12,
+  nextobjectid = 17,
   properties = {
+    ["music"] = "deltarune/wind_highplace",
     ["name"] = "Cliffs? - Start"
   },
   tilesets = {
@@ -100,7 +101,47 @@ return {
       parallaxx = 1,
       parallaxy = 1,
       properties = {},
-      objects = {}
+      objects = {
+        {
+          id = 13,
+          name = "c1",
+          type = "",
+          shape = "point",
+          x = 40,
+          y = 240,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 14,
+          name = "spawn",
+          type = "",
+          shape = "point",
+          x = 320,
+          y = 200,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 16,
+          name = "c3",
+          type = "",
+          shape = "point",
+          x = 600,
+          y = 240,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
     },
     {
       type = "objectgroup",
@@ -128,6 +169,38 @@ return {
           rotation = 0,
           visible = true,
           properties = {}
+        },
+        {
+          id = 12,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = -40,
+          y = 200,
+          width = 40,
+          height = 80,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "cliffs_1",
+            ["marker"] = "c2"
+          }
+        },
+        {
+          id = 15,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 640,
+          y = 200,
+          width = 40,
+          height = 80,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "cliffs_3",
+            ["marker"] = "c2"
+          }
         }
       }
     },

@@ -4,7 +4,9 @@
     // Displays on the main menu.
     "name": "Dark Future DLC",
     // Displays underneath the name. Optional.
-    "subtitle": "A strange portal appears, and when you walk into it, there's no turning back. You are stuck in the future, and things couldn't be worse. Can you navigate the collapse of the world and make your way back to your time?",
+    "subtitle": "A strange portal appears, and when you walk into it, there's no turning back. You are stuck in a bleak future, and things couldn't be worse. Can you navigate the collapse of the world and make your way back to your time?",
+	
+	"creator": "AcousticJamm",
 
     // The version of your mod.
     "version": "v1.0.0",
@@ -56,6 +58,8 @@
     // When your mod is configured as the engine's target mod, it's automatically done unless if
     // this option is explicitly set to false; else, it's done if this is set to true.
     "setWindowTitleAndIcon": null,
+	
+	"hide_name": true,
 
     // Dark Place-specific configuration for DLCs.
     "dlc": {

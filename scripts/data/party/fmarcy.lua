@@ -13,6 +13,7 @@ function character:init()
     self.soul_priority = 1
     self.soul_color = {39/255, 106/255, 179/255}
     self.has_spells = true
+    self.has_act = false
 
     self.has_xact = false
     self.xact_name = "M-Action"
@@ -31,6 +32,9 @@ function character:init()
     self:setWeapon("liberator")
 	
 	self:addSpell("true_slash")
+    -- self:addSpell("ultra_break")
+    -- self:addSpell("life_sever")
+    -- self:addSpell("vslash")
 
     self.lw_weapon_default = "light/rope_sling"
     self.lw_armor_default = "light/bandage"

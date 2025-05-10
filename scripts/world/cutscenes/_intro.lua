@@ -19,8 +19,6 @@ return function(cutscene, event)
 	variable.x = 300
 	variable.y = -120
 	
-	Game.world.music:play("deltarune/wind_highplace")
-	
 	cutscene:wait(1)
 	
 	cutscene:setSprite(jamm, "trip")
