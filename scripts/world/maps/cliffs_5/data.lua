@@ -5,12 +5,12 @@ return {
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
-  width = 32,
+  width = 64,
   height = 12,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 6,
-  nextobjectid = 8,
+  nextlayerid = 7,
+  nextobjectid = 12,
   properties = {
     ["music"] = "deltarune/wind_highplace"
   },
@@ -24,13 +24,10 @@ return {
   },
   layers = {
     {
-      type = "tilelayer",
-      x = 0,
-      y = 0,
-      width = 32,
-      height = 12,
-      id = 1,
-      name = "Tile Layer 1",
+      type = "imagelayer",
+      image = "../../../../assets/sprites/map_images/cliffs_5.png",
+      id = 6,
+      name = "Image Layer 1",
       class = "",
       visible = true,
       opacity = 1,
@@ -38,54 +35,9 @@ return {
       offsety = 0,
       parallaxx = 1,
       parallaxy = 1,
-      properties = {},
-      encoding = "lua",
-      data = {
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
-        8, 6, 8, 8, 8, 11, 8, 6, 8, 8, 8, 8, 11, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8,
-        13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13,
-        18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18,
-        5, 23, 23, 23, 23, 23, 23, 5, 23, 23, 23, 10, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23,
-        23, 23, 10, 5, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 10, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-      }
-    },
-    {
-      type = "tilelayer",
-      x = 0,
-      y = 0,
-      width = 32,
-      height = 12,
-      id = 2,
-      name = "Tile Layer 2",
-      class = "",
-      visible = true,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      parallaxx = 1,
-      parallaxy = 1,
-      properties = {},
-      encoding = "lua",
-      data = {
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        76, 76, 76, 76, 76, 76, 76, 76, 76, 76, 76, 76, 76, 76, 76, 76, 76, 76, 76, 76, 76, 76, 76, 76, 76, 76, 76, 76, 76, 76, 76, 76,
-        71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71,
-        71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71, 71
-      }
+      repeatx = true,
+      repeaty = false,
+      properties = {}
     },
     {
       type = "objectgroup",
@@ -122,7 +74,7 @@ return {
           name = "transition",
           type = "",
           shape = "rectangle",
-          x = 1280,
+          x = 2560,
           y = 160,
           width = 40,
           height = 120,
@@ -131,6 +83,57 @@ return {
           properties = {
             ["map"] = "cliffs_6",
             ["marker"] = "c5"
+          }
+        },
+        {
+          id = 8,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 640,
+          y = 160,
+          width = 40,
+          height = 120,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["flagcheck"] = "bg_convo",
+            ["map"] = "cliffs_6",
+            ["marker"] = "c5"
+          }
+        },
+        {
+          id = 9,
+          name = "script",
+          type = "",
+          shape = "rectangle",
+          x = 960,
+          y = 160,
+          width = 0,
+          height = 120,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["cutscene"] = "cliffs.bg_convo"
+          }
+        },
+        {
+          id = 10,
+          name = "cameratarget",
+          type = "",
+          shape = "rectangle",
+          x = 0,
+          y = 160,
+          width = 640,
+          height = 120,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["flagcheck"] = "bg_convo",
+            ["lockx"] = true,
+            ["locky"] = true,
+            ["marker"] = "camtargy",
+            ["time"] = 0.1
           }
         }
       }
@@ -167,8 +170,21 @@ return {
           name = "c6",
           type = "",
           shape = "point",
-          x = 1240,
+          x = 600,
           y = 220,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 11,
+          name = "camtargy",
+          type = "",
+          shape = "point",
+          x = 320,
+          y = 200,
           width = 0,
           height = 0,
           rotation = 0,
@@ -198,7 +214,7 @@ return {
           shape = "rectangle",
           x = 0,
           y = 0,
-          width = 1280,
+          width = 2560,
           height = 160,
           rotation = 0,
           visible = true,
@@ -211,7 +227,7 @@ return {
           shape = "rectangle",
           x = 0,
           y = 280,
-          width = 1280,
+          width = 2560,
           height = 200,
           rotation = 0,
           visible = true,

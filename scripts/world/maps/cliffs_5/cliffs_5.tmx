@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="32" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="6" nextobjectid="8">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="64" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="7" nextobjectid="12">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -7,38 +7,9 @@
   <property name="music" value="deltarune/wind_highplace"/>
  </properties>
  <tileset firstgid="1" source="../../tilesets/cliffs.tsx"/>
- <layer id="1" name="Tile Layer 1" width="32" height="12">
-  <data encoding="csv">
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,
-8,6,8,8,8,11,8,6,8,8,8,8,11,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,
-13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,
-18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,
-5,23,23,23,23,23,23,5,23,23,23,10,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,
-23,23,10,5,23,23,23,23,23,23,23,23,23,23,23,10,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-</data>
- </layer>
- <layer id="2" name="Tile Layer 2" width="32" height="12">
-  <data encoding="csv">
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-76,76,76,76,76,76,76,76,76,76,76,76,76,76,76,76,76,76,76,76,76,76,76,76,76,76,76,76,76,76,76,76,
-71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,
-71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71,71
-</data>
- </layer>
+ <imagelayer id="6" name="Image Layer 1" repeatx="1">
+  <image source="../../../../assets/sprites/map_images/cliffs_5.png" width="640" height="480"/>
+ </imagelayer>
  <objectgroup id="3" name="objects">
   <object id="4" name="transition" x="-40" y="160" width="40" height="120">
    <properties>
@@ -46,10 +17,31 @@
     <property name="marker" value="c5"/>
    </properties>
   </object>
-  <object id="7" name="transition" x="1280" y="160" width="40" height="120">
+  <object id="7" name="transition" x="2560" y="160" width="40" height="120">
    <properties>
     <property name="map" value="cliffs_6"/>
     <property name="marker" value="c5"/>
+   </properties>
+  </object>
+  <object id="8" name="transition" x="640" y="160" width="40" height="120">
+   <properties>
+    <property name="flagcheck" value="bg_convo"/>
+    <property name="map" value="cliffs_6"/>
+    <property name="marker" value="c5"/>
+   </properties>
+  </object>
+  <object id="9" name="script" x="960" y="160" height="120">
+   <properties>
+    <property name="cutscene" value="cliffs.bg_convo"/>
+   </properties>
+  </object>
+  <object id="10" name="cameratarget" x="0" y="160" width="640" height="120">
+   <properties>
+    <property name="flagcheck" value="bg_convo"/>
+    <property name="lockx" type="bool" value="true"/>
+    <property name="locky" type="bool" value="true"/>
+    <property name="marker" value="camtargy"/>
+    <property name="time" type="float" value="0.1"/>
    </properties>
   </object>
  </objectgroup>
@@ -57,12 +49,15 @@
   <object id="5" name="c4" x="40" y="220">
    <point/>
   </object>
-  <object id="6" name="c6" x="1240" y="220">
+  <object id="6" name="c6" x="600" y="220">
+   <point/>
+  </object>
+  <object id="11" name="camtargy" x="320" y="200">
    <point/>
   </object>
  </objectgroup>
  <objectgroup id="5" name="collision">
-  <object id="1" x="0" y="0" width="1280" height="160"/>
-  <object id="2" x="0" y="280" width="1280" height="200"/>
+  <object id="1" x="0" y="0" width="2560" height="160"/>
+  <object id="2" x="0" y="280" width="2560" height="200"/>
  </objectgroup>
 </map>
