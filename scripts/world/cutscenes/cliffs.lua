@@ -9,5 +9,10 @@ return {
     walk1 = function(cutscene, event)
         Game:setFlag("walk1_active", true)
 		Game.world:getEvent(13):walkToSpeed("fmarcy_walkto", 8)
+    end,
+	
+    walk2 = function(cutscene, event)
+        Game:setFlag("walk2_active", true)
+		Game.world:getEvent(7):walkToSpeed("fnoelle_walkto", 8)
     end
 }

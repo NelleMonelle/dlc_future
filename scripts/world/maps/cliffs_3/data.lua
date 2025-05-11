@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 7,
-  nextobjectid = 19,
+  nextobjectid = 21,
   properties = {
     ["music"] = "deltarune/wind_highplace"
   },
@@ -194,6 +194,19 @@ return {
           rotation = 0,
           visible = true,
           properties = {}
+        },
+        {
+          id = 19,
+          name = "c4",
+          type = "",
+          shape = "point",
+          x = 220,
+          y = 920,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
         }
       }
     },
@@ -285,6 +298,22 @@ return {
           visible = true,
           properties = {
             ["cutscene"] = "cliffs.walk1"
+          }
+        },
+        {
+          id = 20,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 160,
+          y = 960,
+          width = 120,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "cliffs_4",
+            ["marker"] = "c3"
           }
         }
       }
