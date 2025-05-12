@@ -133,7 +133,7 @@ return {
             ["lockx"] = true,
             ["locky"] = true,
             ["marker"] = "camtargy",
-            ["time"] = 0.1
+            ["time"] = 0.01
           }
         }
       }

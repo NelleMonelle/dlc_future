@@ -73,6 +73,10 @@
         // Bosses that can be re-fought from the Boss Rush menu (not yet accessible)
         "bosses": {}
     },
+	
+	"sharedlibs": [
+        "status_core"
+    ],
 
     // Config values for the engine and any libraries you may have.
     // These config values can control chapter-specific features as well.

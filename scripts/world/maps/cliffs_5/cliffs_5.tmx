@@ -41,7 +41,7 @@
     <property name="lockx" type="bool" value="true"/>
     <property name="locky" type="bool" value="true"/>
     <property name="marker" value="camtargy"/>
-    <property name="time" type="float" value="0.1"/>
+    <property name="time" type="float" value="0.01"/>
    </properties>
   </object>
  </objectgroup>

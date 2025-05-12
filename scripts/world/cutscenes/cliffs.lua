@@ -18,11 +18,12 @@ return {
 	
     bg_convo = function(cutscene, event)
 		local texts = {}
-        local function genText(text, x, y, scale, main, wait_time)
+        local function genText(text, x, y, actor, scale, main, wait_time)
             scale = scale or 1
             wait_time = wait_time or 0.2
 
             local text_o = Game.world:spawnObject(DialogueText(text, x, y, 300, 500))
+            text_o.skippable = false
             text_o:setScale(scale)
             text_o.parallax_x = 0
             text_o.parallax_y = 0
@@ -49,26 +50,26 @@ return {
         Game:setFlag("bg_convo", true)
 		cutscene:enableMovement()
 		
-		genText("So, you saw them too, right?", 50, 50)	-- Marcy
+		genText("So, you saw them too, right?", 50, 50, "fmarcy")	-- Marcy
 		cutscene:wait(5)
-		genText("The outsiders? Y-yeah, I saw them...", 300, 50)	-- Noelle
+		genText("The outsiders? Y-yeah, I saw them...", 300, 50, "fnoelle")	-- Noelle
 		cutscene:wait(5)
-		genText("But they seem... familiar, somehow.", 300, 50)	-- Noelle
+		genText("But they seem... familiar, somehow.", 300, 50, "fnoelle")	-- Noelle
 		cutscene:wait(5)
-		genText("Agreed. So what do we do?", 50, 50)	-- Marcy
+		genText("Agreed. So what do we do?", 50, 50, "fmarcy")	-- Marcy
 		cutscene:wait(5)
 		
 		if Game:getFlag("future_variable") == "ceroba_dw" then
 			genText("Can't we just leave them be?", 175, 50)	-- Kanako
 			cutscene:wait(5)
-			genText("Negative. Remember what happened last time.", 50, 50)	-- Marcy
+			genText("Negative. Remember what happened last time.", 50, 50, "fmarcy")	-- Marcy
 			cutscene:wait(5)
 		end
 		genText("Maybe we could wait to see what happens?", 300, 50)	-- Noelle
 		cutscene:wait(5)
-		genText("We don't know if they're malicious.", 300, 50)	-- Noelle
+		genText("We don't know if they're malicious.", 300, 50, "fnoelle")	-- Noelle
 		cutscene:wait(5)
-		genText("...Probably for the best to do that.", 50, 50)	-- Marcy
+		genText("...Probably for the best to do that.", 50, 50, "fmarcy")	-- Marcy
 		cutscene:wait(5)
     end
 }
