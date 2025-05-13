@@ -22,9 +22,9 @@ function actor:init()
     self.default = "walk"
 
     -- Sound to play when this actor speaks (optional)
-    self.voice = "marcy" -- Temporary
+    self.voice = "fmarcy"
     -- Path to this actor's portrait for dialogue (optional)
-    self.portrait_path = "face/marcy" -- Temporary
+    self.portrait_path = "face/fmarcy"
     -- Offset position for this actor's portrait (optional)
     self.portrait_offset = {-19,-3}
 

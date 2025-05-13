@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 7,
-  nextobjectid = 19,
+  nextobjectid = 20,
   properties = {
     ["music"] = "future_world"
   },
@@ -195,15 +195,33 @@ return {
           name = "interactable",
           type = "",
           shape = "rectangle",
-          x = 300,
+          x = 280,
           y = 240,
-          width = 40,
+          width = 80,
           height = 40,
           rotation = 0,
           visible = true,
           properties = {
             ["cutscene"] = "fountain",
             ["once"] = false
+          }
+        },
+        {
+          id = 19,
+          name = "npc",
+          type = "",
+          shape = "point",
+          x = 400,
+          y = 400,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["actor"] = "fnoelle",
+            ["cutscene"] = "hub.fnoelle",
+            ["facing"] = "up",
+            ["turn"] = true
           }
         }
       }

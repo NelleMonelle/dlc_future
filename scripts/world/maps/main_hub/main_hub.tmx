@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="23" height="27" tilewidth="40" tileheight="40" infinite="0" nextlayerid="13" nextobjectid="98">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="23" height="27" tilewidth="40" tileheight="40" infinite="0" nextlayerid="13" nextobjectid="99">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -245,6 +245,14 @@
     <property name="text2">* Good fer nothin' kids...[wait:10]
 * I swear,[wait:5] nothin' changes in ten years.</property>
    </properties>
+  </object>
+  <object id="98" name="npc" x="560" y="160">
+   <properties>
+    <property name="actor" value="fmarcy"/>
+    <property name="cutscene" value="hub.fmarcy"/>
+    <property name="turn" type="bool" value="true"/>
+   </properties>
+   <point/>
   </object>
  </objectgroup>
  <objectgroup color="#7f00ff" id="4" name="markers">

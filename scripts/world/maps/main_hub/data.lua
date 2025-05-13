@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 13,
-  nextobjectid = 98,
+  nextobjectid = 99,
   properties = {
     ["border"] = "mainhub",
     ["music"] = "future_world",
@@ -833,6 +833,23 @@ return {
           properties = {
             ["text1"] = "* Hey,[wait:5] HEY![wait:10]\n* I'm tryna sleep here!",
             ["text2"] = "* Good fer nothin' kids...[wait:10]\n* I swear,[wait:5] nothin' changes in ten years."
+          }
+        },
+        {
+          id = 98,
+          name = "npc",
+          type = "",
+          shape = "point",
+          x = 560,
+          y = 160,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["actor"] = "fmarcy",
+            ["cutscene"] = "hub.fmarcy",
+            ["turn"] = true
           }
         }
       }

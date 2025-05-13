@@ -73,6 +73,21 @@ local hub = {
         cutscene:showNametag("Susie")
 		cutscene:text("* I actually surprised myself there!", "surprise_smile", "susie")
         cutscene:hideNametag()
+    end,
+	
+	fmarcy = function(cutscene, event)
+        cutscene:showNametag("Marcy")
+		cutscene:text("* Well,[wait:5] welcome back to the hub where it all started.", "neutral", "fmarcy")
+		cutscene:text("* Or at least,[wait:5] what's left of it,[wait:5] anyways...", "closed", "fmarcy")
+		cutscene:text("* Too bad our training didn't finish when it mattered...", "lookright", "fmarcy")
+        cutscene:hideNametag()
+    end,
+	
+	fnoelle = function(cutscene, event)
+        cutscene:showNametag("Noelle")
+		cutscene:text("* It all happened so fast,[wait:5] and we...", "neutral", "noelle")
+		cutscene:text("* We were completely unprepared for it.", "neutral", "noelle")
+        cutscene:hideNametag()
     end
 }
 return hub
