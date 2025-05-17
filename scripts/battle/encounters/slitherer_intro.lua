@@ -4,7 +4,7 @@ function Dummy:init()
     super.init(self)
 
     -- Text displayed at the bottom of the screen at the start of the encounter
-    self.text = "* Slitherer approaches.[wait:10]\n* You can't help but be scared."
+    self.text = "* Creature α approaches.[wait:10]\n* You can't help but be scared."
 
     -- Battle music ("battle" is rude buster)
     self.music = "battle"

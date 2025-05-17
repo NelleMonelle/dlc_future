@@ -4,7 +4,7 @@ function Dummy:init()
     super.init(self)
 
     -- Enemy name
-    self.name = "Slitherer"
+    self.name = "Creature α"
     -- Sets the actor, which handles the enemy's sprites (see scripts/data/actors/dummy.lua)
     self:setActor("slitherer")
 
