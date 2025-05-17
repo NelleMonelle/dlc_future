@@ -1,4 +1,55 @@
 {
+    "maps": [
+        {
+            "fileName": "maps/cliffs_5/cliffs_5.tmx",
+            "height": 480,
+            "width": 2560,
+            "x": -2560,
+            "y": 40
+        },
+        {
+            "fileName": "maps/cliffs_4/cliffs_4.tmx",
+            "height": 640,
+            "width": 800,
+            "x": -3360,
+            "y": -40
+        },
+        {
+            "fileName": "maps/cliffs_3/cliffs_3.tmx",
+            "height": 960,
+            "width": 1000,
+            "x": -3440,
+            "y": -1000
+        },
+        {
+            "fileName": "maps/cliffs_2/cliffs_2.tmx",
+            "height": 480,
+            "width": 640,
+            "x": -4080,
+            "y": -1040
+        },
+        {
+            "fileName": "maps/cliffs_1/cliffs_1.tmx",
+            "height": 480,
+            "width": 640,
+            "x": -4720,
+            "y": -1040
+        },
+        {
+            "fileName": "maps/cliffs_7/cliffs_7.tmx",
+            "height": 1200,
+            "width": 1000,
+            "x": 1000,
+            "y": 80
+        },
+        {
+            "fileName": "maps/cliffs_6/cliffs_6.tmx",
+            "height": 680,
+            "width": 1000,
+            "x": 0,
+            "y": 0
+        }
+    ],
     "onlyShowAdjacentMaps": false,
     "type": "world"
 }

@@ -11,6 +11,8 @@ local hub = {
 			return
 		end
 		
+		event:remove()
+		
 		Game:setFlag("broke_wall_future", true)
     
         local susie = cutscene:getCharacter("susie")
@@ -26,7 +28,7 @@ local hub = {
 		cutscene:text("* You've got this,[wait:5] Susie.[wait:10]\n* Take a deep breath.", "side_smile", "jamm")
     
         cutscene:showNametag("Susie")
-		cutscene:text("* ...You're right, Jamm.", "smile", "susie")
+		cutscene:text("* ...You're right,[wait:5] Jamm.", "smile", "susie")
 		cutscene:text("* Let's do this.", "smile", "susie")
         cutscene:hideNametag()
     
@@ -72,6 +74,37 @@ local hub = {
     
         cutscene:showNametag("Susie")
 		cutscene:text("* I actually surprised myself there!", "surprise_smile", "susie")
+        cutscene:hideNametag()
+		
+        local fmarcy = cutscene:getCharacter("fmarcy")
+		fmarcy.x = 620
+		fmarcy.y = 240
+		
+		cutscene:wait(cutscene:walkToSpeed(fmarcy, "fmarcy_walkto", 8, "left"))
+		
+		cutscene:look(jamm, "right")
+		cutscene:look(susie, "right")
+		cutscene:look(variant, "right")
+		
+        cutscene:showNametag("Marcy")
+		cutscene:text("* What was that?", "neutral", "fmarcy")
+        cutscene:hideNametag()
+		
+		cutscene:alert(fmarcy)
+		cutscene:wait(1)
+		
+        cutscene:walkTo(susie, susie.x - 120, susie.y, 0.75, "right", true)
+        cutscene:walkTo(jamm, jamm.x - 110, jamm.y, 0.75, "right", true)
+        cutscene:walkTo(variant, variant.x - 130, variant.y, 0.75, "right", true)
+		cutscene:wait(cutscene:walkTo(fmarcy, fmarcy.x - 160, fmarcy.y, 0.75, "up"))
+		
+		cutscene:wait(0.25)
+		
+        cutscene:showNametag("Marcy")
+		cutscene:text("* Huh...[wait:10]\n* How interesting...", "closed", "fmarcy")
+		cutscene:look(fmarcy, "left")
+		cutscene:text("* You three seem to have uncovered a secret passage.", "neutral", "fmarcy")
+		cutscene:text("* And it's even in the direction of Hometown...", "untrusting", "fmarcy")
         cutscene:hideNametag()
     end,
 	

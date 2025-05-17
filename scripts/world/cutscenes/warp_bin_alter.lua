@@ -22,7 +22,16 @@ return function(cutscene)
 			cutscene:showNametag("Susie")
 			cutscene:text("* I'm sure we can leave using the fountain,[wait:5] right?", "sincere_smile", "susie")
 		else
-			
+			Game:setFlag("future_exhausted_all_options", true)
+			cutscene:showNametag("Jamm")
+			cutscene:text("* So the Warp Bin,[wait:5] elevator,[wait:5] and fountain are all not working...", "neutral", "jamm")
+			cutscene:text("* Well,[wait:5] I'm all out of ideas.", "nervous_left", "jamm")
+			cutscene:showNametag("Susie")
+			cutscene:text("* ...You know,[wait:5] there is always that one wall...", "neutral", "susie")
+			cutscene:showNametag("Jamm")
+			cutscene:text("* You sure?[wait:10]\n* You couldn't do it before...", "nervous", "jamm")
+			cutscene:showNametag("Susie")
+			cutscene:text("* I have a feeling about this time.", "smile", "susie")
 		end
 		cutscene:hideNametag()
 	end

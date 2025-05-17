@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 7,
-  nextobjectid = 15,
+  nextobjectid = 17,
   properties = {
     ["music"] = "deltarune/wind_highplace",
     ["name"] = "Cliffs? - Lookout"
@@ -190,8 +190,23 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["flagcheck"] = "bg_convo",
             ["map"] = "cliffs_5",
+            ["marker"] = "c6"
+          }
+        },
+        {
+          id = 15,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 1000,
+          y = 200,
+          width = 40,
+          height = 120,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "cliffs_7",
             ["marker"] = "c6"
           }
         }
@@ -230,6 +245,19 @@ return {
           type = "",
           shape = "point",
           x = 40,
+          y = 260,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 16,
+          name = "c7",
+          type = "",
+          shape = "point",
+          x = 960,
           y = 260,
           width = 0,
           height = 0,

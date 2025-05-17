@@ -14,11 +14,13 @@ end
 
 function Break:onStatus(battler)
 	self.base = battler.chara:getBaseStat("defense") + battler.chara:getEquipmentBonus("defense")
-	battler.chara:addStatBuff("defense", -self.base)
 end
 
-function Break:onCure(battler)
-	battler.chara:addStatBuff("defense", self.base)
+function Break:applyStatModifier(stat, value)
+    if stat == "defense" then
+        value = value - self.base
+    end
+    return value
 end
 
 return Break

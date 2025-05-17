@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="31" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="6" nextobjectid="60">
+ <editorsettings>
+  <export target="hub_marketplace.lua" format="lua"/>
+ </editorsettings>
+ <properties>
+  <property name="border" value="mainhub"/>
+  <property name="music" value="future_world"/>
+ </properties>
+ <tileset firstgid="1" source="../tilesets/main_area.tsx"/>
+ <tileset firstgid="209" source="../tilesets/other-objects.tsx"/>
+ <layer id="1" name="Tile Layer 1" width="31" height="12">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,67,67,67,67,67,67,67,67,67,67,67,67,67,67,67,0,0,0,0,0,0,0,0,
+0,0,0,0,0,54,55,0,80,80,80,80,80,30,80,80,80,80,80,80,80,194,80,0,53,54,0,0,0,0,0,
+0,0,0,0,55,67,68,0,80,80,115,116,80,80,80,80,115,116,80,80,80,30,80,0,66,67,53,54,54,54,54,
+67,67,67,67,68,31,81,0,93,93,128,129,93,93,93,93,128,129,93,93,93,93,93,0,79,194,66,67,67,67,67,
+80,30,80,80,195,93,94,6,2,2,2,2,2,2,2,2,32,2,2,2,2,2,2,7,92,93,193,115,116,194,80,
+93,93,93,93,94,4,2,15,15,15,32,15,15,32,15,15,15,15,15,15,15,15,15,15,2,5,92,128,129,93,93,
+2,2,2,2,2,15,15,32,15,15,15,15,15,15,15,15,15,15,15,15,15,32,15,15,15,32,2,2,2,2,2,
+28,28,28,28,28,32,15,15,15,15,15,15,15,15,15,15,15,32,15,15,15,15,15,15,15,15,28,28,28,28,28,
+0,0,0,0,0,27,28,15,15,15,15,32,15,15,15,15,15,15,15,15,15,15,32,15,28,29,0,0,0,0,0,
+0,0,0,0,0,0,0,19,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,20,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="2" name="Tile Layer 2" width="31" height="12">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,134,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,131,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,147,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,144,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,160,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,157,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,173,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,170,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,186,0,0,141,142,0,0,0,0,141,142,0,0,0,0,0,183,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,141,142,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup color="#0000ff" id="3" name="collision">
+  <object id="2" x="1040" y="240" width="200" height="40"/>
+  <object id="6" x="649" y="180" width="100" height="40"/>
+  <object id="21" x="0" y="240" width="200" height="40"/>
+  <object id="37" x="320" y="40" width="600" height="160"/>
+  <object id="39" x="960" y="120" width="80" height="120"/>
+  <object id="40" x="200" y="120" width="80" height="120"/>
+  <object id="46" x="280" y="240">
+   <polygon points="0,0 40,-40 40,-160 0,-160"/>
+  </object>
+  <object id="48" x="920" y="200">
+   <polygon points="0,0 40,40 40,-120 0,-120"/>
+  </object>
+  <object id="54" x="320" y="440" width="600" height="40"/>
+  <object id="55" x="320" y="440">
+   <polygon points="0,0 -120,0 -120,-40 -40,-40 0,0"/>
+  </object>
+  <object id="56" x="920" y="440">
+   <polygon points="0,0 40,-40 120,-40 120,0"/>
+  </object>
+  <object id="57" x="0" y="360" width="200" height="40"/>
+  <object id="58" x="1040" y="360" width="200" height="40"/>
+ </objectgroup>
+ <objectgroup color="#ff00ff" id="4" name="objects">
+  <object id="14" name="transition" x="1240" y="280" width="40" height="80">
+   <properties>
+    <property name="map" value="main_hub"/>
+    <property name="marker" value="west2"/>
+   </properties>
+  </object>
+  <object id="26" name="transition" x="-40" y="280" width="40" height="80">
+   <properties>
+    <property name="marker" value="exit_shop"/>
+    <property name="shop" value="mousehole"/>
+   </properties>
+  </object>
+  <object id="53" gid="211" x="642" y="220" width="114" height="140"/>
+  <object id="59" name="interactable" x="649" y="180" width="100" height="40">
+   <properties>
+    <property name="text1" value="* An abandoned stand."/>
+    <property name="text2" value="* Even in the future, nobody cleaned the snow off of it."/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup color="#7f00ff" id="5" name="markers">
+  <object id="15" name="entry" x="1200" y="320">
+   <point/>
+  </object>
+  <object id="16" name="spawn" x="630" y="360">
+   <point/>
+  </object>
+  <object id="27" name="exit_shop" x="40" y="320">
+   <point/>
+  </object>
+ </objectgroup>
+</map>

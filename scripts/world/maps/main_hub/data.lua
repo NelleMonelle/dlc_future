@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 13,
-  nextobjectid = 99,
+  nextobjectid = 104,
   properties = {
     ["border"] = "mainhub",
     ["music"] = "future_world",
@@ -167,8 +167,8 @@ return {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 143, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 143, 0, 0, 0, 0,
-        0, 0, 0, 0, 143, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 143, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 143, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 143, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -619,19 +619,6 @@ return {
           properties = {}
         },
         {
-          id = 91,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 160,
-          y = 600,
-          width = 40,
-          height = 80,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
           id = 92,
           name = "",
           type = "",
@@ -851,6 +838,22 @@ return {
             ["cutscene"] = "hub.fmarcy",
             ["turn"] = true
           }
+        },
+        {
+          id = 99,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 0,
+          y = 600,
+          width = 40,
+          height = 80,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "hub_marketplace",
+            ["marker"] = "entry"
+          }
         }
       }
     },
@@ -901,6 +904,32 @@ return {
           shape = "point",
           x = 460,
           y = 644,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 101,
+          name = "west2",
+          type = "",
+          shape = "point",
+          x = 80,
+          y = 640,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 103,
+          name = "fmarcy_walkto",
+          type = "",
+          shape = "point",
+          x = 620,
+          y = 600,
           width = 0,
           height = 0,
           rotation = 0,
