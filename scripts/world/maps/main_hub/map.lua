@@ -10,6 +10,10 @@ function DeadHub:onEnter()
 	else
 		layer.visible = true
 	end
+	
+    if Game.mapbackground then
+		Game.mapbackground:remove()
+	end
 end
 
 return DeadHub

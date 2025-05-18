@@ -9,8 +9,8 @@ function Dummy:init()
     self:setActor("slitherer")
 
     -- Enemy health
-    self.max_health = 2500
-    self.health = 2500
+    self.max_health = 3500
+    self.health = 3500
     -- Enemy attack (determines bullet damage)
     self.attack = 16
     -- Enemy defense (usually 0)
