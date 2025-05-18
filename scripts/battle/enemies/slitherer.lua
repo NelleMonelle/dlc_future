@@ -12,7 +12,7 @@ function Dummy:init()
     self.max_health = 2500
     self.health = 2500
     -- Enemy attack (determines bullet damage)
-    self.attack = 8
+    self.attack = 16
     -- Enemy defense (usually 0)
     self.defense = 0
     -- Enemy reward
@@ -34,7 +34,7 @@ function Dummy:init()
     }
 
     -- Check text (automatically has "ENEMY NAME - " at the start)
-    self.check = {"AT 8 DF 0\n* You don't know what to make of it.", "The more time passes,[wait:5] the more you feel it stare into your SOUL."}
+    self.check = {"AT 16 DF 0\n* You don't know what to make of it.", "The more time passes,[wait:5] the more you feel it stare into your SOUL."}
 
     -- Text randomly displayed at the bottom of the screen each turn
     self.text = {

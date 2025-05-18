@@ -65,6 +65,8 @@ function character:init()
         ["boldness"] = -3,
         ["weird"] = false
     }
+	
+	self.future = true
 end
 
 function character:onLevelUp(level)

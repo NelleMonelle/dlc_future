@@ -52,6 +52,8 @@ function character:init()
     self.battle_offset = {2, 1}
     self.head_icon_offset = {0, -3}
     self.menu_icon_offset = nil
+	
+	self.future = true
 end
 
 function character:onLevelUp(level)
@@ -126,6 +128,20 @@ function character:getReaction(item, user)
     else
         return "Try it and your head comes off."
     end
+end
+
+function character:getGameOverMessage(main)
+	if main:getName() == "Jamm" then
+		return {
+			"I knew bringing\nyou along was\na mistake.",
+			"Dad,[wait:5]\nyou gonna get\nup?"
+		}
+	else
+		return {
+			"I knew bringing\nyou along was\na mistake.",
+			main:getName()..",[wait:5]\nyou gonna get\nup?"
+		}
+	end
 end
 
 return character
