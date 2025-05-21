@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="23" height="27" tilewidth="40" tileheight="40" infinite="0" nextlayerid="13" nextobjectid="104">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="23" height="27" tilewidth="40" tileheight="40" infinite="0" nextlayerid="13" nextobjectid="106">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -74,8 +74,8 @@
  </layer>
  <layer id="11" name="Tile Layer 4" width="23" height="27">
   <data encoding="csv">
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,62,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,75,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -257,6 +257,11 @@
    <properties>
     <property name="map" value="hub_marketplace"/>
     <property name="marker" value="entry"/>
+   </properties>
+  </object>
+  <object id="105" name="interactable" x="240" y="80" width="40" height="40">
+   <properties>
+    <property name="cutscene" value="hub.warp_bin_note"/>
    </properties>
   </object>
  </objectgroup>

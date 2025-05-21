@@ -108,6 +108,12 @@ local hub = {
         cutscene:hideNametag()
     end,
 	
+	warp_bin_note = function(cutscene, event)
+        cutscene:text("* To whoever keeps stealing the Warp Bin,[wait:5] please stop it.")
+        cutscene:text("* We only have so many of these things left.")
+        cutscene:text("* (...Attached is a note cussing out the person who wrote the first note.)")
+    end,
+	
 	fmarcy = function(cutscene, event)
         cutscene:showNametag("Marcy")
 		cutscene:text("* Well,[wait:5] welcome back to the hub where it all started.", "neutral", "fmarcy")

@@ -144,6 +144,7 @@ return {
 		cutscene:look(jamm, "up")
 		cutscene:showNametag("Susie")
 		cutscene:text("* ...Hey,[wait:5] yeah![wait:10] You're right![wait:10] There has to be one!", "surprise_smile", "susie")
+		cutscene:hideNametag()
 		cutscene:look(susie, "right")
 		cutscene:look(jamm, "right")
         for i = 0,5 do

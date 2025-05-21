@@ -59,6 +59,10 @@ function actor:init()
         ["battle/transition"]   		= {"walk/right", 0.2, true},
         ["battle/intro"]        		= {"battle/attack", 1/20, false},
         ["battle/victory"]      		= {"battle/victory", 1/10, false},
+		
+		-- training encounter
+		["idle"]      					= {"battle/idle", 0.2, true},
+        ["hurt"]         				= {"battle/hurt", 1/15, false},
     }
 
     -- Table of sprite offsets (indexed by sprite name)
@@ -87,6 +91,9 @@ function actor:init()
 
         ["battle/intro"] = {-8, -9},
         ["battle/victory"] = {-5, -1},
+		
+        ["idle"] = {-5, -1},
+        ["hurt"] = {-5, -1},
     }
 
     -- self.menu_anim = "bs_win"		-- TODO
