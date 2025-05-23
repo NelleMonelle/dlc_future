@@ -32,7 +32,7 @@ function character:init()
 
     self:setWeapon("kanakos_staff")
 	
-    -- self:addSpell("")		FIGURE THIS OUT
+    self:addSpell("bellguard")
 
     self.lw_weapon_default = "light/rope_sling"
     self.lw_armor_default = "light/bandage"
