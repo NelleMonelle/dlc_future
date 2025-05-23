@@ -156,5 +156,32 @@ return {
 			cutscene:showNametag("Ceroba")
 			cutscene:text("* ...What was that?", "nervous", "ceroba")
 		end
+		cutscene:hideNametag()
+		local alpha = cutscene:spawnNPC("slitherer", 1050, 960)
+        for i = 0,4 do
+			if i == 2 then
+				susie:setSprite("shock_right")
+				cutscene:shakeCharacter(susie, 2)
+				Assets.playSound("sussurprise")
+				cutscene:walkToSpeed(jamm, jamm.x - 40, jamm.y, 4, "right", true)
+			end
+            cutscene:wait(cutscene:slideTo(alpha, alpha.x - 30, alpha.y, 1, "in-out-cubic"))
+        end
+		cutscene:showNametag("Susie")
+		cutscene:text("* The hell is THAT thing!?", "surprise_frown", "susie")
+		cutscene:showNametag("Jamm")
+		cutscene:text("* I don't know,[wait:5] but I don't think we can reason with it.", "determined", "jamm")
+		cutscene:setAnimation(jamm, "battle/idle")
+		cutscene:text("* Let's show it hell,[wait:5] guys!", "sling_ready", "jamm")
+		cutscene:hideNametag()
+		cutscene:setAnimation(susie, "battle/attack")
+		Assets.playSound("laz_c")
+		cutscene:wait(0.6)
+		cutscene:setAnimation(susie, "battle/idle")
+		cutscene:setAnimation(variant, "battle/idle")
+		cutscene:showNametag("Susie")
+		cutscene:text("* That,[wait:5] I can get behind!", "teeth_smile", "susie")
+		cutscene:hideNametag()
+		cutscene:startEncounter("slitherer_intro", true, alpha)
     end
 }
