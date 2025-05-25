@@ -80,8 +80,8 @@ function Soul:update()
 		if bell.health <= 0 then
 			bell.inv_timer = -1
 			table.remove(self.bells, i)
-			Assets.playSound("hurt", 1, 2)
-			Assets.playSound("dtrans_flip")
+			-- Assets.playSound("bell_hit", 1, 2)
+			Assets.playSound("bell_dead")
 
 			local x, y = bell:getRelativePosFor(Game.battle)
 			bell:setParent(Game.battle)
@@ -92,9 +92,11 @@ function Soul:update()
 		for _,bullet in ipairs(Game.stage:getObjects(Bullet)) do
 			if bullet:collidesWith(bell) and not bullet.no_affect_bells then
 				if bell.inv_timer <= 0 then
-					Assets.playSound("hurt")
 					bell.health = bell.health-1
 					Game.battle.party[1].bells[bell.index] = Game.battle.party[1].bells[bell.index] - 1
+					if bell.health > 0 then
+						Assets.playSound("bell_hit")
+					end
 					bell.inv_timer = 10
 					bullet.no_affect_bells = true
 					bullet.damage = 0

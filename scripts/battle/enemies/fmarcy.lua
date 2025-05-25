@@ -42,9 +42,18 @@ function Marcy:init()
         "* You hear the rest of your party cheer for you in the distance.",
         "* Marcy aims Liberator towards you,[wait:5] hoping you'll match her might.",
         "* For a second,[wait:5] you swear Marcy smiled a little.",
+		"* Marcy doesn’t speak.[wait:10]\n* Her silence says she still believes in you.",
+		"* She’s not trying to win.[wait:10]\n* She’s trying to wake something up inside you.",
+		"* Marcy adjusts her stance — just like Jamm taught her."
     }
+	
+	-- Text that will show whenever Marcy is about to do a particularly strong attack.
+	self.strong_text = {
+		"* Marcy’s gaze sharpens;[wait:5] she’s about to cut through more than just air."
+	}
+	
     -- Text displayed at the bottom of the screen when the enemy has low health
-    self.low_health_text = "* The dummy looks like it's\nabout to fall over."
+    self.low_health_text = "* Even weakened,[wait:5] she doesn’t flinch."
 
     -- Register act called "Smile"
     self:registerAct("Smile")
