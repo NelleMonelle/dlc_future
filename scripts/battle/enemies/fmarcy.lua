@@ -42,23 +42,28 @@ function Marcy:init()
         "* You hear the rest of your party cheer for you in the distance.",
         "* Marcy aims Liberator towards you,[wait:5] hoping you'll match her might.",
         "* For a second,[wait:5] you swear Marcy smiled a little.",
-		"* Marcy doesn’t speak.[wait:10]\n* Her silence says she still believes in you.",
-		"* She’s not trying to win.[wait:10]\n* She’s trying to wake something up inside you.",
+		"* Marcy doesn't speak.[wait:10]\n* Her silence says she believes in your power.",
+		"* She's not trying to win.[wait:10]\n* She's trying to wake something up inside you.",
 		"* Marcy adjusts her stance — just like Jamm taught her."
     }
 	
 	-- Text that will show whenever Marcy is about to do a particularly strong attack.
-	self.strong_text = {
-		"* Marcy’s gaze sharpens;[wait:5] she’s about to cut through more than just air."
-	}
+	self.strong_text = "* Marcy's gaze sharpens;[wait:5] she's about to cut through [color:red]more than just air[color:white]."
 	
-    -- Text displayed at the bottom of the screen when the enemy has low health
-    self.low_health_text = "* Even weakened,[wait:5] she doesn’t flinch."
+	self.weakened_text = {
+		"* Even weakened,[wait:5] Marcy doesn’t flinch.",
+		"* You can tell Marcy is overexerting herself a lot.",
+		"* Marcy's grip on Liberator slackens for a moment.",
+		"* Marcy staggers for a second,[wait:5] but quickly corrects her balance.",
+		"* Marcy's knees nearly buckle,[wait:5] but she stays standing for Jamm's sake."
+	}
 
     -- Register act called "Smile"
     self:registerAct("Smile")
 	
 	self.times_smiled = 0
+	
+	self.boss = true
 end
 
 function Marcy:onAct(battler, name)
@@ -93,6 +98,21 @@ end
 
 function Marcy:getXAction(battler)
 	return "Smile"
+end
+
+function Marcy:getAttackDamage(damage, battler, points)
+	if self.health == self.max_health then
+		return 1
+	end
+	return super.getAttackDamage(self, damage, battler, points)
+end
+
+function Marcy:onHurt(damage, battler)
+	super.onHurt(self, damage, battler)
+	
+	if self.health == self.max_health - 1 then
+		Game.battle.encounter.do_first_cutscene = true
+	end
 end
 
 return Marcy
