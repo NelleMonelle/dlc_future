@@ -31,6 +31,7 @@ function character:init()
     self.weapon_icon = "ui/menu/equip/staff"
 
     self:setWeapon("kanakos_staff")
+	self:setArmor(1, "resistance_band")
 	
     self:addSpell("bellguard")
 

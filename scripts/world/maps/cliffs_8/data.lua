@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 9,
-  nextobjectid = 56,
+  nextobjectid = 58,
   properties = {
     ["music"] = "deltarune/wind_highplace"
   },
@@ -434,6 +434,19 @@ return {
           rotation = 0,
           visible = true,
           properties = {}
+        },
+        {
+          id = 56,
+          name = "c9",
+          type = "",
+          shape = "point",
+          x = 1080,
+          y = 740,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
         }
       }
     },
@@ -499,6 +512,22 @@ return {
           visible = true,
           properties = {
             ["item"] = "ice_sling"
+          }
+        },
+        {
+          id = 57,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 1120,
+          y = 680,
+          width = 40,
+          height = 160,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "cliffs_9",
+            ["marker"] = "c8"
           }
         }
       }

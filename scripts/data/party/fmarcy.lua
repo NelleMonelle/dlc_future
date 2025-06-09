@@ -30,6 +30,7 @@ function character:init()
     self.weapon_icon = "ui/menu/equip/sword"
 
     self:setWeapon("liberator")
+	self:setArmor(1, "resistance_band")
 	
 	self:addSpell("true_slash")
     -- self:addSpell("ultra_break")

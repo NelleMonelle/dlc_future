@@ -31,6 +31,7 @@ function character:init()
     self.weapon_icon = "ui/menu/equip/ring"
 
     self:setWeapon("crimsonspire")
+	self:setArmor(1, "resistance_band")
 	
     -- self:addSpell("frostspite")
     -- self:addSpell("whiteout")

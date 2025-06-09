@@ -267,5 +267,17 @@ return {
 		cutscene:showNametag("Susie")
 		cutscene:text("* Maybe we should try to [color:yellow]avoid these enemies[color:white]...", "neutral", "susie")
 		cutscene:hideNametag()
-    end
+    end,
+	
+    sign2 = function(cutscene, event)
+		cutscene:text("* Inside this chest contains [color:yellow]ARMOR[color:white].")
+		cutscene:text("* It can help you withstand the daily horrors.")
+		cutscene:text("* (Signed, The Resistance)")
+		cutscene:showNametag("Jamm")
+		cutscene:text("* Guys, I have a feeling we'll be needing this armor.", "nervous", "jamm")
+		cutscene:text("* Maybe we should equip it on one of us?", "nervous_left", "jamm")
+		cutscene:showNametag("Susie")
+		cutscene:text("* Let's see...", "nervous", "susie")
+		cutscene:hideNametag()
+    end,
 }
