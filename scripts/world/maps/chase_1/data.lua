@@ -161,7 +161,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["cutscene"] = "cliffs.no_return_1"
+            ["cutscene"] = "cliffs.no_return_1",
+            ["once"] = false
           }
         },
         {
