@@ -7,6 +7,9 @@ function DeadMap:onEnter()
 		Game.stage:addChild(Game.mapbackground)
 		Game.mapbackground:setLayer(Game.world.layer - 1)
 	end
+	if self:getEvent(19) then
+		self:getEvent(19).sprite.color = {0,0,0}
+	end
 end
 
 return DeadMap

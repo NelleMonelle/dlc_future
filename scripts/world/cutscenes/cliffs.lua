@@ -280,4 +280,192 @@ return {
 		cutscene:text("* Let's see...", "nervous", "susie")
 		cutscene:hideNametag()
     end,
+	
+    chase_start	= function(cutscene, event)
+		local texts = {}
+        local function genText(text, x, y, actor, scale, main, wait_time)
+            scale = scale or 1
+            wait_time = wait_time or 0.2
+
+            local text_o = Game.world:spawnObject(DialogueText(text, x, y, 300, 500))
+            text_o.skippable = false
+            text_o:setScale(scale)
+            text_o.parallax_x = 0
+            text_o.parallax_y = 0
+			text_o.alpha = 0
+			text_o:setLayer(9999)
+			text_o:addFX(OutlineFX(COLORS.black, {
+				thickness = 2,
+				amount = 4
+			}))
+            table.insert(texts, text_o)
+
+            -- cutscene:wait(wait_time)
+			Game.world.timer:tween(1, text_o, { x = x + 15, alpha = 1 }, "linear", function()
+				Game.world.timer:after(2.5, function()
+					
+					Game.world.timer:tween(1, text_o, {alpha = 0 }, "linear", function()
+					end)
+				end)
+			end)
+
+            return text_o
+        end
+		
+		local function createParticle(x, y)
+			local sprite = Sprite("effects/icespell/snowflake", x, y)
+			sprite:setOrigin(0.5, 0.5)
+			sprite:setScale(1.5)
+			sprite.layer = WORLD_LAYERS["above_events"]
+			Game.world:addChild(sprite)
+			return sprite
+		end
+		
+        local jamm = cutscene:getCharacter("jamm")
+		local susie = cutscene:getCharacter("susie")
+		local variant = cutscene:getCharacter(Game:getFlag("future_variable"))
+		
+		cutscene:detachFollowers()
+		cutscene:detachCamera()
+		
+		cutscene:panTo(780, 500, 1)
+		cutscene:walkTo(susie, "susie_walkto", 1)
+        cutscene:walkTo(jamm, "jamm_walkto", 1)
+        cutscene:wait(cutscene:walkTo(variant, "variant_walkto", 1))
+		
+		cutscene:showNametag("Susie")
+		cutscene:text("* I think I might have some idea about where we are...", "neutral", "susie")
+		cutscene:look(susie, "down")
+		cutscene:look(jamm, "up")
+		cutscene:showNametag("Jamm")
+		cutscene:text("* ...Go on.", "neutral", "jamm")
+		genText("...This is taking too long.", 50, 50, "fmarcy")	-- Marcy
+		cutscene:showNametag("Susie")
+		cutscene:text("* With the different language on the signs and the cliffs...", "neutral_side", "susie")
+		cutscene:text("* We might be in some kind of a different universe.", "neutral", "susie")
+		genText("I think we should take them prisoner.", 50, 50, "fmarcy")	-- Marcy
+		cutscene:showNametag("Jamm")
+		cutscene:text("* Like an AU or something?", "neutral", "jamm")
+		cutscene:showNametag("Susie")
+		cutscene:text("* The hell is an AU?", "neutral", "susie")
+		if Game:getFlag("future_variable") == "ceroba_dw" then
+			genText("And interrogate them at the base or something?", 175, 50)	-- Kanako
+		end
+		cutscene:showNametag("Jamm")
+		cutscene:text("* It means \"Alternate Universe\".", "look_left", "jamm")
+		cutscene:text("* It's an alternate version of a world,[wait:5] with some change.", "neutral", "jamm")
+		cutscene:text("* Swapped roles,[wait:5] everyone is evil,[wait:5] extra people...", "neutral", "jamm")
+		genText("Yeah, that's what I'm thinking now.", 50, 50, "fmarcy")	-- Marcy
+		cutscene:text("* There might even be one where the Roaring is real.[react:1]", "side_smile", "jamm", {reactions={
+			{"Or one where\nAnia is alive...", 352, 61, "worried", "jamm"}
+		}})
+		cutscene:showNametag("Susie")
+		cutscene:text("* Dude,[wait:5] really???[wait:10]\n* I'd want to go to that one!", "surprise_smile", "susie")
+		genText("...If you think it's best, then...", 300, 50, "fnoelle")	-- Noelle
+		cutscene:text("* But,[wait:5] uh...[wait:10]\n* Something like that.", "nervous", "susie")
+		cutscene:look(susie, "left")
+		cutscene:look(jamm, "left")
+		if Game:getFlag("future_variable") == "ceroba_dw" then
+			cutscene:showNametag("Ceroba")
+			cutscene:text("* ...It's the best we've got.", "default", "ceroba")
+			cutscene:text("* So then how would we get home?", "default", "ceroba")
+		end
+		cutscene:setAnimation(susie, {"away_scratch", 1/3, true})
+		cutscene:showNametag("Susie")
+		cutscene:text("* Yeah,[wait:5] I'm still working on--", "nervous_side", "susie", {auto=true})
+		cutscene:hideNametag()
+		local particles = {}
+		Game.world.music:stop()
+		cutscene:wait(1/30)
+		Assets.playSound("icespell")
+        particles[1] = createParticle(755, 480)
+        cutscene:wait(3/30)
+		cutscene:setSprite(susie, "shock_left")
+		cutscene:setSprite(jamm, "trip")
+		jamm.flip_x = true
+		if Game:getFlag("future_variable") == "ceroba_dw" then
+			cutscene:setSprite(variant, "fall")
+			variant.flip_x = true
+		end
+		cutscene:slideTo(susie, susie.x + 40, susie.y, 0.2)
+		cutscene:slideTo(jamm, jamm.x + 40, jamm.y, 0.2)
+		cutscene:slideTo(variant, variant.x - 40, variant.y, 0.2)
+        particles[2] = createParticle(805, 480)
+        cutscene:wait(3/30)
+        particles[3] = createParticle(780, 520)
+        cutscene:wait(3/30)
+        Game.world:addChild(IceSpellBurst(780, 500))
+        for _,particle in ipairs(particles) do
+            for i = 0, 5 do
+                local effect = IceSpellEffect(particle.x, particle.y)
+                effect:setScale(0.75)
+                effect.physics.direction = math.rad(60 * i)
+                effect.physics.speed = 8
+                effect.physics.friction = 0.2
+                effect.layer = WORLD_LAYERS["above_events"] - 1
+                Game.world:addChild(effect)
+            end
+        end
+        cutscene:wait(1/30)
+        for _,particle in ipairs(particles) do
+            particle:remove()
+        end
+        cutscene:wait(1)
+		cutscene:showNametag("Jamm")
+		cutscene:text("* Wh-what was that!?", "speechless", "jamm")
+		cutscene:hideNametag()
+		cutscene:look(susie, "up")
+		cutscene:resetSprite(susie)
+		susie:alert()
+		cutscene:wait(1)
+		cutscene:setAnimation(susie, {"point_up", 1/3, true})
+		Game.world.music:play("creepychase")
+		cutscene:showNametag("Susie")
+		cutscene:text("* HEY!", "angry", "susie")
+		jamm.flip_x = false
+		cutscene:look(jamm, "up")
+		cutscene:resetSprite(jamm)
+		variant.flip_x = false
+		cutscene:look(variant, "up")
+		cutscene:resetSprite(variant)
+		cutscene:hideNametag()
+		cutscene:panTo(780, 140, 1)
+		cutscene:wait(1)
+		cutscene:showNametag("???", {top=false})
+		cutscene:text("* Shit,[wait:5] they spotted us!", nil, "fmarcy", {top=false})
+		local fmarcy = cutscene:getCharacter("fmarcy")
+		cutscene:walkToSpeed(fmarcy, 1160, fmarcy.y, 12)
+		cutscene:text("* Hey,[wait:5] don't run off without me!", nil, "fmarcy", {top=false})
+		cutscene:resetSprite(susie)
+		cutscene:hideNametag()
+		cutscene:panTo(780, 500, 1)
+		cutscene:wait(1)
+		cutscene:look(susie, "down")
+		cutscene:showNametag("Jamm")
+		cutscene:text("* C'mon, after them!", "determined", "jamm")
+		jamm:walkToSpeed(1160, jamm.y, 12)
+		variant:walkToSpeed(1160, variant.y, 12)
+		cutscene:hideNametag()
+    end,
+	
+    no_return_1	= function(cutscene, event)
+		cutscene:showNametag("Susie")
+		cutscene:text("* I can't go back now.", "nervous", "susie")
+		cutscene:hideNametag()
+		local susie = cutscene:getCharacter("susie")
+		cutscene:wait(cutscene:walkToSpeed(susie, susie.x + 40, susie.y, 8))
+    end,
+	
+	jamm_jump = function(cutscene)
+		local jamm = cutscene:getCharacter("jamm")
+		Assets.playSound("jump")
+		Game:setFlag("future_jamm_jump", true)
+		jamm:jumpTo(580, 380, 20, 0.5, "ball", "landed_2")
+		Game.world.timer:after(0.5, function()
+			jamm:shake(2)
+		end)
+		Game.world.timer:after(0.7, function()
+			jamm:walkToSpeed(580, 600, 8)
+		end)
+	end
 }
