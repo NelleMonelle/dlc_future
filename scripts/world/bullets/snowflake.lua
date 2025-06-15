@@ -1,6 +1,6 @@
-local ScytheBullet, super = Class(WorldBullet)
+local SnowBullet, super = Class(WorldBullet)
 
-function ScytheBullet:init(x, y, dir)
+function SnowBullet:init(x, y, dir)
     super.init(self, x, y, "bullets/world/snowflake")
 
     self.damage = 30
@@ -10,12 +10,12 @@ function ScytheBullet:init(x, y, dir)
 	-- Move the bullet in dir radians (0 = right, pi = left, clockwise rotation)
     self.physics.direction = dir
     -- Speed the bullet moves (pixels per frame at 30FPS)
-    self.physics.speed = 8
+    self.physics.speed = 6
 	
 	self:setScale(1)
 end
 
-function ScytheBullet:onDamage(soul)
+function SnowBullet:onDamage(soul)
     local all_at_one = true
 	for k,v in pairs(Game.party) do
 		if v.health ~= 1 then
@@ -67,4 +67,4 @@ function ScytheBullet:onDamage(soul)
 	end
 end
 
-return ScytheBullet
+return SnowBullet

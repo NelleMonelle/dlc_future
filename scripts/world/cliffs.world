@@ -48,6 +48,34 @@
             "width": 1000,
             "x": 0,
             "y": 0
+        },
+        {
+            "fileName": "maps/cliffs_8/cliffs_8.tmx",
+            "height": 960,
+            "width": 1120,
+            "x": 2000,
+            "y": 880
+        },
+        {
+            "fileName": "maps/cliffs_9/cliffs_9.tmx",
+            "height": 720,
+            "width": 1120,
+            "x": 3120,
+            "y": 1480
+        },
+        {
+            "fileName": "maps/chase_1/chase_1.tmx",
+            "height": 480,
+            "width": 2400,
+            "x": 4240,
+            "y": 1760
+        },
+        {
+            "fileName": "maps/chase_2/chase_2.tmx",
+            "height": 1080,
+            "width": 640,
+            "x": 5960,
+            "y": 2240
         }
     ],
     "onlyShowAdjacentMaps": false,
