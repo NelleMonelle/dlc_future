@@ -475,6 +475,7 @@ return {
 		local variant = cutscene:getCharacter(Game:getFlag("future_variable"))
 		local fmarcy = cutscene:getCharacter("fmarcy")
 		local fnoelle = cutscene:getCharacter("fnoelle")
+		local fvariant = cutscene:getCharacter(Mod:getVariableFuture(Game.party[3].id))
 		
 		cutscene:wait(cutscene:walkToSpeed(susie, "susie_meetup", 8, "down"))
 		
@@ -558,11 +559,10 @@ return {
 		cutscene:resetSprite(susie)
 		
 		cutscene:showNametag("Susie", {top=true})
+		
+		cutscene:showNametag("Susie", {top=true})
 		cutscene:text("* ...", "bangs/down", "susie", {top=true})
-		local thirdpartyname
-		if Game:getFlag("future_variable") == "ceroba_dw" then
-			thirdpartyname = "Ceroba"
-		end
+		local thirdpartyname = Game.party[3]:getName()
 		cutscene:text("* "..thirdpartyname..".", "bangs/down", "susie", {top=true})
 		cutscene:text("* Protect Jamm.", "bangs/down", "susie", {top=true})
 		if Game:getFlag("future_variable") == "ceroba_dw" then
@@ -704,6 +704,7 @@ return {
 		
 		cutscene:showNametag("???")
 		cutscene:text("* It's me,[wait:5] dad.[wait:10]\n* Your only daughter.", "neutral", "fmarcy")
+		
 		cutscene:showNametag("Marcy")
 		cutscene:text("* Marcy.", "closed", "fmarcy")
 		
@@ -784,5 +785,134 @@ return {
 		
 		cutscene:showNametag("Jamm")
 		cutscene:text("* I-I...[wait:10]\n* I can't believe it...", "speechless", "jamm")
+		
+		cutscene:showNametag("Marcy")
+		cutscene:text("* And I'm not alone.", "neutral", "fmarcy")
+		cutscene:look(fmarcy, "down")
+		local fparty_id = Mod:getVariableFuture(Game.party[3].id)
+		cutscene:text("* Noelle.[func:reveal][wait:10] " .. Game:getPartyMember(fparty_id):getName() .. ".[wait:10]\n* You might want to see this.", "neutral", "fmarcy", {functions = {
+			reveal = function()
+				susie:setFacing("right")
+				variant:setFacing("right")
+				susie:alert()
+			end
+		}})
+		cutscene:hideNametag()
+		cutscene:look(jamm, "down")
+		
+		cutscene:walkToSpeed(fnoelle, fnoelle.x - 400, fnoelle.y, 6)
+		cutscene:wait(cutscene:walkToSpeed(fvariant, fvariant.x - 400, fvariant.y, 6))
+		
+		cutscene:showNametag("Susie")
+		cutscene:text("* Noelle???", "surprise", "susie")
+		cutscene:hideNametag()
+		
+		cutscene:walkToSpeed(susie, susie.x, fnoelle.y, 6)
+		cutscene:wait(cutscene:walkToSpeed(variant, variant.x, fvariant.y, 6))
+		
+		cutscene:walkToSpeed(susie, fnoelle.x - 120, fnoelle.y, 6)
+		cutscene:wait(cutscene:walkToSpeed(variant, fvariant.x - 80, fvariant.y, 6))
+		
+		if Game:getFlag("future_variable") == "ceroba_dw" then
+			cutscene:showNametag("Kanako")
+			cutscene:text("* Wait... Are you...", "neutral", "fkanako")
+			cutscene:text("* My mother...?", "neutral", "fkanako")
+			cutscene:showNametag("Ceroba")
+			cutscene:text("* K... Kanako?", "surprised", "ceroba")
+			cutscene:showNametag("Kanako")
+			cutscene:text("* I thought you...", "neutral", "fkanako")
+		end
+		
+		cutscene:showNametag("Susie")
+		cutscene:text("* Noelle, hey![wait:10]\n* It's cool to...", "surprise", "susie")
+		cutscene:text("* ...Wait a minute...", "surprise", "susie")
+		cutscene:text("* Where did you get that jacket...?", "surprise", "susie")
+		cutscene:text("* And your antlers and hair...", "surprise", "susie")
+		
+        cutscene:showNametag("Noelle")
+		cutscene:text("* It's been...", "neutral", "noelle")
+		cutscene:text("* It's been so long...", "neutral", "noelle")
+		
+		cutscene:showNametag("Susie")
+		cutscene:text("* ...What?", "nervous", "susie")
+		
+		cutscene:showNametag("Marcy")
+		cutscene:text("* You three have been missing for a decade,[wait:5] Susie.", "closed", "fmarcy")
+		
+		cutscene:showNametag("Susie")
+		cutscene:text("* A decade!?[wait:10]\n* That's like...[wait:10] A hundred years!", "surprise_frown", "susie")
+		
+		cutscene:showNametag("Jamm")
+		cutscene:text("* ...Ten years,[wait:5] Susie.[wait:10]\n* We've been missing for ten y--", "stern", "jamm", {auto=true})
+		cutscene:look(jamm, "right")
+		cutscene:text("* Wait a minute,[wait:5] what do you mean we've been missing for a decade?", "nervous", "jamm")
+		
+		cutscene:look(fmarcy, "left")
+		cutscene:showNametag("Marcy")
+		cutscene:text("* We did all we could to look for you after you disappeared...", "neutral", "fmarcy")
+		cutscene:look(fmarcy, "down")
+		cutscene:look(jamm, "down")
+		
+		if Game:getFlag("future_variable") == "ceroba_dw" then
+			variant:setSprite("fall")
+			variant.flip_x = true
+			cutscene:showNametag("Ceroba")
+			cutscene:text("* What?![wait:10] I disappeared?!", "surprised", "ceroba")
+			variant:resetSprite()
+			variant.flip_x = false
+			cutscene:showNametag("Kanako")
+			cutscene:text("* Well,[wait:5] one day you just...[wait:10] Didn't come back home.", "neutral", "fkanako")
+			cutscene:text("* Uncle Star and the rest searched for you,[wait:5] but nobody could find you.", "neutral", "fkanako")
+			cutscene:text("* Then I heard Marcy and Noelle lost Jamm and Susie,[wait:5] and...", "neutral", "fkanako")
+			cutscene:text("* We decided to look for you three together.", "neutral", "fkanako")
+		end
+		
+		cutscene:showNametag("Susie")
+		cutscene:text("* Damn...", "shy_down", "susie")
+		cutscene:text("* Can't believe we went missing.", "neutral", "susie")
+		
+		cutscene:showNametag("Marcy")
+		cutscene:text("* If I may ask...", "closed", "fmarcy")
+		cutscene:look(fmarcy, "left")
+		cutscene:look(jamm, "right")
+		cutscene:text("* Why did you three choose to return here?[wait:10]\n* Why now?", "neutral", "fmarcy")
+		cutscene:text("* And where the hell were you when we needed you most?", "neutral", "fmarcy")
+		cutscene:look(jamm, "right")
+		cutscene:text("* Well,[wait:5] it wasn't exactly by choice...", "nervous", "jamm")
+		cutscene:hideNametag()
+		
+		cutscene:wait(cutscene:fadeOut())
+		
+		cutscene:text("* The three of you explain what happened.")
+		
+		-- 1160, 240
+		local lore_board = Registry.createEvent("lore_board", {x = 1160, y = 240, properties = {}})
+		Game.world:spawnObject(lore_board)
+		
+		jamm.x = 1240
+		jamm.y = 240
+		variant.x = 1080
+		variant.y = 240
+		susie.x = 1160
+		susie.y = 280
+		jamm:setFacing("down")
+		variant:setFacing("down")
+		susie:setFacing("left")
+		
+		fvariant.x = 1240
+		fvariant.y = 400
+		fnoelle.x = 1080
+		fnoelle.y = 400
+		fmarcy.x = 1160
+		fmarcy.y = 400
+		fvariant:setFacing("up")
+		fnoelle:setFacing("up")
+		fmarcy:setFacing("up")
+		
+		cutscene:wait(cutscene:fadeIn())
+		
+		cutscene:showNametag("Susie")
+		cutscene:text("* ...And, uh, I think that covers it.", "nervous", "susie")
+		cutscene:hideNametag()
 	end,
 }

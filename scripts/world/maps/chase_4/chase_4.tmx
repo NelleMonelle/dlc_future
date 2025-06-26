@@ -86,7 +86,7 @@
    </properties>
    <point/>
   </object>
-  <object id="16" name="npc" x="1640" y="400">
+  <object id="16" name="npc" x="1640" y="360">
    <properties>
     <property name="actor" value="fnoelle"/>
     <property name="facing" value="left"/>
@@ -94,7 +94,7 @@
    </properties>
    <point/>
   </object>
-  <object id="17" name="npc" x="1300" y="-20">
+  <object id="17" name="npc" x="1680" y="440">
    <properties>
     <property name="actor" value="fnoelle"/>
     <property name="facing" value="left"/>
