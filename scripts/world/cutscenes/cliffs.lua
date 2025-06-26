@@ -824,10 +824,10 @@ return {
 		end
 		
 		cutscene:showNametag("Susie", {left=true})
-		cutscene:text("* Noelle, hey![wait:10]\n* It's cool to...", "surprise", "susie")
-		cutscene:text("* ...Wait a minute...", "surprise", "susie")
-		cutscene:text("* Where did you get that jacket...?", "surprise", "susie")
-		cutscene:text("* And your antlers and hair...", "surprise", "susie")
+		cutscene:text("* Noelle, hey![wait:10]\n* It's cool to...", "surprise_smile", "susie")
+		cutscene:text("* ...Wait a minute...", "neutral", "susie")
+		cutscene:text("* Where did you get that jacket...?", "neutral", "susie")
+		cutscene:text("* And your antlers and hair...", "nervous", "susie")
 		
         cutscene:showNametag("Noelle", {left=true})
 		cutscene:text("* It's been...", "neutral", "noelle")
