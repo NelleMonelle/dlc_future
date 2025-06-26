@@ -559,6 +559,34 @@ return {
 		
 		cutscene:showNametag("Susie", {top=true})
 		cutscene:text("* ...", "bangs/down", "susie", {top=true})
+		local thirdpartyname
+		if Game:getFlag("future_variable") == "ceroba_dw" then
+			thirdpartyname = "Ceroba"
+		end
+		cutscene:text("* "..thirdpartyname..".", "bangs/down", "susie", {top=true})
+		cutscene:text("* Protect Jamm.", "bangs/down", "susie", {top=true})
+		if Game:getFlag("future_variable") == "ceroba_dw" then
+			cutscene:showNametag("Ceroba", {top=true})
+			cutscene:text("* On it.", "neutral", "ceroba", {top=true})
+		end
+		local robashield
+		if Game:getFlag("future_variable") == "ceroba_dw" then
+			cutscene:walkToSpeed(variant, jamm.x + 100, jamm.y, 4, "right", nil, function()
+				variant:setAnimation("guard")
+				Game.world.timer:after(0.4, function()
+					local shield = Sprite("world/cutscenes/ceroba_guard_shield", jamm.x+20, jamm.y-jamm.height/2)
+					shield:setScale(2)
+					shield:setOrigin(0.5, 0.5)
+					shield.layer = jamm.layer + 0.1
+					Game.world:addChild(shield)
+					shield:play(1/10, false)
+					robashield = shield
+				end)
+			end)
+		else
+			cutscene:walkToSpeed(variant, jamm.x + 100, jamm.y, 4, "right")
+		end
+		cutscene:showNametag("Susie", {top=true})
 		cutscene:look(susie, "right")
 		cutscene:text("* You.", "bangs/neutral", "susie", {top=true})
 		cutscene:hideNametag()
@@ -567,7 +595,6 @@ return {
 		
 		cutscene:wait(cutscene:panTo("camera_to"))
 		
-		cutscene:walkToSpeed(variant, variant.x + 40, variant.y, 4, "left", true)
 		cutscene:wait(cutscene:walkToSpeed(susie, susie.x, fmarcy.y, 4, "right"))
 		
 		cutscene:look(variant, "right")
@@ -616,6 +643,9 @@ return {
 		
 		Game:addPartyMember("jamm")
 		Game:addPartyMember(party_id)
+
+		if robashield then robashield:remove() end
+		variant:resetSprite()
 		
 		cutscene:showNametag("Jamm")
 		cutscene:text("* Susie![wait:10] Snap out of it!", "speechless", "jamm")
@@ -635,7 +665,13 @@ return {
 		cutscene:text("* Dude![wait:10]\n* You're okay!", "surprise_smile", "susie")
 		
 		cutscene:showNametag("Jamm")
-		cutscene:text("* Thank the Angel I had my secret ReviveMint...", "smirk", "jamm")
+		if Game:getFlag("future_variable") == "ceroba_dw" then
+			cutscene:text("* Thank the Angel I had my secret ReviveMint...[react:1]", "smirk", "jamm", {reactions={
+				{"I helped him with it\nwhile you were occupied.", "mid", "bottom", "neutral_1", "ceroba"}
+			}})
+		else
+			cutscene:text("* Thank the Angel I had my secret ReviveMint...", "smirk", "jamm")
+		end
 		cutscene:text("* But Susie,[wait:5] what was that!?", "determined", "jamm")
 		cutscene:text("* We were trying to get your attention for a while now!", "determined", "jamm")
 		
