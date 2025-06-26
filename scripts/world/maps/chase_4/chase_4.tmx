@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="40" height="13" tilewidth="40" tileheight="40" infinite="0" nextlayerid="7" nextobjectid="28">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="40" height="13" tilewidth="40" tileheight="40" infinite="0" nextlayerid="7" nextobjectid="32">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
+ <properties>
+  <property name="music" value="deltarune/wind_highplace"/>
+ </properties>
  <tileset firstgid="1" source="../../tilesets/cliffs.tsx"/>
  <layer id="4" name="Tile Layer 3" width="40" height="13">
   <data encoding="csv">

@@ -10,8 +10,10 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 7,
-  nextobjectid = 28,
-  properties = {},
+  nextobjectid = 32,
+  properties = {
+    ["music"] = "deltarune/wind_highplace"
+  },
   tilesets = {
     {
       name = "cliffs",
