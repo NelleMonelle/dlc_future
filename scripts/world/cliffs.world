@@ -76,6 +76,13 @@
             "width": 640,
             "x": 5960,
             "y": 2240
+        },
+        {
+            "fileName": "maps/chase_3/chase_3.tmx",
+            "height": 640,
+            "width": 800,
+            "x": 6600,
+            "y": 2600
         }
     ],
     "onlyShowAdjacentMaps": false,

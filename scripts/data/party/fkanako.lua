@@ -7,7 +7,8 @@ function character:init()
 
     self:setActor("fkanako")
 
-    self.level = 18
+    self.level = 17
+    self.exp = 16724
     self.title = "Amalgamate\nAble to hold her\nform, mostly"
 
     self.soul_priority = 1

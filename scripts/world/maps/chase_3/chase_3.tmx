@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="20" height="16" tilewidth="40" tileheight="40" infinite="0" nextlayerid="7" nextobjectid="14">
+ <editorsettings>
+  <export target="data.lua" format="lua"/>
+ </editorsettings>
+ <properties>
+  <property name="music" value="creepychase"/>
+ </properties>
+ <tileset firstgid="1" source="../../tilesets/cliffs.tsx"/>
+ <layer id="1" name="Tile Layer 1" width="20" height="16">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,4,0,
+0,7,8,8,11,8,8,8,8,8,8,8,8,8,8,8,8,11,9,0,
+0,12,13,13,13,13,13,11,13,13,6,13,13,13,13,13,13,13,14,0,
+0,12,6,13,13,13,13,13,13,13,13,13,13,13,13,13,13,13,14,0,
+0,12,13,13,13,13,13,13,13,13,13,13,13,13,6,13,13,13,14,0,
+0,12,13,11,13,13,6,13,13,13,13,13,13,13,13,13,13,13,14,0,
+0,12,8,8,8,8,8,8,8,8,8,11,8,8,8,8,8,8,14,0,
+3,6,8,8,8,8,8,8,8,8,8,8,8,8,8,8,6,8,8,3,
+13,13,13,13,13,13,13,13,11,13,13,13,13,13,13,13,13,13,13,13,
+18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,
+23,23,23,23,23,10,23,23,23,23,23,23,23,23,23,5,23,10,23,23,
+3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,
+8,8,11,8,8,8,8,8,11,8,8,8,6,8,8,8,8,8,8,6,
+13,6,13,13,13,6,13,13,13,13,13,13,13,13,13,11,13,13,13,13
+</data>
+ </layer>
+ <objectgroup id="3" name="objects">
+  <object id="8" name="transition" x="-40" y="360" width="40" height="80">
+   <properties>
+    <property name="map" value="chase_2"/>
+    <property name="marker" value="chase_3"/>
+   </properties>
+  </object>
+  <object id="9" name="npc" x="400" y="600">
+   <properties>
+    <property name="actor" value="jamm"/>
+    <property name="facing" value="right"/>
+    <property name="flagcheck" value="!future_post_looney_toons"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="10" name="npc" x="-40" y="600">
+   <properties>
+    <property name="actor" value="fnoelle"/>
+    <property name="facing" value="right"/>
+    <property name="flagcheck" value="!future_post_looney_toons"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="13" name="transition" x="800" y="360" width="40" height="80">
+   <properties>
+    <property name="map" value="chase_4"/>
+    <property name="marker" value="chase_3"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="4" name="markers">
+  <object id="5" name="big_flower_spawn" x="400" y="260">
+   <point/>
+  </object>
+  <object id="7" name="chase_2" x="40" y="400">
+   <point/>
+  </object>
+  <object id="12" name="chase_4" x="760" y="400">
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="6" name="battleareas">
+  <object id="6" x="40" y="80" width="720" height="360"/>
+ </objectgroup>
+ <objectgroup id="5" name="collision">
+  <object id="1" x="0" y="0" width="40" height="360"/>
+  <object id="2" x="40" y="0" width="720" height="80"/>
+  <object id="3" x="760" y="0" width="40" height="360"/>
+  <object id="4" x="0" y="440" width="800" height="80"/>
+ </objectgroup>
+</map>

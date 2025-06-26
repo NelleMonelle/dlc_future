@@ -8,6 +8,7 @@ function character:init()
     self:setActor("fmarcy")
 
     self.level = 19
+    self.exp = 76525
     self.title = "Light Slasher\nEmpty attacker who\ndeals heavy damage"
 
     self.soul_priority = 1
@@ -45,6 +46,10 @@ function character:init()
     self.attack_bar_color = {0, 0, 0.5}
     self.attack_box_color = {39/255, 106/255, 179/255}
     self.xact_color = nil
+	
+	self.attack_sprite = "effects/attack/cut_ceroba"
+    self.attack_sound = "laz_c"
+    self.attack_pitch = 1
 
     self.menu_icon = "party/future_marcy/head"
     self.head_icons = "party/future_marcy/icon"

@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 9,
-  nextobjectid = 29,
+  nextobjectid = 31,
   properties = {
     ["music"] = "creepychase"
   },
@@ -353,6 +353,22 @@ return {
           properties = {
             ["script"] = "handle_chase_2"
           }
+        },
+        {
+          id = 30,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 640,
+          y = 720,
+          width = 40,
+          height = 80,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "chase_3",
+            ["marker"] = "chase_2"
+          }
         }
       }
     },
@@ -470,6 +486,19 @@ return {
           y = 320,
           width = 40,
           height = 360,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 29,
+          name = "chase_3",
+          type = "",
+          shape = "point",
+          x = 600,
+          y = 760,
+          width = 0,
+          height = 0,
           rotation = 0,
           visible = true,
           properties = {}
