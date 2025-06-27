@@ -23,9 +23,9 @@ function Dummy:init()
 
     -- List of possible wave ids, randomly picked each turn
     self.waves = {
-        "basic",
-        "aiming",
-        "movingarena"
+        "rudinn/diamonds_aim",
+        "rudinn/diamonds_up_lots",
+        "rudinn/diamonds_vert_lots",
     }
 
     -- Dialogue randomly displayed in the enemy's speech bubble

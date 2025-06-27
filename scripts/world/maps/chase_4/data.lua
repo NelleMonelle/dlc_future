@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 7,
-  nextobjectid = 32,
+  nextobjectid = 36,
   properties = {
     ["music"] = "deltarune/wind_highplace"
   },
@@ -251,6 +251,37 @@ return {
           properties = {
             ["cutscene"] = "cliffs.chase_end"
           }
+        },
+        {
+          id = 32,
+          name = "interactable",
+          type = "",
+          shape = "rectangle",
+          x = 1400,
+          y = 240,
+          width = 40,
+          height = 80,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["cutscene"] = "cliffs.sign1"
+          }
+        },
+        {
+          id = 34,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 1600,
+          y = 320,
+          width = 40,
+          height = 160,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "cliffs_10",
+            ["marker"] = "chase_4"
+          }
         }
       }
     },
@@ -366,6 +397,19 @@ return {
           shape = "point",
           x = 1160,
           y = 260,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 35,
+          name = "cliffs_10",
+          type = "",
+          shape = "point",
+          x = 1560,
+          y = 400,
           width = 0,
           height = 0,
           rotation = 0,
