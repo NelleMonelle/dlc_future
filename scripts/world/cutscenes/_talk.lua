@@ -48,7 +48,7 @@ return {
                 cutscene:showNametag("Susie")
                 cutscene:text("* Anyone's got a guess on what is this thing on the horizon?", "nervous", "susie")
                 cutscene:showNametag("Jamm")
-                cutscene:text("* Mmm[wait:5]nope.", "look_left", "jamm")
+                cutscene:text("* Not a clue.", "look_left", "jamm")
                 if Game:getFlag("future_variable") == "ceroba_dw" then
                     cutscene:showNametag("Ceroba")
 			        cutscene:text("* Sorry,[wait:5] I got nothing.", "dissapproving", "ceroba")
@@ -57,16 +57,28 @@ return {
                 cutscene:text("* ...[wait:5] yeah,[wait:5] same here.", "nervous_side", "susie")
                 cutscene:hideNametag()
             elseif map == "cliffs_3" then
+                cutscene:showNametag("Jamm")
+                cutscene:text("* Is it a little hard to breathe for anyone else?", "look_left", "jamm")
+                cutscene:text("* I mean,[wait:5] it's like there's not a lot of clean air...", "worried", "jamm")
                 cutscene:showNametag("Susie")
-                cutscene:text("* ...", "nervous_side", "susie") -- yeah erm placeholder
+                cutscene:text("* Or a lot of air,[wait:5] to begin with...", "neutral", "susie")
                 cutscene:hideNametag()
             elseif map == "cliffs_4" then
                 cutscene:showNametag("Susie")
-                cutscene:text("* ...", "nervous_side", "susie") -- yeah erm placeholder
-                cutscene:hideNametag()
-            elseif map == "cliffs_5" then
+                cutscene:text("* ...I can't be the only one who saw that.", "nervous_side", "susie")
+                cutscene:showNametag("Jamm")
+                cutscene:text("* Saw what,[wait:5] exactly?", "nervous", "jamm")
                 cutscene:showNametag("Susie")
-                cutscene:text("* ...", "nervous_side", "susie") -- yeah erm placeholder
+                cutscene:text("* ...Nevermind.", "nervous", "susie")
+                cutscene:hideNametag()
+            elseif map == "cliffs_5" and Game:getFlag("bg_convo") then
+                cutscene:showNametag("Jamm")
+                cutscene:text("* So should we ignore that conversation?", "nervous", "jamm")
+                if Game:getFlag("future_variable") == "ceroba_dw" then
+                    cutscene:showNametag("Ceroba")
+			        cutscene:text("* We don't want them to know we heard...", "neutral", "ceroba")
+		        end
+                cutscene:text("* Good point.", "look_left", "jamm")
                 cutscene:hideNametag()
             elseif map == "cliffs_6" then
                 cutscene:showNametag("Susie")
@@ -88,7 +100,7 @@ return {
                 cutscene:showNametag("Susie")
                 cutscene:text("* ...", "nervous_side", "susie") -- yeah erm placeholder
                 cutscene:hideNametag()
-                elseif map == "cliffs_10" then
+            elseif map == "cliffs_10" then
                 cutscene:showNametag("Susie")
                 cutscene:text("* ...", "nervous_side", "susie") -- yeah erm placeholder
                 cutscene:hideNametag()
