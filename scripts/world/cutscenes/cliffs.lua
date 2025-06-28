@@ -52,7 +52,11 @@ return {
 		
 		genText("So, you saw them too, right?", 50, 50, "fmarcy")	-- Marcy
 		cutscene:wait(5)
-		genText("The outsiders? Y-yeah, I saw them...", 300, 50, "fnoelle")	-- Noelle
+		if Game:isDessMode() then
+			genText("The outsider? Y-yeah, I saw them...", 300, 50, "fnoelle")	-- Noelle
+		else
+			genText("The outsiders? Y-yeah, I saw them...", 300, 50, "fnoelle")	-- Noelle
+		end
 		cutscene:wait(5)
 		genText("But they seem... familiar, somehow.", 300, 50, "fnoelle")	-- Noelle
 		cutscene:wait(5)
@@ -103,6 +107,72 @@ return {
 
             return text_o
         end
+
+		if Game:isDessMode() then
+			local dess = cutscene:getCharacter("dess")
+
+			cutscene:detachCamera()
+			
+			cutscene:panTo(680, 960, 1)
+			cutscene:wait(cutscene:walkTo(dess, "jamm_walkto", 1))
+			
+			cutscene:showNametag("Dess")
+			cutscene:text("* it's quiet...", "neutral_c", "dess")
+			cutscene:text("* too quiet...", "annoyed", "dess")
+			cutscene:hideNametag()
+        	for i = 0,5 do
+            	cutscene:playSound("impact", (1 - (i/10)) ^ (4) )
+            	cutscene:wait(0.2)
+        	end
+			cutscene:wait(1)
+			cutscene:showNametag("Dess")
+			cutscene:text("* uh oh", "wtf", "dess")
+			cutscene:hideNametag()
+			local alpha = cutscene:spawnNPC("slitherer", 1050, 960)
+        	for i = 0,4 do
+            	cutscene:wait(cutscene:slideTo(alpha, alpha.x - 30, alpha.y, 1, "in-out-cubic"))
+        	end
+			cutscene:showNametag("Dess")
+			cutscene:text("* hi yes what the actual FUCK is that thing", "annoyed", "dess")
+			cutscene:text("* whelp,[wait:5] guess i better kill it", "challenging", "dess")
+			cutscene:hideNametag()
+			cutscene:startEncounter("slitherer_intro", true, alpha)
+			cutscene:wait(0.2)
+			Assets.playSound("hurt")
+			dess:setSprite("battle/hurt")
+			cutscene:shakeCharacter(dess, 2)
+			genText("Are they already down...?", 50, 50, "fmarcy")	-- Marcy
+			cutscene:wait(0.3)
+			cutscene:showNametag("Dess")
+			cutscene:text("* what the hell did i just fight", "annoyed", "dess")
+			cutscene:hideNametag()
+			cutscene:wait(0.7)
+			genText("They're not very strong, are they?", 300, 50, "fnoelle")	-- Noelle
+			cutscene:showNametag("Dess")
+			cutscene:text("* is this the end of the line for me...?", "annoyed", "dess")
+			cutscene:hideNametag()
+			genText("Wait, don't interfere w--", 50, 50, "fmarcy")	-- Marcy
+			cutscene:wait(0.8)
+			cutscene:healEffect(dess)
+			cutscene:wait(1)
+			cutscene:resetSprite(dess)
+			Assets.playSound("noise")
+			cutscene:wait(0.5)
+			cutscene:showNametag("Dess")
+			cutscene:text("* what", "mspaint", "dess")
+			genText("We don't need them to die!", 300, 50, "fnoelle")	-- Noelle
+			cutscene:text("* uhhhhhhhh", "neutral_c", "dess")
+			cutscene:text("* im just gonna assume that was God saving my ass and move on", "neutral", "dess")
+			genText("We're lucky the dumbfaced one bailed us out.", 50, 50, "fmarcy")	-- Marcy
+			cutscene:text("* okay where tf was i going again?", "angry", "dess")
+			cutscene:hideNametag()
+			cutscene:attachCamera(1)
+			cutscene:showNametag("Dess")
+			cutscene:text("* maybe i should avoid those guys...", "neutral_c", "dess")
+			cutscene:text("* OR i could kill them all and get a bajillion exp", "smug", "dess")
+			cutscene:hideNametag()
+			return
+		end
 		
         local jamm = cutscene:getCharacter("jamm")
 		local susie = cutscene:getCharacter("susie")
@@ -273,6 +343,12 @@ return {
 		cutscene:text("* Inside this chest contains [color:yellow]ARMOR[color:white].")
 		cutscene:text("* It can help you withstand the daily horrors.")
 		cutscene:text("* (Signed, The Resistance)")
+		if Game:isDessMode() then
+			cutscene:showNametag("Dess")
+			cutscene:text("* am i in some king of [color:red]Half-Life 2[color:reset] right now", "neutral", "dess")
+			cutscene:hideNametag()
+			return
+		end
 		cutscene:showNametag("Jamm")
 		cutscene:text("* Guys, I have a feeling we'll be needing this armor.", "nervous", "jamm")
 		cutscene:text("* Maybe we should equip it on one of us?", "nervous_left", "jamm")

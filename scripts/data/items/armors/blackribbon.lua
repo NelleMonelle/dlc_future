@@ -4,12 +4,14 @@ function item:init()
     super.init(self)
 	
 	self.can_equip = Utils.merge(self.can_equip, {
-        fmarcy = false
+        fmarcy = false,
+        fbrenda = false
     })
 
     -- Character reactions
     self.reactions = Utils.merge(self.reactions, {
-		fmarcy = "...No. Definitely not."
+		fmarcy = "...No. Definitely not.",
+    fbrenda = "... No..."
     })
 end
 

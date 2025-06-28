@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.11.0",
+  tiledversion = "1.11.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 7,
-  nextobjectid = 25,
+  nextobjectid = 26,
   properties = {
     ["music"] = "deltarune/wind_highplace"
   },
@@ -284,6 +284,22 @@ return {
           properties = {
             ["map"] = "cliffs_2",
             ["marker"] = "c1"
+          }
+        },
+        {
+          id = 25,
+          name = "npc",
+          type = "",
+          shape = "point",
+          x = 440,
+          y = -80,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["actor"] = "dess",
+            ["cond"] = "Game:isDessMode()"
           }
         }
       }

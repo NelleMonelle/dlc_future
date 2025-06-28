@@ -3,13 +3,14 @@ local item, super = Class("program_socks", true)
 function item:init()
     super.init(self)
 	
-	--self.can_equip = Utils.merge(self.can_equip, {
-        --fmarcy = false
-    --})
+	  self.can_equip = Utils.merge(self.can_equip, {
+        fbrenda = false
+    })
 
     -- Character reactions
     self.reactions = Utils.merge(self.reactions, {
 		fmarcy = "...Are you implying something?",
+    fbrenda = "Make me wear that and I'll kill you."
     })
 	
 	self.reactions["jamm"] = {
