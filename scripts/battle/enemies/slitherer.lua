@@ -18,6 +18,11 @@ function Dummy:init()
     -- Enemy reward
     self.money = 100
 
+    if Game:isDessMode() then
+        self.killable = true
+        self.experience = 500
+    end
+
     -- Mercy given when sparing this enemy before its spareable (20% for basic enemies)
     self.spare_points = 00
 

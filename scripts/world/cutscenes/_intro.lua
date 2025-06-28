@@ -1,4 +1,55 @@
 return function(cutscene, event)
+	if Game:isDessMode() then
+		local realdess = Game.world.player
+		local dess = cutscene:getCharacter("dess")
+		realdess.x = 360
+		realdess.y = 280
+        local alpha = realdess:addFX(AlphaFX())
+        Game.world.timer:tween(0, alpha, { alpha = 0 })
+	
+		cutscene:wait(1)
+
+		cutscene:setSprite(dess, "beatbox")
+		cutscene:wait(cutscene:slideTo(dess, "jamm_land", 0.5))
+		cutscene:setSprite(dess, "battle/defeat_1")
+		cutscene:shakeCharacter(dess, 4)
+		Assets.playSound("impact")
+		cutscene:wait(3)
+
+        Assets.playSound("vaporized", 1.2)
+
+        local sprite = dess.sprite
+
+        sprite.visible = false
+
+        local death_x, death_y = sprite:getRelativePos(0, 0, self)
+        local death
+        death = DustEffect(sprite:getTexture(), death_x, death_y, true, function() dess:remove() end)
+
+        death:setColor(sprite:getDrawColor())
+        death:setScale(sprite:getScale())
+        dess:addChild(death)
+        cutscene:wait(5)
+
+        Game.world.timer:tween(1, alpha, { alpha = 1 })
+        Assets.playSound("hypnosis")
+        cutscene:wait(2)
+
+		realdess:setFacing("left")
+		cutscene:wait(1/5)
+		realdess:setFacing("right")
+		cutscene:wait(1/5)
+		realdess:setFacing("up")
+		cutscene:wait(1/5)
+		realdess:setFacing("down")
+		cutscene:wait(1)
+
+		cutscene:showNametag("Dess")
+		cutscene:text("* man where tf am i", "angy", "dess")
+		cutscene:text("* thats the last time im touching weird vortex thingies", "annoyed", "dess")
+		cutscene:hideNametag()
+		return
+	end
 	Game:movePartyMember("susie", 1)
 	Game:movePartyMember("jamm", 2)
 	
