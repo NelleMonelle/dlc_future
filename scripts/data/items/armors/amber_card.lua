@@ -5,7 +5,8 @@ function item:init()
 
     -- Character reactions
     self.reactions = Utils.merge(self.reactions, {
-		fmarcy = "I mean, it doesn't seem very..."
+		fmarcy = "I mean, it doesn't seem very...",
+    fbrenda = "What even is this junk?"
     })
 end
 

@@ -10,6 +10,7 @@ function item:init()
     -- Character reactions
     self.reactions = Utils.merge(self.reactions, {
 		fmarcy = "It's just like... I can't accept it.",
+    fbrenda = "..."
     })
 end
 

@@ -3,9 +3,9 @@ local item, super = Class("riot_shield", true)
 function item:init()
     super.init(self)
 	
-	--self.can_equip = Utils.merge(self.can_equip, {
-        --fmarcy = false
-    --})
+ 	self.can_equip = Utils.merge(self.can_equip, {
+        fbrenda = false
+    })
 
     -- Character reactions
     self.reactions = Utils.merge(self.reactions, {
@@ -13,6 +13,7 @@ function item:init()
 			fmarcy = "...Don't say it, dad.",
 			jamm = "What? What was I going to say?"
 		},
+    	fbrenda = "... I don't do jokes."
     })
 	
 	self.reactions["jamm"] = {

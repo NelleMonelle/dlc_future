@@ -7,8 +7,8 @@ function actor:init()
     self.name = "Future Brenda"
 
     -- Width and height for this actor, used to determine its center
-    self.width = 25
-    self.height = 59
+    self.width = 29
+    self.height = 50
 
     -- Hitbox for this actor in the overworld (optional, uses width and height by default)
     self.hitbox = {7, 43, 15, 7}
@@ -37,10 +37,12 @@ function actor:init()
     -- Table of sprite offsets (indexed by sprite name)
     self.offsets = {
         -- Movement offsets
-        ["walk/left"] = {0, 0},
-        ["walk/right"] = {0, 0},
-        ["walk/up"] = {0, 0},
-        ["walk/down"] = {0, 0},
+        ["walk/left_2"] = {0, 1},
+        ["walk/left_4"] = {0, 1},
+        ["walk/right_2"] = {0, 1},
+        ["walk/right_4"] = {0, 1},
+        ["walk/up_2"] = {0, 1},
+        ["walk/up_4"] = {0, 1},
     }
 
     -- self.menu_anim = "bs_win"		-- TODO
