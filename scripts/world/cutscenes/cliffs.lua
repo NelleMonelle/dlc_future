@@ -163,7 +163,7 @@ return {
 			genText("We don't need them to die!", 300, 50, "fnoelle")	-- Noelle
 			cutscene:text("* uhhhhhhhh", "neutral_c", "dess")
 			cutscene:text("* im just gonna assume that was God saving my ass and move on", "neutral", "dess")
-			genText("We're lucky the dumbfaced one bailed us out.", 50, 50, "fmarcy")	-- Marcy
+			genText("We're lucky the deer bailed us out.", 50, 50, "fmarcy")	-- Marcy
 			cutscene:text("* okay where tf was i going again?", "angry", "dess")
 			cutscene:hideNametag()
 			cutscene:attachCamera(1)
