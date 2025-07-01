@@ -1103,4 +1103,218 @@ return {
 		
 		Game.world.music:play("deltarune/wind_highplace", 1, 1)
 	end,
+	
+	exit_cliffs = function(cutscene)
+        local jamm = cutscene:getCharacter("jamm")
+		local susie = cutscene:getCharacter("susie")
+		local variant = cutscene:getCharacter(Game:getFlag("future_variable"))
+		local fmarcy = cutscene:getCharacter("fmarcy")
+		
+		cutscene:wait(cutscene:fadeOut())
+		
+		cutscene:detachFollowers()
+		
+		susie.x = fmarcy.x - 80
+		jamm.x = susie.x - 80
+		variant.x = jamm.x
+		
+		susie.y = fmarcy.y
+		jamm.y = susie.y
+		variant.y = jamm.y + 80
+		
+		susie:setFacing("right")
+		jamm:setFacing("right")
+		variant:setFacing("right")
+		
+		Game.world.map:getTileLayer("Tile Layer 3").visible = true
+		Game.world.map:getTileLayer("Tile Layer 4").visible = true
+		
+		cutscene:wait(cutscene:fadeIn())
+		
+		cutscene:showNametag("Marcy")
+		cutscene:text("* The other two already went down.", "neutral", "fmarcy")
+		cutscene:text("* Follow me once you built up the courage.", "neutral", "fmarcy")
+		cutscene:text("* Be warned:[wait:10] The wall ends pretty quickly.", "neutral", "fmarcy")
+		cutscene:hideNametag()
+		
+		local sound = Assets.newSound("paper_surf")
+		sound:setLooping(true)
+		
+		cutscene:during(function()
+			sound:setVolume(math.max(sound:getVolume() - DT/2, 0))
+		end)
+		
+		cutscene:wait(cutscene:walkToSpeed(fmarcy, fmarcy.x, fmarcy.y + 80, 4))
+		cutscene:setSprite(fmarcy, "slide")
+		Assets.playSound("noise")
+		sound:play()
+		sound:setVolume(1)
+		cutscene:wait(cutscene:slideTo(fmarcy, fmarcy.x, fmarcy.y + 280, 0.5))
+		
+		cutscene:walkTo(susie, "susie_walkto", 1, "down")
+        cutscene:walkTo(jamm, "jamm_walkto", 1, "down")
+        cutscene:wait(cutscene:walkTo(variant, "variant_walkto", 1, "down"))
+		
+		cutscene:showNametag("Jamm")
+		cutscene:text("* Hole's kinda deep...", "nervous", "jamm")
+		
+		if Game:getFlag("future_variable") == "ceroba_dw" then
+			cutscene:showNametag("Ceroba")
+			cutscene:text("* It's our only way forward.", "default", "ceroba")
+		end
+		
+		cutscene:showNametag("Susie")
+		cutscene:text("* What,[wait:5] you got a fear of heights or something?", "smile", "susie")
+		
+		cutscene:showNametag("Jamm")
+		cutscene:text("* Wh-what!?[wait:10]\n* I do not!", "nervous_left", "jamm")
+		cutscene:text("* Here,[wait:5] I'll go in first,[wait:5] then!", "nervous", "jamm")
+		cutscene:hideNametag()
+		
+		cutscene:wait(cutscene:walkToSpeed(jamm, jamm.x + 40, jamm.y, 4))
+		cutscene:wait(cutscene:walkToSpeed(jamm, jamm.x, jamm.y + 40, 4))
+		cutscene:setSprite(jamm, "slide")
+		Assets.playSound("noise")
+		sound:setVolume(1)
+		cutscene:wait(cutscene:slideTo(jamm, jamm.x, jamm.y + 280, 0.5))
+		
+		cutscene:showNametag("Susie")
+		cutscene:text("* Huh.[wait:10]\n* He actually did it.", "shock", "susie")
+		
+		if Game:getFlag("future_variable") == "ceroba_dw" then
+			cutscene:showNametag("Ceroba")
+			cutscene:text("* I'll see you down there.", "default", "ceroba")
+		end
+		cutscene:hideNametag()
+		
+		cutscene:wait(cutscene:walkToSpeed(variant, variant.x - 40, variant.y, 4))
+		cutscene:wait(cutscene:walkToSpeed(variant, variant.x, variant.y + 40, 4))
+		cutscene:setSprite(variant, "slide")
+		Assets.playSound("noise")
+		sound:setVolume(1)
+		cutscene:wait(cutscene:slideTo(variant, variant.x, variant.y + 280, 0.5))
+		cutscene:wait(0.5)
+		
+		cutscene:wait(cutscene:walkToSpeed(susie, susie.x, susie.y + 40, 4))
+		cutscene:setSprite(susie, "slide")
+		Assets.playSound("noise")
+		sound:setVolume(1)
+		cutscene:wait(cutscene:slideTo(susie, susie.x, susie.y + 280, 0.5))
+		
+		cutscene:wait(cutscene:fadeOut())
+		cutscene:loadMap("main_hub", "landing")
+		Game.world.music:stop()
+		
+        local jamm = cutscene:getCharacter("jamm")
+		local susie = cutscene:getCharacter("susie")
+		local variant = cutscene:getCharacter(Game:getFlag("future_variable"))
+		local fmarcy = cutscene:getCharacter("fmarcy")
+		
+		cutscene:detachFollowers()
+		
+		local rect = Rectangle(0, 0, 9999, 9999)
+		rect.color = {0, 0, 0}
+		rect:setLayer(WORLD_LAYERS["above_events"])
+		Game.world:addChild(rect)
+		
+		susie:setLayer(rect.layer + 1)
+		
+		jamm.x = susie.x - 80
+		jamm:setFacing("up")
+		
+		variant.x = susie.x + 60
+		variant.y = susie.y + 40
+		
+		susie:setAnimation({"fall", 1/15, true})
+		
+		cutscene:wait(cutscene:fadeIn(1.5))
+		
+		cutscene:wait(1)
+		
+		susie:setSprite("landed_1")
+		Assets.playSound("dtrans_flip")
+		susie:shake(2)
+		
+		cutscene:wait(1)
+		
+		Assets.playSound("him_quick")
+		Game.world.timer:tween(0.65, rect, {alpha = 0})
+		
+		cutscene:wait(1)
+		
+		Game.world.music:play()
+		
+		cutscene:setSprite(susie, "landed_2")
+		cutscene:wait(1/10)
+		cutscene:resetSprite(susie)
+		
+		susie:setLayer(Game.world.followers[1].layer)
+		
+		cutscene:look(susie, "left")
+		cutscene:wait(0.25)
+		cutscene:look(susie, "right")
+		cutscene:wait(0.25)
+		cutscene:look(susie, "up")
+		cutscene:wait(0.25)
+		
+		cutscene:showNametag("Susie")
+		cutscene:text("* Jeez...[wait:10]\n* The hell is this place?", "nervous", "susie")
+		cutscene:text("* It seems pretty...[wait:10]\n* Dead.", "nervous_side", "susie")
+		
+		cutscene:look(susie, "left")
+		
+		cutscene:showNametag("Jamm")
+		cutscene:text("* Susie,[wait:5] I...[wait:10]\n* I think this is the hub.", "nervous_left", "jamm")
+		
+		cutscene:showNametag("Marcy")
+		cutscene:text("* Or what's left of it,[wait:5] that is.", "closed", "fmarcy")
+		cutscene:hideNametag()
+		
+		cutscene:wait(cutscene:panTo(fmarcy.x, fmarcy.y))
+		
+		cutscene:look(susie, "up")
+		cutscene:look(jamm, "up")
+		cutscene:look(variant, "up")
+		
+		cutscene:showNametag("Marcy", {top=false})
+		cutscene:text("* The Endless War...[wait:10]\n* It ruined this place real bad.", "closed", "fmarcy", {top=false})
+		cutscene:text("* I don't remember how to leave this place.", "neutral", "fmarcy", {top=false})
+		cutscene:hideNametag()
+		
+		cutscene:wait(cutscene:attachCamera())
+		
+		cutscene:look(jamm, "right")
+		cutscene:look(variant, "left")
+		
+		cutscene:showNametag("Susie")
+		cutscene:text("* ...Right.", "nervous", "susie")
+		cutscene:hideNametag()
+		
+		cutscene:look(susie, "down")
+		
+		cutscene:wait(cutscene:walkToSpeed(jamm, susie.x - 60, susie.y + 40, 4, "right"))
+		
+		cutscene:showNametag("Susie")
+		cutscene:text("* Let's think...[wait:10]\n* How do we leave this place again?", "nervous", "susie")
+		
+		cutscene:showNametag("Jamm")
+		cutscene:text("* Well,[wait:5] we could probably use the elevator...", "side_smile", "jamm")
+		
+		if Game:getFlag("future_variable") == "ceroba_dw" then
+			cutscene:showNametag("Ceroba")
+			cutscene:text("* Or maybe the warp bin.", "default", "ceroba")
+		end
+		
+		cutscene:showNametag("Susie")
+		cutscene:text("* The Great Door might be helpful,[wait:5] too.", "small_smile", "susie")
+		cutscene:look(susie, "up")
+		cutscene:text("* And if none of those work,[wait:5] there's always this wall.", "smile", "susie")
+		
+		cutscene:showNametag("Jamm")
+		cutscene:text("* Let's try what we came up with first...", "nervous", "jamm")
+		cutscene:hideNametag()
+		cutscene:interpolateFollowers()
+		cutscene:attachFollowers(8)
+		cutscene:wait(1)
+	end
 }

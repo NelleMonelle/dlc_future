@@ -10,8 +10,10 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 8,
-  nextobjectid = 10,
-  properties = {},
+  nextobjectid = 14,
+  properties = {
+    ["music"] = "deltarune/wind_highplace"
+  },
   tilesets = {
     {
       name = "cliffs",
@@ -111,7 +113,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["actor"] = "fmarcy"
+            ["actor"] = "fmarcy",
+            ["cutscene"] = "cliffs.exit_cliffs"
           }
         },
         {
@@ -153,6 +156,45 @@ return {
           shape = "point",
           x = 40,
           y = 220,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 11,
+          name = "jamm_walkto",
+          type = "",
+          shape = "point",
+          x = 280,
+          y = 120,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 12,
+          name = "variant_walkto",
+          type = "",
+          shape = "point",
+          x = 360,
+          y = 120,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 13,
+          name = "susie_walkto",
+          type = "",
+          shape = "point",
+          x = 320,
+          y = 80,
           width = 0,
           height = 0,
           rotation = 0,
@@ -264,7 +306,7 @@ return {
       id = 6,
       name = "Tile Layer 3",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -296,7 +338,7 @@ return {
       id = 7,
       name = "Tile Layer 4",
       class = "",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
