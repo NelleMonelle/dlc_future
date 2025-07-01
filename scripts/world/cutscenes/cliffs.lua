@@ -184,6 +184,7 @@ return {
 		cutscene:panTo(680, 960, 1)
 		cutscene:walkTo(susie, "susie_walkto", 1)
         cutscene:walkTo(jamm, "jamm_walkto", 1)
+		cutscene:resetSprite(variant)
         cutscene:wait(cutscene:walkTo(variant, "variant_walkto", 1))
 		
 		cutscene:showNametag("Jamm")

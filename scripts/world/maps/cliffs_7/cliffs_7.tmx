@@ -142,7 +142,7 @@
     <property name="marker" value="c7"/>
    </properties>
   </object>
-  <object id="16" name="script" x="560" y="880" height="160">
+  <object id="16" name="script" x="640" y="880" height="160">
    <properties>
     <property name="cutscene" value="cliffs.monster"/>
    </properties>

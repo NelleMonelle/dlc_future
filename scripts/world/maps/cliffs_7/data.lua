@@ -330,7 +330,7 @@ return {
           name = "script",
           type = "",
           shape = "rectangle",
-          x = 560,
+          x = 640,
           y = 880,
           width = 0,
           height = 160,
