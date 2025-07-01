@@ -159,8 +159,8 @@
   <object id="2" x="280" y="120" width="520" height="280"/>
   <object id="4" x="480" y="400" width="320" height="480"/>
   <object id="5" x="800" y="760" width="120" height="120"/>
-  <object id="6" x="400" y="520" width="80" height="400"/>
-  <object id="7" x="160" y="520" width="200" height="400"/>
+  <object id="6" x="404" y="520" width="76" height="400"/>
+  <object id="7" x="160" y="520" width="196" height="400"/>
   <object id="8" x="0" y="240" width="160" height="960"/>
   <object id="9" x="160" y="1040" width="840" height="160"/>
   <object id="23" x="920" y="520" width="80" height="360"/>

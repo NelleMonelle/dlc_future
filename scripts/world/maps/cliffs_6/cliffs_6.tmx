@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="25" height="17" tilewidth="40" tileheight="40" infinite="0" nextlayerid="7" nextobjectid="17">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="25" height="17" tilewidth="40" tileheight="40" infinite="0" nextlayerid="7" nextobjectid="17">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -109,8 +109,8 @@
   <object id="2" x="200" y="0" width="120" height="120"/>
   <object id="3" x="320" y="0" width="680" height="200"/>
   <object id="4" x="520" y="200" width="200" height="280"/>
-  <object id="5" x="480" y="320" width="40" height="160"/>
-  <object id="6" x="0" y="320" width="440" height="160"/>
+  <object id="5" x="484" y="320" width="36" height="160"/>
+  <object id="6" x="0" y="320" width="436" height="160"/>
   <object id="7" x="0" y="480" width="160" height="200"/>
   <object id="8" x="160" y="560" width="840" height="120"/>
   <object id="9" x="840" y="320" width="160" height="240"/>
