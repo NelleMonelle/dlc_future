@@ -29,7 +29,7 @@ function ElevatorDoor:onInteract()
 			
 			if not Game:getFlag("future_fountain_checked") then
 				cutscene:showNametag("Susie")
-				cutscene:text("* Well,[wait:5] maybe the fountain will give us better luck?", "nervous", "susie")
+				cutscene:text("* Well,[wait:5] maybe the Great Door will give us better luck?", "nervous", "susie")
 				if not Game:getFlag("future_bin_checked") then
 					if Game:getFlag("future_variable") == "ceroba_dw" then
 						cutscene:showNametag("Ceroba")
@@ -44,7 +44,7 @@ function ElevatorDoor:onInteract()
 			else
 				Game:setFlag("future_exhausted_all_options", true)
 				cutscene:showNametag("Jamm")
-				cutscene:text("* So the Warp Bin,[wait:5] elevator,[wait:5] and fountain are all not working...", "neutral", "jamm")
+				cutscene:text("* So the Warp Bin,[wait:5] elevator,[wait:5] and Great Door are all not working...", "neutral", "jamm")
 				cutscene:text("* Well,[wait:5] I'm all out of ideas.", "nervous_left", "jamm")
 				cutscene:showNametag("Susie")
 				cutscene:text("* ...You know,[wait:5] there is always that one wall...", "neutral", "susie")

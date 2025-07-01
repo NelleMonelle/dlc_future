@@ -16,15 +16,15 @@ return function(cutscene)
 			cutscene:text("* Hey,[wait:5] chin up![wait:10]\n* We still gotta check the elevator!", "side_smile", "jamm")
 			if not Game:getFlag("future_fountain_checked") then
 				cutscene:showNametag("Susie")
-				cutscene:text("* And we haven't checked the fountain either...", "nervous", "susie")
+				cutscene:text("* And we haven't checked the Great Door either...", "nervous", "susie")
 			end
 		elseif not Game:getFlag("future_fountain_checked") then
 			cutscene:showNametag("Susie")
-			cutscene:text("* I'm sure we can leave using the fountain,[wait:5] right?", "sincere_smile", "susie")
+			cutscene:text("* I'm sure we can leave using the Great Door,[wait:5] right?", "sincere_smile", "susie")
 		else
 			Game:setFlag("future_exhausted_all_options", true)
 			cutscene:showNametag("Jamm")
-			cutscene:text("* So the Warp Bin,[wait:5] elevator,[wait:5] and fountain are all not working...", "neutral", "jamm")
+			cutscene:text("* So the Warp Bin,[wait:5] elevator,[wait:5] and Great Door are all not working...", "neutral", "jamm")
 			cutscene:text("* Well,[wait:5] I'm all out of ideas.", "nervous_left", "jamm")
 			cutscene:showNametag("Susie")
 			cutscene:text("* ...You know,[wait:5] there is always that one wall...", "neutral", "susie")
