@@ -68,6 +68,11 @@ return {
 			cutscene:wait(5)
 			genText("Negative. Remember what happened last time.", 50, 50, "fmarcy")	-- Marcy
 			cutscene:wait(5)
+		elseif Game:getFlag("future_variable") == "brenda" then
+			genText("Worst comes to worse, we can just kill them, right?", 175, 50)	-- Celestial
+			cutscene:wait(5)
+			genText("True, but I'd rather we know who they are first.", 50, 50, "fmarcy")	-- Marcy
+			cutscene:wait(5)
 		end
 		genText("Maybe we could wait to see what happens?", 300, 50)	-- Noelle
 		cutscene:wait(5)
@@ -204,6 +209,11 @@ return {
 		if Game:getFlag("future_variable") == "ceroba_dw" then
 			cutscene:showNametag("Ceroba")
 			cutscene:text("* Is this really worth fighting over right now?", "default", "ceroba")
+		elseif Game:getFlag("future_variable") == "brenda" then
+			cutscene:showNametag("Brenda")
+			cutscene:text("* Oh for the love of...", "suspicious", "brenda")
+			cutscene:text("* Can you two stop bickering like school children?", "angry", "brenda")
+			cutscene:text("* We need to stick together.", "dissapointed", "brenda")
 		end
 		cutscene:showNametag("Susie")
 		cutscene:text("* ...Yeah.[wait:5] You're right, " .. Game.party[3].name .. ".", "shy_down", "susie")
@@ -226,6 +236,9 @@ return {
 		if Game:getFlag("future_variable") == "ceroba_dw" then
 			cutscene:showNametag("Ceroba")
 			cutscene:text("* ...What was that?", "nervous", "ceroba")
+		elseif Game:getFlag("future_variable") == "brenda" then
+			cutscene:showNametag("Brenda")
+			cutscene:text("* Uhhh you guys heard that too,[wait:5] right?", "shocked_b", "brenda")
 		end
 		cutscene:hideNametag()
 		local alpha = cutscene:spawnNPC("slitherer", 1050, 960)
@@ -305,6 +318,10 @@ return {
 		if Game:getFlag("future_variable") == "ceroba_dw" then
 			cutscene:showNametag("Ceroba")
 			cutscene:text("* I have no idea...", "nervous", "ceroba")
+		elseif Game:getFlag("future_variable") == "brenda" then
+			cutscene:showNametag("Brenda")
+			cutscene:text("* I dunno but I don't wanna question it.", "neutral", "brenda")
+			cutscene:text("* Y'know,[wait:5] don't look a gift horse in the mouth and all.", "suspicious", "brenda")
 		end
 		genText("We don't need them to die!", 300, 50, "fnoelle")	-- Noelle
 		cutscene:look(jamm, "up")
@@ -316,6 +333,10 @@ return {
 			cutscene:showNametag("Ceroba")
 			cutscene:text("* I don't feel confident about this,[wait:5] Jamm...", "neutral", "ceroba")
 			cutscene:text("* What if it's trying to lure us in?", "suspicious", "ceroba")
+		elseif Game:getFlag("future_variable") == "brenda" then
+			cutscene:showNametag("Brenda")
+			cutscene:text("* I guess,[wait:5] but like...", "neutral", "brenda")
+			cutscene:text("* This is all just so bizarre.", "suspicious_b", "brenda")
 		end
 		cutscene:showNametag("Susie")
 		cutscene:text("* Well,[wait:5] so what if it feels wrong?", "smile", "susie")
@@ -427,6 +448,8 @@ return {
 		cutscene:text("* The hell is an AU?", "neutral", "susie")
 		if Game:getFlag("future_variable") == "ceroba_dw" then
 			genText("And interrogate them at the base or something?", 175, 50)	-- Kanako
+		elseif Game:getFlag("future_variable") == "brenda" then
+			genText("Agreed, perhaps we can interrogate them as well.", 175, 50)	-- Celestial
 		end
 		cutscene:showNametag("Jamm")
 		cutscene:text("* It means \"Alternate Universe\".", "look_left", "jamm")
@@ -446,6 +469,10 @@ return {
 			cutscene:showNametag("Ceroba")
 			cutscene:text("* ...It's the best we've got.", "default", "ceroba")
 			cutscene:text("* So then how would we get home?", "default", "ceroba")
+		elseif Game:getFlag("future_variable") == "brenda" then
+			cutscene:showNametag("Brenda")
+			cutscene:text("* That's cool and all,[wait:5] but uh...", "dissapointed", "brenda")
+			cutscene:text("* How the hell are we supposed to get home?", "suspicious", "brenda")
 		end
 		cutscene:setAnimation(susie, {"away_scratch", 1/3, true})
 		cutscene:showNametag("Susie")
@@ -463,6 +490,8 @@ return {
 		if Game:getFlag("future_variable") == "ceroba_dw" then
 			cutscene:setSprite(variant, "fall")
 			variant.flip_x = true
+		elseif Game:getFlag("future_variable") == "brenda" then
+			cutscene:setSprite(variant, "battle/defend_6")
 		end
 		cutscene:slideTo(susie, susie.x + 40, susie.y, 0.2)
 		cutscene:slideTo(jamm, jamm.x + 40, jamm.y, 0.2)
