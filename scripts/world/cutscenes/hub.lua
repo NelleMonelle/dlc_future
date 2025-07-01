@@ -115,10 +115,27 @@ local hub = {
     end,
 	
 	fmarcy = function(cutscene, event)
-        cutscene:showNametag("Marcy")
-		cutscene:text("* Well,[wait:5] welcome back to the hub where it all started.", "neutral", "fmarcy")
-		cutscene:text("* Or at least,[wait:5] what's left of it,[wait:5] anyways...", "closed", "fmarcy")
-		cutscene:text("* Too bad our training didn't finish when it mattered...", "lookright", "fmarcy")
+		if not event.talked_to_once_lol then
+			cutscene:showNametag("Marcy")
+			cutscene:text("* Well,[wait:5] welcome back to the hub where it all started.", "neutral", "fmarcy")
+			cutscene:text("* Or at least,[wait:5] what's left of it,[wait:5] anyways...", "closed", "fmarcy")
+			cutscene:text("* Too bad our training didn't finish when it mattered...", "lookright", "fmarcy")
+			event.talked_to_once_lol = true
+		elseif not event.talked_to_twice_lol then
+			cutscene:showNametag("Jamm")
+			cutscene:text("* So do you guys have a version of \"We Didn't Start the Fire\"?", "neutral", "jamm")
+			cutscene:showNametag("Marcy")
+			cutscene:text("* What's the point in making something like that,[wait:5] dad?", "neutral", "fmarcy")
+			cutscene:text("* Not like we'd be singing it for long...", "closed", "fmarcy")
+			cutscene:text("* ...But yes,[wait:5] we do.", "neutral", "fmarcy")
+			event.talked_to_twice_lol = true
+		else
+			cutscene:showNametag("Jamm")
+			cutscene:text("* ...Are you gonna sing it later?", "nervous", "jamm")
+			cutscene:showNametag("Marcy")
+			cutscene:text("* My singing voice isn't as good as yours,[wait:5] dad.", "neutral", "fmarcy")
+			cutscene:text("* I don't think you want to hear it.", "neutral", "fmarcy")
+		end
         cutscene:hideNametag()
     end,
 	
