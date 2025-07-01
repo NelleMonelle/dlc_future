@@ -24,7 +24,8 @@ function Dummy:init()
     end
 
     -- Mercy given when sparing this enemy before its spareable (20% for basic enemies)
-    self.spare_points = 00
+    self.spare_points = 0
+    self.service_mercy = 0
 
     -- List of possible wave ids, randomly picked each turn
     self.waves = {
@@ -51,6 +52,12 @@ function Dummy:init()
 end
 
 function Dummy:onAct(battler, name)
+    if name == "Standard" then
+        return "* But "..battler.chara:getName().." didn't know what to do."
+    end
+
+    -- If the act is none of the above, run the base onAct function
+    -- (this handles the Check act)
     return super.onAct(self, battler, name)
 end
 
