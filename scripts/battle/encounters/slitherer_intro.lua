@@ -7,7 +7,7 @@ function Dummy:init()
     self.text = "* Creature α approaches.[wait:10]\n* You can't help but be scared."
 
     -- Battle music ("battle" is rude buster)
-    self.music = "battle"
+    self.music = "battle_collapse"
     -- Enables the purple grid battle background
     self.background = true
 
