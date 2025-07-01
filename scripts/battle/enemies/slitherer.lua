@@ -71,4 +71,8 @@ function Dummy:update()
 	end
 end
 
+function Dummy:getSpareText(battler, success)
+    return "* But,[wait:20] it was not something that\ncan understand MERCY."
+end
+
 return Dummy
