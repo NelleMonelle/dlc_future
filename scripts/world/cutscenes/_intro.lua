@@ -154,6 +154,9 @@ return function(cutscene, event)
 	if Game:getFlag("future_variable") == "ceroba_dw" then	-- Add more cases
 		cutscene:showNametag("Ceroba")
 		cutscene:text("* Jamm is right.[wait:5]\n* I need to get back home to Kanako.", "closed_eyes", "ceroba")
+	elseif Game:getFlag("future_variable") == "brenda" then
+		cutscene:showNametag("Brenda")
+		cutscene:text("* Yeah,[wait:5] I really don't wanna live the rest of my days here.", "angry_b", "brenda")
 	end
 	
 	cutscene:showNametag("Susie")
