@@ -202,13 +202,25 @@ return {
 		cutscene:text("* It's not my fault![wait:10]\n* That rift sucked me in too!", "determined", "jamm")
 		cutscene:showNametag("Susie")
 		cutscene:text("* You were the one who touched it in the first place!", "angry", "susie")
+		if Game:getFlag("future_variable") == "ceroba_dw" then -- just in Ceroba's case specifically
+			cutscene:look(variant, "up")
+			Game.world.music:fade(0, 1)
+		end
 		cutscene:showNametag("Jamm")
 		cutscene:text("* Oh,[wait:5] don't act like you wouldn't have--", "furious", "jamm", {auto=true, skip=false})
 		cutscene:look(susie, "left")
 		cutscene:look(jamm, "left")
 		if Game:getFlag("future_variable") == "ceroba_dw" then
+			cutscene:look(variant, "right")
+			Assets.playSound("ceroba_yell")
+			Game.world.camera:shake(6, 2)
 			cutscene:showNametag("Ceroba")
-			cutscene:text("* Is this really worth fighting over right now?", "default", "ceroba")
+			cutscene:text("* WOULD YOU TWO JUST STOP THAT!?", "furious", "ceroba")
+			--genText("She's got the guts.", 50, 50, "fmarcy")	-- Marcy (probably) (wasn't sure if it's okay for that dialogue to appear that early in the cutscene)
+			cutscene:text("* We've got enough problems as it is.", "angry", "ceroba")
+			cutscene:text("* We don't know where we are,[wait:5] nor how do we get back.", "angry_alt", "ceroba")
+			cutscene:text("* The LAST thing we need right now is a conflict.", "irked", "ceroba")
+			Game.world.music:fade(1, 1)
 		elseif Game:getFlag("future_variable") == "brenda" then
 			cutscene:showNametag("Brenda")
 			cutscene:text("* Oh for the love of...", "suspicious", "brenda")
@@ -216,7 +228,7 @@ return {
 			cutscene:text("* We need to stick together.", "dissapointed", "brenda")
 		end
 		cutscene:showNametag("Susie")
-		cutscene:text("* ...Yeah.[wait:5] You're right, " .. Game.party[3].name .. ".", "shy_down", "susie")
+		cutscene:text("* ...Yeah.[wait:5] You're right,[wait:5] " .. Game.party[3].name .. ".", "shy_down", "susie")
 		cutscene:showNametag("Jamm")
 		cutscene:text("* Yeah,[wait:5] sorry.[wait:10] I'm just...[wait:10] really stressed right now.", "shaded_frown", "jamm")
 		cutscene:text("* Let's just keep going,[wait:5] alright?", "neutral", "jamm")
@@ -235,7 +247,8 @@ return {
 		cutscene:wait(1)
 		if Game:getFlag("future_variable") == "ceroba_dw" then
 			cutscene:showNametag("Ceroba")
-			cutscene:text("* ...What was that?", "nervous", "ceroba")
+			cutscene:text("* Oh,[wait:5] for the love of...", "unamused", "ceroba")
+			cutscene:text("* What is it now?", "closed_eyes", "ceroba")
 		elseif Game:getFlag("future_variable") == "brenda" then
 			cutscene:showNametag("Brenda")
 			cutscene:text("* Uhhh you guys heard that too,[wait:5] right?", "shocked_b", "brenda")
@@ -317,7 +330,7 @@ return {
 		cutscene:text("* What just healed us...?", "nervous_left", "jamm")
 		if Game:getFlag("future_variable") == "ceroba_dw" then
 			cutscene:showNametag("Ceroba")
-			cutscene:text("* I have no idea...", "nervous", "ceroba")
+			cutscene:text("* I'm...[wait:5] Not sure,[wait:5] honestly.", "dissapproving", "ceroba")
 		elseif Game:getFlag("future_variable") == "brenda" then
 			cutscene:showNametag("Brenda")
 			cutscene:text("* I dunno but I don't wanna question it.", "neutral", "brenda")
@@ -331,7 +344,7 @@ return {
 		genText("We're lucky the dumbfaced one bailed us out.", 50, 50, "fmarcy")	-- Marcy
 		if Game:getFlag("future_variable") == "ceroba_dw" then
 			cutscene:showNametag("Ceroba")
-			cutscene:text("* I don't feel confident about this,[wait:5] Jamm...", "neutral", "ceroba")
+			cutscene:text("* I don't feel confident about this,[wait:5] Jamm...", "unsure_alt", "ceroba")
 			cutscene:text("* What if it's trying to lure us in?", "suspicious", "ceroba")
 		elseif Game:getFlag("future_variable") == "brenda" then
 			cutscene:showNametag("Brenda")
@@ -592,6 +605,7 @@ return {
 		local susie_available = false
 		
 		susie:walkToSpeed("susie_walkto", 8, nil, false, function()
+			Assets.playSound("jump")
 			susie:jumpTo(840, 260, 20, 0.5, "ball", "landed_2")
 			Game.world.timer:after(0.5, function()
 				susie_available = true
@@ -649,7 +663,7 @@ return {
 		
 		if Game:getFlag("future_variable") == "ceroba_dw" then
 			cutscene:showNametag("Ceroba", {top=true})
-			cutscene:text("* ...I don't think he can...", "pensive", "ceroba", {top=true})
+			cutscene:text("* ...[wait:5] I don't think he can,[wait:5] Susie.", "sorrowful", "ceroba", {top=true})
 		end
 		cutscene:showNametag("Susie", {top=true})
 		cutscene:text("* ...", "bangs/down", "susie", {top=true})
