@@ -1124,6 +1124,8 @@ return {
 		local variant = cutscene:getCharacter(Game:getFlag("future_variable"))
 		local fmarcy = cutscene:getCharacter("fmarcy")
 		
+		Game:setFlag("future_met_fp", true)
+		
 		cutscene:wait(cutscene:fadeOut())
 		
 		cutscene:detachFollowers()
