@@ -234,7 +234,7 @@
   <object id="70" name="warpbin" x="280" y="120" width="120" height="40"/>
   <object id="88" name="interactable" x="160" y="200" width="40" height="80">
    <properties>
-    <property name="text1" value="* (Closed for good.)"/>
+    <property name="text1" value="* (But there was never something here.)"/>
    </properties>
   </object>
   <object id="93" name="interactable" x="120" y="920" width="40" height="40">

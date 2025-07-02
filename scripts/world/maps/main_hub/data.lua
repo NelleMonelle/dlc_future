@@ -803,7 +803,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text1"] = "* (Closed for good.)"
+            ["text1"] = "* (But there was never something here.)"
           }
         },
         {
