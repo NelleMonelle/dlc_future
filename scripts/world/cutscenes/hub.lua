@@ -123,7 +123,7 @@ local hub = {
 			event.talked_to_once_lol = true
 		elseif not event.talked_to_twice_lol then
 			cutscene:showNametag("Jamm")
-			cutscene:text("* So do you guys have a verson of \"We Didn't Start the Fire\"?", "neutral", "jamm")
+			cutscene:text("* So do you guys have a version of \"We Didn't Start the Fire\"?", "neutral", "jamm")
 			cutscene:showNametag("Marcy")
 			cutscene:text("* What's the point in making something like that,[wait:5] dad?", "neutral", "fmarcy")
 			cutscene:text("* Not like we'd be singing it for long...", "closed", "fmarcy")
