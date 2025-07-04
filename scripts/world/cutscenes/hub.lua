@@ -38,6 +38,7 @@ local hub = {
         cutscene:walkTo(susie, x, y + 40, 0.75, "up")
         cutscene:walkTo(jamm, x - 60, y + 100, 0.75, "up")
         cutscene:walkTo(variant, x + 60, y + 100, 0.75, "up")
+		cutscene:panTo(460, 604)
         
         cutscene:wait(1.5)
         
@@ -105,7 +106,52 @@ local hub = {
 		cutscene:look(fmarcy, "left")
 		cutscene:text("* You three seem to have uncovered a secret passage.", "neutral", "fmarcy")
 		cutscene:text("* And it's even in the direction of Hometown...", "untrusting", "fmarcy")
+		cutscene:look(fmarcy, "up")
+		cutscene:text("* Seeing as we have no other way of exiting this hub...", "neutral", "fmarcy")
+		cutscene:text("* I'll go get my team.", "neutral", "fmarcy")
         cutscene:hideNametag()
+		
+		cutscene:wait(cutscene:walkToSpeed(fmarcy, fmarcy.x + 160, fmarcy.y, 4))
+		cutscene:wait(cutscene:walkToSpeed(fmarcy, fmarcy.x, fmarcy.y - 360, 4))
+    
+		cutscene:look(variant, "left")
+        cutscene:showNametag("Jamm")
+		cutscene:text("* Wow, she's uh...[wait:10]\n* Really grown up...", "nervous", "jamm")
+    
+		cutscene:look(susie, "down")
+        cutscene:showNametag("Susie")
+		cutscene:text("* You seem upset,[wait:5] Jamm...", "surprise", "susie")
+    
+		cutscene:look(jamm, "up")
+        cutscene:showNametag("Jamm")
+		cutscene:text("* Well,[wait:5] don't get me wrong.[wait:10] I'm proud of her.", "nervous", "jamm")
+		cutscene:text("* It's just...[wait:10]\n* How do I say this...", "nervous_left", "jamm")
+		cutscene:text("* Being a soldier isn't the life I hoped she'd have.", "worried", "jamm")
+		if Game:getFlag("future_variable") == "ceroba_dw" then
+			cutscene:look(variant, "down")
+		end
+		cutscene:text("* I wanted her to be able to live her life happily,[wait:5] but...", "worried", "jamm")
+		if Game:getFlag("future_variable") == "ceroba_dw" then
+			variant:setSprite("shadowed_down")
+		end
+		cutscene:text("* I just...[wait:10]\n* Couldn't bring that to her...", "worried_down", "jamm")
+		
+		if Game:getFlag("future_variable") == "ceroba_dw" then
+			cutscene:showNametag("Ceroba")
+			cutscene:text("* ...", "sorrowful", "ceroba")
+			
+			cutscene:look(jamm, "right")
+			cutscene:showNametag("Jamm")
+			cutscene:text("* I-I'm sorry,[wait:5] Ceroba,[wait:5] I didn't mean to--", "speechless", "jamm", {auto=true})
+			
+			cutscene:showNametag("Ceroba")
+			cutscene:text("* No,[wait:5] don't worry.[wait:10]\n* I'm okay.", "sorrowful", "ceroba")
+			cutscene:resetSprite(variant)
+			cutscene:text("* Kanako turned out fine,[wait:5] after all.", "mourning", "ceroba")
+		end
+        cutscene:hideNametag()
+		
+		
     end,
 	
 	warp_bin_note = function(cutscene, event)
