@@ -40,6 +40,7 @@ return {
 				Game.world.timer:after(2.5, function()
 					
 					Game.world.timer:tween(1, text_o, {alpha = 0 }, "linear", function()
+						text_o:remove()
 					end)
 				end)
 			end)
@@ -106,6 +107,7 @@ return {
 				Game.world.timer:after(2.5, function()
 					
 					Game.world.timer:tween(1, text_o, {alpha = 0 }, "linear", function()
+						text_o:remove()
 					end)
 				end)
 			end)
@@ -416,6 +418,7 @@ return {
 				Game.world.timer:after(2.5, function()
 					
 					Game.world.timer:tween(1, text_o, {alpha = 0 }, "linear", function()
+						text_o:remove()
 					end)
 				end)
 			end)

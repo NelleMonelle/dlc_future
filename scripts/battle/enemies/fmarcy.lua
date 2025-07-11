@@ -65,6 +65,9 @@ function Marcy:init()
 	self.times_smiled = 0
 	
 	self.boss = true
+	
+	self.has_weapon = true
+	self.disarm_chance = 0.7
 end
 
 function Marcy:onAct(battler, name)
