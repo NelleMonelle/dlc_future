@@ -9,7 +9,7 @@ function character:init()
 
     self.level = 19
     self.exp = 76525
-    self.title = "Light Slasher\nEmpty attacker who\ndeals heavy damage"
+    self.title = "Light Reaper\nEmpty attacker who\ndeals heavy damage"
 
     self.soul_priority = 1
     self.soul_color = {39/255, 106/255, 179/255}
