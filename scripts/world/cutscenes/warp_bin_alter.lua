@@ -7,8 +7,9 @@ return function(cutscene)
 			cutscene:showNametag("Ceroba")
 			cutscene:text("* This thing is really dented...", "default", "ceroba")
 			cutscene:text("* I can only imagine something heavy did this.", "default", "ceroba")
-			-- F!Kanako: Either that,[wait:5] or something really strong...
-			-- F!Kanako: Those Roaring creatures are tough to take down sometimes...
+			cutscene:showNametag("Kanako")
+			cutscene:text("* Either that,[wait:5] or something really strong...", "default", "fkanako")
+			cutscene:text("* Those Roaring creatures are tough to take down sometimes...", "default", "fkanako")
 		end
 		
 		if not Game:getFlag("future_elevator_checked") then
