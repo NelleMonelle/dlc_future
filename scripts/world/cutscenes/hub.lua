@@ -151,7 +151,64 @@ local hub = {
 		end
         cutscene:hideNametag()
 		
+        local fvariant = Game.world:getEvent(107)
+		fvariant.x = fmarcy.x - 20
+		fvariant.y = fmarcy.y - 50
+		local fnoelle = Game.world:spawnNPC("fnoelle", fmarcy.x + 20, fmarcy.y - 70)
+		cutscene:walkToSpeed(fmarcy, fmarcy.x, fmarcy.y + 360, 4)
+		cutscene:walkToSpeed(fnoelle, fnoelle.x, fnoelle.y + 360, 4)
+		cutscene:wait(cutscene:walkToSpeed(fvariant, fvariant.x, fvariant.y + 360, 4))
+		cutscene:look(fmarcy, "left")
+		cutscene:look(fnoelle, "left")
+		cutscene:look(fvariant, "left")
+		cutscene:look(jamm, "right")
+		cutscene:look(susie, "right")
+		cutscene:look(variant, "right")
 		
+		cutscene:showNametag("Marcy")
+		cutscene:text("* It's over here.", "neutral", "fmarcy")
+        cutscene:showNametag("Noelle")
+		cutscene:text("* I see...", "neutral", "noelle")
+        cutscene:hideNametag()
+		
+		cutscene:walkToSpeed(fvariant, fvariant.x - 140, fvariant.y + 60, 4, "up")
+		cutscene:wait(cutscene:walkToSpeed(fnoelle, fnoelle.x - 180, fnoelle.y + 40, 4, "up"))
+		
+        cutscene:showNametag("Noelle")
+		cutscene:text("* I wonder where it leads...", "neutral", "noelle")
+		if Game:getFlag("future_variable") == "ceroba_dw" then
+			cutscene:showNametag("Kanako")
+			cutscene:text("* Only one way to find out,[wait:5] right?", "neutral", "fkanako")
+		end
+        cutscene:hideNametag()
+		
+		cutscene:wait(cutscene:walkToSpeed(fnoelle, fnoelle.x, fnoelle.y - 40, 4, "up"))
+		
+		Game.world.timer:tween(0.8, fnoelle, {alpha = 0})
+		cutscene:wait(0.8)
+		fnoelle:remove()
+		
+		cutscene:wait(cutscene:walkToSpeed(fvariant, fvariant.x, fvariant.y - 80, 4, "up"))
+		
+		Game.world.timer:tween(0.8, fvariant, {alpha = 0})
+		cutscene:wait(0.8)
+		fvariant:remove()
+		
+		cutscene:wait(cutscene:walkToSpeed(fmarcy, fmarcy.x - 160, fmarcy.y, 4, "up"))
+		
+		cutscene:showNametag("Marcy")
+		cutscene:text("* (...No wonder why Susie wanted to break this thing.)", "closed", "fmarcy")
+        cutscene:hideNametag()
+		
+		cutscene:wait(cutscene:walkToSpeed(fmarcy, fmarcy.x, fmarcy.y - 80, 4, "up"))
+		
+		Game.world.timer:tween(0.8, fmarcy, {alpha = 0})
+		cutscene:wait(0.8)
+		fmarcy:remove()
+		
+		cutscene:interpolateFollowers()
+		cutscene:attachFollowers(8)
+		cutscene:wait(cutscene:attachCamera())
     end,
 	
 	warp_bin_note = function(cutscene, event)
@@ -190,6 +247,96 @@ local hub = {
 		cutscene:text("* It all happened so fast,[wait:5] and we...", "neutral", "noelle")
 		cutscene:text("* We were completely unprepared for it.", "neutral", "noelle")
         cutscene:hideNametag()
-    end
+    end,
+	
+	variant = function(cutscene, event)
+		if Game:getFlag("future_variable") == "ceroba_dw" then
+			cutscene:showNametag("Kanako")
+			cutscene:text("* You three might be the only ones to remember how this worked...", "neutral", "fkanako")
+			cutscene:text("* It's rare to see one that isn't destroyed.", "neutral", "fkanako")
+		end
+        cutscene:hideNametag()
+	end,
+	
+	light = function(cutscene, event)
+		local jamm = cutscene:getCharacter("jamm")
+		local susie = cutscene:getCharacter("susie")
+		cutscene:detachFollowers()
+		cutscene:detachCamera()
+		cutscene:showNametag("Susie")
+		cutscene:text("* I can't even see anything...", "neutral", "susie")
+		cutscene:showNametag("Jamm")
+		cutscene:text("* Leave that to me,[wait:5] Susie.", "smug", "jamm")
+        cutscene:hideNametag()
+		Game:setFlag("future_jamm_light", true)
+		Game:setFlag("future_jamm_thunderbolt", Game:getPartyMember("jamm"):checkArmor("flowerbrace"))
+		if Game:getPartyMember("jamm"):checkArmor("flowerbrace") then
+			local shock = Sprite("party/jamm/dark/special/shock")
+			shock:setOrigin(0.5, 1)
+			shock:setLayer(Game.world.followers[1].layer - 0.1)
+			shock:setScale(2, 2)
+			shock.x = jamm.x + 6
+			shock.y = jamm.y - 12
+			Game.world:spawnObject(shock)
+			Game.world.map.darkness_override = 0
+			Assets.playSound("shock", 0.5)
+			jamm.actor.default = "walk_thunder"
+			cutscene:resetSprite(jamm)
+			Game.world.player:setFacing("down")
+			local ls = LightSource(jamm.width/2, jamm.height/2, 80)
+			jamm:addChild(ls)
+			Game.world.timer:tween(0.65, shock, {alpha = 0})
+			Game.world.timer:tween(0.65, Game.world.map, {darkness_override = 1})
+			cutscene:wait(0.2)
+			cutscene:setSprite(susie, "shock_down")
+			cutscene:slideTo(susie, susie.x, susie.y - 30, 0.3, "out-cubic")
+			Assets.playSound("sussurprise")
+			cutscene:wait(0.8)
+			cutscene:showNametag("Susie")
+			cutscene:text("* D-don't do that,[wait:5] dumbass!!!", "teeth", "susie")
+			cutscene:resetSprite(susie)
+			cutscene:showNametag("Jamm")
+			cutscene:text("* ...Haha,[wait:5] whoops![wait:10]\n* Sorry!", "nervous", "jamm")
+			cutscene:text("* Guess the FlowerBrace summoned too much lightning.", "nervous_left", "jamm")
+			cutscene:text("* But at least we got some light now.", "smile", "jamm")
+			cutscene:hideNametag()
+		else
+			Assets.playSound("noise")
+			cutscene:wait(0.65)
+			Assets.playSound("noise")
+			cutscene:wait(1)
+			cutscene:showNametag("Jamm")
+			cutscene:text("* Hold on a second...", "stern", "jamm")
+			jamm.actor.default = "walk_thunder"
+			cutscene:hideNametag()
+			cutscene:wait(0.2)
+			Assets.playSound("noise")
+			cutscene:wait(0.65)
+			Assets.playSound("noise")
+			cutscene:wait(0.65)
+			Assets.playSound("noise")
+			cutscene:resetSprite(jamm)
+			Game.world.player:setFacing("down")
+			local ls = LightSource(jamm.width/2, jamm.height/2, 80)
+			jamm:addChild(ls)
+			cutscene:wait(0.65)
+			cutscene:showNametag("Jamm")
+			cutscene:text("* There we go!", "happy", "jamm")
+			cutscene:showNametag("Susie")
+			cutscene:text("* Dude,[wait:5] hell yeah!", "smile", "susie")
+			cutscene:hideNametag()
+		end
+		local sx = susie.x
+		local sy = susie.y
+		
+		jamm = jamm:convertToPlayer()
+		local ls = LightSource(jamm.width/2, jamm.height/2, 80)
+		jamm:addChild(ls)
+        susie = susie:convertToFollower(1)
+        Game:movePartyMember("jamm", 1)
+		cutscene:alignFollowers("up")
+		cutscene:attachFollowers(8)
+		cutscene:wait(cutscene:attachCamera(1))
+	end
 }
 return hub

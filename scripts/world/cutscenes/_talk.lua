@@ -81,22 +81,39 @@ return {
                 cutscene:text("* Good point.", "look_left", "jamm")
                 cutscene:hideNametag()
             elseif map == "cliffs_6" then
+                cutscene:showNametag("Jamm")
+                cutscene:text("* So is this that Cliffside you mentioned,[wait:5] Susie?", "look_left", "jamm")
                 cutscene:showNametag("Susie")
-                cutscene:text("* ...", "nervous_side", "susie") -- yeah erm placeholder
+                cutscene:text("* Can't be.[wait:10]\n* Something seems off here...", "annoyed", "susie")
+                cutscene:showNametag("Jamm")
+                cutscene:text("* I'll take your word for it then.", "nervous", "jamm")
                 cutscene:hideNametag()
-            elseif map == "cliffs_7" then
+            elseif map == "cliffs_7" and Game:getFlag("first_collapse_creature") then
+                cutscene:showNametag("Jamm")
+                cutscene:text("* ...To be continued on that argument,[wait:5] Susie?", "smirk", "jamm")
                 cutscene:showNametag("Susie")
-                cutscene:text("* ...", "nervous_side", "susie") -- yeah erm placeholder
-                cutscene:hideNametag()
+                cutscene:text("* To be continued.", "smile", "susie")
+                cutscene:showNametag("Jamm")
+                cutscene:text("* Okay!", "smug", "jamm")
+				cutscene:hideNametag()
             elseif map == "cliffs_8" then
                 cutscene:showNametag("Susie")
-                cutscene:text("* ...", "nervous_side", "susie") -- yeah erm placeholder
+                cutscene:text("* Tch,[wait:5] that creature...", "annoyed_down", "susie")
+                cutscene:showNametag("Jamm")
+                cutscene:text("* Right???[wait:10]\n* I didn't know it was boss fight time.", "nervous", "jamm")
+                if Game:getFlag("future_variable") == "ceroba_dw" then
+                    cutscene:showNametag("Ceroba")
+			        cutscene:text("* Didn't you say your DarkSling is effective against them?", "question", "ceroba")
+		        end
+                cutscene:showNametag("Jamm")
+                cutscene:text("* Okay,[wait:5] but I meant boss strength.", "nervous_left", "jamm")
+                cutscene:text("* If that's just the status quo around here,[wait:5] we're screwed...", "ouch", "jamm")
                 cutscene:hideNametag()
-            elseif map == "cliffs_9" then
-                cutscene:showNametag("Susie")
-                cutscene:text("* ...", "nervous_side", "susie") -- yeah erm placeholder
+            elseif map == "cliffs_9" and not Game.world.future_chase_started then
+                cutscene:showNametag("Jamm")
+                cutscene:text("* I have a bad feeling about what's coming up...", "nervous_left", "jamm")
                 cutscene:hideNametag()
-            elseif map == "chase_4" then
+            elseif map == "chase_4" and Game.party[1]:hasSpell("rage") then
                 cutscene:showNametag("Susie")
                 cutscene:text("* ...", "nervous_side", "susie") -- yeah erm placeholder
                 cutscene:hideNametag()

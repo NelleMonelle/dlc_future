@@ -374,6 +374,7 @@ return {
 		cutscene:showNametag("Susie")
 		cutscene:text("* Maybe we should try to [color:yellow]avoid these enemies[color:white]...", "neutral", "susie")
 		cutscene:hideNametag()
+		Game:setFlag("first_collapse_creature", true)
     end,
 	
     sign2 = function(cutscene, event)
@@ -564,10 +565,11 @@ return {
 		cutscene:wait(1)
 		cutscene:look(susie, "down")
 		cutscene:showNametag("Jamm")
-		cutscene:text("* C'mon, after them!", "determined", "jamm")
+		cutscene:text("* C'mon,[wait:5] after them!", "determined", "jamm")
 		jamm:walkToSpeed(1160, jamm.y, 12)
 		variant:walkToSpeed(1160, variant.y, 12)
 		cutscene:hideNametag()
+		Game.world.future_chase_started = true
     end,
 	
     no_return_1	= function(cutscene, event)

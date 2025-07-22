@@ -27,6 +27,7 @@ function actor:init()
 end
 
 function actor:getDefault()
+	if self.default ~= "walk" then return self.default end
 	if Game:getFlag("future_carrying_marcy") then
 		return "carry_f_marcy"
 	end

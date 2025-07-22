@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 13,
-  nextobjectid = 106,
+  nextobjectid = 110,
   properties = {
     ["border"] = "mainhub",
     ["music"] = "future_world",
@@ -869,6 +869,40 @@ return {
           properties = {
             ["cutscene"] = "hub.warp_bin_note"
           }
+        },
+        {
+          id = 107,
+          name = "npc",
+          type = "",
+          shape = "point",
+          x = 360,
+          y = 240,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["actor"] = "fmarcy",
+            ["cutscene"] = "hub.variant",
+            ["facing"] = "up",
+            ["turn"] = true
+          }
+        },
+        {
+          id = 109,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 440,
+          y = 436,
+          width = 40,
+          height = 80,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "hub_passage_1",
+            ["marker"] = "hub"
+          }
         }
       }
     },
@@ -945,6 +979,19 @@ return {
           shape = "point",
           x = 620,
           y = 600,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 108,
+          name = "passageway_1",
+          type = "",
+          shape = "point",
+          x = 460,
+          y = 560,
           width = 0,
           height = 0,
           rotation = 0,

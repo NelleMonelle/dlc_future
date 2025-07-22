@@ -14,6 +14,13 @@ function DeadHub:onEnter()
     if Game.mapbackground then
 		Game.mapbackground:remove()
 	end
+	
+	self:getEvent(107):setActor(Mod:getVariableFuture(Game.party[3].id))
+	
+	if Game:getFlag("broke_wall_future") then
+		self:getEvent(107):remove()
+		self:getEvent(98):remove()
+	end
 end
 
 return DeadHub
