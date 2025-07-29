@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 7,
-  nextobjectid = 10,
+  nextobjectid = 13,
   properties = {
     ["music"] = "future_world"
   },
@@ -207,6 +207,22 @@ return {
           properties = {
             ["cutscene"] = "hub.light"
           }
+        },
+        {
+          id = 12,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = -40,
+          y = 160,
+          width = 40,
+          height = 160,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "hub_passage_2",
+            ["marker"] = "passageway_1"
+          }
         }
       }
     },
@@ -231,6 +247,19 @@ return {
           shape = "point",
           x = 320,
           y = 1960,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 10,
+          name = "passageway_2",
+          type = "",
+          shape = "point",
+          x = 40,
+          y = 220,
           width = 0,
           height = 0,
           rotation = 0,

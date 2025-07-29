@@ -55,7 +55,12 @@ function Mod:getVariableFuture(chara)
 end
 
 function Mod:incoherent(cutscene)
-	if not Game:hasPartyMember("fmarcy") then	-- Add the other future characters when they get made
+	if not (
+		Game:hasPartyMember("fmarcy")
+		or Game:hasPartyMember("fnoelle")
+		or Game:hasPartyMember("fkanako")
+		or Game:hasPartyMember("fbrenda")
+	) then	-- Add the other future characters when they get made
 		cutscene:text("* (It's written in a language you don't understand.)")
 		return true
 	end

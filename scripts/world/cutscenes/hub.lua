@@ -337,6 +337,75 @@ local hub = {
 		cutscene:alignFollowers("up")
 		cutscene:attachFollowers(8)
 		cutscene:wait(cutscene:attachCamera(1))
-	end
+	end,
+	
+	sign_1 = function(cutscene, event)
+        if not Mod:incoherent(cutscene) then
+			cutscene:text("* PHASE ONE OF THE COLLAPSE")
+			cutscene:text("* The FOUNTAINs shall solidify into pillars of LIGHT.")
+			cutscene:text("* No new FOUNTAINs can be opened,[wait:5] none existing shall be sealed.")
+		end
+    end,
+	
+	sign_2 = function(cutscene, event)
+        if not Mod:incoherent(cutscene) then
+			cutscene:text("* PHASE TWO OF THE COLLAPSE")
+			cutscene:text("* The DARK and LIGHT worlds shall merge into one.")
+			cutscene:text("* At this point,[wait:5] the sun's light will be snuffed out for good.")
+		end
+    end,
+	
+	sign_3 = function(cutscene, event)
+        if not Mod:incoherent(cutscene) then
+			cutscene:text("* PHASE THREE OF THE COLLAPSE")
+			cutscene:text("* Once every DARKNER has turned to STONE...")
+			cutscene:text("* Once every LIGHTNER has been TRANSFORMED...")
+			cutscene:text("* RIFTS will open everywhere in the world.")
+			cutscene:text("* The reign of the COLLAPSE has begun,[wait:5] and the eternal war wages.")
+		end
+    end,
+	
+	sign_4 = function(cutscene, event)
+        if not Mod:incoherent(cutscene) then
+			cutscene:text("* Once the COLLAPSE occurs,[wait:5] there will be no hope for the world.")
+		end
+    end,
+	
+	truth = function(cutscene, event)
+		cutscene:showNametag("Jamm")
+		cutscene:text("* So,[wait:5] uh...[wait:10]\n* We can't read these signs.", "nervous", "jamm")
+		cutscene:look(Game.world.map:getEvent(14), "down")
+		cutscene:showNametag("Marcy")
+		cutscene:text("* We made a new written language to throw off the Knight...", "closed", "fmarcy")
+		cutscene:text("* But it somehow stuck after their defeat.", "neutral", "fmarcy")
+		cutscene:text("* These signs tell of the prophecy of the Collapse.", "neutral", "fmarcy")
+		
+		if Game:getFlag("future_variable") == "ceroba_dw" then
+			cutscene:showNametag("Ceroba")
+			cutscene:text("* ...The Collapse?", "default", "ceroba")
+		end
+		
+		cutscene:showNametag("Marcy")
+		cutscene:text("* First,[wait:5] the fountains would solidify.", "closed", "fmarcy")
+		cutscene:text("* Next,[wait:5] the worlds would collide and the sky would darken.", "closed", "fmarcy")
+		cutscene:text("* Finally,[wait:5] the rifts open and the Collapse Creatures reign.", "neutral", "fmarcy")
+		cutscene:text("* All of this...[wait:10] It already happened.", "neutral", "fmarcy")
+		cutscene:showNametag("Jamm")
+		cutscene:text("* I'm really sorry,[wait:5] Marcy...", "worried", "jamm")
+		cutscene:look(Game.world.map:getEvent(14), "left")
+		cutscene:showNametag("Marcy")
+		cutscene:text("* Spare our world the pity,[wait:5] dad.", "closed", "fmarcy")
+		cutscene:text("* You lost your chance to save it.", "upset", "fmarcy")
+        cutscene:hideNametag()
+		cutscene:wait(cutscene:walkToSpeed(Game.world.map:getEvent(14), -150, 240, 4))
+		cutscene:showNametag("Jamm")
+		cutscene:text("* ...", "shaded_pissed", "jamm")
+		cutscene:showNametag("Susie")
+		cutscene:text("* ...You okay,[wait:5] Jamm?", "sad_frown", "susie")
+		cutscene:showNametag("Jamm")
+		cutscene:text("* Yeah,[wait:5] just...[wait:10]\n* Thinking.", "shaded_neutral", "jamm")
+        cutscene:hideNametag()
+		Game:setFlag("future_marcy_in_halls", true)
+    end,
 }
 return hub

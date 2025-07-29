@@ -75,7 +75,8 @@
     },
 	
 	"sharedlibs": [
-        "status_core"
+        "status_core",
+        "chapter4lib"
     ],
 
     // Config values for the engine and any libraries you may have.

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="34" height="16" tilewidth="40" tileheight="40" infinite="0" nextlayerid="7" nextobjectid="29">
+ <editorsettings>
+  <export target="data.lua" format="lua"/>
+ </editorsettings>
+ <properties>
+  <property name="music" value="future_world"/>
+ </properties>
+ <tileset firstgid="1" source="../../tilesets/main_area.tsx"/>
+ <layer id="1" name="Tile Layer 1" width="34" height="16">
+  <data encoding="csv">
+80,80,80,80,80,80,80,79,80,80,80,80,80,81,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,79,80,80,80,
+80,80,80,80,80,80,80,79,80,80,80,80,80,81,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,79,80,80,80,
+80,80,80,80,80,30,80,79,80,80,80,80,80,81,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,79,80,80,80,
+30,80,80,31,80,80,80,79,80,80,80,80,80,81,80,80,80,30,80,80,80,80,80,80,80,80,80,80,80,31,79,80,80,80,
+93,93,207,93,93,93,93,79,80,80,80,80,80,81,80,31,80,80,80,80,80,31,80,80,80,30,80,80,80,80,79,80,80,80,
+2,2,2,2,2,2,5,79,30,80,80,80,80,81,93,93,93,207,93,93,93,207,93,93,93,93,93,207,93,93,79,80,80,80,
+15,32,15,15,32,15,16,79,80,31,80,80,30,81,4,2,2,2,2,2,2,2,2,2,2,2,2,2,2,5,79,30,80,80,
+28,28,28,15,15,15,16,92,93,93,207,93,93,208,14,32,15,15,15,15,32,15,15,15,15,15,32,15,15,16,79,80,80,30,
+0,0,0,14,15,15,15,2,2,2,2,2,2,2,15,15,15,15,28,28,28,28,28,28,28,28,15,15,15,16,79,80,31,80,
+0,0,0,14,15,32,15,15,15,15,15,15,32,15,15,15,32,16,0,0,0,0,0,0,0,0,14,15,32,16,92,207,93,93,
+0,0,0,27,28,28,28,28,28,28,28,28,28,28,28,28,28,29,0,0,0,0,0,0,0,0,14,15,15,15,2,2,2,2,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,14,32,15,15,15,15,15,32,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27,28,28,28,28,28,28,28,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="2" name="Tile Layer 2" width="34" height="16">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,105,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,105,0,0,0,0,0,0,0,0,0,0,105,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,105,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="3" name="collision">
+  <object id="19" x="1200" y="0" width="160" height="400"/>
+  <object id="20" x="560" y="0" width="640" height="240"/>
+  <object id="21" x="280" y="0" width="280" height="320"/>
+  <object id="22" x="0" y="0" width="280" height="200"/>
+  <object id="23" x="0" y="320" width="120" height="320"/>
+  <object id="24" x="120" y="440" width="600" height="200"/>
+  <object id="25" x="720" y="360" width="320" height="280"/>
+  <object id="26" x="1040" y="520" width="320" height="120"/>
+ </objectgroup>
+ <objectgroup id="4" name="markers">
+  <object id="17" name="passageway_1" x="1320" y="460">
+   <point/>
+  </object>
+  <object id="27" name="passageway_3" x="40" y="260">
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="5" name="objects">
+  <object id="10" name="interactable" x="1080" y="160" width="40" height="80">
+   <properties>
+    <property name="cutscene" value="hub.sign_1"/>
+   </properties>
+  </object>
+  <object id="11" name="interactable" x="640" y="160" width="40" height="80">
+   <properties>
+    <property name="cutscene" value="hub.sign_2"/>
+   </properties>
+  </object>
+  <object id="12" name="interactable" x="400" y="240" width="40" height="80">
+   <properties>
+    <property name="cutscene" value="hub.sign_3"/>
+   </properties>
+  </object>
+  <object id="13" name="interactable" x="160" y="120" width="40" height="80">
+   <properties>
+    <property name="cutscene" value="hub.sign_4"/>
+   </properties>
+  </object>
+  <object id="14" name="npc" x="180" y="240">
+   <properties>
+    <property name="actor" value="fmarcy"/>
+    <property name="facing" value="up"/>
+    <property name="flagcheck" value="!future_marcy_in_halls"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="16" name="script" x="120" y="320" width="160">
+   <properties>
+    <property name="cutscene" value="hub.truth"/>
+   </properties>
+  </object>
+  <object id="18" name="transition" x="1360" y="400" width="40" height="160">
+   <properties>
+    <property name="map" value="hub_passage_1"/>
+    <property name="marker" value="passageway_2"/>
+   </properties>
+  </object>
+  <object id="28" name="transition" x="-40" y="200" width="40" height="160">
+   <properties>
+    <property name="map" value="hub_passage_3"/>
+    <property name="marker" value="passageway_2"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="6" name="controllers">
+  <object id="1" name="darkness" x="1320" y="40">
+   <properties>
+    <property name="alpha" type="float" value="1"/>
+    <property name="characters" value="jamm"/>
+   </properties>
+   <point/>
+  </object>
+ </objectgroup>
+</map>
