@@ -21,6 +21,20 @@ function DeadHub:onEnter()
 		self:getEvent(107):remove()
 		self:getEvent(98):remove()
 	end
+	
+	if Game:getFlag("future_jamm_light") then
+		for k,v in ipairs(Game.party) do
+			if v.id == "jamm" then
+				if k == 1 then
+					Game.world.player.actor.default = "walk_serious"
+					Game.world.player:resetSprite()
+				else
+					Game.world.followers[k-1].actor.default = "walk_serious"
+					Game.world.followers[k-1]:resetSprite()
+				end
+			end
+		end
+	end
 end
 
 return DeadHub

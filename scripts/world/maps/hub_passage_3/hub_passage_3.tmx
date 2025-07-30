@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="16" height="44" tilewidth="40" tileheight="40" infinite="0" nextlayerid="6" nextobjectid="49">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="16" height="44" tilewidth="40" tileheight="40" infinite="0" nextlayerid="6" nextobjectid="51">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -112,12 +112,21 @@
     <property name="marker" value="passageway_3"/>
    </properties>
   </object>
+  <object id="50" name="transition" x="200" y="-40" width="160" height="40">
+   <properties>
+    <property name="map" value="hub_passage_4"/>
+    <property name="marker" value="passageway_3"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup id="4" name="markers">
   <object id="43" name="spawn" x="320" y="1560">
    <point/>
   </object>
   <object id="47" name="passageway_2" x="600" y="1580">
+   <point/>
+  </object>
+  <object id="49" name="passageway_4" x="260" y="40">
    <point/>
   </object>
  </objectgroup>

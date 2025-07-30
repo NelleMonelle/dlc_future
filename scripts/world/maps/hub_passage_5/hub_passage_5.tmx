@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="24" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="7" nextobjectid="20">
+ <properties>
+  <property name="music" value="future_world"/>
+  <property name="name" value="Ruined Hub - The Tower"/>
+ </properties>
+ <tileset firstgid="1" source="../../tilesets/main_area.tsx"/>
+ <layer id="1" name="Tile Layer 1" width="24" height="12">
+  <data encoding="csv">
+0,0,79,80,69,70,71,80,80,80,80,80,80,80,80,80,80,80,81,14,15,16,0,0,
+0,0,79,80,69,70,71,80,80,80,30,80,80,80,80,80,80,80,81,14,32,16,0,0,
+0,0,79,80,69,70,71,80,80,69,70,71,80,80,69,70,71,30,81,14,15,16,0,0,
+0,0,79,30,80,80,80,80,194,80,80,80,80,80,80,80,72,80,195,14,15,16,0,0,
+0,0,79,80,80,80,80,115,116,80,80,80,80,31,80,80,72,80,81,14,15,16,0,0,
+0,0,206,93,93,207,93,128,129,93,207,207,93,93,93,207,93,93,208,14,32,16,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,2,2,2,2,15,15,15,3,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,14,15,32,15,15,32,15,15,16,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,14,15,15,15,15,15,15,32,16,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,14,32,15,15,15,15,15,15,16,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,27,28,28,28,28,28,28,28,29,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="2" name="collision">
+  <object id="1" x="880" y="0" width="80" height="240"/>
+  <object id="2" x="920" y="240" width="40" height="240"/>
+  <object id="3" x="560" y="440" width="360" height="40"/>
+  <object id="4" x="520" y="200" width="40" height="280"/>
+  <object id="5" x="560" y="200" width="200" height="40"/>
+  <object id="6" x="720" y="0" width="40" height="200"/>
+ </objectgroup>
+ <objectgroup id="3" name="objects">
+  <object id="7" name="climbentry" x="640" y="200" width="40" height="40">
+   <properties>
+    <property name="area" type="object" value="8"/>
+   </properties>
+  </object>
+  <object id="8" name="climbarea" x="640" y="120" width="40" height="80"/>
+  <object id="9" name="climbarea" x="560" y="80" width="120" height="40"/>
+  <object id="10" name="climbarea" x="360" y="80" width="120" height="40"/>
+  <object id="11" name="climbarea" x="160" y="-40" width="120" height="160"/>
+  <object id="12" name="transition" x="160" y="-40" width="120" height="40">
+   <properties>
+    <property name="map" value="hub_tower"/>
+    <property name="marker" value="passageway_5"/>
+   </properties>
+  </object>
+  <object id="15" name="transition" x="760" y="-40" width="120" height="40">
+   <properties>
+    <property name="map" value="hub_passage_4"/>
+    <property name="marker" value="passageway_5"/>
+   </properties>
+  </object>
+  <object id="19" name="savepoint" x="720" y="240" width="40" height="40">
+   <properties>
+    <property name="text1" value="* The long climb looms before you..."/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="4" name="markers">
+  <object id="13" name="hub_tower" x="220" y="40">
+   <point/>
+  </object>
+  <object id="14" name="passageway_4" x="820" y="40">
+   <point/>
+  </object>
+  <object id="17" name="spawn" x="740" y="360">
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="6" name="controllers">
+  <object id="16" name="darkness" x="920" y="40">
+   <properties>
+    <property name="alpha" type="float" value="1"/>
+    <property name="characters" value="jamm"/>
+   </properties>
+   <point/>
+  </object>
+ </objectgroup>
+</map>
