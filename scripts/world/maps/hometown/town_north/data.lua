@@ -10,10 +10,10 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 48,
-  nextobjectid = 100,
+  nextobjectid = 101,
   properties = {
     ["border"] = "leaves",
-    ["music"] = "hometown"
+    ["music"] = "future_world"
   },
   tilesets = {
     {
@@ -1187,7 +1187,7 @@ return {
             ["exit_delay"] = 0.3,
             ["exit_sound"] = "doorclose",
             ["facing"] = "up",
-            ["map"] = "light/hometown/interior/flower_shop",
+            ["map"] = "hometown/interior/flower_shop",
             ["marker"] = "spawn",
             ["sound"] = "dooropen"
           }
@@ -1350,7 +1350,21 @@ return {
       parallaxx = 1,
       parallaxy = 1,
       properties = {},
-      objects = {}
+      objects = {
+        {
+          id = 100,
+          name = "hometowndaynight",
+          type = "",
+          shape = "point",
+          x = 40,
+          y = 0,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
     }
   }
 }

@@ -10,10 +10,10 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 11,
-  nextobjectid = 29,
+  nextobjectid = 30,
   properties = {
     ["border"] = "leaves",
-    ["music"] = "church"
+    ["music"] = "future_world"
   },
   tilesets = {
     {
@@ -450,7 +450,21 @@ return {
       parallaxx = 1,
       parallaxy = 1,
       properties = {},
-      objects = {}
+      objects = {
+        {
+          id = 29,
+          name = "hometowndaynight",
+          type = "",
+          shape = "point",
+          x = 120,
+          y = 40,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
     }
   }
 }

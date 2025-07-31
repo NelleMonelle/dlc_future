@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="16" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="6" nextobjectid="22">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="16" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="7" nextobjectid="23">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
  <properties>
   <property name="border" value="leaves"/>
-  <property name="music" value="hometown"/>
+  <property name="music" value="future_world"/>
  </properties>
  <imagelayer id="2" name="room">
   <image source="../../../../../../assets/sprites/world/maps/hometown/interior/hospitalhallway.png" width="640" height="480"/>
@@ -66,6 +66,11 @@
    <point/>
   </object>
   <object id="20" name="spawn" x="320" y="320">
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="6" name="controllers">
+  <object id="22" name="hometowndaynight" x="40" y="40">
    <point/>
   </object>
  </objectgroup>

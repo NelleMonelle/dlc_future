@@ -22,4 +22,12 @@ return {
 			Game:setFlag("future_jamm_susie_door", true)
 		end
     end,
+
+    hospitalroom2bed = function(cutscene, event)
+        if Game:getFlag("POST_SNOWGRAVE") then
+            cutscene:text("* (He's no longer breathing...)")
+        else
+            cutscene:text("* (It's an empty bed.)")
+        end
+    end,
 }

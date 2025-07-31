@@ -9,11 +9,11 @@ return {
   height = 12,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 7,
-  nextobjectid = 17,
+  nextlayerid = 8,
+  nextobjectid = 18,
   properties = {
     ["border"] = "leaves",
-    ["music"] = "hometown"
+    ["music"] = "future_world"
   },
   tilesets = {},
   layers = {
@@ -313,6 +313,35 @@ return {
       repeatx = false,
       repeaty = false,
       properties = {}
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 7,
+      name = "controllers",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 17,
+          name = "hometowndaynight",
+          type = "",
+          shape = "point",
+          x = 40,
+          y = 40,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
     }
   }
 }

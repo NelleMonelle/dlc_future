@@ -9,11 +9,11 @@ return {
   height = 12,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 7,
-  nextobjectid = 17,
+  nextlayerid = 8,
+  nextobjectid = 18,
   properties = {
     ["border"] = "leaves",
-    ["music"] = "hometown"
+    ["music"] = "future_world"
   },
   tilesets = {},
   layers = {
@@ -233,7 +233,7 @@ return {
           properties = {
             ["solid"] = true,
             ["text1"] = "* (You looked inside the cupboard.)",
-            ["text2"] = "* (... a very small obligatory piano is hiding inside.)"
+            ["text2"] = "* (... the very small obligatory piano seems to be missing.)"
           }
         },
         {
@@ -266,7 +266,7 @@ return {
           properties = {
             ["flagcheck"] = "POST_SNOWGRAVE",
             ["solid"] = true,
-            ["text"] = "* (The space heater is running.)"
+            ["text"] = "* (Unsurprisingly,[wait:5] the space heater isn't running.)"
           }
         },
         {
@@ -312,6 +312,35 @@ return {
           shape = "point",
           x = 320,
           y = 440,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 7,
+      name = "controllers",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 17,
+          name = "hometowndaynight",
+          type = "",
+          shape = "point",
+          x = 40,
+          y = 40,
           width = 0,
           height = 0,
           rotation = 0,

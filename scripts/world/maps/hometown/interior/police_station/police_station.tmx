@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="16" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="6" nextobjectid="29">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="16" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="7" nextobjectid="30">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
  <properties>
   <property name="border" value="leaves"/>
-  <property name="music" value="hometown"/>
+  <property name="music" value="future_world"/>
  </properties>
  <tileset firstgid="1" source="../../../../tilesets/hometownobjects.tsx"/>
  <imagelayer id="2" name="room">
@@ -78,6 +78,11 @@ in the tree somehow.)</property>
  </objectgroup>
  <objectgroup color="#7f00ff" id="5" name="markers">
   <object id="25" name="spawn" x="320" y="440">
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="6" name="controllers">
+  <object id="29" name="hometowndaynight" x="40" y="40">
    <point/>
   </object>
  </objectgroup>

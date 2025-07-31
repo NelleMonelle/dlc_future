@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="16" nextobjectid="15">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="16" nextobjectid="16">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
  <properties>
   <property name="border" value="leaves"/>
-  <property name="music" value="hometown"/>
+  <property name="music" value="future_world"/>
  </properties>
  <tileset firstgid="1" source="../../../tilesets/hometown.tsx"/>
  <tileset firstgid="287" source="../../../tilesets/hometownobjects.tsx"/>
@@ -86,5 +86,9 @@
  <objectgroup id="15" name="objects_beachwater">
   <object id="14" name="beachwater" x="810" y="0" width="400" height="480"/>
  </objectgroup>
- <objectgroup color="#00aa00" id="8" name="controllers"/>
+ <objectgroup color="#00aa00" id="8" name="controllers">
+  <object id="15" name="hometowndaynight" x="40" y="40">
+   <point/>
+  </object>
+ </objectgroup>
 </map>

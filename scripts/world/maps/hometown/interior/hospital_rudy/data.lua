@@ -9,11 +9,11 @@ return {
   height = 12,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 6,
-  nextobjectid = 20,
+  nextlayerid = 7,
+  nextobjectid = 22,
   properties = {
     ["border"] = "leaves",
-    ["music"] = "hometown"
+    ["music"] = "future_world"
   },
   tilesets = {},
   layers = {
@@ -222,6 +222,21 @@ return {
           }
         },
         {
+          id = 20,
+          name = "interactable",
+          type = "",
+          shape = "rectangle",
+          x = 280,
+          y = 220,
+          width = 80,
+          height = 100,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["text"] = "* (The bed is empty...)"
+          }
+        },
+        {
           id = 13,
           name = "interactable",
           type = "",
@@ -263,7 +278,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (It's a bouquet of flowers in a glass container.)"
+            ["text"] = "* (It's a bouquet of withered flowers in a glass container.)"
           }
         },
         {
@@ -300,22 +315,6 @@ return {
             ["marker"] = "entryrudy",
             ["sound"] = "dooropen"
           }
-        },
-        {
-          id = 19,
-          name = "npc",
-          type = "",
-          shape = "point",
-          x = 320,
-          y = 286,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["actor"] = "rudy",
-            ["cutscene"] = "hometown.rudy"
-          }
         }
       }
     },
@@ -340,6 +339,35 @@ return {
           shape = "point",
           x = 320,
           y = 440,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 6,
+      name = "controllers",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 21,
+          name = "hometowndaynight",
+          type = "",
+          shape = "point",
+          x = 40,
+          y = 40,
           width = 0,
           height = 0,
           rotation = 0,

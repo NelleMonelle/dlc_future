@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="43" height="31" tilewidth="40" tileheight="40" infinite="0" nextlayerid="11" nextobjectid="129">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="43" height="31" tilewidth="40" tileheight="40" infinite="0" nextlayerid="11" nextobjectid="130">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
  <properties>
   <property name="border" value="leaves"/>
-  <property name="music" value="church"/>
+  <property name="music" value="future_world"/>
  </properties>
  <tileset firstgid="1" source="../../../../tilesets/hometownobjects.tsx"/>
  <imagelayer id="2" name="bg">
@@ -276,5 +276,9 @@
    <point/>
   </object>
  </objectgroup>
- <objectgroup id="6" name="controllers"/>
+ <objectgroup id="6" name="controllers">
+  <object id="129" name="hometowndaynight" x="80" y="80">
+   <point/>
+  </object>
+ </objectgroup>
 </map>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="16" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="6" nextobjectid="20">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="16" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="7" nextobjectid="22">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
  <properties>
   <property name="border" value="leaves"/>
-  <property name="music" value="hometown"/>
+  <property name="music" value="future_world"/>
  </properties>
  <imagelayer id="2" name="room">
   <image source="../../../../../../assets/sprites/world/maps/hometown/interior/hospitalrudy.png" width="640" height="480"/>
@@ -30,6 +30,11 @@
 [wait:5]* (Rudolph &quot;Rudy&quot; Holiday)</property>
    </properties>
   </object>
+  <object id="20" name="interactable" x="280" y="220" width="80" height="100">
+   <properties>
+    <property name="text" value="* (The bed is empty...)"/>
+   </properties>
+  </object>
   <object id="13" name="interactable" x="122" y="290" width="40" height="38">
    <properties>
     <property name="text">* (It's an angel doll.)
@@ -43,7 +48,7 @@
   </object>
   <object id="15" name="interactable" x="400" y="250" width="82" height="40">
    <properties>
-    <property name="text" value="* (It's a bouquet of flowers in a glass container.)"/>
+    <property name="text" value="* (It's a bouquet of withered flowers in a glass container.)"/>
    </properties>
   </object>
   <object id="16" name="interactable" x="122.5" y="344" width="40" height="56">
@@ -61,16 +66,14 @@
     <property name="sound" value="dooropen"/>
    </properties>
   </object>
-  <object id="19" name="npc" x="320" y="286">
-   <properties>
-    <property name="actor" value="rudy"/>
-    <property name="cutscene" value="hometown.rudy"/>
-   </properties>
-   <point/>
-  </object>
  </objectgroup>
  <objectgroup color="#ff00ff" id="5" name="markers">
   <object id="18" name="spawn" x="320" y="440">
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="6" name="controllers">
+  <object id="21" name="hometowndaynight" x="40" y="40">
    <point/>
   </object>
  </objectgroup>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="21" nextobjectid="25">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="21" nextobjectid="26">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
  <properties>
   <property name="border" value="leaves"/>
-  <property name="music" value="hometown"/>
+  <property name="music" value="future_world"/>
  </properties>
  <tileset firstgid="1" source="../../../tilesets/hometown.tsx"/>
  <tileset firstgid="287" source="../../../tilesets/hometownobjects.tsx"/>
@@ -190,8 +190,12 @@
 151,152,151,152,150,151,152,150,151,152,150,151,152,150,151,152,150,151,152,150,151,152,150,151,152,150,151,152,150,151
 </data>
  </layer>
- <imagelayer id="16" name="overlay" parallaxx="0.9">
+ <imagelayer id="16" name="overlay" visible="0" parallaxx="0.9">
   <image source="../../../../../assets/sprites/world/maps/hometown/graveyardover.png" width="1200" height="480"/>
  </imagelayer>
- <objectgroup color="#00aa00" id="19" name="controllers"/>
+ <objectgroup color="#00aa00" id="19" name="controllers">
+  <object id="25" name="hometowndaynight" x="40" y="40">
+   <point/>
+  </object>
+ </objectgroup>
 </map>
