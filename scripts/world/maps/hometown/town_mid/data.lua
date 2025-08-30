@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 32,
-  nextobjectid = 71,
+  nextobjectid = 72,
   properties = {
     ["border"] = "leaves",
     ["music"] = "future_world"
@@ -440,7 +440,7 @@ return {
           shape = "rectangle",
           x = 530,
           y = 100,
-          width = 80,
+          width = 190,
           height = 134,
           rotation = 0,
           visible = true,
@@ -708,26 +708,6 @@ return {
           }
         },
         {
-          id = 35,
-          name = "transition",
-          type = "",
-          shape = "rectangle",
-          x = 610,
-          y = 192,
-          width = 110,
-          height = 40,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["exit_delay"] = 0.3,
-            ["exit_sound"] = "doorclose",
-            ["facing"] = "up",
-            ["map"] = "hometown/interior/icee_room",
-            ["marker"] = "spawn",
-            ["sound"] = "dooropen"
-          }
-        },
-        {
           id = 48,
           name = "interactable",
           type = "",
@@ -739,22 +719,23 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (Here at ICE-E'S PEZZA, You're Family.)"
+            ["text1"] = "* (A sign that has been rewritten and graffitied over..)",
+            ["text2"] = "* (You can't seem to read it.)"
           }
         },
         {
-          id = 49,
+          id = 71,
           name = "interactable",
           type = "",
           shape = "rectangle",
-          x = 548,
+          x = 610,
           y = 194,
-          width = 50,
+          width = 108,
           height = 40,
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (Here at ICE-E'S PEZZA, You're Family.)"
+            ["text1"] = "* You don't even dare to enter the restaurant."
           }
         },
         {

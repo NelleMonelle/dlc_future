@@ -9,8 +9,8 @@ return {
   height = 12,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 16,
-  nextobjectid = 16,
+  nextlayerid = 17,
+  nextobjectid = 18,
   properties = {
     ["border"] = "leaves",
     ["music"] = "future_world"
@@ -96,11 +96,11 @@ return {
       properties = {},
       encoding = "lua",
       data = {
-        150, 151, 150, 151, 150, 151, 150, 151, 150, 151, 150, 151, 150, 151, 150, 151, 150, 151, 150, 153, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        151, 150, 151, 150, 151, 150, 151, 150, 151, 150, 151, 150, 151, 150, 151, 150, 151, 150, 151, 153, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        150, 151, 150, 151, 150, 151, 150, 151, 150, 151, 150, 151, 150, 151, 150, 151, 150, 151, 150, 153, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        161, 162, 163, 162, 161, 162, 163, 162, 161, 162, 163, 162, 161, 162, 163, 162, 161, 162, 163, 164, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        172, 173, 174, 173, 172, 173, 174, 173, 172, 173, 174, 173, 172, 173, 174, 173, 172, 173, 174, 175, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        150, 151, 150, 151, 150, 151, 150, 151, 150, 95, 0, 93, 150, 151, 150, 151, 150, 151, 150, 153, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        151, 150, 151, 150, 151, 150, 151, 150, 151, 95, 0, 93, 151, 150, 151, 150, 151, 150, 151, 153, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        150, 151, 150, 151, 150, 151, 150, 151, 150, 95, 0, 93, 150, 151, 150, 151, 150, 151, 150, 153, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        161, 162, 163, 162, 161, 162, 163, 162, 161, 102, 0, 100, 161, 162, 163, 162, 161, 162, 163, 164, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        172, 173, 174, 173, 172, 173, 174, 173, 172, 113, 0, 111, 172, 173, 174, 173, 172, 173, 174, 175, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -111,12 +111,28 @@ return {
       }
     },
     {
+      type = "imagelayer",
+      image = "../../../../../assets/sprites/world/maps/hometown/beachwater.png",
+      id = 16,
+      name = "watre",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 806,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      repeatx = false,
+      repeaty = false,
+      properties = {}
+    },
+    {
       type = "objectgroup",
       draworder = "topdown",
       id = 3,
       name = "collision",
       class = "",
-      visible = false,
+      visible = true,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -144,7 +160,20 @@ return {
           shape = "rectangle",
           x = 0,
           y = 0,
-          width = 800,
+          width = 394,
+          height = 200,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 17,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 444,
+          y = 0,
+          width = 356,
           height = 200,
           rotation = 0,
           visible = true,
@@ -249,6 +278,22 @@ return {
           gid = 329,
           visible = true,
           properties = {}
+        },
+        {
+          id = 16,
+          name = "interactable",
+          type = "",
+          shape = "rectangle",
+          x = 808,
+          y = 0,
+          width = 120,
+          height = 480,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["text1"] = "* Pure darkness...",
+            ["text2"] = "* Instinctively,[wait:5] you look at your hand in front of the lake.[wait:10]\n* You can't see your hand."
+          }
         }
       }
     },
@@ -326,21 +371,7 @@ return {
       parallaxx = 1,
       parallaxy = 1,
       properties = {},
-      objects = {
-        {
-          id = 14,
-          name = "beachwater",
-          type = "",
-          shape = "rectangle",
-          x = 810,
-          y = 0,
-          width = 400,
-          height = 480,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        }
-      }
+      objects = {}
     },
     {
       type = "objectgroup",

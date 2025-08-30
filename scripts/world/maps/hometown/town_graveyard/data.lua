@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 21,
-  nextobjectid = 26,
+  nextobjectid = 29,
   properties = {
     ["border"] = "leaves",
     ["music"] = "future_world"
@@ -454,6 +454,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
+            ["solid"] = true,
             ["text"] = "* (It's a gravestone. It's kind of hard to read in the dark.)"
           }
         },
@@ -463,13 +464,14 @@ return {
           type = "",
           shape = "rectangle",
           x = 488,
-          y = 132,
+          y = 150,
           width = 62,
-          height = 40,
+          height = 22,
           rotation = 0,
           visible = true,
           properties = {
-            ["text"] = "* (It's a gravestone. It's kind of hard to read in the dark.)"
+            ["solid"] = true,
+            ["text"] = "* (What was once a gravestone,[wait:5] now reduced to a graveslab.)"
           }
         },
         {
@@ -484,6 +486,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
+            ["solid"] = true,
             ["text"] = "* (It's a gravestone. It's kind of hard to read in the dark.)"
           }
         },
@@ -499,6 +502,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
+            ["solid"] = true,
             ["text"] = "* (It's a gravestone. It's kind of hard to read in the dark.)"
           }
         },
@@ -515,10 +519,9 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text1"] = "* (Gerson Boom Memorial Bench)",
-            ["text2"] = "* \"Throughout my career, some of my best ideas came from dreams.\"",
-            ["text3"] = "* \"Take a rest here.[wait:5] If anyone asks -- you're writing!\"",
-            ["text4"] = "* (You decided not to sit.)"
+            ["text1"] = "* (Ger_n Bo__ ___or__l Be__h)",
+            ["text2"] = "* \"Thro____ut my ___eer, some of\"...",
+            ["text3"] = "* (You decide to stop.)"
           }
         },
         {
@@ -551,6 +554,55 @@ return {
           gid = 330,
           visible = true,
           properties = {}
+        },
+        {
+          id = 26,
+          name = "script",
+          type = "",
+          shape = "rectangle",
+          x = 800,
+          y = 240,
+          width = 40,
+          height = 200,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["cutscene"] = "hometown.berdly_graveyard"
+          }
+        },
+        {
+          id = 27,
+          name = "npc",
+          type = "",
+          shape = "point",
+          x = 520,
+          y = 320,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["actor"] = "fmarcy",
+            ["facing"] = "left",
+            ["flagcheck"] = "!future_berdly_graveyard"
+          }
+        },
+        {
+          id = 28,
+          name = "npc",
+          type = "",
+          shape = "point",
+          x = 360,
+          y = 320,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["actor"] = "fberdly",
+            ["facing"] = "right",
+            ["flagcheck"] = "!future_berdly_graveyard"
+          }
         }
       }
     },

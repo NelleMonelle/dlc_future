@@ -1,48 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.10" tiledversion="1.11.2" name="hometownobjects" tilewidth="1758" tileheight="1240" tilecount="79" columns="0">
+<tileset version="1.10" tiledversion="1.11.2" name="hometownobjects" tilewidth="1758" tileheight="1240" tilecount="65" columns="0">
  <editorsettings>
   <export target="hometownobjects.lua" format="lua"/>
  </editorsettings>
  <grid orientation="orthogonal" width="1" height="1"/>
- <tile id="1">
-  <image source="../../../assets/sprites/tilesets/objects/flowersfs.png" width="166" height="76"/>
- </tile>
- <tile id="2">
-  <image source="../../../assets/sprites/tilesets/objects/flowerregister.png" width="244" height="114"/>
- </tile>
- <tile id="3">
-  <image source="../../../assets/sprites/tilesets/objects/flowerblue.png" width="46" height="62"/>
- </tile>
- <tile id="4">
-  <image source="../../../assets/sprites/tilesets/objects/flowercyan.png" width="46" height="62"/>
- </tile>
- <tile id="5">
-  <image source="../../../assets/sprites/tilesets/objects/flowergolden.png" width="46" height="62"/>
- </tile>
- <tile id="6">
-  <image source="../../../assets/sprites/tilesets/objects/flowerorange.png" width="46" height="62"/>
- </tile>
- <tile id="7">
-  <image source="../../../assets/sprites/tilesets/objects/flowerpurple.png" width="46" height="62"/>
- </tile>
- <tile id="8">
-  <image source="../../../assets/sprites/tilesets/objects/floweryellow.png" width="46" height="62"/>
- </tile>
- <tile id="9">
-  <image source="../../../assets/sprites/tilesets/objects/flowergreen.png" width="46" height="62"/>
- </tile>
- <tile id="10">
-  <image source="../../../assets/sprites/tilesets/objects/policesound.png" width="56" height="32"/>
- </tile>
- <tile id="11">
-  <image source="../../../assets/sprites/tilesets/objects/policetable.png" width="170" height="118"/>
- </tile>
- <tile id="12">
-  <image source="../../../assets/sprites/tilesets/objects/cell_closed.png" width="166" height="138"/>
- </tile>
- <tile id="13">
-  <image source="../../../assets/sprites/tilesets/objects/cell_open.png" width="166" height="168"/>
- </tile>
  <tile id="14">
   <image source="../../../assets/sprites/tilesets/objects/computer_table.png" width="110" height="192"/>
  </tile>
@@ -98,7 +59,7 @@
   <image source="../../../assets/sprites/world/maps/hometown/apartmentwindow.png" width="280" height="372"/>
  </tile>
  <tile id="42">
-  <image source="../../../assets/sprites/world/maps/hometown/beachtable.png" width="134" height="90"/>
+  <image source="../../../assets/sprites/world/maps/hometown/beachtable.png" width="67" height="45"/>
  </tile>
  <tile id="43">
   <image source="../../../assets/sprites/world/maps/hometown/bench.png" width="78" height="50"/>
@@ -108,9 +69,6 @@
  </tile>
  <tile id="45">
   <image source="../../../assets/sprites/world/maps/hometown/cathouse.png" width="472" height="218"/>
- </tile>
- <tile id="46">
-  <image source="../../../assets/sprites/world/maps/hometown/church.png" width="312" height="656"/>
  </tile>
  <tile id="66">
   <image source="../../../assets/sprites/world/maps/hometown/church_night.png" width="156" height="328"/>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="21" nextobjectid="26">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="21" nextobjectid="29">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -129,31 +129,34 @@
  <objectgroup color="#ff00ff" id="9" name="objects">
   <object id="9" name="interactable" x="614" y="132" width="54" height="40">
    <properties>
+    <property name="solid" type="bool" value="true"/>
     <property name="text" value="* (It's a gravestone. It's kind of hard to read in the dark.)"/>
    </properties>
   </object>
-  <object id="10" name="interactable" x="488" y="132" width="62" height="40">
+  <object id="10" name="interactable" x="488" y="150" width="62" height="22">
    <properties>
-    <property name="text" value="* (It's a gravestone. It's kind of hard to read in the dark.)"/>
+    <property name="solid" type="bool" value="true"/>
+    <property name="text" value="* (What was once a gravestone,[wait:5] now reduced to a graveslab.)"/>
    </properties>
   </object>
   <object id="11" name="interactable" x="322" y="132" width="66" height="40">
    <properties>
+    <property name="solid" type="bool" value="true"/>
     <property name="text" value="* (It's a gravestone. It's kind of hard to read in the dark.)"/>
    </properties>
   </object>
   <object id="12" name="interactable" x="200" y="132" width="72" height="40">
    <properties>
+    <property name="solid" type="bool" value="true"/>
     <property name="text" value="* (It's a gravestone. It's kind of hard to read in the dark.)"/>
    </properties>
   </object>
   <object id="15" name="interactable" x="52" y="120" width="78" height="42">
    <properties>
     <property name="solid" type="bool" value="true"/>
-    <property name="text1" value="* (Gerson Boom Memorial Bench)"/>
-    <property name="text2" value="* &quot;Throughout my career, some of my best ideas came from dreams.&quot;"/>
-    <property name="text3" value="* &quot;Take a rest here.[wait:5] If anyone asks -- you're writing!&quot;"/>
-    <property name="text4" value="* (You decided not to sit.)"/>
+    <property name="text1" value="* (Ger_n Bo__ ___or__l Be__h)"/>
+    <property name="text2" value="* &quot;Thro____ut my ___eer, some of&quot;..."/>
+    <property name="text3" value="* (You decide to stop.)"/>
    </properties>
   </object>
   <object id="18" name="transition" x="1200" y="240" width="40" height="200">
@@ -164,6 +167,27 @@
    </properties>
   </object>
   <object id="19" gid="330" x="52" y="162" width="78" height="50"/>
+  <object id="26" name="script" x="800" y="240" width="40" height="200">
+   <properties>
+    <property name="cutscene" value="hometown.berdly_graveyard"/>
+   </properties>
+  </object>
+  <object id="27" name="npc" x="520" y="320">
+   <properties>
+    <property name="actor" value="fmarcy"/>
+    <property name="facing" value="left"/>
+    <property name="flagcheck" value="!future_berdly_graveyard"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="28" name="npc" x="360" y="320">
+   <properties>
+    <property name="actor" value="fberdly"/>
+    <property name="facing" value="right"/>
+    <property name="flagcheck" value="!future_berdly_graveyard"/>
+   </properties>
+   <point/>
+  </object>
  </objectgroup>
  <objectgroup color="#ff00ff" id="10" name="markers">
   <object id="16" name="spawn" x="1160" y="320">

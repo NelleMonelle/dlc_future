@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 27,
-  nextobjectid = 69,
+  nextobjectid = 75,
   properties = {
     ["border"] = "leaves",
     ["music"] = "future_world"
@@ -327,22 +327,6 @@ return {
           visible = true,
           opacity = 1,
           offsetx = 960,
-          offsety = 0,
-          parallaxx = 1,
-          parallaxy = 1,
-          repeatx = false,
-          repeaty = false,
-          properties = {}
-        },
-        {
-          type = "imagelayer",
-          image = "../../../../../assets/sprites/world/maps/hometown/church.png",
-          id = 21,
-          name = "church",
-          class = "",
-          visible = true,
-          opacity = 1,
-          offsetx = 440,
           offsety = 0,
           parallaxx = 1,
           parallaxy = 1,
@@ -822,7 +806,7 @@ return {
         },
         {
           id = 43,
-          name = "transition",
+          name = "script",
           type = "",
           shape = "rectangle",
           x = 560,
@@ -832,11 +816,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["exit_sound"] = "doorclose",
-            ["facing"] = "up",
-            ["map"] = "hometown/church/entrance",
-            ["marker"] = "south",
-            ["sound"] = "dooropen"
+            ["cutscene"] = "hometown.not_yet_church"
           }
         },
         {
@@ -865,6 +845,40 @@ return {
           visible = true,
           properties = {
             ["text"] = "* The fall from here would surely kill you..."
+          }
+        },
+        {
+          id = 69,
+          name = "npc",
+          type = "",
+          shape = "point",
+          x = 880,
+          y = 640,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["actor"] = "fnoelle",
+            ["facing"] = "right",
+            ["flagcheck"] = "!future_hometown_intro"
+          }
+        },
+        {
+          id = 74,
+          name = "script",
+          type = "",
+          shape = "rectangle",
+          x = 720,
+          y = 640,
+          width = 400,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["cutscene"] = "hometown.not_yet",
+            ["flagcheck"] = "!future_hometown_graveyard_cutscene",
+            ["once"] = false
           }
         }
       }
@@ -954,7 +968,7 @@ return {
           type = "",
           shape = "point",
           x = 880,
-          y = 1240,
+          y = 1280,
           width = 0,
           height = 0,
           rotation = 0,
@@ -968,6 +982,19 @@ return {
           shape = "point",
           x = 880,
           y = 960,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 70,
+          name = "camera_drag",
+          type = "",
+          shape = "point",
+          x = 880,
+          y = 880,
           width = 0,
           height = 0,
           rotation = 0,
@@ -1093,22 +1120,6 @@ return {
       parallaxy = 1,
       properties = {},
       layers = {
-        {
-          type = "imagelayer",
-          image = "../../../../../assets/sprites/world/maps/hometown/churchup.png",
-          id = 18,
-          name = "churchup",
-          class = "",
-          visible = true,
-          opacity = 1,
-          offsetx = 440,
-          offsety = 0,
-          parallaxx = 1,
-          parallaxy = 1,
-          repeatx = false,
-          repeaty = false,
-          properties = {}
-        },
         {
           type = "imagelayer",
           image = "../../../../../assets/sprites/world/maps/hometown/townhallup.png",

@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 14,
-  nextobjectid = 62,
+  nextobjectid = 63,
   properties = {
     ["music"] = "future_world",
     ["playerstate"] = "CLIMB"
@@ -1188,6 +1188,21 @@ return {
           properties = {
             ["once"] = true,
             ["script"] = "hub_tower_talk.talk_9"
+          }
+        },
+        {
+          id = 62,
+          name = "script",
+          type = "",
+          shape = "rectangle",
+          x = 160,
+          y = 0,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["cutscene"] = "hub.escape"
           }
         }
       }

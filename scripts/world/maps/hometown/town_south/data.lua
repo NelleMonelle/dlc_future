@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 23,
-  nextobjectid = 55,
+  nextobjectid = 56,
   properties = {
     ["border"] = "leaves",
     ["music"] = "future_world"
@@ -463,9 +463,9 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 546,
+          x = 460,
           y = 0,
-          width = 216,
+          width = 302,
           height = 216,
           rotation = 0,
           visible = true,
@@ -659,26 +659,6 @@ return {
           }
         },
         {
-          id = 30,
-          name = "transition",
-          type = "",
-          shape = "rectangle",
-          x = 486,
-          y = 170,
-          width = 60,
-          height = 40,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["exit_delay"] = 0.3,
-            ["exit_sound"] = "doorclose",
-            ["facing"] = "up",
-            ["map"] = "light/hometown/interior/police_station",
-            ["marker"] = "spawn",
-            ["sound"] = "dooropen"
-          }
-        },
-        {
           id = 31,
           name = "transition",
           type = "",
@@ -747,6 +727,21 @@ return {
             ["text1"] = "* (There's more police tape.)",
             ["text2"] = "* (It says \"NGAHHHH!!![wait:5] I MEAN IT!!!\")",
             ["text3"] = "* (It's not clear what is meant by that.)"
+          }
+        },
+        {
+          id = 55,
+          name = "interactable",
+          type = "",
+          shape = "rectangle",
+          x = 474,
+          y = 96,
+          width = 80,
+          height = 120,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["text"] = "* (Seems like the police station is closed.)"
           }
         }
       }

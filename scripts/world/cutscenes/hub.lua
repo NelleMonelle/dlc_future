@@ -407,5 +407,155 @@ local hub = {
         cutscene:hideNametag()
 		Game:setFlag("future_marcy_in_halls", true)
     end,
+	
+	escape = function(cutscene, event)
+		cutscene:fadeOut(0.5)
+		cutscene:wait(0.5)
+		cutscene:loadMap("hometown/town_church", "player_spawn_tower")
+		cutscene:panTo("camera_to_tower", 0)
+		cutscene:fadeIn(0.5)
+		cutscene:wait(0.5)
+		
+		local jamm = cutscene:getCharacter("jamm")
+		local susie = cutscene:getCharacter("susie")
+        local variant = cutscene:getCharacter(Game:getFlag("future_variable"))
+		
+		jamm.actor.default = "walk_serious"
+		cutscene:resetSprite(jamm)
+		
+		cutscene:showNametag("Jamm")
+		cutscene:text("* Here,[wait:5] I'll go first.[wait:10]\n* I'll make sure it's safe.", nil, "jamm")	-- Take one for the team
+		cutscene:showNametag("Susie")
+		cutscene:text("* ...Uh,[wait:5] got it.", nil, "susie")		-- Confused, but okay
+        cutscene:hideNametag()
+		
+		cutscene:detachFollowers()
+		Assets.playSound("jump")
+		jamm:setAnimation({"ball", 1/10, true})
+		cutscene:wait(cutscene:jumpTo(jamm, 880, 920, 20, 0.8))
+		jamm:setSprite("landed_2")
+		Assets.playSound("dtrans_flip")
+		jamm:shake(6)
+		cutscene:wait(1)
+		cutscene:setAnimation(jamm, {"landed", 1/10, false})
+		cutscene:wait(0.5)
+		cutscene:resetSprite(jamm)
+		cutscene:look(jamm, "right")
+		cutscene:wait(0.5)
+		cutscene:look(jamm, "left")
+		cutscene:wait(0.5)
+		cutscene:look(jamm, "up")
+		cutscene:wait(1)
+		
+		if Game:getFlag("future_variable") == "ceroba_dw" then
+			cutscene:showNametag("Ceroba")
+			cutscene:text("* Is it safe up there?", nil, "ceroba")
+		end
+		cutscene:showNametag("Susie")
+		cutscene:text("* The hell is even up there?", nil, "susie")
+		cutscene:showNametag("Jamm")
+		if Game:getFlag("jamm_been_to_hometown") then
+			cutscene:text("* You guys might doubt me for a second,[wait:5] but I think we're in Hometown...", "look_left", "jamm")
+			cutscene:showNametag("Susie")
+			cutscene:text("* Wait,[wait:5] really?", nil, "susie")
+		else
+			cutscene:text("* I see a church,[wait:5] a town hall,[wait:5] and the entrance to a graveyard...", "look_left", "jamm")
+			cutscene:showNametag("Susie")
+			cutscene:text("* Wait,[wait:5] does that mean...", nil, "susie")
+		end
+        cutscene:hideNametag()
+		
+		Assets.playSound("jump")
+		susie:setAnimation({"ball", 1/10, true})
+		cutscene:wait(cutscene:jumpTo(susie, 840, 960, 20, 0.8))
+		susie:setSprite("landed_2")
+		Assets.playSound("dtrans_flip")
+		susie:shake(6)
+		cutscene:wait(1)
+		cutscene:setAnimation(susie, {"landed", 1/10, false})
+		cutscene:wait(0.5)
+		cutscene:resetSprite(susie)
+		cutscene:look(susie, "up")
+		
+		cutscene:showNametag("Susie")
+		cutscene:text("* At least we're somewhere I recognize.", "smile", "susie")
+		
+		if not Game:getFlag("jamm_been_to_hometown") then
+			cutscene:look(jamm, "down")
+			cutscene:showNametag("Jamm")
+			cutscene:text("* You know this town?", "nervous", "jamm")
+			cutscene:showNametag("Susie")
+			cutscene:text("* Well,[wait:5] yeah.[wait:10]\n* This is where I live.", "smile", "susie")
+			cutscene:look(susie, "down")
+			cutscene:text("* Look,[wait:5] just over there is the shelter.", "smirk", "susie")
+			cutscene:text("* It's where,[wait:5] uh...", "smirk", "susie")
+			cutscene:look(susie, "up")
+			cutscene:text("* ...Yeah,[wait:5] let's not talk about that...", "nervous_side", "susie")
+		end
+        cutscene:hideNametag()
+		cutscene:look(jamm, "down")
+		
+		Assets.playSound("jump")
+		variant:setAnimation({"ball", 1/10, true})
+		cutscene:wait(cutscene:jumpTo(variant, 920, 960, 20, 0.8))
+		variant:setSprite("landed_2")
+		Assets.playSound("dtrans_flip")
+		variant:shake(6)
+		cutscene:wait(1)
+		cutscene:setAnimation(variant, {"landed", 1/10, false})
+		cutscene:wait(0.5)
+		cutscene:resetSprite(variant)
+		cutscene:look(variant, "up")
+		
+		if Game:getFlag("future_variable") == "ceroba_dw" then
+			cutscene:showNametag("Ceroba")
+			cutscene:text("* I thought this place would be more damaged.", nil, "ceroba")
+		end
+		
+		cutscene:showNametag("Susie")
+		cutscene:text("* Yeah,[wait:5] now that you mention it...", "nervous_side", "susie")
+		
+		cutscene:look(jamm, "up")
+		
+		local fnoelle = cutscene:getCharacter("fnoelle")
+		
+        cutscene:showNametag("Noelle")
+		cutscene:text("* It's because Hometown is our base.", "neutral", "noelle")
+        cutscene:hideNametag()
+		
+		cutscene:panTo("camera_drag", 1)
+		cutscene:wait(cutscene:walkTo(fnoelle, 880, 800, 1))
+		
+		cutscene:showNametag("Noelle")
+		cutscene:text("* It's our duty to make sure Hometown stays safe.", "neutral", "noelle")
+		cutscene:text("* We house people who can't fight, as well as those who won't...", "neutral", "noelle")
+		cutscene:text("* Life goes on,[wait:5] and we can't let it stop.", "neutral", "noelle")
+		
+		cutscene:showNametag("Jamm")
+		cutscene:text("* Can't say I haven't been there,[wait:5] Noelle...", "shaded_neutral", "jamm")
+		
+		cutscene:showNametag("Noelle")
+		cutscene:text("* Marcy wants to see you in the deeper graveyard.", "neutral", "noelle")
+		cutscene:text("* I'll see you there,[wait:5] too.", "neutral", "noelle")
+        cutscene:hideNametag()
+		
+		cutscene:wait(cutscene:walkToSpeed(fnoelle, 500, 800, 6))
+		
+		fnoelle:remove()
+		
+		Game:setFlag("future_hometown_intro", true)
+		
+		cutscene:attachCamera(1)
+		
+		cutscene:interpolateFollowers()
+		cutscene:attachFollowers(8)
+		cutscene:wait(1)
+		
+		-- setup for next scene
+		
+		if Game:getFlag("POST_SNOWGRAVE") then
+			Game:setFlag("future_berdly_graveyard", true)
+		end
+    end,
 }
 return hub

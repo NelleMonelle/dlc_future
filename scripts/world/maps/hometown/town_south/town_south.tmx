@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="66" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="23" nextobjectid="55">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="66" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="23" nextobjectid="56">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -139,7 +139,7 @@
   <object id="22" x="160" y="200">
    <polygon points="0,0 -80,240 -160,240 -160,0"/>
   </object>
-  <object id="28" x="546" y="0" width="216" height="216"/>
+  <object id="28" x="460" y="0" width="302" height="216"/>
  </objectgroup>
  <objectgroup id="21" name="objects_deco">
   <object id="43" gid="342" x="460" y="242" width="302" height="242"/>
@@ -181,16 +181,6 @@
     <property name="sound" value="dooropen"/>
    </properties>
   </object>
-  <object id="30" name="transition" x="486" y="170" width="60" height="40">
-   <properties>
-    <property name="exit_delay" type="float" value="0.3"/>
-    <property name="exit_sound" value="doorclose"/>
-    <property name="facing" value="up"/>
-    <property name="map" value="light/hometown/interior/police_station"/>
-    <property name="marker" value="spawn"/>
-    <property name="sound" value="dooropen"/>
-   </properties>
-  </object>
   <object id="31" name="transition" x="2008" y="174" width="60" height="40">
    <properties>
     <property name="exit_delay" type="float" value="0.3"/>
@@ -220,6 +210,11 @@
     <property name="text1" value="* (There's more police tape.)"/>
     <property name="text2" value="* (It says &quot;NGAHHHH!!![wait:5] I MEAN IT!!!&quot;)"/>
     <property name="text3" value="* (It's not clear what is meant by that.)"/>
+   </properties>
+  </object>
+  <object id="55" name="interactable" x="474" y="96" width="80" height="120">
+   <properties>
+    <property name="text" value="* (Seems like the police station is closed.)"/>
    </properties>
   </object>
  </objectgroup>

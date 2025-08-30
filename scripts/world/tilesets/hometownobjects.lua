@@ -23,86 +23,8 @@ return {
   },
   properties = {},
   wangsets = {},
-  tilecount = 79,
+  tilecount = 65,
   tiles = {
-    {
-      id = 1,
-      image = "../../../assets/sprites/tilesets/objects/flowersfs.png",
-      width = 166,
-      height = 76
-    },
-    {
-      id = 2,
-      image = "../../../assets/sprites/tilesets/objects/flowerregister.png",
-      width = 244,
-      height = 114
-    },
-    {
-      id = 3,
-      image = "../../../assets/sprites/tilesets/objects/flowerblue.png",
-      width = 46,
-      height = 62
-    },
-    {
-      id = 4,
-      image = "../../../assets/sprites/tilesets/objects/flowercyan.png",
-      width = 46,
-      height = 62
-    },
-    {
-      id = 5,
-      image = "../../../assets/sprites/tilesets/objects/flowergolden.png",
-      width = 46,
-      height = 62
-    },
-    {
-      id = 6,
-      image = "../../../assets/sprites/tilesets/objects/flowerorange.png",
-      width = 46,
-      height = 62
-    },
-    {
-      id = 7,
-      image = "../../../assets/sprites/tilesets/objects/flowerpurple.png",
-      width = 46,
-      height = 62
-    },
-    {
-      id = 8,
-      image = "../../../assets/sprites/tilesets/objects/floweryellow.png",
-      width = 46,
-      height = 62
-    },
-    {
-      id = 9,
-      image = "../../../assets/sprites/tilesets/objects/flowergreen.png",
-      width = 46,
-      height = 62
-    },
-    {
-      id = 10,
-      image = "../../../assets/sprites/tilesets/objects/policesound.png",
-      width = 56,
-      height = 32
-    },
-    {
-      id = 11,
-      image = "../../../assets/sprites/tilesets/objects/policetable.png",
-      width = 170,
-      height = 118
-    },
-    {
-      id = 12,
-      image = "../../../assets/sprites/tilesets/objects/cell_closed.png",
-      width = 166,
-      height = 138
-    },
-    {
-      id = 13,
-      image = "../../../assets/sprites/tilesets/objects/cell_open.png",
-      width = 166,
-      height = 168
-    },
     {
       id = 14,
       image = "../../../assets/sprites/tilesets/objects/computer_table.png",
@@ -214,8 +136,8 @@ return {
     {
       id = 42,
       image = "../../../assets/sprites/world/maps/hometown/beachtable.png",
-      width = 134,
-      height = 90
+      width = 67,
+      height = 45
     },
     {
       id = 43,
@@ -234,12 +156,6 @@ return {
       image = "../../../assets/sprites/world/maps/hometown/cathouse.png",
       width = 472,
       height = 218
-    },
-    {
-      id = 46,
-      image = "../../../assets/sprites/world/maps/hometown/church.png",
-      width = 312,
-      height = 656
     },
     {
       id = 66,
