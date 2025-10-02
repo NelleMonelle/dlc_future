@@ -89,7 +89,7 @@ function Marcy:beforeStateChange(old, new)
 			cutscene:battlerText(susie, "[shake:2]And just...", {x=susie.x + 40, y=susie.y - 50, right=true})
 			cutscene:battlerText(susie, "[shake:2]JUST DI--", {x=susie.x + 40, y=susie.y - 50, right=true, auto=true})
 			
-			Game.world.player:setSprite("battle/idle_serious_2")
+			Game.world.player:setSprite("battle_serious/idle_2")
 			Game.world:getEvent(14):resetSprite()
 			Assets.playSound("noise")
 			Game.world:getEvent(14).x = Game.world.player.x - 80

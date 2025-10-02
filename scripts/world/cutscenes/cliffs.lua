@@ -1015,9 +1015,9 @@ return {
 		local lore_board = Registry.createEvent("lore_board", {x = 1160, y = 240, properties = {}})
 		Game.world:spawnObject(lore_board)
 		
-		jamm.x = 1240
+		jamm.x = 1300
 		jamm.y = 240
-		variant.x = 1080
+		variant.x = 1020
 		variant.y = 240
 		susie.x = 1160
 		susie.y = 280
