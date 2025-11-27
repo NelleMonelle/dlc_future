@@ -1,7 +1,7 @@
 local Spikes, super = Class(Event, "spikes")
 
 function Spikes:init(data)
-    super:init(self, data.x, data.y, data.properties)
+    super.init(self, data.x, data.y, data.properties)
 	
 	self.sprite_up = data.properties["sprite"] or "world/events/spikes_up"
 	self.sprite_down = data.properties["spritedown"] or "world/events/spikes_down"
@@ -50,7 +50,7 @@ function Spikes:update()
 	if self.solid and self:collidesWith(self.world.player) and self.spikedeath then
 		Game:gameOver(self.world.player.x, self.world.player.y)
 	end
-	super:update(self)
+	super.update(self)
 end
 
 function Spikes:getDebugInfo()
