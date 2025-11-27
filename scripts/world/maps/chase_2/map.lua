@@ -28,8 +28,8 @@ function DeadMap:onEnter()
 			
 			local x1 = marker1.center_x
 			local x2 = marker2.center_x
-			local y1 = Utils.random(marker1.y, marker1.y+marker1.height)
-			local y2 = Utils.random(marker2.y, marker2.y+marker2.height)
+			local y1 = MathUtils.random(marker1.y, marker1.y+marker1.height)
+			local y2 = MathUtils.random(marker2.y, marker2.y+marker2.height)
 			
 			particles = {}
 			Assets.playSound("icespell")
@@ -68,8 +68,8 @@ function DeadMap:onEnter()
 				end)
 			end)
 			
-            -- self.world:spawnBullet("testbullet", marker1.center_x, Utils.random(marker1.y, marker1.y+marker1.height), false)
-            -- self.world:spawnBullet("testbullet", marker2.center_x, Utils.random(marker2.y, marker2.y+marker2.height), true)
+            -- self.world:spawnBullet("testbullet", marker1.center_x, MathUtils.random(marker1.y, marker1.y+marker1.height), false)
+            -- self.world:spawnBullet("testbullet", marker2.center_x, MathUtils.random(marker2.y, marker2.y+marker2.height), true)
         end
     end)
 end

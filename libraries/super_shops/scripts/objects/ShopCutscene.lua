@@ -67,8 +67,8 @@ function ShopCutscene:update()
         if sk.x == target[1] and sk.y == target[2] then
             table.insert(done_moving, sk)
         end
-        local tx = Utils.approach(sk.x, target[1], target[3] * DTMULT)
-        local ty = Utils.approach(sk.y, target[2], target[3] * DTMULT)
+        local tx = MathUtils.approach(sk.x, target[1], target[3] * DTMULT)
+        local ty = MathUtils.approach(sk.y, target[2], target[3] * DTMULT)
         sk:setPosition(tx, ty)
     end
     for _,v in ipairs(done_moving) do

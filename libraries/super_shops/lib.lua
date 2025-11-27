@@ -1,7 +1,7 @@
 local Lib = {}
 
 function Lib:init()
-	Utils.hook(Item, "getDiscountPrice", function(orig, self, id)
+	HookSystem.hook(Item, "getDiscountPrice", function(orig, self, id)
 		return false
 	end)
     
@@ -11,7 +11,7 @@ function Lib:init()
 		if LightShop then
 			print("[Super Shops] LightShop detected. Modifying...")
 			
-			Utils.hook(LightShop, "init", function(orig, self)
+			HookSystem.hook(LightShop, "init", function(orig, self)
 				orig(self)
 	
 				self.cutscene = nil
@@ -30,11 +30,11 @@ function Lib:init()
 				self.deny_text = {}
 			end)
 			
-			Utils.hook(LightShop, "getNote", function(orig, self)
+			HookSystem.hook(LightShop, "getNote", function(orig, self)
 				return self.note
 			end)
 			
-			Utils.hook(LightShop, "readNote", function(orig, self)
+			HookSystem.hook(LightShop, "readNote", function(orig, self)
 				local note = {}
 				for k, v in pairs(self:getNote()) do
 					note[k] = v
@@ -46,7 +46,7 @@ function Lib:init()
 				end)
 			end)
 			
-			Utils.hook(LightShop, "handleStealing", function(orig, self)
+			HookSystem.hook(LightShop, "handleStealing", function(orig, self)
 				if self:getFlag("stole_from") then
 					self:setDialogueText({self.steal_nothing})
 				else
@@ -60,7 +60,7 @@ function Lib:init()
 				end)
 			end)
 			
-			Utils.hook(LightShop, "onStateChange", function(orig, self, old, new)
+			HookSystem.hook(LightShop, "onStateChange", function(orig, self, old, new)
 				orig(self, old, new)
 				if new == "READNOTE" then
 					self.dialogue_text.width = 598
@@ -76,7 +76,7 @@ function Lib:init()
 				end
 			end)
 			
-			Utils.hook(LightShop, "denyDialogue", function(orig, self, reason)
+			HookSystem.hook(LightShop, "denyDialogue", function(orig, self, reason)
 				self:setState("DIALOGUE")
 				if type(self.deny_text[reason]) == "function" then
 					self.deny_text[reason]()
@@ -93,7 +93,7 @@ function Lib:init()
 				end)
 			end)
 			
-			Utils.hook(LightShop, "setState", function(orig, self, state, reason)
+			HookSystem.hook(LightShop, "setState", function(orig, self, state, reason)
 				if self.deny_text[state] and self:doesDeny(state) then
 					self:denyDialogue(state)
 					return
@@ -102,11 +102,11 @@ function Lib:init()
 				orig(self, state, reason)
 			end)
 			
-			Utils.hook(LightShop, "doesDeny", function(orig, self, state)
+			HookSystem.hook(LightShop, "doesDeny", function(orig, self, state)
 				return true
 			end)
 			
-			Utils.hook(LightShop, "startCutscene", function(orig, self, group, id, ...)
+			HookSystem.hook(LightShop, "startCutscene", function(orig, self, group, id, ...)
 				if self.cutscene and not self.cutscene.ended then
 					local cutscene_name = ""
 					if type(group) == "string" then
@@ -126,11 +126,11 @@ function Lib:init()
 				return self.cutscene
 			end)
 			
-			Utils.hook(LightShop, "hasCutscene", function(orig, self)
+			HookSystem.hook(LightShop, "hasCutscene", function(orig, self)
 				return self.cutscene and not self.cutscene.ended
 			end)
 			
-			Utils.hook(LightShop, "stopCutscene", function(orig, self)
+			HookSystem.hook(LightShop, "stopCutscene", function(orig, self)
 				if not self.cutscene then
 					error("Attempt to stop a cutscene while none are active.")
 				end
@@ -139,7 +139,7 @@ function Lib:init()
 				self.cutscene = nil
 			end)
 			
-			Utils.hook(LightShop, "update", function(orig, self)
+			HookSystem.hook(LightShop, "update", function(orig, self)
 				orig(self)
 				
 				if self.cutscene then
@@ -154,7 +154,7 @@ function Lib:init()
 				end
 			end)
 			
-			Utils.hook(LightShop, "onStateChange", function(orig, self, old, new)
+			HookSystem.hook(LightShop, "onStateChange", function(orig, self, old, new)
 				orig(self, old, new)
 				
 				if new == "CUTSCENE" then
