@@ -28,6 +28,7 @@ function Darkness:draw()
         if light:isFullyVisible() then
             local x, y = light:getRelativePos(0,0, self)
             local color = TableUtils.copy(light.color)
+			color = {color[1], color[2], color[3]}
             local alpha = color[4] or light.alpha
             local radius = light:getRadius()
 
@@ -50,6 +51,7 @@ function Darkness:draw()
         if light:isFullyVisible() then
             local x, y = light:getRelativePos(0,0, self)
             local color = TableUtils.copy(light.color)
+			color = {color[1], color[2], color[3]}
             local alpha = color[4] or light.alpha
             local w, h = light:getSize()
 
