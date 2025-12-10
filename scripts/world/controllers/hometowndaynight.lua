@@ -14,7 +14,7 @@ function HometownDayNight:postLoad()
     self.inside = self.world.map.data.properties["inside"]
     if (not self.inside) then
 		self.overlay = HometownNightOverlay(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
-		self.overlay.color = Utils.hexToRgb("#00042B")
+		self.overlay.color = ColorUtils.hexToRGB("#00042B")
 		self.overlay.alpha = 0.5
 		self.overlay:setLayer(WORLD_LAYERS["below_ui"])
 		self.overlay:setParallax(0)
@@ -28,7 +28,7 @@ function HometownDayNight:postLoad()
 		Game.world:addChild(self.callback)
 		---@type love.Shader
 		if Game.world.map.image_layers["overlay"] then
-			Game.world.map.image_layers["overlay"].color = Utils.mergeColor(COLORS["black"], COLORS["navy"], 0.5)
+			Game.world.map.image_layers["overlay"].color = ColorUtils.mergeColor(COLORS["black"], COLORS["navy"], 0.5)
 			self.callback:setParent(Game.world.map.image_layers["overlay"])
 			Game.world:addChild(Game.world.map.image_layers["overlay"])
 		end

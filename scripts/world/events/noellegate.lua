@@ -28,17 +28,17 @@ function NoelleGate:onLoad()
 end
 
 function NoelleGate:spawnLeaf()
-	local leaf_x_pos = self.x + 80 + Utils.random(24)
+	local leaf_x_pos = self.x + 80 + MathUtils.random(24)
 	local leaf = Sprite("world/events/noellegate/leaf")
 	leaf:setOrigin(0, 0)
 	leaf:setScale(2, 2)
 	leaf.layer = self.layer + 0.01
-	leaf.x = leaf_x_pos + 60 + Utils.random(20)
+	leaf.x = leaf_x_pos + 60 + MathUtils.random(20)
 	leaf.y = self.y + 60
 	leaf.timer = 0
 	leaf.con = 0
 	leaf.alpha = 0
-	self.world.timer:tween(40/30, leaf, {x = leaf_x_pos + 70 + Utils.random(20), y = self.y + 120}, "out-sine")
+	self.world.timer:tween(40/30, leaf, {x = leaf_x_pos + 70 + MathUtils.random(20), y = self.y + 120}, "out-sine")
 	self.world.timer:tween(5/30, leaf, {alpha = 1}, "out-sine")
 	table.insert(self.leaves, leaf)
 	leaf:play(1/15, true)
@@ -124,7 +124,7 @@ function NoelleGate:update()
 		end
 		if leaf.timer >= 50 then
 			leaf:remove()
-			Utils.removeFromTable(self.leaves, leaf)
+			TableUtils.removeValue(self.leaves, leaf)
 		end
 	end
 end

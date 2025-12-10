@@ -6,7 +6,7 @@ function WorldCutscene:walk(chara, x, y, time, facing, keep_facing, ease, after)
     end
     local walked = false
     if chara:walkTo(chara.x + x, chara.y + y, time, facing, keep_facing, ease, after) then
-        chara.physics.move_target.after = Utils.override(chara.physics.move_target.after, function(orig) orig() walked = true end)
+        chara.physics.move_target.after = HookSystem.override(chara.physics.move_target.after, function(orig) orig() walked = true end)
         table.insert(self.moving_objects, chara)
         return function() return walked end
     else
@@ -20,7 +20,7 @@ function WorldCutscene:walkSpeed(chara, x, y, speed, facing, keep_facing, after)
     end
     local walked = false
     if chara:walkToSpeed(chara.x + x, chara.y + y, speed, facing, keep_facing, after) then
-        chara.physics.move_target.after = Utils.override(chara.physics.move_target.after, function(orig) orig() walked = true end)
+        chara.physics.move_target.after = HookSystem.override(chara.physics.move_target.after, function(orig) orig() walked = true end)
         table.insert(self.moving_objects, chara)
         return function() return walked end
     else

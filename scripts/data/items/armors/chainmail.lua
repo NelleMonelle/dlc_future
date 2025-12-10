@@ -3,12 +3,12 @@ local item, super = Class("chainmail", true)
 function item:init()
     super.init(self)
 	
-	--self.can_equip = Utils.merge(self.can_equip, {
+	--self.can_equip = TableUtils.merge(self.can_equip, {
         --fmarcy = false
     --})
 
     -- Character reactions
-    self.reactions = Utils.merge(self.reactions, {
+    self.reactions = TableUtils.merge(self.reactions, {
 		fmarcy = "Not a good idea to respond.",
     fbrenda = ""
     })

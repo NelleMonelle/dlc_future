@@ -58,7 +58,7 @@ function BeachWater:update()
             local splash = Sprite("effects/rain_splash")
             splash:setOrigin(0.5, 0.5)
             splash:setScale(2, 2)
-            splash:setPosition(self.x + Utils.random(384) + 20, self.y + Utils.random(440) + 20)
+            splash:setPosition(self.x + MathUtils.random(384) + 20, self.y + MathUtils.random(440) + 20)
 			splash.layer = self.layer + 0.01
             splash:play(1/15, false, function(s) s:remove() end)
             Game.world:addChild(splash)

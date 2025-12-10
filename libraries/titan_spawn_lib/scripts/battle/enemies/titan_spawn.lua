@@ -168,7 +168,7 @@ function TitanSpawn:getEncounterText()
 
     end
 
-    return Utils.pick(self.text)
+    return TableUtils.pick(self.text)
 end
 
 return TitanSpawn

@@ -330,10 +330,10 @@ function Shop:handleStealing()
 end
 
 function Shop:handleStock()
-	local mult = Utils.random(Utils.unpack(self.stock_range))
-	self:setFlag("stock_money", Utils.round(self:getFlag("stock_money", 0) * mult, 1))
+	local mult = MathUtils.random(TableUtils.unpack(self.stock_range))
+	self:setFlag("stock_money", MathUtils.round(self:getFlag("stock_money", 0) * mult, 1))
 	-- "stock_list", {nil, nil, nil, nil, nil}
-	mult = Utils.round(100 * mult, 1)
+	mult = MathUtils.round(100 * mult, 1)
 	mult = mult - 100
 	local list = self:getFlag("stock_list", {nil, nil, nil, nil, nil})
 	list[1] = list[2]
@@ -640,7 +640,7 @@ function Shop:onStateChange(old,new)
 		self.current_y = 1
 		self:setDialogueText("")
 		self:setRightText("Select a box!")
-		self.list = Utils.shuffle(self.list)
+		self.list = TableUtils.shuffle(self.list)
 		self.bonus_timer = 0
 	elseif old == "BONUSCONFIRM" or old == "BONUS" then
 		self.bonus_selected = false
@@ -927,7 +927,7 @@ function Shop:draw()
         else
             Draw.draw(self.heart_sprite, 30 + 420, 230 + 80 + 10 + (self.current_selecting_choice * 30))
             Draw.setColor(COLORS.white)
-            local lines = Utils.split(string.format(self.buy_confirmation_text, string.format(self.currency_text, self.items[self.current_selecting].options["price"] or 0)), "\n")
+            local lines = StringUtils.split(string.format(self.buy_confirmation_text, string.format(self.currency_text, self.items[self.current_selecting].options["price"] or 0)), "\n")
             for i = 1, #lines do
                 love.graphics.print(lines[i], 60 + 400, 420 - 160 + ((i - 1) * 30))
             end
@@ -1062,7 +1062,7 @@ function Shop:draw()
         else
             Draw.draw(self.heart_sprite, 30 + 420, 230 + 80 + 10 + (self.current_selecting_choice * 30))
             Draw.setColor(COLORS.white)
-            local lines = Utils.split(string.format(self.loyalty_confirmation_text, self.loyalty_items[self.current_selecting].options["price"] or 0), "\n")
+            local lines = StringUtils.split(string.format(self.loyalty_confirmation_text, self.loyalty_items[self.current_selecting].options["price"] or 0), "\n")
             for i = 1, #lines do
                 love.graphics.print(lines[i], 60 + 400, 420 - 160 + ((i - 1) * 30))
             end
@@ -1181,7 +1181,7 @@ function Shop:draw()
         if self.sell_confirming then
             Draw.draw(self.heart_sprite, 30 + 420, 230 + 80 + 10 + (self.current_selecting_choice * 30))
             Draw.setColor(COLORS.white)
-            local lines = Utils.split(string.format(self.sell_confirmation_text, string.format(self.currency_text, inventory[self.item_current_selecting]:getSellPrice())), "\n")
+            local lines = StringUtils.split(string.format(self.sell_confirmation_text, string.format(self.currency_text, inventory[self.item_current_selecting]:getSellPrice())), "\n")
             for i = 1, #lines do
                 love.graphics.print(lines[i], 60 + 400, 420 - 160 + ((i - 1) * 30))
             end

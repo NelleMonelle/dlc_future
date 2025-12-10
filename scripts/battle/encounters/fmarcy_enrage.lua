@@ -44,6 +44,10 @@ function Marcy:beforeStateChange(old, new)
 		Game.battle:startCutscene(function(cutscene)
 			local fmarcy = cutscene:getCharacter("fmarcy_first")
 				
+			cutscene:after(function()
+				Game.battle:setState("ACTIONS")
+			end)
+				
 			cutscene:battlerText(fmarcy, "I'm just doing my\njob.", {x=fmarcy.x - 40, y=fmarcy.y - 50})
 			cutscene:battlerText(fmarcy, "You outsiders don't\nget it.", {x=fmarcy.x - 40, y=fmarcy.y - 50})
 			cutscene:battlerText(fmarcy, "You never do.", {x=fmarcy.x - 40, y=fmarcy.y - 50})
@@ -54,6 +58,10 @@ function Marcy:beforeStateChange(old, new)
 	elseif new == "ACTIONS" and Game.battle.turn_count == 2 and self.cutscenes < 3 then
 		Game.battle:startCutscene(function(cutscene)
 			local fmarcy = cutscene:getCharacter("fmarcy_first")
+				
+			cutscene:after(function()
+				Game.battle:setState("ACTIONS")
+			end)
 				
 			cutscene:battlerText(fmarcy, "It's for the protection\nof my people.", {x=fmarcy.x - 40, y=fmarcy.y - 50})
 			cutscene:battlerText(fmarcy, "The survival of our\nworld.", {x=fmarcy.x - 40, y=fmarcy.y - 50})
@@ -66,6 +74,10 @@ function Marcy:beforeStateChange(old, new)
 			local fmarcy = cutscene:getCharacter("fmarcy_first")
 			local susie = cutscene:getCharacter("susie")
 				
+			cutscene:after(function()
+				Game.battle:setState("ACTIONS")
+			end)
+			
 			cutscene:battlerText(fmarcy, "We can't risk any\nmalintent in--", {x=fmarcy.x - 40, y=fmarcy.y - 50, auto=true})
 			cutscene:battlerText(susie, "[shake:2]SHUT UP!", {x=susie.x + 40, y=susie.y - 50, right=true})
 			
@@ -75,6 +87,11 @@ function Marcy:beforeStateChange(old, new)
 	elseif new == "ACTIONS" and Game.battle.turn_count == 4 and self.cutscenes < 5 then
 		Game.battle:startCutscene(function(cutscene)
 			local susie = cutscene:getCharacter("susie")
+				
+			cutscene:after(function()
+				Game.battle:setState("ACTIONS")
+			end)
+			
 			cutscene:battlerText(susie, "[shake:2]I don't care who\nthis is for.", {x=susie.x + 40, y=susie.y - 50, right=true})
 			cutscene:battlerText(susie, "[shake:2]I don't care what\nyour game is.", {x=susie.x + 40, y=susie.y - 50, right=true})
 			cutscene:battlerText(susie, "[shake:2]My friend is\nin critical\ncondition.", {x=susie.x + 40, y=susie.y - 50, right=true})
@@ -85,6 +102,11 @@ function Marcy:beforeStateChange(old, new)
 	elseif new == "ACTIONS" and Game.battle.turn_count == 5 then
 		Game.battle:startCutscene(function(cutscene)
 			local susie = cutscene:getCharacter("susie")
+				
+			cutscene:after(function()
+				Game.battle:setState("ACTIONS")
+			end)
+			
 			cutscene:battlerText(susie, "[shake:2]So stand still...", {x=susie.x + 40, y=susie.y - 50, right=true})
 			cutscene:battlerText(susie, "[shake:2]And just...", {x=susie.x + 40, y=susie.y - 50, right=true})
 			cutscene:battlerText(susie, "[shake:2]JUST DI--", {x=susie.x + 40, y=susie.y - 50, right=true, auto=true})

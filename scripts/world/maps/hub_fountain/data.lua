@@ -1,7 +1,7 @@
 return {
   version = "1.10",
   luaversion = "5.1",
-  tiledversion = "1.11.0",
+  tiledversion = "1.11.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,11 +10,18 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 7,
-  nextobjectid = 20,
+  nextobjectid = 31,
   properties = {
     ["music"] = "future_world"
   },
-  tilesets = {},
+  tilesets = {
+    {
+      name = "main_area",
+      firstgid = 1,
+      filename = "../../tilesets/main_area.tsx",
+      exportfilename = "../../tilesets/main_area.lua"
+    }
+  },
   layers = {
     {
       type = "tilelayer",
@@ -41,11 +48,11 @@ return {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        0, 0, 0, 0, 0, 1, 2, 2, 2, 2, 3, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 14, 15, 15, 15, 15, 16, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 14, 15, 15, 15, 15, 16, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 14, 15, 15, 15, 15, 16, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 14, 15, 15, 15, 15, 16, 0, 0, 0, 0, 0
       }
     },
     {
@@ -63,27 +70,14 @@ return {
       properties = {},
       objects = {
         {
-          id = 1,
-          name = "fountainfloor",
+          id = 26,
+          name = "greatdoor",
           type = "",
           shape = "rectangle",
-          x = 200,
-          y = 280,
-          width = 240,
-          height = 200,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 2,
-          name = "darkfountain",
-          type = "",
-          shape = "point",
-          x = 320,
-          y = 280,
-          width = 0,
-          height = 0,
+          x = 134,
+          y = -30,
+          width = 360,
+          height = 310,
           rotation = 0,
           visible = true,
           properties = {}
@@ -105,7 +99,7 @@ return {
       properties = {},
       objects = {
         {
-          id = 9,
+          id = 27,
           name = "",
           type = "",
           shape = "rectangle",
@@ -118,7 +112,7 @@ return {
           properties = {}
         },
         {
-          id = 10,
+          id = 28,
           name = "",
           type = "",
           shape = "rectangle",
@@ -131,7 +125,7 @@ return {
           properties = {}
         },
         {
-          id = 11,
+          id = 29,
           name = "",
           type = "",
           shape = "rectangle",
@@ -148,21 +142,6 @@ return {
     {
       type = "objectgroup",
       draworder = "topdown",
-      id = 5,
-      name = "controllers",
-      class = "",
-      visible = true,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      parallaxx = 1,
-      parallaxy = 1,
-      properties = {},
-      objects = {}
-    },
-    {
-      type = "objectgroup",
-      draworder = "topdown",
       id = 4,
       name = "objects",
       class = "",
@@ -175,7 +154,7 @@ return {
       properties = {},
       objects = {
         {
-          id = 8,
+          id = 22,
           name = "transition",
           type = "",
           shape = "rectangle",
@@ -191,23 +170,7 @@ return {
           }
         },
         {
-          id = 12,
-          name = "interactable",
-          type = "",
-          shape = "rectangle",
-          x = 280,
-          y = 240,
-          width = 80,
-          height = 40,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["cutscene"] = "fountain",
-            ["once"] = false
-          }
-        },
-        {
-          id = 19,
+          id = 30,
           name = "npc",
           type = "",
           shape = "point",
@@ -241,7 +204,7 @@ return {
       properties = {},
       objects = {
         {
-          id = 3,
+          id = 20,
           name = "spawn",
           type = "",
           shape = "point",
@@ -254,7 +217,7 @@ return {
           properties = {}
         },
         {
-          id = 7,
+          id = 21,
           name = "entry",
           type = "",
           shape = "point",

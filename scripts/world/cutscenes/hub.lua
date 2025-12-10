@@ -53,7 +53,7 @@ local hub = {
 		cutscene:wait(1)
 		
         cutscene:wait(cutscene:walkTo(susie, x, susie.y + 20, 0.5, "up", true))
-        cutscene:wait(cutscene:walkTo(susie, x, y + 20, 0.2))
+        cutscene:wait(cutscene:walkTo(susie, x, y + 40, 0.2))
         
         Assets.playSound("impact")
 		local layer = Game.world.map:getTileLayer("tile_hidden")
@@ -61,7 +61,7 @@ local hub = {
         susie:shake(4)
         susie:setSprite("shock_up")
         
-        cutscene:slideTo(susie, x, y + 40, 0.1)
+        cutscene:slideTo(susie, x, y + 60, 0.1)
         cutscene:wait(1.5)
     
         cutscene:showNametag("Susie")

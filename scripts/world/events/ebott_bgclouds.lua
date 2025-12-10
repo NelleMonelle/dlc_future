@@ -21,10 +21,10 @@ function EbottBGClouds:init(data)
 			elseif i % 8 == 7 then
 				sprite = self.star_3
 			end
-			local star = Sprite(sprite, x_offset, Utils.random(0, 240)/2)
+			local star = Sprite(sprite, x_offset, MathUtils.random(0, 240)/2)
 			star:setScale(2)
 			star:setOrigin(0.5)
-			star.siner = Utils.random(360)
+			star.siner = MathUtils.random(360)
 			star.y_start = star.y
 			star:setParallax(1, 0.9)
 			star.night_mode = 2
@@ -61,7 +61,7 @@ function EbottBGClouds:draw()
 	if self.stars then
 		for _, star in ipairs(self.stars) do
 			star.siner = star.siner + DTMULT
-			star.color = Utils.mergeColor(Game.world.map.bg_color, COLORS["white"], 0.6 + math.sin(star.siner/16) * 0.1)
+			star.color = ColorUtils.mergeColor(Game.world.map.bg_color, COLORS["white"], 0.6 + math.sin(star.siner/16) * 0.1)
 		end
 	end
     super.draw(self)

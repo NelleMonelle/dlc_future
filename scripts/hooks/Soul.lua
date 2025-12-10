@@ -31,7 +31,7 @@ function Soul:init(x, y, color)
 			b.max_health = 2
 			b.inv_timer = 0
 			b.collider = CircleCollider(b, b.width/2, b.height/2, 5)
-			Utils.hook(b, "draw", function(orig, b, ...)
+			HookSystem.hook(b, "draw", function(orig, b, ...)
 				orig(b, ...)
 				if DEBUG_RENDER then
 					Draw.setColor(0, 1, 0)
@@ -58,7 +58,7 @@ function Soul:update()
 		if bell.inv_timer > 0 then
 			bell.inv_timer = bell.inv_timer-DTMULT
 			print(math.floor(bell.inv_timer * 10), math.floor(bell.inv_timer * 10) % 2, bell.inv_timer)
-			if math.floor(bell.inv_timer * 10) % 2 == 0 or Utils.round(bell.inv_timer) == 8 or (math.floor(bell.inv_timer * 10) % 2 == 0 and bell.inv_timer >= 0) then
+			if math.floor(bell.inv_timer * 10) % 2 == 0 or MathUtils.round(bell.inv_timer) == 8 or (math.floor(bell.inv_timer * 10) % 2 == 0 and bell.inv_timer >= 0) then
 				bell.visible = false
 			else
 				bell.visible = true

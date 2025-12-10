@@ -11,7 +11,7 @@ function Mod:postInit(new_file)
 end
 
 function Mod:addGlobalEXP(exp)
-    Game:setFlag("library_experience", Utils.clamp(Game:getFlag("library_experience", 0) + exp, 0, 99999))
+    Game:setFlag("library_experience", MathUtils.clamp(Game:getFlag("library_experience", 0) + exp, 0, 99999))
 
     local max_love = #Kristal.getLibConfig("library_main", "global_xp_requirements")
     local leveled_up = false
@@ -34,7 +34,7 @@ function Mod:getGlobalNextLvRequiredEXP()
 end
 
 function Mod:getGlobalNextLv()
-    return Utils.clamp(Kristal.callEvent("getGlobalNextLvRequiredEXP") - Game:getFlag("library_experience"), 0, 99999)
+    return MathUtils.clamp(Kristal.callEvent("getGlobalNextLvRequiredEXP") - Game:getFlag("library_experience"), 0, 99999)
 end
 
 function Mod:getVariablePartyMember()	-- Assuming Jamm and Susie are the only other ones in the party

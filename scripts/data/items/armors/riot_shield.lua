@@ -3,12 +3,12 @@ local item, super = Class("riot_shield", true)
 function item:init()
     super.init(self)
 	
- 	self.can_equip = Utils.merge(self.can_equip, {
+ 	self.can_equip = TableUtils.merge(self.can_equip, {
         fbrenda = false
     })
 
     -- Character reactions
-    self.reactions = Utils.merge(self.reactions, {
+    self.reactions = TableUtils.merge(self.reactions, {
 		fmarcy = {
 			fmarcy = "...Don't say it, dad.",
 			jamm = "What? What was I going to say?"

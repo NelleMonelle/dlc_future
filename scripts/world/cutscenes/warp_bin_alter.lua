@@ -9,7 +9,7 @@ return function(cutscene)
 			cutscene:text("* I can only imagine something heavy did this.", "default", "ceroba")
 			cutscene:showNametag("Kanako")
 			cutscene:text("* Either that,[wait:5] or something really strong...", "default", "fkanako")
-			cutscene:text("* Those Roaring creatures are tough to take down sometimes...", "default", "fkanako")
+			cutscene:text("* Those Collapse Creatures are tough to take down sometimes...", "default", "fkanako")
 		end
 		
 		if not Game:getFlag("future_elevator_checked") then

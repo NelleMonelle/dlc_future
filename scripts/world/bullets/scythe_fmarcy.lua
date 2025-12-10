@@ -56,7 +56,7 @@ function ScytheBullet:onDamage(soul)
 			end
 		end
 		
-		local party = Utils.pick(possible_party_members)
+		local party = TableUtils.pick(possible_party_members)
 		
 		if party:checkArmor("resistance_band") then
 			local value = math.min(30, party.health-1)

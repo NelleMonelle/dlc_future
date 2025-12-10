@@ -3,12 +3,12 @@ local item, super = Class("program_socks", true)
 function item:init()
     super.init(self)
 	
-	  self.can_equip = Utils.merge(self.can_equip, {
+	  self.can_equip = TableUtils.merge(self.can_equip, {
         fbrenda = false
     })
 
     -- Character reactions
-    self.reactions = Utils.merge(self.reactions, {
+    self.reactions = TableUtils.merge(self.reactions, {
 		fmarcy = "...Are you implying something?",
     fbrenda = "Make me wear that and I'll kill you."
     })

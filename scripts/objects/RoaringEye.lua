@@ -20,7 +20,7 @@ function Part:update()
 	
 	if self.target then
 		local sx, sy = self:localToScreenPos(self.x, self.y)
-		local angle = Utils.angle(sx,sy, self.target.x,self.target.y)
+		local angle = MathUtils.angle(sx,sy, self.target.x,self.target.y)
 		self.sprite.x = math.cos(angle) * self.distance
 		self.sprite.y = math.sin(angle) * self.distance
 	end
