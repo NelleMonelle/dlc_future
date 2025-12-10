@@ -54,7 +54,7 @@ function Spikes:update()
 end
 
 function Spikes:getDebugInfo()
-	local info = super:getDebugInfo(self)
+	local info = super.getDebugInfo(self)
 	if self.flag then
 		table.insert(info, "Flag: "    .. self.flag)
 	end
