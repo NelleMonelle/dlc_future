@@ -1246,7 +1246,7 @@ return {
 		
 		if Game:getFlag("future_variable") == "ceroba_dw" then
 			cutscene:showNametag("Ceroba")
-			cutscene:text("* It's our only way forward.", "default", "ceroba")
+			cutscene:text("* I'm afraid it's our only way forward...", "dissapproving", "ceroba")
 		end
 		
 		cutscene:showNametag("Susie")
@@ -1269,7 +1269,27 @@ return {
 		
 		if Game:getFlag("future_variable") == "ceroba_dw" then
 			cutscene:showNametag("Ceroba")
-			cutscene:text("* I'll see you down there.", "default", "ceroba")
+			cutscene:text("[speed:0.5]* ...", "nervous_1", "ceroba")
+			cutscene:showNametag("Susie")
+			cutscene:text("* Uh,[wait:5] you going or what?", "nervous_side", "susie")
+			variant:setFacing("up")
+			cutscene:showNametag("Ceroba")
+			cutscene:text("* Oh?[wait:5] Uh,[wait:5] yeah,[wait:5] haha,[wait:5] of course!", "nervous_smile", "ceroba")
+			cutscene:showNametag("Susie")
+			cutscene:text("* Wait,[wait:5] don't tell me...", "teeth_smile", "susie")
+			cutscene:text("* YOU'RE afraid of heights!?", "sincere_smile", "susie")
+			cutscene:hideNametag()
+			Assets.playSound("suslaugh")
+			cutscene:setAnimation(susie, {"laugh_right", 1/4, true})
+			cutscene:wait(1.5)
+			cutscene:showNametag("Susie")
+			cutscene:text("* And I thought you're supposed to be the most mature one here,[wait:5] haha!", "teeth_smile", "susie")
+			cutscene:showNametag("Ceroba")
+			cutscene:text("* Fearing heights doesn't make me less-", "irked", "ceroba")
+			susie:resetSprite()
+			cutscene:text("* Okay,[wait:5] actually,[wait:5] you know what?", "dissapproving", "ceroba")
+			variant:setFacing("down")
+			cutscene:text("* Let's just go.", "unamused", "ceroba")
 		end
 		cutscene:hideNametag()
 		
