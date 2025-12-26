@@ -1,4 +1,4 @@
-local TitanSpawn, super = Class(EnemyBattler)
+local TitanSpawn, super = Class(EnemyBattler, "titan_spawn")
 
 function TitanSpawn:init()
     super.init(self)
@@ -12,163 +12,276 @@ function TitanSpawn:init()
     self.defense = 0
     self.money = 0
 
-    self.spare_points = 0
-    self.tired_percentage = 0
     self.disable_mercy = true
 
-    self.waves = {}
+    self.tired = false
+    self.tired_percentage = -1
+
+    self.can_freeze = false
 
     self.text = {
-        "* You hear your heart beating in\nyour ears.",
-        "* When did you start being\nyourself?",
-        "* It sputtered in a voice like\ncrushed glass.",
-        "* Smells like adrenaline."
+        "* You hear your heart beating in \nyour ears.",
+        "* When did you start being \nyourself?",
+        "* It sputtered in a voice like \ncrushed glass."
     }
+    if Game:hasPartyMember("ralsei") then
+        table.insert(self.text, "* Ralsei mutters to himself to \nstay calm.")
+    end
+
+	self.low_health_text = nil
+	self.tired_text = nil
+	self.spareable_text = nil
 
     self:getAct("Check").description = "Consider\nstrategy"
     self:registerAct("Brighten", "Powerup\nlight", "all", 4)
-    self:registerAct("DualHeal", "Heal\nparty", "all", 16)
-    self:registerAct("Banish", "Defeat\nenemy", nil, 64)
+    self:registerAct("DualHeal", "Heal\nparty", {"susie", "ralsei"}, 16)
+    self:registerAct("Banish",   "Defeat\nenemy",  nil,   64)
+
+    self.dualhealcount = 0
+
+	self.t_siner = 0
+    if Game:hasPartyMember("susie") and Game:hasPartyMember("ralsei") then -- aka do we have DualHeal or nah
+        self.banish_act_index = 4
+    else
+        self.banish_act_index = 3
+    end
+
+    self.first_barrage = true
+    self.phaseturn = 1
+    self.difficulty = 0
+end
+
+function TitanSpawn:update()
+    super.update(self)
+    if Game.battle.state == "MENUSELECT" and Game.tension >= 64 then
+        self.t_siner = self.t_siner + (1 * DTMULT)
+        if Game.battle.menu_items[self.banish_act_index] and Game.battle.menu_items[self.banish_act_index].name == "Banish" then
+            Game.battle.menu_items[self.banish_act_index].color = function()
+                return (ColorUtils.mergeColor(COLORS.yellow, COLORS.white, 0.5 + (math.sin(self.t_siner / 4) * 0.5)))
+            end
+        end
+    end
+end
+
+function TitanSpawn:getGrazeTension()
+    return 0
+end
+
+function TitanSpawn:getSpareText(battler, success)
+    return "* But, it was not something that \ncan understand MERCY."
+end
+
+function TitanSpawn:getXAction(battler)
+    if battler.chara.id == "susie" then -- DPR exclusive function here
+	    return "Analysis"
+    end
+    return super.getXAction(self, battler)
+end
+
+function TitanSpawn:isXActionShort(battler)
+    return true
+end
+
+-- note about damage to PARTY: if ShadowMantle is equipped, then the next happens:
+-- damage = round(damage * 0.5)
+-- (data.win of chapter 4, scr_damage, line 86)
+-- (adding this to not forget to add it to bullet code)
+function TitanSpawn:getAttackDamage(damage, battler, points)
+    if battler.chara:checkWeapon("blackshard") or battler.chara:checkWeapon("twistedswd") then
+        local dmg = super.getAttackDamage(self, damage, battler, points)
+        return math.ceil(dmg * 10)
+    end
+    return super.getAttackDamage(self, damage, battler, points)
+end
+
+function TitanSpawn:onShortAct(battler, name)
+    if name == "Standard" then
+        return "* " .. battler.chara:getName() .. " tried to ACT, but failed!"
+    end
+    return nil
 end
 
 function TitanSpawn:onAct(battler, name)
-    if name == "Check" then
+	if name == "Check" then
         if Game:getTension() >= 64 then
-            return {"* TITAN SPAWN - AT 30 DEF 200\n* A shard of fear. Appears in\nplaces of deep dark.", "* The atmosphere feels tense...\n* (You can use \"[color:yellow]BANISH[color:reset]\"!)"}
+            return {
+                "* TITAN SPAWN - AT 30 DF 200\n* A shard of fear. Appears \nin places of deep dark.",
+                "* The atmosphere feels tense...\n* (You can use [color:yellow]BANISH[color:reset]!)"
+            }
         else
-            return {"* TITAN SPAWN - AT 30 DEF 200\n* A shard of fear. Appears in\nplaces of deep dark.", "* Expose it to LIGHT... and\ngain COURAGE to gain TP.", "* Then, \"[color:yellow]BANISH[color:reset]\" it!"}
+            return {
+                "* TITAN SPAWN - AT 30 DF 200\n* A shard of fear. Appears \nin places of deep dark.",
+                "* Expose it to LIGHT... and gather COURAGE to gain TP.",
+                "* Then, \"[color:yellow]BANISH[color:reset]\" it!",
+            }
         end
     elseif name == "Brighten" then
+        for _,party in ipairs(Game.battle.party) do
+            party:flash()
+        end
         Assets.playSound("boost")
         local bx, by = Game.battle:getSoulLocation()
-        local soul = Sprite("effects/soulshine", bx, by)
-        soul:play(1/30, false, function() soul:remove() end)
-        soul:setOrigin(0.25, 0.25)
+        local soul = Sprite("effects/soulshine", bx + 5.5, by)
+        soul:play(1 / 30, false, function() soul:remove() end)
+        soul:setOrigin(0.5)
         soul:setScale(2, 2)
         Game.battle:addChild(soul)
-        for _,pm in ipairs(Game.battle.party) do
-            pm:flash()
-        end
-		return "* "..battler.chara:getName().."'s SOUL shone brighter!"
+		Game.battle.encounter.light_radius = 63
+        return "* "..battler.chara:getName().."'s SOUL shone brighter!"
     elseif name == "DualHeal" then
-        Game.battle:powerAct("dual_heal", battler, "ralsei") -- not really accurate
-        return
-    elseif name == "Banish" then
+        self.dualhealcount = self.dualhealcount + 1
         Game.battle:startActCutscene(function(cutscene)
-            local kris = Game.battle:getPartyBattler("kris") -- Kris should be replaced by the party leader
-            cutscene:text("* "..battler.chara:getName().."'s SOUL emitted a brilliant\nlight!")
-            local soul = Sprite("player/heart_dodge", kris.x, kris.y-kris.height)
-            soul.layer = 9998
-            soul.color = {1, 0, 0}
-            soul:setOrigin(0.5, 0.5)
-            Game.battle:addChild(soul)
-            cutscene:playSound("revival") -- copied that flash thing from fountain seal, unaccurate at the moment
-            local flash_parts = {}
-            local flash_part_total = 12
-            local flash_part_grow_factor = 0.5
-            for i = 1, flash_part_total - 1 do
-                -- width is 1px for better scaling
-                local part = Rectangle(SCREEN_WIDTH / 2, 0, 1, SCREEN_HEIGHT)
-                part:setOrigin(0.5, 0)
-                part.layer = soul.layer - i
-                part:setColor(1, 1, 1, -(i / flash_part_total))
-                part.graphics.fade = flash_part_grow_factor / 16
-                part.graphics.fade_to = math.huge
-                part.scale_x = i*i * 2
-                part.graphics.grow_x = flash_part_grow_factor*i * 2
-                table.insert(flash_parts, part)
-                Game.battle:addChild(part)
-            end
-
-            cutscene:wait(50/30)
-            soul:fadeOutAndRemove(1)
-            cutscene:wait(cutscene:fadeOut(1, {color={1, 1, 1}}))
-            for _, part in ipairs(flash_parts) do
-                part:remove()
-            end
-            for _, enemy in ipairs(Game.battle.enemies) do
-                if enemy.id == "titan_spawn" then
-                    enemy.alpha = 0
+            local susie = Game.battle:getPartyBattler("susie")
+            local ralsei = Game.battle:getPartyBattler("ralsei")
+            local canproceed = false
+            local hashealed = false
+            Game.battle.timer:after(7 / 30, function()
+                susie:setAnimation("heal_charge") -- Susie starts the animation with the effects
+                Assets.playSound("boost")
+                battler:flash()
+                susie:flash()
+                ralsei:flash()
+                local bx, by = Game.battle:getSoulLocation()
+                local soul = Sprite("effects/soulshine", bx + 5.5, by)
+                soul:play(1 / 30, false, function() soul:remove() end)
+                soul:setOrigin(0.5)
+                soul:setScale(2, 2)
+                Game.battle:addChild(soul)
+            end)
+            Game.battle.timer:after(24 / 30, function()
+                ralsei:setAnimation("battle/spell_ready") -- Ralsei starts the animation after a pause
+                canproceed = true
+            end)
+            cutscene:text("* Your SOUL shined its power on\nRALSEI and SUSIE!")
+            cutscene:wait(function() return canproceed == true end)
+            susie:setAnimation("heal_end_short", function() susie:setAnimation("battle/idle") end)
+            ralsei:setAnimation("battle/spell", function()
+                for _,party in ipairs(Game.battle.party) do
+                    local healnum = MathUtils.round((susie.chara:getStat("magic") + ralsei.chara:getStat("magic")) * 6)
+                    Game.battle:applyHealBonuses(healnum, "susie") -- ralsei or susie??? Maybe needs 2 heal bonus appliers?????
+                    local healmultiplier = 1.5
+                    if self.dualhealcount == 2 then
+                        healmultiplier = 1
+                    elseif self.dualhealcount == 3 then
+                        healmultiplier = 0.8
+                    elseif self.dualhealcount == 4 then
+                        healmultiplier = 0.3
+                    elseif self.dualhealcount > 4 then
+                        healmultiplier = 0.2
+                    end
+                    party:heal(MathUtils.round(healnum * healmultiplier))
                 end
+                hashealed = true
+            end)
+            if self.dualhealcount < 4 then
+                cutscene:text("* Susie and Susie cast DUAL HEAL!\nEffectiveness of DUAL HEAL has\nlowered!")
+            else
+                cutscene:text("* Susie and Susie cast DUAL HEAL!")
             end
-            cutscene:fadeIn(1, {color={1, 1, 1}})
-            cutscene:wait(1)
-            for _, enemy in ipairs(Game.battle.enemies) do
-                if enemy.id == "titan_spawn" then
-                    enemy:statusMessage("msg", "purified")
-                    Assets.playSound("spare")
-                    enemy:defeat("SPARED", false)
-                end
-            end
-            cutscene:wait(1)
+            cutscene:wait(function() return hashealed == true end)
         end)
         return
-    elseif name == "WakeKris" then -- unaccurate at the moment
-        local kris = Game.battle:getPartyBattler("kris")
-        if not kris.is_down then
-            return "* (But, Kris wasn't DOWNed...)"
-        else
-            battler:setAnimation("throw")
-            local slap = Sprite("effects/attack/slap_purple", kris.x, kris.y-kris.height/2)
-            slap:setOrigin(0.5, 0.5)
-            slap.layer = kris.layer + 1
-            Game.battle:addChild(slap)
-            Assets.playSound("damage")
-            kris:heal(math.ceil(-kris.chara.health + 1))
-            slap:play(1/15, false, function(s) s:remove() end)
-            return "* "..battler.chara:getName().." used Wake Up!"
-        end
-    elseif name == "ReviveKris" then -- unaccurate at the moment
-        battler:setAnimation("battle/spell")
-        local kris = Game.battle:getPartyBattler("kris")
-        if not kris.is_down then
-            kris:heal(math.ceil(kris.chara.stats["health"]*0.5))
-        else
-            kris:heal(math.ceil(-kris.chara.health + kris.chara.stats["health"]/3))
-        end
-        return "* "..battler.chara:getName().." used Reviver!"
-    elseif name == "Standard" then -- normal X-Action is supposed to be inaccessible in this fight
-        return "* "
+    elseif name == "Banish" or name == "Semi-Banish" then
+        battler:setAnimation("act")
+        Game.battle:startCutscene(function(cutscene)
+            cutscene:text("* "..battler.chara:getName().."'s SOUL emitted a brilliant \nlight!")
+            battler:flash()
+
+            local bx, by = battler:getRelativePos(battler.width/2 + 4, battler.height/2 + 4)
+
+            local semi = false
+            local texture = "player/heart_centered"
+            if name == "Semi-Banish" then semi = true end
+            if battler.chara.id == "susie" then texture = "player/heart_centered_flip" end -- hacky
+            local soul = Game.battle:addChild(TitanSpawnPurifySoul(texture, bx, by, semi, self))
+            soul.color = Game:getPartyMember(Game.party[1].id).soul_color or { 1, 0, 0 }
+            soul.layer = 501
+
+            cutscene:wait(function() return soul.t >= 500 end)
+            cutscene:after(function()
+                if #Game.battle.enemies == 0 then
+                    Game.battle:setState("VICTORY")
+                else
+                    Game.battle:finishAction()
+                    Game.battle:setState("ACTIONS", "CUTSCENE")
+                end
+            end)
+        end)
+        return
+    elseif name == "Analysis" then
+        Game.battle:startActCutscene(function(cutscene)
+            cutscene:text("* Placeholder text", "smile", "susie")
+            if not Game:getFlag("susie_got_soul_xacts") then
+                cutscene:text("* Ey I got new x-acts", "smile", "susie")
+                Game.battle:registerXAction("susie", "Brighten", "Powerup\nlight", 4)
+                Game.battle:registerXAction("susie", "Semi-Banish", "Defeat one\nenemy", 64)
+                Game:setFlag("susie_got_soul_xacts", true)
+            end
+        end)
+        return
+    elseif name == "Standard" then
+        Game.battle:startActCutscene(function(cutscene)
+            cutscene:text("* "..battler.chara:getName().." tried to \"[color:yellow]ACT[color:reset]\"...\n* But, the enemy couldn't understand!")
+        end)
+        return
     end
     return super.onAct(self, battler, name)
 end
 
-function TitanSpawn:getAttackDamage(damage, battler, points)
-    if damage > 0 then
-        return damage
+function TitanSpawn:getEnemyDialogue()
+    return false
+end
+
+function TitanSpawn:onTurnEnd()
+    self.phaseturn = self.phaseturn + 1
+
+    if self.phaseturn > 3 then
+        self.phaseturn = 2
     end
-    local dmg = ((battler.chara:getStat("attack") * points) / 20) - (self.defense * 3)
-    if battler.chara:checkWeapon("blackshard") then
-        dmg = dmg * 10
+end
+
+function TitanSpawn:getNextWaves()
+    if self.phaseturn == 1 then
+        return { "titan_spawn/darkshapesintro" }
     end
-    return dmg
+    if self.phaseturn == 2 then
+        return { "titan_spawn/darkshapesspeedup" }
+    end
+    if self.phaseturn == 3 then
+        return { "titan_spawn/darkshapeswithred" }
+    end
+
+    return super.getNextWaves(self)
+end
+
+function TitanSpawn:onSpared()
+	local recruit = RecruitMessage("purified", self.target_x, self.y - 40)
+	recruit.start_x = self.target_x
+	Game.battle:addChild(recruit)
 end
 
 function TitanSpawn:onHurt(damage, battler)
-    super.onHurt(self, damage, battler)
+	super.onHurt(self, damage, battler)
+
     Assets.stopAndPlaySound("spawn_weaker")
 end
 
+function TitanSpawn:onDefeat(damage, battler)
+    self:onDefeatFatal(damage, battler)
+end
+
 function TitanSpawn:freeze()
-	self:onDefeatFatal()
-end
-
-function TitanSpawn:onDefeat(reason, violent)
-    self:onDefeatFatal()
-end
-
-function TitanSpawn:getSpareText(battler, success)
-    return "* But,[wait:20] it was not something that\ncan understand MERCY."
+    self:onDefeat()
 end
 
 function TitanSpawn:getEncounterText()
-
-    if Game:getTension() >= 64 then
-        return "* The atmosphere feels tense...\n* (You can use \"[color:yellow]BANISH[color:reset]\"!)"
-
-    end
-
-    return TableUtils.pick(self.text)
+	if Game:getTension() < 64 and MathUtils.randomInt(100) < 4 then
+		return "* Smells like adrenaline."
+    elseif Game:getTension() >= 64 then
+		return "* The atmosphere feels tense...\n* (You can use [color:yellow]BANISH[color:reset]!)"
+	else
+		return super.getEncounterText(self)
+	end
 end
 
 return TitanSpawn

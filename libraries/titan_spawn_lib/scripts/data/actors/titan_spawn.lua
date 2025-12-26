@@ -8,17 +8,17 @@ function actor:init()
     self.width = 40
     self.height = 46
 
-    --self.hitbox = {0, 23, 40, 23}
+    self.hitbox = {0, 0, self.width, self.height}
 
     self.flip = "right"
 
-    self.path = "enemies/titan_spawn"
+    self.path = "battle/enemies/titan_spawn"
     self.default = "idle"
 
     self.animations = {
-        ["idle"] = {"idle", 1/5, true},
-        ["nooutline"] = {"nooutline", 1/5, true}, -- used when they chase you in dark rooms
-        ["hurt"] = {"hurt", 0, false}
+	    ["idle"] = {"idle", 0.2, true},
+        ["nooutline"] = {"nooutline", 0.2, true},
+        ["hurt"] = {"hurt", 1, false},
     }
 
     self.offsets = {
