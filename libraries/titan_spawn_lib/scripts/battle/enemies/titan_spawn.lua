@@ -40,7 +40,7 @@ function TitanSpawn:init()
     self.dualhealcount = 0
 
 	self.t_siner = 0
-    if Game:hasPartyMember("susie") and Game:hasPartyMember("ralsei") then -- aka do we have DualHeal or nah
+    if Game:hasPartyMember("susie") and Game:hasPartyMember("ralsei") then
         self.banish_act_index = 4
     else
         self.banish_act_index = 3
@@ -49,15 +49,41 @@ function TitanSpawn:init()
     self.first_barrage = true
     self.phaseturn = 1
     self.difficulty = 0
+
+	self.wake_kris_count = 0
+
+    -- DPR
+    self.service_mercy = 0
 end
 
 function TitanSpawn:update()
     super.update(self)
-    if Game.battle.state == "MENUSELECT" and Game.tension >= 64 then
+    if Game.battle.state == "MENUSELECT" and Game.battle.state_reason == "ACT" and Game.tension >= 64 then
         self.t_siner = self.t_siner + (1 * DTMULT)
-        if Game.battle.menu_items[self.banish_act_index] and Game.battle.menu_items[self.banish_act_index].name == "Banish" then
+        if Game.battle.menu_items[self.banish_act_index] then
             Game.battle.menu_items[self.banish_act_index].color = function()
                 return (ColorUtils.mergeColor(COLORS.yellow, COLORS.white, 0.5 + (math.sin(self.t_siner / 4) * 0.5)))
+            end
+        end
+    end
+
+    -- DPR
+    if Game.battle.current_selecting == 1 and Game.battle.state == "MENUSELECT" and Game.battle.state_reason == "SPELL" and Game:getFlag("susie_got_soul_xacts") and Game.tension >= 64 then
+        self.t_siner = self.t_siner + (1 * DTMULT)
+        local sb_slot = Game.battle.encounter.default_xactions and 3 or 2
+        if Game.battle.menu_items[sb_slot] then
+            Game.battle.menu_items[sb_slot].color = function()
+                return (ColorUtils.mergeColor(COLORS.yellow, {Game.battle.party[1].chara:getXActColor()}, 0.5 + (math.sin(self.t_siner / 4) * 0.5)))
+            end
+        end
+    end
+
+    -- shining S-Action
+    if Game.battle.current_selecting == 1 and Game.battle.state == "MENUSELECT" and Game.battle.state_reason == "SPELL" and not Game:getFlag("susie_got_soul_xacts") then
+        self.t_siner = self.t_siner + (1 * DTMULT)
+        if Game.battle.menu_items[1] then
+            Game.battle.menu_items[1].color = function()
+                return (ColorUtils.mergeColor(COLORS.yellow, {Game.battle.party[1].chara:getXActColor()}, 0.5 + (math.sin(self.t_siner / 4) * 0.5)))
             end
         end
     end
@@ -79,7 +105,11 @@ function TitanSpawn:getXAction(battler)
 end
 
 function TitanSpawn:isXActionShort(battler)
-    return true
+	if self:getXAction(battler) == "Standard" then
+		return true
+	else
+		return false
+	end
 end
 
 -- note about damage to PARTY: if ShadowMantle is equipped, then the next happens:
@@ -121,7 +151,7 @@ function TitanSpawn:onAct(battler, name)
         end
         Assets.playSound("boost")
         local bx, by = Game.battle:getSoulLocation()
-        local soul = Sprite("effects/soulshine", bx + 5.5, by)
+        local soul = Sprite("effects/soulshine_s", bx + 5.5, by)
         soul:play(1 / 30, false, function() soul:remove() end)
         soul:setOrigin(0.5)
         soul:setScale(2, 2)
@@ -208,14 +238,115 @@ function TitanSpawn:onAct(battler, name)
             end)
         end)
         return
+	elseif name == "WakeKris" then
+        Game.battle:startActCutscene(function(cutscene)
+            local kris = Game.battle:getPartyBattler("kris")
+			self.wake_kris_count = self.wake_kris_count + 1
+            cutscene:text("* "..battler.chara:getName().." used Wake Up!")
+			if self.wake_kris_count == 1 then
+				cutscene:text("* Hey, dumbass! Get up!")
+			end
+			battler:setAnimation("attack_unarmed")
+			Assets.playSound("ui_cancel_small")
+			Assets.playSound("damage",0.94)
+            local dmg_sprite = Sprite("effects/attack/slap_s")
+            dmg_sprite:setOrigin(0.5, 0.5)
+            dmg_sprite:setScale(1, 1)
+            local bx, by = kris:getRelativePos(kris.width / 2, kris.height / 2)
+            dmg_sprite:setPosition(bx, by)
+            dmg_sprite.layer = kris.layer + 0.01
+            dmg_sprite:play(1 / 15, false, function(s) s:remove() end)
+            kris.parent:addChild(dmg_sprite)
+			kris:shake()
+			cutscene:wait(0.5)
+			battler:setAnimation("battle/idle")
+			if kris then
+				local kris_member = Game:getPartyMember("kris")
+				if kris_member.health <= 0 then
+					local reviveamt = math.abs(kris_member.health) + 1
+					kris:heal(reviveamt)
+				else
+					cutscene:text("* (But, Kris wasn't DOWNed...)")
+				end
+			end
+        end)
+        return
+	elseif name == "ReviveKris" then
+        Game.battle:startActCutscene(function(cutscene)
+            local kris = Game.battle:getPartyBattler("kris")
+			local kris_member = Game:getPartyMember("kris")
+            cutscene:text("* "..battler.chara:getName().." used Reviver!")
+			battler:setAnimation("battle/spell")
+            local bx, by = kris:getRelativePos(0, 0)
+            local cherub = Game.battle:addChild(RalseiCherub(kris, bx+20, by+10))
+			if kris_member.health > 0 then
+				cherub.xoff = cherub.xoff - 6
+				cherub.yoff = cherub.yoff - 20
+			end
+            cherub.layer = kris.layer
+			cutscene:wait(58/30)
+			battler:setAnimation("battle/idle")
+			if kris then
+				local starthp = kris_member.health
+				if starthp <= 0 then
+					kris:heal(math.abs(starthp) + math.ceil(kris_member:getStat("health") / 3))
+				else
+					kris:heal(math.ceil(kris_member:getStat("health") * 0.5))
+				end
+			end
+        end)
+        return
     elseif name == "Analysis" then
         Game.battle:startActCutscene(function(cutscene)
-            cutscene:text("* Placeholder text", "smile", "susie")
             if not Game:getFlag("susie_got_soul_xacts") then
-                cutscene:text("* Ey I got new x-acts", "smile", "susie")
+                if self.phaseturn > 1 then -- more than one turn passed
+                    cutscene:text("* (Dammit,[wait:5] they're surrounding us!)", "angry_down", "susie")
+                    cutscene:text("* (I gotta think of something before they beat us to death...)", "angry_unsure", "susie")
+                end
+                cutscene:text("* Hey,[wait:5] wait,[wait:5] I think I know these things!", "surprise", "susie")
+                cutscene:text("* You do?", "neutral", "jamm")
+                cutscene:text("* Yeah,[wait:5] they're the same that were chasing us back in the Church!", "angry", "susie")
+                cutscene:text("* Wait,[wait:5] if you know them...", "nervous_left", "jamm")
+                cutscene:text("* How do we defeat them?", "neutral", "jamm")
+                cutscene:text("* Well,[wait:5] back then we were just running away,[wait:5] but...", "nervous_side", "susie")
+                cutscene:text("* Yeah,[wait:5] I don't think that'll work right now.", "nervous", "susie")
+                if Game:getFlag("future_variable") == "ceroba_dw" then
+                    cutscene:text("* So is there anything else we can do?", "neutral", "ceroba")
+                end
+                cutscene:text("* ...[wait:5] they WERE chasing us only in the dark,[wait:5] so maybe...", "nervous_side", "susie")
+                cutscene:text("* Jamm,[wait:5] can you do that light thingy with your soul?", "neutral", "susie")
+                cutscene:text("* What \"light thingy\"?", "suspicious", "jamm")
+                cutscene:text("* Well,[wait:5] you know...[wait:5] When your soul is glowing like a flashlight.", "neutral_side", "susie")
+                cutscene:text("* I thought all humans could do that?", "nervous_side", "susie")
+                cutscene:text("* Well,[wait:5] I,[wait:5] uh...", "speechless", "jamm")
+                cutscene:text("* Can't you try it...[wait:5] Yourself?", "nervous", "jamm")
+                cutscene:text("* ...[wait:5] I mean,[wait:5] I could,[wait:5] but there's no guarantee it'll actually-", "neutral", "susie")
+                battler:setSprite("shock_right")
+                battler:flash()
+                Assets.playSound("boost")
+                local bx, by = Game.battle:getSoulLocation()
+                local soul = Sprite("effects/soulshine_s", bx - 5.5, by)
+                soul:play(1 / 30, false, function() soul:remove() end)
+                soul:setOrigin(0.5)
+                soul:setScale(2, 2)
+                Game.battle:addChild(soul)
+                cutscene:text("* (Susie's SOUL shined with bright light!)")
+                battler:setAnimation("battle/idle")
+                cutscene:text("* Oh hey,[wait:5] what do you know,[wait:5] it works!", "surprise_smile", "susie")
+                cutscene:text("* (New [color:yellow]ACT[color:reset]s are now available in Susie's [color:yellow]MAGIC[color:reset] menu.)")
+                Game.battle.encounter.light_radius = 48
                 Game.battle:registerXAction("susie", "Brighten", "Powerup\nlight", 4)
                 Game.battle:registerXAction("susie", "Semi-Banish", "Defeat one\nenemy", 64)
                 Game:setFlag("susie_got_soul_xacts", true)
+            else
+                if Game.tension >= 64 then
+                    cutscene:text("* (Alright,[wait:5] now just gotta...)", "nervous", "susie")
+                    cutscene:text("* (Wait,[wait:5] how was Kris doing that again?)", "nervous_side", "susie")
+                    cutscene:text("* (You can use [color:yellow]SEMI-BANISH[color:reset] from Susie's [color:yellow]MAGIC[color:reset] menu!)")
+                else
+                    cutscene:text("* (These things seem to be vulnerable to light...)", "neutral_side", "susie")
+                    cutscene:text("* (Maybe if I collect more [color:yellow]TP[color:reset],[wait:5] I could try something.)", "neutral", "susie")
+                end
             end
         end)
         return
@@ -278,7 +409,7 @@ function TitanSpawn:getEncounterText()
 	if Game:getTension() < 64 and MathUtils.randomInt(100) < 4 then
 		return "* Smells like adrenaline."
     elseif Game:getTension() >= 64 then
-		return "* The atmosphere feels tense...\n* (You can use [color:yellow]BANISH[color:reset]!)"
+		return "* The atmosphere feels tense...\n* (You can use [color:yellow]SEMI-BANISH[color:reset]!)"
 	else
 		return super.getEncounterText(self)
 	end

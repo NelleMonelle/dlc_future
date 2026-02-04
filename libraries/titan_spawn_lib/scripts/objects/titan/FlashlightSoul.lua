@@ -4,6 +4,8 @@ local FlashlightSoul, super = Class(Soul)
 
 function FlashlightSoul:init(x, y)
     super.init(self, x, y)
+
+	self:setColor(Game:getSoulColor())
 	
     self.light_radius = 0                                              -- Initial radius of the light.
     self.light_radius_goal = Game.battle.encounter.light_radius or 48  -- Max radius of the light.

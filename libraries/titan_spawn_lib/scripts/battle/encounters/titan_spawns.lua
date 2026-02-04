@@ -11,19 +11,22 @@ function TitanSpawn:init()
     self.titan_spawn_1 = self:addEnemy("titan_spawn", 500, 130)
     self.titan_spawn_2 = self:addEnemy("titan_spawn", 500, 290)
 
-    if Game:getFlag("susie_got_soul_xacts") then -- in case of a rematch?
-        Game.battle:registerXAction("susie", "Brighten", "Powerup\nlight", 4)
-        Game.battle:registerXAction("susie", "Semi-Banish", "Defeat one\nenemy", 64)
-    end
-
     self.reduced_tension = true
-	self.light_radius = 48
+    if Game:getFlag("susie_got_soul_xacts") then
+	    self.light_radius = 48
+    else
+        self.light_radius = 0
+    end
 	self.unleash_threshold = 64
 end
 
 function TitanSpawn:onTurnEnd()
     super.onTurnEnd(self)
-	self.light_radius = 48
+	if Game:getFlag("susie_got_soul_xacts") then
+	    self.light_radius = 48
+    else
+        self.light_radius = 0
+    end
 end
 
 function TitanSpawn:getPartyPosition(index)
@@ -46,6 +49,25 @@ function TitanSpawn:getPartyPosition(index)
         return raloc[1]+(21 + 4), raloc[2]+(40 + 52)
     else
         return super.getPartyPosition(self, index)
+    end
+end
+
+function TitanSpawn:onBattleStart(battler)
+	if Game:hasPartyMember("kris") then
+		self.default_xactions = false
+		for _,battler in ipairs(Game.battle.party) do
+			if battler.chara.id == "susie" then
+				Game.battle:registerXAction("susie", "WakeKris", "Revive\nKris", 16)
+			elseif battler.chara.id == "ralsei" then
+				Game.battle:registerXAction("ralsei", "ReviveKris", "Revive\nKris", 16)
+			end
+		end
+	end
+
+    if Game:getFlag("susie_got_soul_xacts") then -- in case of a rematch
+        self.default_xactions = false -- because we aleady know ACTs don't work on those creatures
+        Game.battle:registerXAction("susie", "Brighten", "Powerup\nlight", 4)
+        Game.battle:registerXAction("susie", "Semi-Banish", "Defeat one\nenemy", 64)
     end
 end
 
