@@ -1,5 +1,5 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
   tiledversion = "1.11.2",
   class = "",
@@ -780,7 +780,7 @@ return {
         },
         {
           id = 70,
-          name = "warpbin",
+          name = "warpbin_damaged",
           type = "",
           shape = "rectangle",
           x = 280,
