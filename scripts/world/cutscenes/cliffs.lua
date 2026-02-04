@@ -1077,7 +1077,7 @@ return {
 		cutscene:text("* The three of you explain what happened.")
 		
 		-- 1160, 240
-		local lore_board = Registry.createEvent("lore_board", {x = 1160, y = 240, properties = {}})
+		local lore_board = Registry.createLegacyEvent("lore_board", {x = 1160, y = 240, properties = {}})
 		Game.world:spawnObject(lore_board)
 		
 		jamm.x = 1300
