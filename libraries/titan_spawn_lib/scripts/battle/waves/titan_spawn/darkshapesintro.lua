@@ -11,6 +11,7 @@ function DarkShapesIntro:onStart()
 
     local darkshape_manager = self:spawnObject(DarkShapeManager())
     darkshape_manager:patternToUse("intro")
+	darkshape_manager.attacker_num = #self:getAttackers()
 end
 
 function DarkShapesIntro:onEnd()

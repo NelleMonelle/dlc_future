@@ -11,6 +11,7 @@ function DarkShapesWithRed:onStart()
 
     local darkshape_manager = self:spawnObject(DarkShapeManager())
     darkshape_manager:patternToUse("default")
+	darkshape_manager.attacker_num = #self:getAttackers()
 end
 
 function DarkShapesWithRed:onEnd()

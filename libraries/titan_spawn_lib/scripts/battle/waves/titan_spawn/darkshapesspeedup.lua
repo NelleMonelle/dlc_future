@@ -11,6 +11,7 @@ function DarkShapesSpeedUp:onStart()
 
     local darkshape_manager = self:spawnObject(DarkShapeManager())
     darkshape_manager:patternToUse("speedup")
+	darkshape_manager.attacker_num = #self:getAttackers()
 end
 
 function DarkShapesSpeedUp:onEnd()

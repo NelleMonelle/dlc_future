@@ -318,9 +318,12 @@ function TitanSpawn:onAct(battler, name)
                 cutscene:text("* What \"light thingy\"?", "suspicious", "jamm")
                 cutscene:text("* Well,[wait:5] you know...[wait:5] When your soul is glowing like a flashlight.", "neutral_side", "susie")
                 cutscene:text("* I thought all humans could do that?", "nervous_side", "susie")
-                cutscene:text("* Well,[wait:5] I,[wait:5] uh...", "speechless", "jamm")
-                cutscene:text("* Can't you try it...[wait:5] Yourself?", "nervous", "jamm")
-                cutscene:text("* ...[wait:5] I mean,[wait:5] I could,[wait:5] but there's no guarantee it'll actually-", "neutral", "susie")
+				local texts = {"You see--", "Uh--", "Um--", "Well--", "I--"}
+				for i=1, 6 do
+					cutscene:text("[noskip:true]* " .. TableUtils.pick(texts), "speechless", "jamm")
+				end
+                cutscene:text("* W-wait,[wait:5] why can't you try it?", "nervous", "jamm")
+                cutscene:text("* ...[wait:5] I mean,[wait:5] I could,[wait:5] but there's no guarantee it'll actually--", "neutral", "susie", {auto = true})
                 battler:setSprite("shock_right")
                 battler:flash()
                 Assets.playSound("boost")

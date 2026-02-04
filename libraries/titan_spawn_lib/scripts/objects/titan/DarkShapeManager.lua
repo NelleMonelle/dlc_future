@@ -30,6 +30,8 @@ function DarkShapeManager:init(x, y)
     self.barrage_interval = 40
     self.barrage_end = 64
     self.phase_difficulty = 1
+	
+	self.attacker_num = 2
 end
 
 function DarkShapeManager:onAdd(parent)
@@ -140,7 +142,7 @@ function DarkShapeManager:createPattern()
 end
 
 function DarkShapeManager:update()
-    self.timer = self.timer + DTMULT
+    self.timer = self.timer + (DTMULT/2 * self.attacker_num)
 
     if Game.battle.wave_timer >= Game.battle.wave_length - 1/30 then
         self.its_time = true
