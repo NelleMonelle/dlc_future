@@ -320,7 +320,7 @@ function TitanSpawn:onAct(battler, name)
                 cutscene:text("* I thought all humans could do that?", "nervous_side", "susie")
 				local texts = {"You see--", "Uh--", "Um--", "Well--", "I--"}
 				for i=1, 6 do
-					cutscene:text("[noskip:true]* " .. TableUtils.pick(texts), "speechless", "jamm")
+					cutscene:text("[noskip:true]* " .. TableUtils.pick(texts), "speechless", "jamm", {auto=true})
 				end
                 cutscene:text("* W-wait,[wait:5] why can't you try it?", "nervous", "jamm")
                 cutscene:text("* ...[wait:5] I mean,[wait:5] I could,[wait:5] but there's no guarantee it'll actually--", "neutral", "susie", {auto = true})
