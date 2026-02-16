@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 21,
-  nextobjectid = 29,
+  nextobjectid = 32,
   properties = {
     ["border"] = "leaves",
     ["music"] = "future_world"
@@ -603,6 +603,21 @@ return {
             ["facing"] = "right",
             ["flagcheck"] = "!future_berdly_graveyard"
           }
+        },
+        {
+          id = 30,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 400,
+          y = -40,
+          width = 80,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "hometown/deep_graveyard"
+          }
         }
       }
     },
@@ -627,6 +642,19 @@ return {
           shape = "point",
           x = 1160,
           y = 320,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 31,
+          name = "deep",
+          type = "",
+          shape = "point",
+          x = 440,
+          y = 40,
           width = 0,
           height = 0,
           rotation = 0,

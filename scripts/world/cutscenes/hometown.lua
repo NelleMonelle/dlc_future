@@ -27,6 +27,7 @@ return {
 	
 	berdly_graveyard = function(cutscene, event)
 		if not Game:getFlag("future_berdly_graveyard") then
+			Game:setFlag("future_berdly_graveyard", true)
 			cutscene:showNametag("Susie")
 			cutscene:text("* Wait,[wait:5] is that...", "nervous_side", "susie")
 			cutscene:hideNametag()
@@ -120,13 +121,13 @@ return {
 				cutscene:showNametag("Jamm", {top = true})
 				cutscene:text("* ...My daughter brought us here.", "nervous", "jamm", {top = true})
 				cutscene:showNametag("Berdly", {top = true})
-				cutscene:text("* But you were missing for a decade!", "surprised", "fberdly", {top = true})
-				cutscene:text("* What were you doing all this time!?", "surprised", "fberdly", {top = true})
-				cutscene:text("* What,[wait:5] did she find you 15 minutes ago or something!?", "surprised", "fberdly", {top = true})
+				cutscene:text("* But you were missing for a decade!", "angry_b", "fberdly", {top = true})
+				cutscene:text("* What were you doing all this time!?", "angry", "fberdly", {top = true})
+				cutscene:text("* What,[wait:5] did she find you 15 minutes ago or something!?", "angry", "fberdly", {top = true})
 				cutscene:showNametag("Jamm", {top = true})
 				cutscene:text("* Hey,[wait:5] 15 minutes ago,[wait:5] we were 10 years in the past.", "stern", "jamm", {top = true})
 				cutscene:showNametag("Berdly", {top = true})
-				cutscene:text("* That doesn't even make any sense!", "surprised", "fberdly", {top = true})
+				cutscene:text("* That doesn't even make any sense!", "angry_sweat", "fberdly", {top = true})
 				
 				if Game:getFlag("future_variable") == "ceroba_dw" then
 					cutscene:showNametag("Ceroba", {top = true})
@@ -185,11 +186,36 @@ return {
 			cutscene:text("* Berdly,[wait:5] if you don't mind,[wait:5] I have business with them.", "closed", "fmarcy", {top = true})
 			cutscene:text("* And don't you have your own assignments to get done?", "neutral", "fmarcy", {top = true})
 			cutscene:showNametag("Berdly", {top = true})
-			cutscene:text("* Well put, my reaper-wielding rival![react:1]", "surprised", "fberdly", {top = true, reactions={
+			cutscene:text("* Well put,[wait:5] my reaper-wielding rival![react:1]", "laugh", "fberdly", {top = true, reactions={
 				{"We're not rivals.", 352, 61, "neutral", "fmarcy"},
 			}})
 			cutscene:look(fmarcy, "right")
 			cutscene:look(fberdly, "right")
+			cutscene:text("* It was nice running into you,[wait:5] Susan,[wait:5] but I must be off.", "laugh", "fberdly", {top = true})
+			cutscene:text("* I've got a game to complete.[react:1][wait:5][react:2]", "look_up", "fberdly", {top = true, reactions={
+				{"...What?", 120, 61, "nervous", "susie"},
+				{"Don't ask.", 302, 61, "closed", "fmarcy"},
+			}})
+			cutscene:hideNametag()
+			Game.world.music:fade(0, 1)
+			cutscene:wait(cutscene:walkToSpeed(fberdly, 1240, fberdly.y, 10))
+			fberdly:remove()
+			Game.world.music:play("future_world", 1)
+			cutscene:showNametag("Susie", {top = true})
+			cutscene:text("* ...Hey,[wait:5] uh...", "neutral", "susie", {top = true})
+			cutscene:text("* Did anyone else notice that he looked like he did ten years ago?", "nervous", "susie", {top = true})
+			cutscene:showNametag("Marcy", {top = true})
+			cutscene:text("* Right...[wait:5] the Collapse affects everyone differently.", "closed", "fmarcy", {top = true})
+			cutscene:text("* Some attune to the dark,[wait:5] some start to forget stuff...", "neutral", "fmarcy", {top = true})
+			cutscene:text("* In Berdly's case,[wait:5] it halted his aging completely.", "closed", "fmarcy", {top = true})
+			cutscene:text("* I guess that helps him out a bit...", "lookright", "fmarcy", {top = true})
+			cutscene:look(fmarcy, "left")
+			cutscene:text("* Now come.[wait:10]\n* There's something we need to talk about.", "closed", "fmarcy", {top = true})
+			cutscene:hideNametag()
+			cutscene:walkToSpeed(fmarcy, fmarcy.x - 60, fmarcy.y, 4)
+			cutscene:attachFollowers(4)
+			cutscene:wait(cutscene:attachCamera(1))
+			fmarcy:remove()
 		end
     end,
 	

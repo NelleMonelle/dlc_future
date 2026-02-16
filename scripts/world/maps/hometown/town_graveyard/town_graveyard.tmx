@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="21" nextobjectid="29">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="30" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="21" nextobjectid="32">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -188,9 +188,17 @@
    </properties>
    <point/>
   </object>
+  <object id="30" name="transition" x="400" y="-40" width="80" height="40">
+   <properties>
+    <property name="map" value="hometown/deep_graveyard"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup color="#ff00ff" id="10" name="markers">
   <object id="16" name="spawn" x="1160" y="320">
+   <point/>
+  </object>
+  <object id="31" name="deep" x="440" y="40">
    <point/>
   </object>
  </objectgroup>
