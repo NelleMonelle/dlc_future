@@ -46,11 +46,39 @@ function Dummy:init()
     self.low_health_percentage = 0
 	
 	self.disable_mercy = true
+
+    self.weakspot = false
+    self.weakspot_will_close = false
 end
 
 function Dummy:onAct(battler, name)
     if name == "Standard" then
         return "* But "..battler.chara:getName().." didn't know what to do."
+    elseif name == "SoulShine" then
+        battler:setAnimation("act")
+        Game.battle:startCutscene(function(cutscene)
+            cutscene:text("* "..battler.chara:getName().."'s SOUL emitted a brilliant \nlight!")
+            battler:flash()
+
+            local bx, by = battler:getRelativePos(battler.width/2 + 4, battler.height/2 + 4)
+
+            local texture = "player/heart_centered"
+            if battler.chara.id == "susie" then texture = "player/heart_centered_flip" end -- hacky
+            local soul = Game.battle:addChild(TitanSpawnPurifySoul(texture, bx, by, true, self))
+            soul.color = Game:getPartyMember(Game.party[1].id).soul_color or { 1, 0, 0 }
+            soul.layer = 501
+
+            cutscene:wait(function() return soul.t >= 500 end)
+            cutscene:after(function()
+                if #Game.battle.enemies == 0 then
+                    Game.battle:setState("VICTORY")
+                else
+                    Game.battle:finishAction()
+                    Game.battle:setState("ACTIONS", "CUTSCENE")
+                end
+            end)
+        end)
+        return
     end
 
     -- If the act is none of the above, run the base onAct function
@@ -70,6 +98,40 @@ end
 
 function Dummy:getSpareText(battler, success)
     return "* But,[wait:20] it was not something that\ncan understand MERCY."
+end
+
+function Dummy:getEncounterText()
+	if self.weakspot then
+		return "* Creature α's weak spot has been revealed! It's defense dropped dramatically!"
+	else
+		return super.getEncounterText(self)
+	end
+end
+
+function Dummy:getAttackDamage(damage, battler, points)
+    if self.weakspot then
+        local dmg = super.getAttackDamage(self, damage, battler, points)
+        return math.ceil(dmg * 3)
+    end
+    return super.getAttackDamage(self, damage, battler, points)
+end
+
+function Dummy:onHurt(damage, battler)
+	super.onHurt(self, damage, battler)
+
+    if self.weakspot then
+        self.weakspot_will_close = true
+        Assets.playSound("punch_lower_heavy")
+    end
+end
+
+function Dummy:onTurnEnd()
+	if self.weakspot and self.weakspot_will_close then
+        self.sprite.eye.rotating = true
+        self.sprite.eye.sprite:fadeTo(1, 0.2)
+        self.weakspot = false
+        self.weakspot_will_close = false
+    end
 end
 
 return Dummy
