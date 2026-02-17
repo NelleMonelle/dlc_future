@@ -92,11 +92,17 @@ function TitanSpawnPurifySoul:draw()
     if self.t >= 450 then
         if self.enemymovecon == 1 then
             if self.semi then
-                self.target.x = self.target.x + 300
+                if self.target.id == "titan_spawn" then
+                    self.target.x = self.target.x + 300
+                elseif self.target.id == "slitherer" then
+                    self.target.sprite.eye.rotating = false
+                end
             else
                 for _, enemy in ipairs(Game.battle:getActiveEnemies()) do
                     if enemy.id == "titan_spawn" then
                         enemy.x = enemy.x + 300
+                    elseif enemy.id == "slitherer" then
+                        enemy.sprite.eye.rotating = false
                     end
                 end
             end
@@ -129,11 +135,21 @@ function TitanSpawnPurifySoul:draw()
     if self.t >= 500 then
         if self.enemysparecon == 1 then
             if self.semi then
-                self.target:spare()
+                if self.target.id == "titan_spawn" then
+                    self.target:spare()
+                elseif self.target.id == "slitherer" then
+                    Assets.playSound("laz_titan")
+                    self.target.sprite.eye.sprite:fadeTo(0, 1)
+                    self.target.weakspot = true
+                end
             else
                 for _, enemy in ipairs(Game.battle:getActiveEnemies()) do
                     if enemy.id == "titan_spawn" then
                         enemy:spare()
+                    elseif enemy.id == "slitherer" then
+                        Assets.stopAndPlaySound("laz_titan")
+                        enemy.sprite.eye.sprite:fadeTo(0, 1)
+                        enemy.weakspot = true
                     end
                 end
             end

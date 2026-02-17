@@ -7,6 +7,8 @@ function Part:init(x, y, distance)
 	
     self.sprite = Sprite("enemies/roaring_eye", -distance, 0)
 	self.sprite:setOrigin(0.5, 0.5)
+
+	self.rotating = true
 	
 	self.target = nil
 	
@@ -16,7 +18,9 @@ end
 function Part:update()
     super.update(self)
 	
-	self.sprite.rotation = self.sprite.rotation + (DTMULT/40)
+	if self.rotating then
+		self.sprite.rotation = self.sprite.rotation + (DTMULT/40)
+	end
 	
 	if self.target then
 		local sx, sy = self:localToScreenPos(self.x, self.y)

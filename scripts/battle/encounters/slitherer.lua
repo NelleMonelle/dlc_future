@@ -18,4 +18,10 @@ function Dummy:init()
     --self:addEnemy("dummy")
 end
 
+function Dummy:onBattleStart(battler)
+    if Game:getFlag("susie_got_soul_xacts") then
+        Game.battle:registerXAction("susie", "SoulShine", "Reveal\nweakspot", 64)
+    end
+end
+
 return Dummy
