@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 10,
-  nextobjectid = 5,
+  nextobjectid = 14,
   properties = {
     ["border"] = "leaves",
     ["music"] = "future_world"
@@ -21,6 +21,12 @@ return {
       firstgid = 1,
       filename = "../../../tilesets/hometown.tsx",
       exportfilename = "../../../tilesets/hometown.lua"
+    },
+    {
+      name = "hometownobjects",
+      firstgid = 287,
+      filename = "../../../tilesets/hometownobjects.tsx",
+      exportfilename = "../../../tilesets/hometownobjects.lua"
     }
   },
   layers = {
@@ -270,6 +276,114 @@ return {
             ["map"] = "hometown/town_graveyard",
             ["marker"] = "deep"
           }
+        },
+        {
+          id = 6,
+          name = "npc",
+          type = "",
+          shape = "point",
+          x = 460,
+          y = 600,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["actor"] = "fnoelle",
+            ["facing"] = "up",
+            ["flagcheck"] = "!future_graveyard_convo"
+          }
+        },
+        {
+          id = 7,
+          name = "npc",
+          type = "",
+          shape = "point",
+          x = 280,
+          y = 600,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["actor"] = "fmarcy",
+            ["facing"] = "up",
+            ["flagcheck"] = "!future_graveyard_convo"
+          }
+        },
+        {
+          id = 8,
+          name = "npc",
+          type = "",
+          shape = "point",
+          x = 640,
+          y = 600,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["actor"] = "fkanako",
+            ["facing"] = "up",
+            ["flagcheck"] = "!future_graveyard_convo"
+          }
+        },
+        {
+          id = 9,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 248,
+          y = 560,
+          width = 62,
+          height = 72,
+          rotation = 0,
+          gid = 441,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 10,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 430,
+          y = 560,
+          width = 62,
+          height = 72,
+          rotation = 0,
+          gid = 442,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 11,
+          name = "script",
+          type = "",
+          shape = "rectangle",
+          x = 80,
+          y = 960,
+          width = 760,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["cutscene"] = "hometown.our_graves"
+          }
+        },
+        {
+          id = 13,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 608,
+          y = 560,
+          width = 62,
+          height = 72,
+          rotation = 0,
+          gid = 443,
+          visible = true,
+          properties = {}
         }
       }
     },
@@ -294,6 +408,19 @@ return {
           shape = "point",
           x = 1480,
           y = 2040,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 5,
+          name = "camto",
+          type = "",
+          shape = "point",
+          x = 460,
+          y = 520,
           width = 0,
           height = 0,
           rotation = 0,

@@ -23,7 +23,7 @@ return {
   },
   properties = {},
   wangsets = {},
-  tilecount = 65,
+  tilecount = 68,
   tiles = {
     {
       id = 14,
@@ -142,8 +142,8 @@ return {
     {
       id = 43,
       image = "../../../assets/sprites/world/maps/hometown/bench.png",
-      width = 78,
-      height = 50
+      width = 39,
+      height = 25
     },
     {
       id = 70,
@@ -414,6 +414,24 @@ return {
       image = "../../../assets/sprites/world/maps/hometown/pitfall.png",
       width = 240,
       height = 80
+    },
+    {
+      id = 154,
+      image = "../../../assets/sprites/world/events/graves/grave_jamm.png",
+      width = 31,
+      height = 36
+    },
+    {
+      id = 155,
+      image = "../../../assets/sprites/world/events/graves/grave_susie.png",
+      width = 31,
+      height = 36
+    },
+    {
+      id = 156,
+      image = "../../../assets/sprites/world/events/graves/grave_blank.png",
+      width = 31,
+      height = 36
     }
   }
 }

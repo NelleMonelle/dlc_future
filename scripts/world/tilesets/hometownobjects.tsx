@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.10" tiledversion="1.11.2" name="hometownobjects" tilewidth="1758" tileheight="1240" tilecount="65" columns="0">
+<tileset version="1.10" tiledversion="1.11.2" name="hometownobjects" tilewidth="1758" tileheight="1240" tilecount="68" columns="0">
  <editorsettings>
   <export target="hometownobjects.lua" format="lua"/>
  </editorsettings>
@@ -62,7 +62,7 @@
   <image source="../../../assets/sprites/world/maps/hometown/beachtable.png" width="67" height="45"/>
  </tile>
  <tile id="43">
-  <image source="../../../assets/sprites/world/maps/hometown/bench.png" width="78" height="50"/>
+  <image source="../../../assets/sprites/world/maps/hometown/bench.png" width="39" height="25"/>
  </tile>
  <tile id="70">
   <image source="../../../assets/sprites/world/maps/hometown/brathouse_night.png" width="179" height="95"/>
@@ -198,5 +198,14 @@
  </tile>
  <tile id="153">
   <image source="../../../assets/sprites/world/maps/hometown/pitfall.png" width="240" height="80"/>
+ </tile>
+ <tile id="154">
+  <image source="../../../assets/sprites/world/events/graves/grave_jamm.png" width="31" height="36"/>
+ </tile>
+ <tile id="155">
+  <image source="../../../assets/sprites/world/events/graves/grave_susie.png" width="31" height="36"/>
+ </tile>
+ <tile id="156">
+  <image source="../../../assets/sprites/world/events/graves/grave_blank.png" width="31" height="36"/>
  </tile>
 </tileset>

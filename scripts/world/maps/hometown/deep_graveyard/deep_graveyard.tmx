@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="41" height="52" tilewidth="40" tileheight="40" infinite="0" nextlayerid="10" nextobjectid="5">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="41" height="52" tilewidth="40" tileheight="40" infinite="0" nextlayerid="10" nextobjectid="14">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -8,6 +8,7 @@
   <property name="music" value="future_world"/>
  </properties>
  <tileset firstgid="1" source="../../../tilesets/hometown.tsx"/>
+ <tileset firstgid="287" source="../../../tilesets/hometownobjects.tsx"/>
  <layer id="1" name="Tile Layer 1" width="41" height="52">
   <data encoding="csv">
 0,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,56,
@@ -184,9 +185,44 @@
     <property name="marker" value="deep"/>
    </properties>
   </object>
+  <object id="6" name="npc" x="460" y="600">
+   <properties>
+    <property name="actor" value="fnoelle"/>
+    <property name="facing" value="up"/>
+    <property name="flagcheck" value="!future_graveyard_convo"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="7" name="npc" x="280" y="600">
+   <properties>
+    <property name="actor" value="fmarcy"/>
+    <property name="facing" value="up"/>
+    <property name="flagcheck" value="!future_graveyard_convo"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="8" name="npc" x="640" y="600">
+   <properties>
+    <property name="actor" value="fkanako"/>
+    <property name="facing" value="up"/>
+    <property name="flagcheck" value="!future_graveyard_convo"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="9" gid="441" x="248" y="560" width="62" height="72"/>
+  <object id="10" gid="442" x="430" y="560" width="62" height="72"/>
+  <object id="11" name="script" x="80" y="960" width="760">
+   <properties>
+    <property name="cutscene" value="hometown.our_graves"/>
+   </properties>
+  </object>
+  <object id="13" gid="443" x="608" y="560" width="62" height="72"/>
  </objectgroup>
  <objectgroup id="5" name="markers">
   <object id="2" name="spawn" x="1480" y="2040">
+   <point/>
+  </object>
+  <object id="5" name="camto" x="460" y="520">
    <point/>
   </object>
  </objectgroup>
