@@ -111,7 +111,7 @@ end
 function Dummy:getAttackDamage(damage, battler, points)
     if self.weakspot then
         local dmg = super.getAttackDamage(self, damage, battler, points)
-        return math.ceil(dmg * 2.5)
+        return math.ceil(dmg * 3)
     end
     return super.getAttackDamage(self, damage, battler, points)
 end
