@@ -48,4 +48,12 @@ function item:init()
     }
 end
 
+function item:getStatBonus(stat)
+	if Game.battle and Game.battle.temperature and stat == "attack" then
+		local coldness = -(Game.battle.temperature - Game.battle.max_temperature)
+		return 3 + math.floor(coldness / 10)
+	end
+	return super.getStatBonus(self, stat)
+end
+
 return item
