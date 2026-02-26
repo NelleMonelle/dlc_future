@@ -3,7 +3,7 @@ return {
 		cutscene:showNametag("Marcy")
 		cutscene:text("* We're so close to finishing our mission...", "neutral", "fmarcy")
 		cutscene:hideNametag()
-		cutscene:wait(cutscene:walkTo(Game.world.player, Game.world.player.x + 40, 1))
+		cutscene:wait(cutscene:walkTo(Game.world.player, Game.world.player.x + 40, Game.world.player.y, 1))
     end,
 	
 	slitherer = function(cutscene, event)
@@ -29,8 +29,7 @@ return {
 		cutscene:showNametag("Noelle")
 		cutscene:text("* And yet somehow,[wait:5] familiar...", "neutral", "noelle")
 		cutscene:hideNametag()
-		local w, e = cutscene:startEncounter("spawn_solo", true, nil, {wait = false})
-		cutscene:wait(function() return w end)
+		cutscene:startEncounter("spawn_solo")
 		if Game:getFlag("future_variable") == "ceroba_dw" then
 			cutscene:showNametag("Kanako")
 			cutscene:text("* That...[wait:5] was creepy...", "neutral", "fkanako")
