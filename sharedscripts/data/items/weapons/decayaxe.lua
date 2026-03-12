@@ -51,6 +51,7 @@ function item:init()
         ralsei = "It's breaking as I speak!",
         noelle = "Oops! I... Oh wait, it does that?",
         jamm = "How do I reattach the head...?",
+        ceroba = "It's gonna break if I touch it.",
     }
 end
 

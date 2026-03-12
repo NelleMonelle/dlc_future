@@ -45,7 +45,8 @@ function item:init()
     -- Character reactions
     self.reactions = {
         susie = "I mean, as cool as this is...",
-        jamm = "It's my daughter's... I can't."
+        jamm = "It's my daughter's... I can't.",
+        ceroba = "Despite it's power, I'll have to refuse."
     }
 end
 

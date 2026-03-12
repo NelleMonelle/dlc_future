@@ -44,7 +44,9 @@ function item:init()
 
     -- Character reactions
     self.reactions = {
-        jamm = "I feel the cold through my gloves...!"
+        susie = "Brr, my hands're gonna freeze!",
+        jamm = "I feel the cold through my gloves...!",
+        ceroba = "Yeah, I don't wanna get a frostbite."
     }
 end
 

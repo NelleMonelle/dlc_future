@@ -51,6 +51,7 @@ function item:init()
         ralsei = "That's a lot of blade...!",
         noelle = "(Why is it golden?)",
         jamm = "Such a short handle, huh...",
+        ceroba = "Let the teamwork bond us? I guess?",
     }
 end
 
