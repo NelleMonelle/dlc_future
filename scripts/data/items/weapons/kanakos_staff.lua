@@ -6,7 +6,7 @@ function item:init()
     self.name = "Kanako's Staff"
 
     self.type = "weapon"
-    self.icon = "ui/menu/icon/staff"
+    self.icon = "ui/menu/icon/staff_c"
 
     self.effect = ""
     self.shop = ""
@@ -30,7 +30,7 @@ function item:init()
     }
 
     self.reactions = {
-        ceroba = "This is my daughter's...",
+        ceroba = "I'm proud of her.",
         jamm = "I don't do staffs."
     }
 end

@@ -29,7 +29,7 @@ function character:init()
         magic = 60
     }
 
-    self.weapon_icon = "ui/menu/equip/staff"
+    self.weapon_icon = "ui/menu/equip/staff_c"
 
     self:setWeapon("kanakos_staff")
 	self:setArmor(1, "resistance_band")
