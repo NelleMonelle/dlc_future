@@ -9,7 +9,7 @@ function character:init()
 
     self.level = 17
     self.exp = 16724
-    self.title = "Amalgamate\nAble to hold her\nform, mostly"
+    self.title = "Amalgamate\nAble to hold her\nform, mostly."
 
     self.soul_priority = 1
     self.soul_color = {255/255, 255/255, 255/255}

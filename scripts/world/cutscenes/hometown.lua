@@ -335,7 +335,7 @@ return {
 		
 		if Game:getFlag("future_variable") == "ceroba_dw" then
 			cutscene:showNametag("Kanako")
-			cutscene:text("* I'm not liking how quiet it is...", "neutral", "fkanako")
+			cutscene:text("* I'm not liking how quiet it is...", "unimpressed", "fkanako")
 		end
         cutscene:showNametag("Noelle")
 		cutscene:text("* The place seems pretty untouched too...", "neutral", "noelle")

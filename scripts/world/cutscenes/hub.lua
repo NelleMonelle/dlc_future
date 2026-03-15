@@ -178,7 +178,7 @@ local hub = {
 		cutscene:text("* I wonder where it leads...", "neutral", "noelle")
 		if Game:getFlag("future_variable") == "ceroba_dw" then
 			cutscene:showNametag("Kanako")
-			cutscene:text("* Only one way to find out,[wait:5] right?", "neutral", "fkanako")
+			cutscene:text("* Only one way to find out,[wait:5] right?", "eyes_left", "fkanako")
 		end
         cutscene:hideNametag()
 		
@@ -253,7 +253,7 @@ local hub = {
 		if Game:getFlag("future_variable") == "ceroba_dw" then
 			cutscene:showNametag("Kanako")
 			cutscene:text("* You three might be the only ones to remember how this worked...", "neutral", "fkanako")
-			cutscene:text("* It's rare to see one that isn't destroyed.", "neutral", "fkanako")
+			cutscene:text("* It's rare to see one that isn't destroyed.", "eyes_right", "fkanako")
 		end
         cutscene:hideNametag()
 	end,

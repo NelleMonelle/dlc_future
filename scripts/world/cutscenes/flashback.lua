@@ -12,7 +12,7 @@ return {
 		cutscene:text("* Another one of these things...", "neutral", "fmarcy")
 		if Game:getFlag("future_variable") == "ceroba_dw" then
 			cutscene:showNametag("Kanako")
-			cutscene:text("* We just can't catch a break, can we?", "neutral", "fkanako")
+			cutscene:text("* We just can't catch a break, can we?", "unimpressed", "fkanako")
 		end
 		cutscene:hideNametag()
 		local s = cutscene:getCharacter("slitherer")
@@ -32,7 +32,7 @@ return {
 		cutscene:startEncounter("spawn_solo")
 		if Game:getFlag("future_variable") == "ceroba_dw" then
 			cutscene:showNametag("Kanako")
-			cutscene:text("* That...[wait:5] was creepy...", "neutral", "fkanako")
+			cutscene:text("* That...[wait:5] was creepy...", "shock", "fkanako")
 		end
 		cutscene:showNametag("Marcy")
 		cutscene:text("* Did you two feel that?[wait:10]\n* It somehow restricted us.", "closed", "fmarcy")
