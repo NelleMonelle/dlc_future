@@ -54,7 +54,7 @@ function item:init()
 end
 
 function item:getReactions()
-	if not Game:getFlag("future_chase_one") then
+	if not Game:getFlag("future_chase_done") then
 		return {
 			jamm = "Y-you're giving it to me!?",
 			susie = "It's kinda cool, I guess...",
