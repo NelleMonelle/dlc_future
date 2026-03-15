@@ -674,14 +674,23 @@ return {
 		
 		local susie_available = false
 		
+		susie:setSprite("run")
 		susie:walkToSpeed("susie_walkto", 8, nil, false, function()
 			Assets.playSound("jump")
+			susie:resetSprite()
 			susie:jumpTo(840, 260, 20, 0.5, "ball", "landed_2")
 			Game.world.timer:after(0.5, function()
 				susie_available = true
 			end)
 		end)
-		cutscene:walkToSpeed(variant, "variant_walkto", 8)
+		if Game:getFlag("future_variable") == "ceroba_dw" then
+			variant:setSprite("run")
+			cutscene:walkToSpeed(variant, "variant_walkto", 8, nil, false, function()
+				variant:resetSprite()
+			end)
+		else
+			cutscene:walkToSpeed(variant, "variant_walkto", 8)
+		end
 		cutscene:wait(cutscene:walkToSpeed(jamm, "jamm_walkto", 8))
 		
 		local attack_fx = Sprite("effects/attack/cut_ceroba_1", jamm.x, jamm.y - 20)
@@ -714,6 +723,7 @@ return {
 		
 		cutscene:wait(function() return susie_available end)
 		
+		susie:setSprite("walk_unhappy")
 		cutscene:look(susie, "down")
 		cutscene:look(variant, "down")
 		
@@ -1005,10 +1015,10 @@ return {
 		
 		if Game:getFlag("future_variable") == "ceroba_dw" then
 			cutscene:showNametag("Kanako", {left=true})
-			cutscene:text("* Wait... Are you...", "neutral", "fkanako")
-			cutscene:text("* My mother...?", "neutral", "fkanako")
+			cutscene:text("* Wait...[wait:5] Are you...", "shock", "fkanako")
+			cutscene:text("* My...[wait:5] mother...?", "serious", "fkanako")
 			cutscene:showNametag("Ceroba", {left=true})
-			cutscene:text("* K... Kanako?", "surprised", "ceroba")
+			cutscene:text("* K...[wait:5] Kanako?", "surprised", "ceroba")
 			cutscene:showNametag("Kanako", {left=true})
 			cutscene:text("* I thought you...", "neutral", "fkanako")
 		end
@@ -1052,8 +1062,8 @@ return {
 			variant.flip_x = false
 			cutscene:showNametag("Kanako", {left=true})
 			cutscene:text("* Well,[wait:5] one day you just...[wait:10] Didn't come back home.", "neutral", "fkanako")
-			cutscene:text("* Uncle Star and the rest searched for you,[wait:5] but nobody could find you.", "neutral", "fkanako")
-			cutscene:text("* Then I heard Marcy and Noelle lost Jamm and Susie,[wait:5] and...", "neutral", "fkanako")
+			cutscene:text("* Uncle Star and the rest searched for you,[wait:5] but nobody could find you.", "eyes_closed", "fkanako")
+			cutscene:text("* Then I heard Marcy and Noelle lost Jamm and Susie,[wait:5] and...", "eyes_left", "fkanako")
 			cutscene:text("* We decided to look for you three together.", "neutral", "fkanako")
 		end
 		
@@ -1113,9 +1123,9 @@ return {
 		
 		if Game:getFlag("future_variable") == "ceroba_dw" then
 			cutscene:showNametag("Kanako", {top=true})
-			cutscene:text("* And we're just supposed to forgive that?", "neutral", "fkanako", {top=true})
-			cutscene:text("* This is all your fault,[wait:5] you know!", "neutral", "fkanako", {top=true})
-			cutscene:text("* If you hadn't touched that rift,[wait:5] you'd be in your own time!", "neutral", "fkanako", {top=true})
+			cutscene:text("* And we're just supposed to forgive that?", "unimpressed", "fkanako", {top=true})
+			cutscene:text("* This is all your fault,[wait:5] you know!", "angry", "fkanako", {top=true})
+			cutscene:text("* If you hadn't touched that rift,[wait:5] you'd be in your own time!", "angry", "fkanako", {top=true})
 		end
 		fmarcy:setFacing("right")
 		
