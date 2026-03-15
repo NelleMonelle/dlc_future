@@ -556,6 +556,9 @@ local hub = {
 		if Game:getFlag("POST_SNOWGRAVE") then
 			Game:setFlag("future_berdly_graveyard", true)
 		end
+
+		-- we didn't get out of climbing zone properly, so the menu is still disabled, gotta fix that
+		cutscene:after(function() Game.world.can_open_menu = true end)
     end,
 }
 return hub

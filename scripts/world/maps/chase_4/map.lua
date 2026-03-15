@@ -3,7 +3,7 @@ local DeadMap, super = Class(Map)
 function DeadMap:init(world, data)
 	super.init(self, world, data)
 	
-	if not Game:getFlag("future_chase_one") then
+	if not Game:getFlag("future_chase_done") then
 		self.music = "creepychase"
 	end
 end
@@ -11,7 +11,7 @@ end
 function DeadMap:onEnter()
     super.onEnter(self)
 	
-	if not Game:getFlag("future_chase_one") then
+	if not Game:getFlag("future_chase_done") then
 		if Game.world.followers[2] then
 			Game.world.followers[2]:remove()
 		end

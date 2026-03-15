@@ -1192,6 +1192,8 @@ return {
 		cutscene:attachCamera(1)
 		cutscene:attachFollowers(8)
 		cutscene:wait(1)
+
+		Game:setFlag("future_chase_done", true)
 		
 		Game.party[1]:addSpell("rage")
 		
