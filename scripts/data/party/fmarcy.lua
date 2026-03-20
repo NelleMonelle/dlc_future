@@ -9,6 +9,8 @@ function character:init()
 
     self.level = 19
     self.exp = 76525
+    self.love = 19
+    self.kills = 0
     self.title = "Light Reaper\nEmpty attacker who\ndeals heavy damage"
 
     self.soul_priority = 1
@@ -62,6 +64,8 @@ function character:init()
 	
 	self.future = true
 end
+
+function character:getLevel() return self.love end
 
 function character:onLevelUp(level)
     self:increaseStat("health", 10)

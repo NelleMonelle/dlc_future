@@ -9,6 +9,8 @@ function character:init()
 
     self.level = 20
     self.exp = 99999
+    self.love = 20
+    self.kills = 0
     self.title = "Snowcaster\nMight be able to\nuse some cool moves."
 
     self.soul_priority = 1
@@ -71,6 +73,8 @@ function character:init()
 	
 	self.future = true
 end
+
+function character:getLevel() return self.love end
 
 function character:onLevelUp(level)
     self:increaseStat("health", 10)

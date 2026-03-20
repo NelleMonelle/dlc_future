@@ -9,6 +9,8 @@ function character:init()
 
     self.level = 17
     self.exp = 16724
+    self.love = 17
+    self.kills = 0
     self.title = "Amalgamate\nAble to hold her\nform, mostly."
 
     self.soul_priority = 1
@@ -64,6 +66,8 @@ function character:init()
 	
 	self.future = true
 end
+
+function character:getLevel() return self.love end
 
 function character:onLevelUp(level)
     self:increaseStat("health", 10)
