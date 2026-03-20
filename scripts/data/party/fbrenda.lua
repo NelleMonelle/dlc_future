@@ -9,6 +9,8 @@ function character:init()
 
     self.level = 18
     self.exp = 48923
+    self.love = 18
+    self.kills = 0
     self.title = "Battlepriest\nDelivers judgement\n& supports w/ FAITH"
 
     self.soul_priority = 1
@@ -74,6 +76,8 @@ function character:init()
 	
 	self.future = true
 end
+
+function character:getLevel() return self.love end
 
 function character:onLevelUp(level)
     self:increaseStat("health", 10)
