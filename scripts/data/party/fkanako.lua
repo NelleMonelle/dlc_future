@@ -10,7 +10,7 @@ function character:init()
     self.level = 17
     self.exp = 16724
     self.love = 17
-    self.kills = 0
+    self.kills = 128
     self.title = "Amalgamate\nAble to hold her\nform, mostly."
 
     self.soul_priority = 1

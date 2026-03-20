@@ -10,7 +10,7 @@ function character:init()
     self.level = 19
     self.exp = 76525
     self.love = 19
-    self.kills = 0
+    self.kills = 224
     self.title = "Light Reaper\nEmpty attacker who\ndeals heavy damage"
 
     self.soul_priority = 1

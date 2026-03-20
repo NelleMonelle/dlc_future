@@ -10,7 +10,11 @@ function character:init()
     self.level = 20
     self.exp = 99999
     self.love = 20
-    self.kills = 0
+	if Game:getFlag("POST_SNOWGRAVE") then
+		self.kills = 573
+	else
+		self.kills = 224
+	end
     self.title = "Snowcaster\nMight be able to\nuse some cool moves."
 
     self.soul_priority = 1

@@ -10,7 +10,7 @@ function character:init()
     self.level = 18
     self.exp = 48923
     self.love = 18
-    self.kills = 0
+    self.kills = 146
     self.title = "Battlepriest\nDelivers judgement\n& supports w/ FAITH"
 
     self.soul_priority = 1
