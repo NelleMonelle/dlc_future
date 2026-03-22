@@ -168,14 +168,14 @@ local hub = {
 		cutscene:showNametag("Marcy")
 		cutscene:text("* It's over here.", "neutral", "fmarcy")
         cutscene:showNametag("Noelle")
-		cutscene:text("* I see...", "neutral", "noelle")
+		cutscene:text("* I see...", "normal/neutral", "fnoelle")
         cutscene:hideNametag()
 		
 		cutscene:walkToSpeed(fvariant, fvariant.x - 140, fvariant.y + 60, 4, "up")
 		cutscene:wait(cutscene:walkToSpeed(fnoelle, fnoelle.x - 180, fnoelle.y + 40, 4, "up"))
 		
         cutscene:showNametag("Noelle")
-		cutscene:text("* I wonder where it leads...", "neutral", "noelle")
+		cutscene:text("* I wonder where it leads...", "normal/awkward", "fnoelle")
 		if Game:getFlag("future_variable") == "ceroba_dw" then
 			cutscene:showNametag("Kanako")
 			cutscene:text("* Only one way to find out,[wait:5] right?", "eyes_left", "fkanako")
@@ -244,8 +244,8 @@ local hub = {
 	
 	fnoelle = function(cutscene, event)
         cutscene:showNametag("Noelle")
-		cutscene:text("* It all happened so fast,[wait:5] and we...", "neutral", "noelle")
-		cutscene:text("* We were completely unprepared for it.", "neutral", "noelle")
+		cutscene:text("* It all happened so fast,[wait:5] and we...", "shaded/frown_shade_talk_2", "fnoelle")
+		cutscene:text("* We were completely unprepared for it.", "shaded/frown_shade_1", "fnoelle")
         cutscene:hideNametag()
     end,
 	
@@ -520,23 +520,23 @@ local hub = {
 		local fnoelle = cutscene:getCharacter("fnoelle")
 		
         cutscene:showNametag("Noelle")
-		cutscene:text("* It's because Hometown is our base.", "neutral", "noelle")
+		cutscene:text("* It's because Hometown is our base.", "shaded/frown_shade_talk_1", "fnoelle")
         cutscene:hideNametag()
 		
 		cutscene:panTo("camera_drag", 1)
 		cutscene:wait(cutscene:walkTo(fnoelle, 880, 800, 1))
 		
 		cutscene:showNametag("Noelle")
-		cutscene:text("* It's our duty to make sure Hometown stays safe.", "neutral", "noelle")
-		cutscene:text("* We house people who can't fight, as well as those who won't...", "neutral", "noelle")
-		cutscene:text("* Life goes on,[wait:5] and we can't let it stop.", "neutral", "noelle")
+		cutscene:text("* It's our duty to make sure Hometown stays safe.", "shaded/frown_shade_talk_2", "fnoelle")
+		cutscene:text("* We house people who can't fight, as well as those who won't...", "shaded/frown_shade_talk_3", "fnoelle")
+		cutscene:text("* Life goes on,[wait:5] and we can't let it stop.", "shaded/frown_shade_talk_2", "fnoelle")
 		
 		cutscene:showNametag("Jamm")
 		cutscene:text("* Can't say I haven't been there,[wait:5] Noelle...", "shaded_neutral", "jamm")
 		
 		cutscene:showNametag("Noelle")
-		cutscene:text("* Marcy wants to see you in the deeper graveyard.", "neutral", "noelle")
-		cutscene:text("* I'll see you there,[wait:5] too.", "neutral", "noelle")
+		cutscene:text("* Marcy wants to see you in the deeper graveyard.", "shaded/frown_shade_3", "fnoelle")
+		cutscene:text("* I'll see you there,[wait:5] too.", "shaded/frown_shade_2", "fnoelle")
         cutscene:hideNametag()
 		
 		cutscene:wait(cutscene:walkToSpeed(fnoelle, 500, 800, 6))

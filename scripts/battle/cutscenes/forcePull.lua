@@ -6,6 +6,16 @@ return function(cutscene)
 	local s=Game.battle.enemies[1].susie_pull
 	local j=Game.battle.enemies[1].jamm_pull
 	local v=Game.battle.enemies[1].var_pull
+	
+	local function reviveIfNeeded(ally)
+		local health = ally.chara:getHealth()
+		local heal_amount
+		if health >= 1 then return false end
+		heal_amount = math.abs(health) + MathUtils.randomInt(10, 25)
+		-- healitemspell doesn't show UP I think
+		ally:heal(heal_amount)
+		return true
+	end
 
 	local function createForcePull()
 		local data = {}
@@ -46,6 +56,10 @@ return function(cutscene)
 		Game.battle:addChild(data.text2)
 
 		return data
+	end
+	
+	for _, member in ipairs(Game.battle.party) do
+		reviveIfNeeded(member)
 	end
 
 	local susie=cutscene:getCharacter("susie")
@@ -255,6 +269,9 @@ return function(cutscene)
 				Game.battle:setState("NONE")
 				cutscene:endCutscene()
 			end)
+			if Game.battle.enemies[1].health < 0 then
+				return
+			end
 			cutscene:text("* Noelle got hurt by the CrimsonSpire!")
 			if win then
 				Game.battle.enemies[1].win_first = false

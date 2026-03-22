@@ -1,28 +1,28 @@
 local function genText(text, scale)
-            scale = scale or 1
+    scale = scale or 1
 
-            local text_o = Game.world:spawnObject(DialogueText(text, 50, 50, 540, 500))
-            text_o.skippable = false
-            text_o:setScale(scale)
-            text_o.parallax_x = 0
-            text_o.parallax_y = 0
-			text_o.alpha = 0
-			text_o:setLayer(9999)
-			text_o:addFX(OutlineFX(COLORS.black, {
-				thickness = 2,
-				amount = 4
-			}))
+    local text_o = Game.world:spawnObject(DialogueText(text, 50, 50, 540, 500))
+    text_o.skippable = false
+    text_o:setScale(scale)
+    text_o.parallax_x = 0
+    text_o.parallax_y = 0
+	text_o.alpha = 0
+	text_o:setLayer(9999)
+	text_o:addFX(OutlineFX(COLORS.black, {
+		thickness = 2,
+		amount = 4
+	}))
 
-			Game.world.timer:tween(1, text_o, { alpha = 1 }, "linear", function()
-				Game.world.timer:after(2, function()
-					Game.world.timer:tween(1, text_o, {alpha = 0 }, "linear", function()
-						text_o:remove()
-					end)
-				end)
+	Game.world.timer:tween(1, text_o, { alpha = 1 }, "linear", function()
+		Game.world.timer:after(2, function()
+			Game.world.timer:tween(1, text_o, {alpha = 0 }, "linear", function()
+				text_o:remove()
 			end)
+		end)
+	end)
 
-            return text_o
-        end
+    return text_o
+end
 
 return {
 	talk_1 = function(script, chara)

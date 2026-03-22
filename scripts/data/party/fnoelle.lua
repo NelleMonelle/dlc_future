@@ -15,7 +15,7 @@ function character:init()
 	else
 		self.kills = 224
 	end
-    self.title = "Snowceress\nCovers the dark\nin thick ice."
+    self.title = "Snowcaster\nMight be able to\nuse some cool moves."
 
     self.soul_priority = 1
     self.soul_color = {255/255, 255/255, 255/255}

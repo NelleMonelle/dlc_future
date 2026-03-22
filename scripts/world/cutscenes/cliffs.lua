@@ -1030,8 +1030,8 @@ return {
 		cutscene:text("* And your antlers and hair...", "nervous", "susie")
 		
         cutscene:showNametag("Noelle", {left=true})
-		cutscene:text("* It's been...", "neutral", "noelle")
-		cutscene:text("* It's been so long...", "neutral", "noelle")
+		cutscene:text("* It's been...", "tense/guilty_4", "fnoelle")
+		cutscene:text("* It's been so long...", "tense/guilty_5", "fnoelle")
 		
 		cutscene:showNametag("Susie", {left=true})
 		cutscene:text("* ...What?", "nervous", "susie")

@@ -229,6 +229,8 @@ return {
 		local fv = Mod:getVariableFuture(Game.party[3].id)
 		local fvariant = cutscene:getCharacter(fv)
 		
+		Game:setFlag("third_party_member_future", Game.party[3].id)
+		
 		cutscene:look(susie, "up")
 		
 		cutscene:showNametag("Susie")
@@ -257,11 +259,11 @@ return {
 		cutscene:showNametag("Susie")
 		cutscene:text("* Arright,[wait:5] so what did you guys want to talk about?", "neutral", "susie")
         cutscene:showNametag("Noelle")
-		cutscene:text("* Well...", "neutral", "noelle")
+		cutscene:text("* Well...", "normal/awkward_talk", "fnoelle")
 		cutscene:hideNametag()
 		cutscene:wait(cutscene:walkToSpeed(fnoelle, fnoelle.x - 60, fnoelle.y, 2, "down"))
         cutscene:showNametag("Noelle")
-		cutscene:text("* We needed you to be aware of this.", "neutral", "noelle")
+		cutscene:text("* We needed you to be aware of this.", "tense/guilty_2", "fnoelle")
 		cutscene:walkToSpeed(jamm, jamm.x, fmarcy.y + 60, 4)
 		cutscene:showNametag("Susie")
 		cutscene:text("* ...A gravestone?", "neutral", "susie")
@@ -272,7 +274,7 @@ return {
 		cutscene:walkToSpeed(jamm, jamm.x, fmarcy.y, 4)
 		cutscene:walkToSpeed(fmarcy, fmarcy.x - 60, fmarcy.y, 4, "right")
         cutscene:showNametag("Noelle")
-		cutscene:text("* You see...", "neutral", "noelle")
+		cutscene:text("* You see...", "tense/guilty_1", "fnoelle")
 		cutscene:hideNametag()
 		cutscene:wait(function() return jamm.y == fmarcy.y end)
 		cutscene:resetSprite(susie)
@@ -338,7 +340,7 @@ return {
 			cutscene:text("* I'm not liking how quiet it is...", "unimpressed", "fkanako")
 		end
         cutscene:showNametag("Noelle")
-		cutscene:text("* The place seems pretty untouched too...", "neutral", "noelle")
+		cutscene:text("* The place seems pretty untouched too...", "normal/oh", "fnoelle")
 		cutscene:showNametag("Marcy")
 		cutscene:text("* The reports show that the Knight keeps a clean footprint.", "neutral", "fmarcy")
 		cutscene:text("* Keep your guards up,[wait:5] you two.", "neutral", "fmarcy")
@@ -378,5 +380,148 @@ return {
         else
             cutscene:text("* (It's an empty bed.)")
         end
+    end,
+	
+	end_flashback = function(cutscene, event)
+		Game.world.music:fade(0, 1)
+		cutscene:wait(cutscene:fadeOut(1))
+		Game.stage:removeFX(Game.sepia_shader)
+		Game.inventory:load(Game:getFlag("tempflag"))
+		cutscene:wait(1)
+		cutscene:showNametag("Marcy")
+		cutscene:text("* And that's...[wait:10] that's how it happened.", "closed", "fmarcy")
+		cutscene:hideNametag()
+		Game:setPartyMembers("susie", "jamm", Game:getFlag("third_party_member_future", "ceroba"))
+		
+		Game:setFlag("future_hometown_graveyard_cutscene", true)
+		Game:setFlag("future_graveyard_convo", true)
+		
+		cutscene:loadMap("hometown/deep_graveyard", 98, 1840)
+		Game.world.player:setSprite("bangs_wall_right")
+		
+		cutscene:detachFollowers()
+		cutscene:detachCamera()
+		
+		local jamm = cutscene:getCharacter("jamm")
+		local susie = cutscene:getCharacter("susie")
+		local variant = cutscene:getCharacter(Game:getFlag("future_variable"))
+		
+		local fmarcy = cutscene:spawnNPC("fmarcy", 320, 1840, {facing = "up"})
+		local fnoelle = cutscene:spawnNPC("fnoelle", 480, 1880, {facing = "right"})
+		local fvariant = cutscene:spawnNPC(Mod:getVariableFuture(Game.party[3].id), 480, 1960, {facing = "left"})
+		
+		susie.y = 1920
+		
+		jamm.x = 120
+		jamm.y = 1820
+		jamm:setAnimation("sit")
+		
+		variant.x = 320
+		variant.y = 2000
+		cutscene:look(variant, "up")
+		-- y'all can set whatever x, y, and animation for your variants
+		
+		cutscene:wait(cutscene:fadeIn(0.75))
+		
+		cutscene:look(fmarcy, "left")
+		
+		cutscene:wait(1)
+		
+		cutscene:showNametag("Marcy")
+		cutscene:text("* The Knight may be dead,[wait:5] but the war lives on.", "closed", "fmarcy")
+		cutscene:text("* The growing darkness,[wait:5] the Collapse Creatures...", "closed", "fmarcy")
+		cutscene:text("* That is what we stand against.", "neutral", "fmarcy")
+		if Game:getFlag("future_variable") == "ceroba_dw" then
+			cutscene:showNametag("Ceroba")
+			cutscene:text("* You three fight for a noble cause.", "neutral", "ceroba")
+			cutscene:text("* Defending the world,[wait:5] even when it all feels bleak...", "default", "ceroba")
+			cutscene:text("* It reminds me of...", "sorrowful", "ceroba")
+			cutscene:look(variant, "right")
+			cutscene:showNametag("Kanako")
+			cutscene:text("* ...Clover?", "unimpressed", "fkanako")
+			cutscene:showNametag("Ceroba")
+			cutscene:text("* How did you...", "surprised", "ceroba")
+			cutscene:showNametag("Kanako")
+			cutscene:text("* Uncle Star told us all about what happened.", "neutral", "fkanako")
+			cutscene:look(fmarcy, "down")
+			cutscene:look(variant, "up")
+			cutscene:showNametag("Marcy")
+			cutscene:text("* Right,[wait:5] that...", "closed", "fmarcy")
+			cutscene:text("* Selfish.[react:1]", "upset", "fmarcy", {reactions={
+				{"Not really your place\nto chime in, Marcy...", 220, 61, "stern", "jamm"}
+			}})
+		end
+		cutscene:look(fmarcy, "left")
+		cutscene:showNametag("Susie")
+		cutscene:text("* ...", "annoyed_down", "susie")
+		cutscene:text("* I mean,[wait:5] it's great that the Knight was taken down,[wait:5] but...", "annoyed_down_alt", "susie")
+		cutscene:text("* Somehow,[wait:5] I feel...[wait:10] awful.", "scared", "susie")
+		cutscene:showNametag("Jamm")
+		cutscene:text("* Yeah...[wait:10] It's...", "nervous_left", "jamm")
+		cutscene:text("* It's like something is...[wait:10] missing.", "nervous", "jamm")
+		cutscene:text("* [speed:0.5]..........", "concentrate", "jamm")
+		cutscene:text("* Wait,[wait:5] you said you dropped a pen in the rift.", "look_left", "jamm")
+		cutscene:text("* Was it a red ballpoint pen?", "neutral", "jamm")
+		cutscene:look(jamm, "right")
+		jamm:resetSprite()
+		cutscene:text("* Chewed slightly?[wait:10] Broken button?[wait:10] Missing the spring?", "neutral", "jamm")
+		cutscene:showNametag("Marcy")
+		cutscene:text("* How did you...", "lookright", "fmarcy")
+		cutscene:hideNametag()
+		
+		cutscene:wait(cutscene:walkToSpeed(jamm, fmarcy.x - 60, fmarcy.y, 4))
+		
+		cutscene:showNametag("Jamm")
+		cutscene:text("* I...[wait:10] found that pen.", "relief", "jamm")
+		cutscene:showNametag("Marcy")
+		cutscene:text("* ...", "closed", "fmarcy")
+		cutscene:look(fmarcy, "right")
+		cutscene:text("* So that means the Great Tear is...", "closed", "fmarcy")
+		cutscene:look(susie, "right")
+		susie:resetSprite()
+		cutscene:showNametag("Susie")
+		cutscene:text("* ...Our ticket to getting back to our time.", "closed_grin", "susie")
+		if Game:getFlag("future_variable") == "ceroba_dw" then
+			cutscene:showNametag("Kanako")
+			cutscene:text("* Before you do that...", "unimpressed", "fkanako")
+			cutscene:text("* People could use your help around town first.", "unimpressed", "fkanako")
+		end
+		cutscene:showNametag("Susie")
+		cutscene:text("* ...Okay.", "nervous", "susie")
+		cutscene:hideNametag()
+		cutscene:walkTo(susie, susie.x + 640, susie.y, 4)
+		cutscene:walkTo(variant, variant.x + 640, variant.y, 4)
+		cutscene:walkTo(fnoelle, fnoelle.x + 640, fnoelle.y, 4)
+		cutscene:walkTo(fvariant, fvariant.x + 640, fvariant.y, 4)
+		cutscene:wait(cutscene:walkTo(fmarcy, fmarcy.x + 120, fmarcy.y, 4))
+		cutscene:showNametag("Jamm")
+		cutscene:text("* Marcy,[wait:5] wait.", "worried", "jamm")
+		cutscene:look(fmarcy, "left")
+		cutscene:text("* I can tell that something's on your mind.", "worried", "jamm")
+		cutscene:showNametag("Marcy")
+		cutscene:text("* ...", "closed", "fmarcy")
+		cutscene:text("* Do you...[wait:10] have to go back,[wait:5] dad...?", "neutral", "fmarcy")
+		cutscene:showNametag("Jamm")
+		cutscene:text("* What choice do I have?", "worried", "jamm")
+		cutscene:text("* I have a little girl waiting for me in my own time.", "worried_down", "jamm")
+		cutscene:showNametag("Marcy")
+		cutscene:text("* So then...[wait:10] what about us?", "neutral", "fmarcy")
+		cutscene:showNametag("Jamm")
+		cutscene:text("* ...", "worried_down", "jamm")
+		cutscene:text("* I'm sorry,[wait:5] Marcy...", "worried_down", "jamm")
+		cutscene:text("* As much as I'd love to get to know you,[wait:5] I have responsibilities.", "worried", "jamm")
+		cutscene:showNametag("Marcy")
+		cutscene:text("* Okay...[wait:10] I see...", "closed", "fmarcy")
+		cutscene:look(fmarcy, "right")
+		cutscene:text("* Very well then.", "tears_closed", "fmarcy")
+		cutscene:hideNametag()
+		cutscene:walkTo(jamm, jamm.x + 400, jamm.y, 3)
+		cutscene:walkTo(fmarcy, fmarcy.x + 400, fmarcy.y, 3)
+		
+		cutscene:wait(cutscene:fadeOut(2))
+		
+		cutscene:loadMap("hometown/town_graveyard", "deep", "down")
+		
+		cutscene:wait(cutscene:fadeIn(0.75))
     end,
 }

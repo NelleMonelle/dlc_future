@@ -85,18 +85,17 @@ function FNoelle:onAct(battler, name)
 		
 		Game.battle:startActCutscene("forcePull")
 		
-		-- this one shouldn't happen
-		if s_act.action == "ACT" and s_act.name == "Pull" and battler.chara.id ~= "susie" then
+		if s_act and s_act.action == "ACT" and s_act.name == "Pull" and battler.chara.id ~= "susie" then
 			Game.battle:finishActionBy("susie")
 			Game.battle.processed_action[s_act] = true
 		end
 		
-		if j_act.action == "ACT" and j_act.name == "Pull" and battler.chara.id ~= "jamm" then
+		if j_act and j_act.action == "ACT" and j_act.name == "Pull" and battler.chara.id ~= "jamm" then
 			Game.battle:finishActionBy("jamm")
 			Game.battle.processed_action[j_act] = true
 		end
 
-		if v_act.action == "ACT" and v_act.name == "Pull" and battler ~= Game.battle.party[3] then
+		if v_act and v_act.action == "ACT" and v_act.name == "Pull" and battler ~= Game.battle.party[3] then
 			Game.battle:finishActionBy(Game.battle.party[3].chara.id)
 			Game.battle.processed_action[v_act] = true
 		end

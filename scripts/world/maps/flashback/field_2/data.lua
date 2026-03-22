@@ -10,8 +10,10 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 5,
-  nextobjectid = 6,
-  properties = {},
+  nextobjectid = 9,
+  properties = {
+    ["music"] = "future_explore"
+  },
   tilesets = {
     {
       name = "hometown",
@@ -105,6 +107,22 @@ return {
             ["map"] = "flashback/field_1",
             ["marker"] = "ff2"
           }
+        },
+        {
+          id = 8,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 1760,
+          y = 320,
+          width = 40,
+          height = 200,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "flashback/field_3",
+            ["marker"] = "ff2"
+          }
         }
       }
     },
@@ -129,6 +147,19 @@ return {
           shape = "point",
           x = 40,
           y = 500,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 7,
+          name = "ff3",
+          type = "",
+          shape = "point",
+          x = 1720,
+          y = 420,
           width = 0,
           height = 0,
           rotation = 0,

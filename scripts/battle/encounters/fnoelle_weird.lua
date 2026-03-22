@@ -13,14 +13,6 @@ function Noelle_Battle:init()
     -- Enables the purple grid battle background
     self.background = false
 
-    self.spell_countdown = 0
-
-    self.mercy_states={
-        false, --50%
-        false, --75%
-        false  --90%
-    }
-
     self.spell_cast = ""
     self.susie_dead = false
 

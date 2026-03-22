@@ -43,9 +43,8 @@ function Marcy:init()
         "* You hear the rest of your party cheer for you in the distance.",
         "* Marcy aims Liberator towards you,[wait:5] hoping you'll match her might.",
         "* For a second,[wait:5] you swear Marcy smiled a little.",
-		"* Marcy doesn't speak.[wait:10]\n* Her silence says she believes in your power.",
-		"* She's not trying to win.[wait:10]\n* She's trying to wake something up inside you.",
-		"* Marcy adjusts her stance — just like Jamm taught her."
+		"* She doesn't seem to be trying to win.",
+		"* Smells like gunpowder."
     }
 	
 	-- Text that will show whenever Marcy is about to do a particularly strong attack.

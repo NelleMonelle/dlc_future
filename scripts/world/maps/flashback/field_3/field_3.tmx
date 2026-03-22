@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="16" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="5" nextobjectid="9">
+ <editorsettings>
+  <export target="data.lua" format="lua"/>
+ </editorsettings>
+ <properties>
+  <property name="music" value="future_explore"/>
+  <property name="name" value="Flashback - Resting Point"/>
+ </properties>
+ <tileset firstgid="1" source="../../../tilesets/hometown.tsx"/>
+ <layer id="1" name="Tile Layer 1" width="16" height="12">
+  <data encoding="csv">
+91,0,59,60,60,60,60,60,60,60,60,60,60,61,0,0,
+102,0,59,60,60,39,60,60,60,41,60,60,60,61,0,0,
+113,0,59,60,60,60,60,60,60,60,60,60,40,61,0,89,
+0,51,60,60,60,60,60,60,60,60,60,60,60,61,0,100,
+49,60,60,60,41,60,60,40,60,60,60,60,60,61,0,111,
+60,60,60,60,60,60,60,60,60,60,39,60,60,61,0,0,
+60,60,60,60,60,60,60,60,60,60,60,60,60,61,0,0,
+60,60,60,60,40,60,60,60,41,60,60,60,60,61,0,0,
+71,71,60,60,60,60,60,60,60,60,60,60,60,75,0,0,
+0,0,73,71,71,71,71,71,71,71,71,71,75,0,89,90,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,100,101,
+0,89,90,91,0,0,0,0,0,0,0,0,0,0,111,112
+</data>
+ </layer>
+ <objectgroup id="2" name="objects">
+  <object id="4" name="transition" x="-40" y="160" width="40" height="200">
+   <properties>
+    <property name="map" value="flashback/field_2"/>
+    <property name="marker" value="ff2"/>
+   </properties>
+  </object>
+  <object id="5" name="savepoint" x="520" y="200">
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="3" name="markers">
+  <object id="3" name="ff2" x="40" y="260">
+   <point/>
+  </object>
+  <object id="6" name="spawn" x="480" y="280">
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup id="4" name="collision">
+  <object id="1" x="0" y="160">
+   <polygon points="0,0 40,0 80,-40 80,-160 0,-160"/>
+  </object>
+  <object id="2" x="0" y="360">
+   <polygon points="0,0 80,0 120,40 480,40 560,-40 560,-360 640,-360 640,120 0,120"/>
+  </object>
+ </objectgroup>
+</map>

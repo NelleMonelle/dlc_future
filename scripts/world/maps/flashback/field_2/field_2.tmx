@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="44" height="20" tilewidth="40" tileheight="40" infinite="0" nextlayerid="5" nextobjectid="6">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="44" height="20" tilewidth="40" tileheight="40" infinite="0" nextlayerid="5" nextobjectid="9">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
+ <properties>
+  <property name="music" value="future_explore"/>
+ </properties>
  <tileset firstgid="1" source="../../../tilesets/hometown.tsx"/>
  <layer id="1" name="Tile Layer 1" width="44" height="20">
   <data encoding="csv">
@@ -40,9 +43,18 @@
     <property name="marker" value="ff2"/>
    </properties>
   </object>
+  <object id="8" name="transition" x="1760" y="320" width="40" height="200">
+   <properties>
+    <property name="map" value="flashback/field_3"/>
+    <property name="marker" value="ff2"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup id="3" name="markers">
   <object id="3" name="ff1" x="40" y="500">
+   <point/>
+  </object>
+  <object id="7" name="ff3" x="1720" y="420">
    <point/>
   </object>
  </objectgroup>
