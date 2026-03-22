@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="16" height="44" tilewidth="40" tileheight="40" infinite="0" nextlayerid="6" nextobjectid="51">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="16" height="44" tilewidth="40" tileheight="40" infinite="0" nextlayerid="6" nextobjectid="54">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -98,8 +98,8 @@
   <object id="42" name="climbarea" x="200" y="280" width="40" height="40"/>
   <object id="30" name="climbarea" x="160" y="640" width="40" height="40"/>
   <object id="25" name="climbarea" x="360" y="960" width="120" height="40"/>
-  <object id="24" name="climbarea" x="240" y="1000" width="160" height="40"/>
-  <object id="37" name="climbarea" x="120" y="320" width="240" height="40"/>
+  <object id="24" name="climbarea" x="240" y="1000" width="40" height="40"/>
+  <object id="37" name="climbarea" x="200" y="320" width="160" height="40"/>
   <object id="41" name="climbentry" x="200" y="200" width="40" height="40">
    <properties>
     <property name="area" type="object" value="39"/>
@@ -118,6 +118,9 @@
     <property name="marker" value="passageway_3"/>
    </properties>
   </object>
+  <object id="51" name="climbareafall" x="120" y="320" width="80" height="40"/>
+  <object id="52" name="climbarea" x="360" y="1000" width="40" height="40"/>
+  <object id="53" name="climbareafall" x="280" y="1000" width="80" height="40"/>
  </objectgroup>
  <objectgroup id="4" name="markers">
   <object id="43" name="spawn" x="320" y="1560">

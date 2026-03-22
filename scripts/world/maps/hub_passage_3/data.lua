@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 6,
-  nextobjectid = 51,
+  nextobjectid = 54,
   properties = {
     ["music"] = "future_world"
   },
@@ -594,7 +594,7 @@ return {
           shape = "rectangle",
           x = 240,
           y = 1000,
-          width = 160,
+          width = 40,
           height = 40,
           rotation = 0,
           visible = true,
@@ -605,9 +605,9 @@ return {
           name = "climbarea",
           type = "",
           shape = "rectangle",
-          x = 120,
+          x = 200,
           y = 320,
-          width = 240,
+          width = 160,
           height = 40,
           rotation = 0,
           visible = true,
@@ -660,6 +660,45 @@ return {
             ["map"] = "hub_passage_4",
             ["marker"] = "passageway_3"
           }
+        },
+        {
+          id = 51,
+          name = "climbareafall",
+          type = "",
+          shape = "rectangle",
+          x = 120,
+          y = 320,
+          width = 80,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 52,
+          name = "climbarea",
+          type = "",
+          shape = "rectangle",
+          x = 360,
+          y = 1000,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 53,
+          name = "climbareafall",
+          type = "",
+          shape = "rectangle",
+          x = 280,
+          y = 1000,
+          width = 80,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {}
         }
       }
     },
