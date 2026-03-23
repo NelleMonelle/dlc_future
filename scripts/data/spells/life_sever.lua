@@ -12,6 +12,8 @@ function spell:init()
     self.description = "Sacrifice health to give an ally (or self) an attack buff."
     -- Check description
     self.check = "Sacrifice health to give an ally (or self) an attack buff."
+	
+	self.default_resource = "health"
 
     -- TP cost
     self.health_cost = 600
@@ -21,8 +23,6 @@ function spell:init()
 
     -- Tags that apply to this spell
     self.tags = {"Boost"}
-	
-	self.default_resource = "health"
 end
 
 function spell:getCastMessage(user, target)
@@ -35,6 +35,9 @@ function spell:onCast(user, target)
     sound:setPitch(1.4)
     sound:setVolume(0.8)
     sound:play()
+	target.chara:addStatBuff("attack", 5, 20)
 end
+
+function spell:getResourceType(chara) return self.default_resource end
 
 return spell
