@@ -31,10 +31,7 @@ end
 
 function spell:onCast(user, target)
 	target:healEffect({1, 0.5, 0})
-	local sound = Assets.newSound("cardrive")
-    sound:setPitch(1.4)
-    sound:setVolume(0.8)
-    sound:play()
+	Assets.playSound("cardrive", 0.8, 1.4)
 	target.chara:addStatBuff("attack", 5, 20)
 end
 
