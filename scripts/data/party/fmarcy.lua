@@ -37,9 +37,9 @@ function character:init()
 	self:setArmor(1, "resistance_band")
 	
 	self:addSpell("true_slash")
-    -- self:addSpell("ultra_break")
-    -- self:addSpell("life_sever")
-    -- self:addSpell("vslash")
+    self:addSpell("ultra_break")
+    self:addSpell("life_sever")
+    self:addSpell("vslash")
 
     self.lw_weapon_default = "light/rope_sling"
     self.lw_armor_default = "light/bandage"

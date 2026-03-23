@@ -5,8 +5,6 @@ function spell:init()
 
     -- Display name
     self.name = "Ultra Break"
-    -- Name displayed when cast (optional)
-    self.cast_name = "V-SLASH"
 
     -- Battle description
     self.effect = "Break\nDefenses"
