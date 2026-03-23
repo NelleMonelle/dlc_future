@@ -151,7 +151,7 @@ return function(cutscene, event)
 	cutscene:look(jamm, "left")
 	cutscene:look(susie, "left")
 	
-	if Game:getFlag("future_variable") == "ceroba_dw" then	-- Add more cases
+	if Game:getFlag("future_variable") == "ceroba" then	-- Add more cases
 		cutscene:showNametag("Ceroba")
 		cutscene:text("* Jamm is right.[wait:5]\n* I need to get back home to Kanako.", "closed_eyes", "ceroba")
 	elseif Game:getFlag("future_variable") == "brenda" then

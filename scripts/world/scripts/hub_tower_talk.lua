@@ -34,7 +34,7 @@ return {
 	end,
 	
 	talk_3 = function(script, chara)
-		if Game:getFlag("future_variable") == "ceroba_dw" then
+		if Game:getFlag("future_variable") == "ceroba" then
 			genText("[voice:ceroba]We're all responsible for this,[wait:5] you know.", 1)
 		end
 	end,
@@ -56,7 +56,7 @@ return {
 	end,
 	
 	talk_8 = function(script, chara)
-		if Game:getFlag("future_variable") == "ceroba_dw" then
+		if Game:getFlag("future_variable") == "ceroba" then
 			genText("[voice:ceroba]Is it just me,[wait:5] or is it starting to look bright?", 1)
 		end
 	end,

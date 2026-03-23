@@ -49,7 +49,7 @@ return {
                 cutscene:text("* Anyone's got a guess on what is this thing on the horizon?", "nervous", "susie")
                 cutscene:showNametag("Jamm")
                 cutscene:text("* Not a clue.", "look_left", "jamm")
-                if Game:getFlag("future_variable") == "ceroba_dw" then
+                if Game:getFlag("future_variable") == "ceroba" then
                     cutscene:showNametag("Ceroba")
 			        cutscene:text("* Sorry,[wait:5] I got nothing.", "dissapproving", "ceroba")
 		        end
@@ -74,7 +74,7 @@ return {
             elseif map == "cliffs_5" and Game:getFlag("bg_convo") then
                 cutscene:showNametag("Jamm")
                 cutscene:text("* So should we ignore that conversation?", "nervous", "jamm")
-                if Game:getFlag("future_variable") == "ceroba_dw" then
+                if Game:getFlag("future_variable") == "ceroba" then
                     cutscene:showNametag("Ceroba")
 			        cutscene:text("* We don't want them to know we heard...", "neutral", "ceroba")
 		        end
@@ -101,7 +101,7 @@ return {
                 cutscene:text("* Tch,[wait:5] that creature...", "annoyed_down", "susie")
                 cutscene:showNametag("Jamm")
                 cutscene:text("* Right???[wait:10]\n* I didn't know it was boss fight time.", "nervous", "jamm")
-                if Game:getFlag("future_variable") == "ceroba_dw" then
+                if Game:getFlag("future_variable") == "ceroba" then
                     cutscene:showNametag("Ceroba")
 			        cutscene:text("* Didn't you say your DarkSling is effective against them?", "question", "ceroba")
 		        end

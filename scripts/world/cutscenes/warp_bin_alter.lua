@@ -3,7 +3,7 @@ return function(cutscene)
 	
 	if not Game:getFlag("future_bin_checked") then
 		Game:setFlag("future_bin_checked", true)
-		if Game:getFlag("future_variable") == "ceroba_dw" then
+		if Game:getFlag("future_variable") == "ceroba" then
 			cutscene:showNametag("Ceroba")
 			cutscene:text("* This thing is really dented...", "default", "ceroba")
 			cutscene:text("* I can only imagine something heavy did this.", "default", "ceroba")

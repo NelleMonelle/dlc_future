@@ -127,16 +127,16 @@ local hub = {
 		cutscene:text("* Well,[wait:5] don't get me wrong.[wait:10] I'm proud of her.", "nervous", "jamm")
 		cutscene:text("* It's just...[wait:10]\n* How do I say this...", "nervous_left", "jamm")
 		cutscene:text("* Being a soldier isn't the life I hoped she'd have.", "worried", "jamm")
-		if Game:getFlag("future_variable") == "ceroba_dw" then
+		if Game:getFlag("future_variable") == "ceroba" then
 			cutscene:look(variant, "down")
 		end
 		cutscene:text("* I wanted her to be able to live her life happily,[wait:5] but...", "worried", "jamm")
-		if Game:getFlag("future_variable") == "ceroba_dw" then
+		if Game:getFlag("future_variable") == "ceroba" then
 			variant:setSprite("shadowed_down")
 		end
 		cutscene:text("* I just...[wait:10]\n* Couldn't bring that to her...", "worried_down", "jamm")
 		
-		if Game:getFlag("future_variable") == "ceroba_dw" then
+		if Game:getFlag("future_variable") == "ceroba" then
 			cutscene:showNametag("Ceroba")
 			cutscene:text("* ...", "sorrowful", "ceroba")
 			
@@ -176,7 +176,7 @@ local hub = {
 		
         cutscene:showNametag("Noelle")
 		cutscene:text("* I wonder where it leads...", "normal/awkward", "fnoelle")
-		if Game:getFlag("future_variable") == "ceroba_dw" then
+		if Game:getFlag("future_variable") == "ceroba" then
 			cutscene:showNametag("Kanako")
 			cutscene:text("* Only one way to find out,[wait:5] right?", "eyes_left", "fkanako")
 		end
@@ -250,7 +250,7 @@ local hub = {
     end,
 	
 	variant = function(cutscene, event)
-		if Game:getFlag("future_variable") == "ceroba_dw" then
+		if Game:getFlag("future_variable") == "ceroba" then
 			cutscene:showNametag("Kanako")
 			cutscene:text("* You three might be the only ones to remember how this worked...", "neutral", "fkanako")
 			cutscene:text("* It's rare to see one that isn't destroyed.", "eyes_right", "fkanako")
@@ -380,7 +380,7 @@ local hub = {
 		cutscene:text("* But it somehow stuck after their defeat.", "neutral", "fmarcy")
 		cutscene:text("* These signs tell of the prophecy of the Collapse.", "neutral", "fmarcy")
 		
-		if Game:getFlag("future_variable") == "ceroba_dw" then
+		if Game:getFlag("future_variable") == "ceroba" then
 			cutscene:showNametag("Ceroba")
 			cutscene:text("* ...The Collapse?", "default", "ceroba")
 		end
@@ -447,7 +447,7 @@ local hub = {
 		cutscene:look(jamm, "up")
 		cutscene:wait(1)
 		
-		if Game:getFlag("future_variable") == "ceroba_dw" then
+		if Game:getFlag("future_variable") == "ceroba" then
 			cutscene:showNametag("Ceroba")
 			cutscene:text("* Is it safe up there?", nil, "ceroba")
 		end
@@ -507,7 +507,7 @@ local hub = {
 		cutscene:resetSprite(variant)
 		cutscene:look(variant, "up")
 		
-		if Game:getFlag("future_variable") == "ceroba_dw" then
+		if Game:getFlag("future_variable") == "ceroba" then
 			cutscene:showNametag("Ceroba")
 			cutscene:text("* I thought this place would be more damaged.", nil, "ceroba")
 		end

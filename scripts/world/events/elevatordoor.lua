@@ -31,13 +31,13 @@ function ElevatorDoor:onInteract()
 				cutscene:showNametag("Susie")
 				cutscene:text("* Well,[wait:5] maybe the Great Door will give us better luck?", "nervous", "susie")
 				if not Game:getFlag("future_bin_checked") then
-					if Game:getFlag("future_variable") == "ceroba_dw" then
+					if Game:getFlag("future_variable") == "ceroba" then
 						cutscene:showNametag("Ceroba")
 						cutscene:text("* And we still haven't checked the bin,[wait:5] either...", "default", "ceroba")
 					end
 				end
 			elseif not Game:getFlag("future_bin_checked") then
-				if Game:getFlag("future_variable") == "ceroba_dw" then
+				if Game:getFlag("future_variable") == "ceroba" then
 					cutscene:showNametag("Ceroba")
 					cutscene:text("* The only thing left to check is the bin.", "default", "ceroba")
 				end

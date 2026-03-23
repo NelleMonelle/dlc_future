@@ -71,7 +71,7 @@ return function(cutscene)
 	    cutscene:text("* That weird ring on her finger...", "surprise", "susie")
 	    cutscene:text("* It...[wait:10] looks like a torture device...", "nervous_side", "susie")
 		cutscene:text("* It...[wait:10] it must be!", "speechless", "jamm")
-		if Game:getFlag("future_variable") == "ceroba_dw" then
+		if Game:getFlag("future_variable") == "ceroba" then
 			cutscene:text("* Perhaps removing it would help us?", "default", "ceroba")
 		end
 		cutscene:text("* It's the best we've got...", "nervous", "jamm")
@@ -102,7 +102,7 @@ return function(cutscene)
 		elseif j then
 			cutscene:text("* Hold still,[wait:5] Noelle!", "powerful", "jamm")
 		else
-			if Game:getFlag("future_variable") == "ceroba_dw" then
+			if Game:getFlag("future_variable") == "ceroba" then
 				cutscene:text("* This is for your own good.", "nervous", "ceroba")
 			end
 		end
@@ -314,7 +314,7 @@ return function(cutscene)
 	elseif loss then
 		Game.battle.enemies[1].fail_first = false
 		cutscene:text("* That's going to be an issue...", "ouch", "jamm")
-		if Game:getFlag("future_variable") == "ceroba_dw" then
+		if Game:getFlag("future_variable") == "ceroba" then
 			cutscene:text("* I don't feel like we made any progress...", "dissapproving", "ceroba")
 		end
 		cutscene:text("* The ring slipped back up due to her counterattack...", "annoyed", "susie")
