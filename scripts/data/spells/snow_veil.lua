@@ -18,7 +18,7 @@ function spell:init()
     self.target = "party"
 
     -- Tags that apply to this spell
-    self.tags = {}
+    self.tags = {"ice"}
 end
 
 function spell:getBattleDescription()
