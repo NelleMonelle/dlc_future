@@ -4,6 +4,8 @@ local Battle, super = HookSystem.hookScript(Battle)
 function Battle:init()
     super.init(self)
 
+    -- Bell Guard
+    self.bells = {0, 0, 0}
     -- Snow Veil
     self.inv_bonus = false
     self.inv_bonus_turns_left = 0
