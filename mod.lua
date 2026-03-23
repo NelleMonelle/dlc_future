@@ -8,6 +8,9 @@ function Mod:postInit(new_file)
         Game:setFlag("library_experience", 0)
         Game:setFlag("library_kills", 0)
     end
+    if Game:getFlag("future_variable") == "ceroba_dw" then
+        Game:setFlag("future_variable", "ceroba")
+    end
 end
 
 function Mod:addGlobalEXP(exp)
