@@ -129,7 +129,7 @@ return {
 				cutscene:showNametag("Berdly", {top = true})
 				cutscene:text("* That doesn't even make any sense!", "angry_sweat", "fberdly", {top = true})
 				
-				if Game:getFlag("future_variable") == "ceroba_dw" then
+				if Game:getFlag("future_variable") == "ceroba" then
 					cutscene:showNametag("Ceroba", {top = true})
 					cutscene:text("* We traveled in time against our wills.", "neutral", "ceroba", {top = true})
 				end
@@ -152,7 +152,7 @@ return {
 				cutscene:text("* All the terrible enemy designs and bad collision...", "sad", "fberdly", {top = true})
 				cutscene:look(fberdly, "right")
 				
-				if Game:getFlag("future_variable") == "ceroba_dw" then
+				if Game:getFlag("future_variable") == "ceroba" then
 					cutscene:showNametag("Ceroba", {top = true})
 					cutscene:text("* I mean,[wait:5] I don't know a lot about electronics,[wait:5] but...", "neutral", "ceroba", {top = true})
 					cutscene:text("* ...How did you get out?", "question", "ceroba", {top = true})
@@ -335,7 +335,7 @@ return {
 		local fnoelle = cutscene:getCharacter("fnoelle")
 		local fvariant = cutscene:getCharacter(fv)
 		
-		if Game:getFlag("future_variable") == "ceroba_dw" then
+		if Game:getFlag("future_variable") == "ceroba" then
 			cutscene:showNametag("Kanako")
 			cutscene:text("* I'm not liking how quiet it is...", "unimpressed", "fkanako")
 		end
@@ -431,7 +431,7 @@ return {
 		cutscene:text("* The Knight may be dead,[wait:5] but the war lives on.", "closed", "fmarcy")
 		cutscene:text("* The growing darkness,[wait:5] the Collapse Creatures...", "closed", "fmarcy")
 		cutscene:text("* That is what we stand against.", "neutral", "fmarcy")
-		if Game:getFlag("future_variable") == "ceroba_dw" then
+		if Game:getFlag("future_variable") == "ceroba" then
 			cutscene:showNametag("Ceroba")
 			cutscene:text("* You three fight for a noble cause.", "neutral", "ceroba")
 			cutscene:text("* Defending the world,[wait:5] even when it all feels bleak...", "default", "ceroba")
@@ -481,7 +481,7 @@ return {
 		susie:resetSprite()
 		cutscene:showNametag("Susie")
 		cutscene:text("* ...Our ticket to getting back to our time.", "closed_grin", "susie")
-		if Game:getFlag("future_variable") == "ceroba_dw" then
+		if Game:getFlag("future_variable") == "ceroba" then
 			cutscene:showNametag("Kanako")
 			cutscene:text("* Before you do that...", "unimpressed", "fkanako")
 			cutscene:text("* People could use your help around town first.", "unimpressed", "fkanako")

@@ -10,7 +10,7 @@ return {
 		Game:setFlag("future_f_slitherer", true)
 		cutscene:showNametag("Marcy")
 		cutscene:text("* Another one of these things...", "neutral", "fmarcy")
-		if Game:getFlag("future_variable") == "ceroba_dw" then
+		if Game:getFlag("future_variable") == "ceroba" then
 			cutscene:showNametag("Kanako")
 			cutscene:text("* We just can't catch a break, can we?", "unimpressed", "fkanako")
 		end
@@ -39,7 +39,7 @@ return {
 		Game.world.timer:tween(0.8, s3, {alpha = 0})
 		cutscene:wait(1)
 		cutscene:startEncounter("spawn_solo")
-		if Game:getFlag("future_variable") == "ceroba_dw" then
+		if Game:getFlag("future_variable") == "ceroba" then
 			cutscene:showNametag("Kanako")
 			cutscene:text("* That...[wait:5] was creepy...", "shock", "fkanako")
 		end

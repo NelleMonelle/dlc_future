@@ -9,7 +9,7 @@ function DeadMap:onEnter()
 		Game.world.followers[1]:remove()
 	end
 	
-	if Game:getFlag("future_variable") == "ceroba_dw" then
+	if Game:getFlag("future_variable") == "ceroba" then
 		Game.world:spawnBullet("flower_big", 400, 260)
 		
 		self.timer:everyInstant(0.9, function()

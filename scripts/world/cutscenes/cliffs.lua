@@ -64,7 +64,7 @@ return {
 		genText("Agreed. So what do we do?", 50, 50, "fmarcy")	-- Marcy
 		cutscene:wait(5)
 		
-		if Game:getFlag("future_variable") == "ceroba_dw" then
+		if Game:getFlag("future_variable") == "ceroba" then
 			genText("Can't we just leave them be?", 175, 50)	-- Kanako
 			cutscene:wait(5)
 			genText("Negative. Remember what happened last time.", 50, 50, "fmarcy")	-- Marcy
@@ -204,7 +204,7 @@ return {
 		cutscene:text("* It's not my fault![wait:10]\n* That rift sucked me in too!", "determined", "jamm")
 		cutscene:showNametag("Susie")
 		cutscene:text("* You were the one who touched it in the first place!", "angry", "susie")
-		if Game:getFlag("future_variable") == "ceroba_dw" then -- just in Ceroba's case specifically
+		if Game:getFlag("future_variable") == "ceroba" then -- just in Ceroba's case specifically
 			cutscene:look(variant, "up")
 			Game.world.music:fade(0, 1)
 		end
@@ -212,7 +212,7 @@ return {
 		cutscene:text("* Oh,[wait:5] don't act like you wouldn't have--", "furious", "jamm", {auto=true, skip=false})
 		cutscene:look(susie, "left")
 		cutscene:look(jamm, "left")
-		if Game:getFlag("future_variable") == "ceroba_dw" then
+		if Game:getFlag("future_variable") == "ceroba" then
 			cutscene:look(variant, "right")
 			Assets.playSound("ceroba_yell")
 			Game.world.camera:shake(6, 2)
@@ -247,7 +247,7 @@ return {
             cutscene:wait(0.2)
         end
 		cutscene:wait(1)
-		if Game:getFlag("future_variable") == "ceroba_dw" then
+		if Game:getFlag("future_variable") == "ceroba" then
 			cutscene:showNametag("Ceroba")
 			cutscene:text("* Oh,[wait:5] for the love of...", "unamused", "ceroba")
 			cutscene:text("* What is it now?", "closed_eyes", "ceroba")
@@ -302,7 +302,7 @@ return {
 			cutscene:wait(0.7)
 			cutscene:showNametag("Jamm")
 			cutscene:text("* Phew,[wait:5] not a scratch!", "smirk", "jamm")
-			if Game:getFlag("future_variable") == "ceroba_dw" then
+			if Game:getFlag("future_variable") == "ceroba" then
 				cutscene:showNametag("Ceroba")
 				cutscene:text("* I'm honestly surprised we did that.", "nervous_smile", "ceroba")
 				cutscene:text("* Some of the bullets were REALLY close to hitting us...", "nervous", "ceroba")
@@ -394,7 +394,7 @@ return {
 			cutscene:look(susie, "left")
 			cutscene:showNametag("Jamm")
 			cutscene:text("* What just healed us...?", "nervous_left", "jamm")
-			if Game:getFlag("future_variable") == "ceroba_dw" then
+			if Game:getFlag("future_variable") == "ceroba" then
 				cutscene:showNametag("Ceroba")
 				cutscene:text("* I'm...[wait:5] Not sure,[wait:5] honestly.", "dissapproving", "ceroba")
 			elseif Game:getFlag("future_variable") == "brenda" then
@@ -408,7 +408,7 @@ return {
 			cutscene:text("* ...I guess it's not that important,[wait:5] right?", "nervous_left", "jamm")
 			cutscene:text("* Whatever it is helped us in the end.", "nervous_left", "jamm")
 			genText("We're lucky the dumbfaced one bailed us out.", 50, 50, "fmarcy")	-- Marcy
-			if Game:getFlag("future_variable") == "ceroba_dw" then
+			if Game:getFlag("future_variable") == "ceroba" then
 				cutscene:showNametag("Ceroba")
 				cutscene:text("* I don't feel confident about this,[wait:5] Jamm...", "unsure_alt", "ceroba")
 				cutscene:text("* What if it's trying to lure us in?", "suspicious", "ceroba")
@@ -528,7 +528,7 @@ return {
 		cutscene:text("* Like an AU or something?", "neutral", "jamm")
 		cutscene:showNametag("Susie")
 		cutscene:text("* The hell is an AU?", "neutral", "susie")
-		if Game:getFlag("future_variable") == "ceroba_dw" then
+		if Game:getFlag("future_variable") == "ceroba" then
 			genText("And interrogate them at the base or something?", 175, 50)	-- Kanako
 		elseif Game:getFlag("future_variable") == "brenda" then
 			genText("Agreed, perhaps we can interrogate them as well.", 175, 50)	-- Celestial
@@ -547,7 +547,7 @@ return {
 		cutscene:text("* But,[wait:5] uh...[wait:10]\n* Something like that.", "nervous", "susie")
 		cutscene:look(susie, "left")
 		cutscene:look(jamm, "left")
-		if Game:getFlag("future_variable") == "ceroba_dw" then
+		if Game:getFlag("future_variable") == "ceroba" then
 			cutscene:showNametag("Ceroba")
 			cutscene:text("* ...It's the best we've got.", "default", "ceroba")
 			cutscene:text("* So then how would we get home?", "default", "ceroba")
@@ -569,7 +569,7 @@ return {
 		cutscene:setSprite(susie, "shock_left")
 		cutscene:setSprite(jamm, "trip")
 		jamm.flip_x = true
-		if Game:getFlag("future_variable") == "ceroba_dw" then
+		if Game:getFlag("future_variable") == "ceroba" then
 			cutscene:setSprite(variant, "fall")
 			variant.flip_x = true
 		elseif Game:getFlag("future_variable") == "brenda" then
@@ -683,7 +683,7 @@ return {
 				susie_available = true
 			end)
 		end)
-		if Game:getFlag("future_variable") == "ceroba_dw" then
+		if Game:getFlag("future_variable") == "ceroba" then
 			variant:setSprite("run")
 			cutscene:walkToSpeed(variant, "variant_walkto", 8, nil, false, function()
 				variant:resetSprite()
@@ -741,7 +741,7 @@ return {
 		
 		cutscene:wait(cutscene:walkToSpeed(variant, susie.x, susie.y - 40, 8))
 		
-		if Game:getFlag("future_variable") == "ceroba_dw" then
+		if Game:getFlag("future_variable") == "ceroba" then
 			cutscene:showNametag("Ceroba", {top=true})
 			cutscene:text("* ...[wait:5] I don't think he can,[wait:5] Susie.", "sorrowful", "ceroba", {top=true})
 		end
@@ -765,12 +765,12 @@ return {
 		local thirdpartyname = Game.party[3]:getName()
 		cutscene:text("* "..thirdpartyname..".", "bangs/down", "susie", {top=true})
 		cutscene:text("* Protect Jamm.", "bangs/down", "susie", {top=true})
-		if Game:getFlag("future_variable") == "ceroba_dw" then
+		if Game:getFlag("future_variable") == "ceroba" then
 			cutscene:showNametag("Ceroba", {top=true})
 			cutscene:text("* On it.", "neutral", "ceroba", {top=true})
 		end
 		local robashield
-		if Game:getFlag("future_variable") == "ceroba_dw" then
+		if Game:getFlag("future_variable") == "ceroba" then
 			cutscene:walkToSpeed(variant, jamm.x + 100, jamm.y, 4, "right", nil, function()
 				variant:setAnimation("guard")
 				Game.world.timer:after(0.4, function()
@@ -865,7 +865,7 @@ return {
 		cutscene:text("* Dude![wait:10]\n* You're okay!", "surprise_smile", "susie")
 		
 		cutscene:showNametag("Jamm")
-		if Game:getFlag("future_variable") == "ceroba_dw" then
+		if Game:getFlag("future_variable") == "ceroba" then
 			cutscene:text("* Thank the Angel I had my secret ReviveMint...[react:1]", "smirk", "jamm", {reactions={
 				{"I helped him with it\nwhile you were occupied.", "mid", "bottom", "neutral_1", "ceroba"}
 			}})
@@ -1013,7 +1013,7 @@ return {
 		cutscene:walkToSpeed(susie, fnoelle.x - 120, fnoelle.y, 6)
 		cutscene:wait(cutscene:walkToSpeed(variant, fvariant.x - 80, fvariant.y, 6))
 		
-		if Game:getFlag("future_variable") == "ceroba_dw" then
+		if Game:getFlag("future_variable") == "ceroba" then
 			cutscene:showNametag("Kanako", {left=true})
 			cutscene:text("* Wait...[wait:5] Are you...", "shock", "fkanako")
 			cutscene:text("* My...[wait:5] mother...?", "serious", "fkanako")
@@ -1053,7 +1053,7 @@ return {
 		cutscene:look(fmarcy, "down")
 		cutscene:look(jamm, "down")
 		
-		if Game:getFlag("future_variable") == "ceroba_dw" then
+		if Game:getFlag("future_variable") == "ceroba" then
 			variant:setSprite("fall")
 			variant.flip_x = true
 			cutscene:showNametag("Ceroba", {left=true})
@@ -1121,7 +1121,7 @@ return {
 		cutscene:text("* There have been so many rifts opening up in our world.", "neutral", "fmarcy", {top=true})
 		cutscene:text("* If they started opening up a decade ago...", "neutral", "fmarcy", {top=true})
 		
-		if Game:getFlag("future_variable") == "ceroba_dw" then
+		if Game:getFlag("future_variable") == "ceroba" then
 			cutscene:showNametag("Kanako", {top=true})
 			cutscene:text("* And we're just supposed to forgive that?", "unimpressed", "fkanako", {top=true})
 			cutscene:text("* This is all your fault,[wait:5] you know!", "angry", "fkanako", {top=true})
@@ -1135,7 +1135,7 @@ return {
 		cutscene:text("* But yelling at them won't help matters at all.", "closed", "fmarcy", {top=true})
 		fmarcy:setFacing("up")
 		
-		if Game:getFlag("future_variable") == "ceroba_dw" then
+		if Game:getFlag("future_variable") == "ceroba" then
 			cutscene:showNametag("Ceroba", {top=true})
 			cutscene:text("* What happened here,[wait:5] anyways?", "question", "ceroba", {top=true})
 		end
@@ -1256,7 +1256,7 @@ return {
 		cutscene:showNametag("Jamm")
 		cutscene:text("* Hole's kinda deep...", "nervous", "jamm")
 		
-		if Game:getFlag("future_variable") == "ceroba_dw" then
+		if Game:getFlag("future_variable") == "ceroba" then
 			cutscene:showNametag("Ceroba")
 			cutscene:text("* I'm afraid it's our only way forward...", "dissapproving", "ceroba")
 		end
@@ -1279,7 +1279,7 @@ return {
 		cutscene:showNametag("Susie")
 		cutscene:text("* Huh.[wait:10]\n* He actually did it.", "shock", "susie")
 		
-		if Game:getFlag("future_variable") == "ceroba_dw" then
+		if Game:getFlag("future_variable") == "ceroba" then
 			cutscene:showNametag("Ceroba")
 			cutscene:text("[speed:0.5]* ...", "nervous_1", "ceroba")
 			cutscene:showNametag("Susie")
@@ -1418,7 +1418,7 @@ return {
 		cutscene:showNametag("Jamm")
 		cutscene:text("* Well,[wait:5] we could probably use the elevator...", "side_smile", "jamm")
 		
-		if Game:getFlag("future_variable") == "ceroba_dw" then
+		if Game:getFlag("future_variable") == "ceroba" then
 			cutscene:showNametag("Ceroba")
 			cutscene:text("* Or maybe the warp bin.", "default", "ceroba")
 		end
