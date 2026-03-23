@@ -3,22 +3,22 @@ local Soul, super = Class(Soul)
 function Soul:init(x, y, color)
 	super.init(self, x, y, color)
 	
-	if not Game.battle.party[1].bells then
-		Game.battle.party[1].bells = {0, 0, 0}
+	if not Game.battle.bells then
+		Game.battle.bells = {0, 0, 0}
 	end
 	
     self.bells = {}
     self.fluffy_timer = 0
 	self.radius = 25
 	for i=1,3 do
-		if Game.battle.party[1].bells[i] > 0 then
+		if Game.battle.bells[i] > 0 then
 			local b = Sprite("spells/fkanako/bell", self.width/2, self.height/2)
 			b:setScale(1)
 			b.turn_offset = 65*i
 			local x = math.cos(self.fluffy_timer-b.turn_offset)*self.radius
 			local y = math.sin(self.fluffy_timer-b.turn_offset)*self.radius
 			b:setPosition(x - self.width/2, y - self.height / 2)
-			if Game.battle.party[1].bells[i] == 2 then
+			if Game.battle.bells[i] == 2 then
 				b.color = {1, 1, 0}
 			else
 				b.color = {1, 0.5, 0}
@@ -27,7 +27,7 @@ function Soul:init(x, y, color)
 			b.index = i
 			self:addChild(b)
 
-			b.health = Game.battle.party[1].bells[i]
+			b.health = Game.battle.bells[i]
 			b.max_health = 2
 			b.inv_timer = 0
 			b.collider = CircleCollider(b, b.width/2, b.height/2, 5)
@@ -93,7 +93,7 @@ function Soul:update()
 			if bullet:collidesWith(bell) and not bullet.no_affect_bells then
 				if bell.inv_timer <= 0 then
 					bell.health = bell.health-1
-					Game.battle.party[1].bells[bell.index] = Game.battle.party[1].bells[bell.index] - 1
+					Game.battle.bells[bell.index] = Game.battle.bells[bell.index] - 1
 					if bell.health > 0 then
 						Assets.playSound("bell_hit")
 					end
