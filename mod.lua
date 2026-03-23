@@ -11,6 +11,15 @@ function Mod:postInit(new_file)
     if Game:getFlag("future_variable") == "ceroba_dw" then
         Game:setFlag("future_variable", "ceroba")
     end
+    local fnoelle = Game:getPartyMember("fnoelle")
+    -- if she doesn't have the first one, then probably the others too
+    if not fnoelle:hasSpell("frostspite") then
+        fnoelle:addSpell("frostspite")
+        fnoelle:addSpell("coldsnap")
+        fnoelle:addSpell("whiteout")
+        fnoelle:addSpell("snow_veil")
+        fnoelle:addSpell("frostcrypt")
+    end
 end
 
 function Mod:addGlobalEXP(exp)

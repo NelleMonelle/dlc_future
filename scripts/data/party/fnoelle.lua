@@ -40,10 +40,11 @@ function character:init()
     self:setWeapon("crimsonspire")
 	self:setArmor(1, "resistance_band")
 	
-    -- self:addSpell("frostspite")
-    -- self:addSpell("whiteout")
+    self:addSpell("frostspite")
+    self:addSpell("coldsnap")
+    self:addSpell("whiteout")
     self:addSpell("snow_veil")
-    -- self:addSpell("frostcrypt")
+    self:addSpell("frostcrypt")
 
     self.lw_weapon_default = "light/rope_sling"
     self.lw_armor_default = "light/bandage"
