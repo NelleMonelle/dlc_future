@@ -42,7 +42,7 @@ function character:init()
 	
     -- self:addSpell("frostspite")
     -- self:addSpell("whiteout")
-    -- self:addSpell("snow_veil")
+    self:addSpell("snow_veil")
     -- self:addSpell("frostcrypt")
 
     self.lw_weapon_default = "light/rope_sling"
