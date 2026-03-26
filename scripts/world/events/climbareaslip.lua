@@ -8,6 +8,7 @@ function event:init(data)
 	self.slippery = true
 	self.falldir = "down"
 	self.fallingtimer = 8
+	self:setHitbox(5, 5, self.width - 10, self.height - 10)
 end
 
 function event:draw()
@@ -26,11 +27,25 @@ end
 
 function event:onClimbEnter(player)
     if player.facing == "up" or player.facing == "down" then
+		Assets.playSound("motor_upper_2", 0.6, 1.2)
+		local dust = Sprite("effects/slide_dust")
+		dust:play(1 / 15, false, function () dust:remove() end)
+		dust:setOrigin(0.5, 0.5)
+		dust:setScale(2, 2)
+		dust:setPosition(player.x, player.y - 17)
+		dust.layer = player.layer - 0.01
+		dust.physics.speed_y = -3
+		dust.physics.speed_x = MathUtils.random(-1, 1)
+		if player.onrotatingtower then
+			dust.x = self.world.map.cyltower.tower_x
+		end
+		self.world:addChild(dust)
 		player.falldir = self.falldir
 		player.falling = 1
 		player.fallingtimer = self.fallingtimer
 		player.cancel = 1
 	else
+		Assets.playSound("noise")
 		player.slippery = self
 		player:setState("CLIMBSLIP")
 	end

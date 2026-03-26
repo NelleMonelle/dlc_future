@@ -7,6 +7,7 @@ function Light:init(x, y, radius, color)
     self.alpha = 1
     self.inherit_color = false
     self.style = Kristal.getLibConfig("darkness", "style")
+	self.onrotatingtower = false
     -- don't allow debug selecting
     self.debug_select = false
 end
@@ -17,6 +18,14 @@ function Light:getRadius()
     else
         return self.radius
     end
+end
+
+function Light:update()
+	super.update(self)
+	if self.onrotatingtower then
+		self.x = Game.world.map.cyltower.tower_x
+		self.y = Game.world.player.y
+	end
 end
 
 return Light

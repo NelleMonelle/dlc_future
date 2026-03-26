@@ -29,7 +29,12 @@ function Darkness:postLoad()
     for _,chara in ipairs(characters) do
         local light = LightSource(chara.width/2, chara.height/2, radius)
         light.color = color
-        chara:addChild(light)
+		if chara.onrotatingtower then
+			light.onrotatingtower = true
+			self.world:addChild(light)
+		else
+			chara:addChild(light)
+		end
     end
 end
 
