@@ -1,4 +1,4 @@
-local actor, super = Class("jamm", true)
+local actor, super = HookSystem.hookScript("jamm")
 
 function actor:init()
     super.init(self)
