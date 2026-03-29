@@ -94,6 +94,9 @@ function actor:init()
 		
         ["idle"] = {-5, -1},
         ["hurt"] = {-5, -1},
+		
+        ["heavy_walk"] = {-3, 2},
+        ["heavy_walk_slash"] = {-9, -20},
     }
 
     -- self.menu_anim = "bs_win"		-- TODO
