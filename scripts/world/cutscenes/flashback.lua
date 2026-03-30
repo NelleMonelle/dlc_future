@@ -146,7 +146,7 @@ return {
 		
 		Game.world:addChild(DamageNumber("msg", "down", fvariant.x + 20, fvariant.y - 50))
 		
-		cutscene:slideTo(fvariant, fvariant.x, fvariant.y + 200, 0.1)
+		cutscene:slideTo(fvariant, fvariant.x, fvariant.y + 200, 0.2)
 		
 		cutscene:wait(1)
 		
