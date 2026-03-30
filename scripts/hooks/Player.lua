@@ -8,6 +8,8 @@ function Player:init(chara, x, y)
 	self.loc_x = self.x
 	self.ind_x = 1
     self.slip_dust_timer = 0
+	
+	self.state_manager:addState("WINDWALK", { update = self.updateWindWalk })
 end
 
 function Player:beginClimbSlip(last_state)
@@ -76,6 +78,43 @@ function Player:updateClimbSlip()
     self:updateClimbSlipDust()
 end
 
+function Player:updateWindWalk()
+	if self:isMovementEnabled() then
+		local walk_x = 0
+		local walk_y = 0
+
+		if Input.down("left") then
+			walk_x = walk_x - 1
+		elseif Input.down("right") then
+			walk_x = walk_x + 1
+		end
+
+		if Input.down("up") then
+			walk_y = walk_y - 1
+		elseif Input.down("down") then
+			walk_y = walk_y + 1
+		end
+
+		self.moving_x = walk_x
+		self.moving_y = walk_y
+
+		local speed = self:getCurrentSpeed(false)
+		
+		if walk_x ~= 0 or walk_y ~= 0 then
+			self:move(walk_x, walk_y, speed * DTMULT)
+			if not (self.sprite.anim and self.sprite.anim[1] == "heavy_walk") then
+				self:setAnimation({"heavy_walk", 1/8, true})
+			end
+		else
+			self:move(0, 1, 0.5 * DTMULT)
+			self:updateWindWalkDust()
+			if self.sprite.anim then
+				self:setSprite("heavy_walk_1")
+			end
+		end
+	end
+end
+
 function Player:updateClimbSlipDust()
     self.slip_dust_timer = MathUtils.approach(self.slip_dust_timer, 0, DTMULT)
     if self.slip_dust_timer == 0 then
@@ -94,6 +133,24 @@ function Player:updateClimbSlipDust()
 		dust:setPosition(dust_x, dust_y)
 		dust.layer = self.layer - 0.01
 		dust.physics.speed_y = -1
+		self.world:addChild(dust)
+	end
+end
+
+function Player:updateWindWalkDust()
+    self.slip_dust_timer = MathUtils.approach(self.slip_dust_timer, 0, DTMULT)
+    if self.slip_dust_timer == 0 then
+        self.slip_dust_timer = 3
+
+		local dust = Sprite("effects/climb_dust_small")
+		dust:play(1 / 15, false, function() dust:remove() end)
+		dust:setOrigin(0.5, 0)
+		dust:setScale(2, 2)
+		local dust_x = self.x + MathUtils.random(-4, 4)
+		local dust_y = self.y
+		dust:setPosition(dust_x, dust_y)
+		dust.layer = self.layer - 0.01
+		dust.physics.speed_y = 1
 		self.world:addChild(dust)
 	end
 end

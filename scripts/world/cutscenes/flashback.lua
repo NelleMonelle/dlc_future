@@ -78,7 +78,8 @@ return {
 		end
 		cutscene:hideNametag()
 		
-		-- TODO: Knight wind
+		Game.world.cw = Game.world:addChild(ChurchWind(0, 2480))
+		Game.world.cw:setLayer(WORLD_LAYERS["above_events"])
 		
 		Assets.playSound("knightroar")
 		
@@ -163,6 +164,7 @@ return {
 		cutscene:hideNametag()
 		
 		Game.world:setBattle(true)
+		Game.world.player:setState("WINDWALK")
     end,
 	
 	wip = function(cutscene, event)
