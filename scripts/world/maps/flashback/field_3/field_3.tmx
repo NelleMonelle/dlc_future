@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="16" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="5" nextobjectid="9">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="16" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="5" nextobjectid="10">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -28,11 +28,17 @@
   <object id="4" name="transition" x="-40" y="160" width="40" height="200">
    <properties>
     <property name="map" value="flashback/field_2"/>
-    <property name="marker" value="ff2"/>
+    <property name="marker" value="ff3"/>
    </properties>
   </object>
   <object id="5" name="savepoint" x="520" y="200">
    <point/>
+  </object>
+  <object id="9" name="transition" x="80" y="-40" width="480" height="40">
+   <properties>
+    <property name="map" value="flashback/field_4"/>
+    <property name="marker" value="ff3"/>
+   </properties>
   </object>
  </objectgroup>
  <objectgroup id="3" name="markers">

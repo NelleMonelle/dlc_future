@@ -28,7 +28,7 @@ function RepBar:hide()
     if self.shown then
         self.animating_in = false
         self.shown = false
-        self.physics.speed_x = -10
+        self.physics.speed_x = 20
         self.physics.friction = -0.4
     end
 end
@@ -41,7 +41,7 @@ function RepBar:processSlideIn()
             self.animating_in = false
         end
 
-        self.x = Ease.outCubic(self.animation_timer, self.init_x, 25 + 128, 12)
+        self.x = Ease.outCubic(self.animation_timer, self.init_x, -153, 12)
     end
 end
 

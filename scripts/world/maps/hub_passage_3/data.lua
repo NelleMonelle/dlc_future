@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 6,
-  nextobjectid = 54,
+  nextobjectid = 55,
   properties = {
     ["music"] = "future_world"
   },

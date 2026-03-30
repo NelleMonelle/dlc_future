@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 5,
-  nextobjectid = 9,
+  nextobjectid = 10,
   properties = {
     ["music"] = "future_explore",
     ["name"] = "Flashback - Resting Point"
@@ -83,7 +83,7 @@ return {
           visible = true,
           properties = {
             ["map"] = "flashback/field_2",
-            ["marker"] = "ff2"
+            ["marker"] = "ff3"
           }
         },
         {
@@ -98,6 +98,22 @@ return {
           rotation = 0,
           visible = true,
           properties = {}
+        },
+        {
+          id = 9,
+          name = "transition",
+          type = "",
+          shape = "rectangle",
+          x = 80,
+          y = -40,
+          width = 480,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["map"] = "flashback/field_4",
+            ["marker"] = "ff3"
+          }
         }
       }
     },

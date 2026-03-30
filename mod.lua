@@ -22,33 +22,6 @@ function Mod:postInit(new_file)
     end
 end
 
-function Mod:addGlobalEXP(exp)
-    Game:setFlag("library_experience", MathUtils.clamp(Game:getFlag("library_experience", 0) + exp, 0, 99999))
-
-    local max_love = #Kristal.getLibConfig("library_main", "global_xp_requirements")
-    local leveled_up = false
-    while
-        Game:getFlag("library_experience") >= Kristal.callEvent("getGlobalNextLvRequiredEXP")
-        and Game:getFlag("library_love", 1) < max_love
-    do
-        leveled_up = true
-        Game:addFlag("library_love", 1)
-        for _,party in ipairs(Game.party) do
-            party:onLevelUpLVLib(Game:getFlag("library_love"))
-        end
-    end
-
-    return leveled_up
-end
-
-function Mod:getGlobalNextLvRequiredEXP()
-    return Kristal.getLibConfig("library_main", "global_xp_requirements")[Game:getFlag("library_love") + 1] or 0
-end
-
-function Mod:getGlobalNextLv()
-    return MathUtils.clamp(Kristal.callEvent("getGlobalNextLvRequiredEXP") - Game:getFlag("library_experience"), 0, 99999)
-end
-
 function Mod:getVariablePartyMember()	-- Assuming Jamm and Susie are the only other ones in the party
 	for _, value in ipairs(Game.party) do
 		if value.id ~= "jamm" and value.id ~= "susie" then
