@@ -3,7 +3,13 @@ local TitanSpawn, super = Class(EnemyBattler, "titan_spawn")
 function TitanSpawn:init()
     super.init(self)
 
-    self.name = "Titan Spawn"
+    if Game:getFlag("titan_spawn_knowledge") then -- For if you ever learn that Titans come from Titan Spawn
+        self.name = "Titan Spawn"
+    elseif Game:getFlag("topfloor_ambush") then
+        self.name = "Voidspawn"
+    else
+        self.name = "???"
+    end
     self:setActor("titan_spawn")
 
     self.max_health = 3000
@@ -135,12 +141,12 @@ function TitanSpawn:onAct(battler, name)
 	if name == "Check" then
         if Game:getTension() >= 64 then
             return {
-                "* TITAN SPAWN - AT 30 DF 200\n* A shard of fear. Appears \nin places of deep dark.",
+                "* "..string.upper(self.name).." - AT 30 DF 200\n* A shard of fear. Appears \nin places of deep dark.",
                 "* The atmosphere feels tense...\n* (You can use [color:yellow]BANISH[color:reset]!)"
             }
         else
             return {
-                "* TITAN SPAWN - AT 30 DF 200\n* A shard of fear. Appears \nin places of deep dark.",
+                "* "..string.upper(self.name).." - AT 30 DF 200\n* A shard of fear. Appears \nin places of deep dark.",
                 "* Expose it to LIGHT... and gather COURAGE to gain TP.",
                 "* Then, \"[color:yellow]BANISH[color:reset]\" it!",
             }
