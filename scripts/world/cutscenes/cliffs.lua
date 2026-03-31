@@ -74,6 +74,11 @@ return {
 			cutscene:wait(5)
 			genText("True, but I'd rather we know who they are first.", 50, 50, "fmarcy")	-- Marcy
 			cutscene:wait(5)
+		elseif Game:getFlag("future_variable") == "celestial" then
+			genText("Shall I smite them where they stand?", 175, 50) -- Brenda
+			cutscene:wait(5)
+			genText("I believe that won't be necessary. For now, at least.", 50, 50, "fmarcy")	-- Marcy
+			cutscene:wait(5)
 		end
 		genText("Maybe we could wait to see what happens?", 300, 50)	-- Noelle
 		cutscene:wait(5)
@@ -1021,6 +1026,15 @@ return {
 			cutscene:text("* K...[wait:5] Kanako?", "surprised", "ceroba")
 			cutscene:showNametag("Kanako", {left=true})
 			cutscene:text("* I thought you...", "neutral", "fkanako")
+		elseif Game:getFlag("future_variable") == "celestial" then
+			cutscene:showNametag("Brenda", {left = true})
+			cutscene:text("* By the Angel...[wait:10] Is that really you...?", "serious/shocked", "fbrenda")
+			cutscene:showNametag("Celestial", {left = true})
+			--cutscene:text("[noskip]* Brenda?[wait:10] Hey,[wait:5] what happened to-", "", "celestial", {auto = true})
+			cutscene:showNametag("Brenda", {left = true})
+			cutscene:text("* D-[wait:5]DON'T TOUCH ME!!", "serious/angry", "fbrenda")
+			cutscene:showNametag("Celestial", {left = true})
+			--cutscene:text("* O-oh...[wait:5] sorry...", "", "celestial")
 		end
 		
 		cutscene:showNametag("Susie", {left=true})
@@ -1065,6 +1079,13 @@ return {
 			cutscene:text("* Uncle Star and the rest searched for you,[wait:5] but nobody could find you.", "eyes_closed", "fkanako")
 			cutscene:text("* Then I heard Marcy and Noelle lost Jamm and Susie,[wait:5] and...", "eyes_left", "fkanako")
 			cutscene:text("* We decided to look for you three together.", "neutral", "fkanako")
+		elseif Game:getFlag("future_variable") == "celestial" then
+			cutscene:showNametag("Celestial", {left = true})
+			--cutscene:text("* Wait,[wait:5] we went missing?!", "", "celestial")
+			cutscene:showNametag("Brenda", {left = true})
+			cutscene:text("* Yes,[wait:5] for ten whole years.", "serious/neutral", "fbrenda")
+			cutscene:showNametag("Celestial", {left = true})
+			--cutscene:text("* Gosh...", "", "celestial")
 		end
 		
 		cutscene:showNametag("Susie", {left=true})
@@ -1126,6 +1147,11 @@ return {
 			cutscene:text("* And we're just supposed to forgive that?", "unimpressed", "fkanako", {top=true})
 			cutscene:text("* This is all your fault,[wait:5] you know!", "angry", "fkanako", {top=true})
 			cutscene:text("* If you hadn't touched that rift,[wait:5] you'd be in your own time!", "angry", "fkanako", {top=true})
+		elseif Game:getFlag("future_variable") == "celestial" then
+			cutscene:showNametag("Brenda", {top = true})
+			cutscene:text("* Are we supposed to just...[wait:10] FORGIVE them for this?!", "serious/pissed", "fbrenda")
+			cutscene:text("* All of this death and destruction,[wait:5] it's all THEIR fault!", "serious/angry", "fbrenda")
+			cutscene:text("[shake:5][noskip]* I'll...[wait:10][face:serious/deathstare] I'LL-[wait:5]", "serious/shaded", "fbrenda", {auto = true})
 		end
 		fmarcy:setFacing("right")
 		
