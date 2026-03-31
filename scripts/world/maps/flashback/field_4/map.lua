@@ -17,8 +17,8 @@ function DeadMap:update()
 		self.knife_time = self.knife_time + DT
 		
 		if self.knife_state == "SINGLES" then
-			if self.knife_time >= 0.4 then
-				self.knife_time = self.knife_time - 0.4
+			if self.knife_time >= 0.3 then
+				self.knife_time = self.knife_time - 0.3
 				
 				local x = love.math.random(90, 550)
 				
@@ -43,7 +43,7 @@ function DeadMap:update()
 				local x = love.math.random(90, 590 - (40 * knife_count))
 				
 				for i=1, knife_count do
-					self.world:spawnBullet("KnightDagger", x + (40 * (i-1)), 90, "down", 1.5)
+					self.world:spawnBullet("KnightDagger", x + (40 * (i-1)), 90, "down", 1.2)
 				end
 				
 				self.knife_state_uses = self.knife_state_uses + 1
