@@ -179,6 +179,29 @@ return {
 		Game.world.player:setSprite("heavy_walk_1")
 		Game.world.cw:remove()
 		Game:setPartyMembers("fmarcy", "fnoelle", Game:getFlag("tempflag2", "fkanako"))
+		
+		Game.world.music:fade(0, 1)
+		
+		cutscene:wait(1)
+		
+		cutscene:shakeCharacter(Game.world.player, 4)
+		Game.world.player:resetSprite()
+		cutscene:look(Game.world.player, "up")
+		Assets.playSound("wing")
+		
+		cutscene:wait(1)
+		
+		cutscene:showNametag("Marcy")
+		cutscene:text("* ...That was quite the onslaught...", "closed", "fmarcy")
+		if Game.party[1].health == 1800 then
+			cutscene:text("* Made it through unharmed,[wait:5] sure,[wait:5] but still...", "neutral", "fmarcy")
+		end
+		cutscene:text("* ...Hope that made the Knight more tired.", "closed", "fmarcy")
+		cutscene:hideNametag()
+		
+		Game.world.player:walkTo(Game.world.player.x, 80, 3)
+		
+		cutscene:wait(cutscene:fadeOut(3))
     end,
 	
 	wip = function(cutscene, event)
