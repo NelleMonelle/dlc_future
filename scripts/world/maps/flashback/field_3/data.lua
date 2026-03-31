@@ -101,7 +101,7 @@ return {
         },
         {
           id = 9,
-          name = "transition",
+          name = "script",
           type = "",
           shape = "rectangle",
           x = 80,
@@ -111,8 +111,7 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["map"] = "flashback/field_4",
-            ["marker"] = "ff3"
+            ["cutscene"] = "flashback.chase"
           }
         }
       }

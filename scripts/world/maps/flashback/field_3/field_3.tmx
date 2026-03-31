@@ -34,10 +34,9 @@
   <object id="5" name="savepoint" x="520" y="200">
    <point/>
   </object>
-  <object id="9" name="transition" x="80" y="-40" width="480" height="40">
+  <object id="9" name="script" x="80" y="-40" width="480" height="40">
    <properties>
-    <property name="map" value="flashback/field_4"/>
-    <property name="marker" value="ff3"/>
+    <property name="cutscene" value="flashback.chase"/>
    </properties>
   </object>
  </objectgroup>

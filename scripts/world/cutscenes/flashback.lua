@@ -146,7 +146,7 @@ return {
 		
 		Game.world:addChild(DamageNumber("msg", "down", fvariant.x + 20, fvariant.y - 50))
 		
-		cutscene:slideTo(fvariant, fvariant.x, fvariant.y + 200, 0.1)
+		cutscene:slideTo(fvariant, fvariant.x, fvariant.y + 200, 0.2)
 		
 		cutscene:wait(1)
 		
@@ -165,6 +165,20 @@ return {
 		
 		Game.world:setBattle(true)
 		Game.world.player:setState("WINDWALK")
+		
+		Game:setFlag("tempflag2", Game.party[3].id)
+		
+		Game:removePartyMember("fnoelle")
+		Game:removePartyMember(Game.party[2].id)
+    end,
+	
+	end_chase = function(cutscene, event)
+		Game.world:setBattle(false)
+		Game.world.player:setState("WALK")
+		Game.world.player:resetSprite()
+		Game.world.player:setSprite("heavy_walk_1")
+		Game.world.cw:remove()
+		Game:setPartyMembers("fmarcy", "fnoelle", Game:getFlag("tempflag2", "fkanako"))
     end,
 	
 	wip = function(cutscene, event)

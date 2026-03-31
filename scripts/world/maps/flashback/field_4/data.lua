@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 5,
-  nextobjectid = 10,
+  nextobjectid = 11,
   properties = {},
   tilesets = {
     {
@@ -128,7 +128,23 @@ return {
       parallaxx = 1,
       parallaxy = 1,
       properties = {},
-      objects = {}
+      objects = {
+        {
+          id = 10,
+          name = "script",
+          type = "",
+          shape = "rectangle",
+          x = 80,
+          y = 160,
+          width = 480,
+          height = 40,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["cutscene"] = "flashback.end_chase"
+          }
+        }
+      }
     },
     {
       type = "objectgroup",

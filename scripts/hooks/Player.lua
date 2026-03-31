@@ -146,7 +146,7 @@ function Player:updateWindWalkDust()
 		dust:play(1 / 15, false, function() dust:remove() end)
 		dust:setOrigin(0.5, 0)
 		dust:setScale(2, 2)
-		local dust_x = self.x + MathUtils.random(-4, 4)
+		local dust_x = self.x + MathUtils.random(-12, 12)
 		local dust_y = self.y
 		dust:setPosition(dust_x, dust_y)
 		dust.layer = self.layer - 0.01
