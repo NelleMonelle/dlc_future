@@ -283,14 +283,9 @@ return {
 		knight:setAnimation("attack_nl")
 		cutscene:wait(3/25)
 		
-		local rift = Sprite("world/cutscenes/great_tear")
+		local rift = Game.world:addChild(GreatTear(320, 160))
 		rift:setScale(0.03)
-		rift:setOrigin(0.5)
 		rift:setLayer(0.2)
-		rift.x = 320
-		rift.y = 160
-		
-		Game.world:addChild(rift)
 		
 		Game.world.timer:tween(0.6, rift, {scale_y = 2}, "out-cubic")
 		cutscene:wait(0.6)
@@ -324,7 +319,7 @@ return {
 		Game.world.timer:tween(0.8, knight, {y = 360}, "out-cubic")
 		cutscene:wait(1.3)
 		
-		cutscene:wait(cutscene:panTo(320, 560, 2))
+		cutscene:wait(cutscene:attachCamera(2))
 
 		if Game:getFlag("future_variable") == "ceroba" then
 			cutscene:showNametag("Kanako")
