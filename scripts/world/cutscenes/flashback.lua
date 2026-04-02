@@ -188,12 +188,14 @@ return {
 		Game.world.player:resetSprite()
 		cutscene:look(Game.world.player, "up")
 		Assets.playSound("wing")
+		Game.world.player.scarf:remove()
 		
 		cutscene:wait(1)
 		
 		cutscene:showNametag("Marcy")
 		cutscene:text("* ...That was quite the onslaught...", "closed", "fmarcy")
 		if Game.party[1].health == 1800 then
+			-- TODO: Knight chase no-hit achievement
 			cutscene:text("* Made it through unharmed,[wait:5] sure,[wait:5] but still...", "neutral", "fmarcy")
 		end
 		cutscene:text("* ...Hope that made the Knight more tired.", "closed", "fmarcy")
@@ -202,6 +204,53 @@ return {
 		Game.world.player:walkTo(Game.world.player.x, 80, 3)
 		
 		cutscene:wait(cutscene:fadeOut(3))
+		
+		cutscene:loadMap("flashback/field_5", 320, 1200)
+		
+		local fmarcy = cutscene:getCharacter("fmarcy")
+		local fnoelle = cutscene:getCharacter("fnoelle")
+		local fvariant = cutscene:getCharacter(Game.party[3].id)
+		
+		cutscene:detachFollowers()
+		
+		fnoelle.x = 320
+		fnoelle.y = 920
+		
+		fvariant.x = 320
+		fvariant.y = 1280
+		
+		cutscene:wait(cutscene:fadeIn(0.75))
+		cutscene:wait(cutscene:walkToSpeed(Game.world.player, 320, 1000, 4))
+		
+		cutscene:look(fnoelle, "down")
+		cutscene:showNametag("Marcy")
+		cutscene:text("* Glad that's over...", "closed", "fmarcy")
+		cutscene:showNametag("Noelle")
+		cutscene:text("* You could say that again.", "tense/guilty_1", "fnoelle")
+		cutscene:look(fnoelle, "up")
+		cutscene:text("* But we're not done for too long...", "normal/neutral", "fnoelle")
+		cutscene:hideNametag()
+		
+		cutscene:detachCamera()
+		
+		cutscene:wait(cutscene:panTo(320, 320, 2))
+		cutscene:wait(1)
+		
+		cutscene:showNametag("Marcy")
+		cutscene:text("* We made it.[wait:10]\n* The Knight is within our reach.", "neutral", "fmarcy")
+		cutscene:text("* Just what are they planning...?", "mad", "fmarcy")
+		cutscene:showNametag("Noelle")
+		cutscene:text("* Do they even know we're here...?", "normal/scared", "fnoelle")
+		cutscene:hideNametag()
+		
+		fvariant.y = 1100
+		
+		cutscene:wait(cutscene:attachCamera(2))
+		
+		cutscene:showNametag("Marcy")
+		cutscene:text("* Come on,[wait:10] you two.[wait:5]\n* Let's finish this.", "closed", "fmarcy")
+		
+		cutscene:wait(cutscene:attachFollowers(4))
     end,
 	
 	wip = function(cutscene, event)

@@ -10,8 +10,11 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 6,
-  nextobjectid = 4,
-  properties = {},
+  nextobjectid = 7,
+  properties = {
+    ["music"] = "wind",
+    ["name"] = "Flashback - Knight"
+  },
   tilesets = {
     {
       name = "hometown",
@@ -143,6 +146,22 @@ return {
           rotation = 0,
           visible = true,
           properties = {}
+        },
+        {
+          id = 6,
+          name = "npc",
+          type = "",
+          shape = "point",
+          x = 320,
+          y = 480,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["actor"] = "knight",
+            ["sprite"] = "looking_up"
+          }
         }
       }
     },
