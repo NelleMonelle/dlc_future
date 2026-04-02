@@ -21,6 +21,7 @@ function actor:init()
         ["idle"]           = {"idle", 1/25, true},
 		
         ["attack"]         = {"attack_ol", 1/25, true},
+        ["attack_nl"]      = {"attack_ol", 1/25, false},
 
         ["point"]          = {"point_ol", 1/25, false},
         ["point_end"]      = {"point_ol", 0.1, false, next="idle", frames={5,4,3,2,1}},

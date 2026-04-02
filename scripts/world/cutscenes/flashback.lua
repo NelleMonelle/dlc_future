@@ -233,7 +233,7 @@ return {
 		
 		cutscene:detachCamera()
 		
-		cutscene:wait(cutscene:panTo(320, 320, 2))
+		cutscene:wait(cutscene:panTo(320, 160, 2))
 		cutscene:wait(1)
 		
 		cutscene:showNametag("Marcy")
@@ -249,8 +249,101 @@ return {
 		
 		cutscene:showNametag("Marcy")
 		cutscene:text("* Come on,[wait:10] you two.[wait:5]\n* Let's finish this.", "closed", "fmarcy")
+		cutscene:hideNametag()
 		
 		cutscene:wait(cutscene:attachFollowers(4))
+    end,
+	
+	ENGAGE = function(cutscene, event)	-- no I did not have caps lock on
+		local fmarcy = cutscene:getCharacter("fmarcy")
+		local fnoelle = cutscene:getCharacter("fnoelle")
+		local fvariant = cutscene:getCharacter(Game.party[3].id)
+		
+		local knight = cutscene:getCharacter("knight")
+		
+		cutscene:detachFollowers()
+		
+		cutscene:showNametag("Marcy")
+		cutscene:text("* Hold on...", "neutral", "fmarcy")
+		cutscene:hideNametag()
+		
+		cutscene:walkToSpeed(fmarcy, 500, 600, 6, "up")
+		cutscene:walkToSpeed(fnoelle, 120, 660, 6, "right")
+		cutscene:wait(cutscene:walkToSpeed(fvariant, 180, 600, 6, "up"))
+		
+		cutscene:wait(cutscene:panTo(320, 160, 2))
+		cutscene:wait(1)
+		
+		knight:setSprite("idle")
+		
+		Game.world.timer:tween(0.8, knight, {x = 390}, "in-out-back")
+		cutscene:wait(1.2)
+		
+		Assets.playSound("knight_cut")
+		knight:setAnimation("attack_nl")
+		cutscene:wait(3/25)
+		
+		local rift = Sprite("world/cutscenes/great_tear")
+		rift:setScale(0.03)
+		rift:setOrigin(0.5)
+		rift:setLayer(0.2)
+		rift.x = 320
+		rift.y = 160
+		
+		Game.world:addChild(rift)
+		
+		Game.world.timer:tween(0.6, rift, {scale_y = 2}, "out-cubic")
+		cutscene:wait(0.6)
+		
+		Assets.playSound("battleenter")
+		Game.world.timer:tween(0.6, rift, {scale_x = 2}, "in-quart")
+		cutscene:wait(0.6)
+		
+		Assets.playSound("ominous_shine")
+		
+		local rift2 = Sprite("world/cutscenes/great_tear")
+		rift2:setScale(0.2)
+		rift2:setOrigin(0.5)
+		rift2:setLayer(2)
+		rift2.x = 320
+		rift2.y = 160
+		rift2.alpha = 0.5
+		
+		Game.world:addChild(rift2)
+		Game.world.timer:tween(0.5, rift2, {scale_x = 2.5, scale_y = 2.5, alpha = 0}, "in-quart")
+		cutscene:wait(1.3)
+		
+		knight:setSprite("idle")
+		cutscene:wait(0.2)
+		
+		Game.world.timer:tween(0.8, knight, {x = 320}, "in-out-back")
+		cutscene:wait(1.3)
+		
+		knight:setSprite("looking_up")
+		
+		Game.world.timer:tween(0.8, knight, {y = 360}, "out-cubic")
+		cutscene:wait(1.3)
+		
+		cutscene:wait(cutscene:panTo(320, 560, 2))
+
+		if Game:getFlag("future_variable") == "ceroba" then
+			cutscene:showNametag("Kanako")
+			cutscene:text("* That's the biggest rift I've ever seen...!", "shock", "fkanako")
+		end
+		
+		cutscene:showNametag("Marcy")
+		cutscene:text("* Unstable too...", "mad", "fmarcy")
+		
+		cutscene:showNametag("Noelle")
+		cutscene:text("* Where do you think it leads?", "normal/neutral", "fnoelle")
+		
+		cutscene:look(fmarcy, "left")
+		cutscene:look(fvariant, "right")
+		
+		cutscene:showNametag("Marcy")
+		cutscene:text("* I don't know, but one thing's for sure...", "neutral", "fmarcy")
+		cutscene:text("* We have to--", "neutral", "fmarcy", {auto = true})
+		cutscene:hideNametag()
     end,
 	
 	wip = function(cutscene, event)

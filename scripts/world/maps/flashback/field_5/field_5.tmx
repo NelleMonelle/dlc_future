@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="16" height="28" tilewidth="40" tileheight="40" infinite="0" nextlayerid="6" nextobjectid="7">
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="16" height="28" tilewidth="40" tileheight="40" infinite="0" nextlayerid="7" nextobjectid="14">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
  <properties>
-  <property name="music" value="wind"/>
+  <property name="music" value="knight_pre"/>
   <property name="name" value="Flashback - Knight"/>
  </properties>
  <tileset firstgid="1" source="../../../tilesets/hometown.tsx"/>
@@ -76,12 +76,17 @@
   <object id="2" name="savepoint" x="520" y="920">
    <point/>
   </object>
-  <object id="6" name="npc" x="320" y="480">
+  <object id="6" name="npc" x="320" y="280">
    <properties>
     <property name="actor" value="knight"/>
     <property name="sprite" value="looking_up"/>
    </properties>
    <point/>
+  </object>
+  <object id="7" name="script" x="200" y="680" width="240">
+   <properties>
+    <property name="cutscene" value="flashback.ENGAGE"/>
+   </properties>
   </object>
  </objectgroup>
  <objectgroup id="4" name="markers">

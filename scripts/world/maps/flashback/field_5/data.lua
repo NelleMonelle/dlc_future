@@ -9,10 +9,10 @@ return {
   height = 28,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 6,
-  nextobjectid = 7,
+  nextlayerid = 7,
+  nextobjectid = 14,
   properties = {
-    ["music"] = "wind",
+    ["music"] = "knight_pre",
     ["name"] = "Flashback - Knight"
   },
   tilesets = {
@@ -153,7 +153,7 @@ return {
           type = "",
           shape = "point",
           x = 320,
-          y = 480,
+          y = 280,
           width = 0,
           height = 0,
           rotation = 0,
@@ -161,6 +161,21 @@ return {
           properties = {
             ["actor"] = "knight",
             ["sprite"] = "looking_up"
+          }
+        },
+        {
+          id = 7,
+          name = "script",
+          type = "",
+          shape = "rectangle",
+          x = 200,
+          y = 680,
+          width = 240,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {
+            ["cutscene"] = "flashback.ENGAGE"
           }
         }
       }
