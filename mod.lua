@@ -1,5 +1,15 @@
 function Mod:init()
     print("Loaded "..self.info.name.."!")
+
+	-- iirc all Deltarune music is 0.7 volume
+	TableUtils.merge(MUSIC_VOLUMES, {
+		berdly_theme = 0.7,
+        creepychase = 0.7,
+		fanfare = 0.7,
+		susie = 0.7,
+		vs_susie = 0.7,
+		wind = 0.7,
+    })
 end
 
 function Mod:postInit(new_file)

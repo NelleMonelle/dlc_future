@@ -64,8 +64,8 @@ function KnightDagger:update()
     self.timer = self.timer + DTMULT/self.delay
     if self.timer >= 1 and self.do_once_phase < 1 then
         self.do_once_phase = 1
-        Assets.stopSound("knight_jump")
-        Assets.playSound("knight_jump")
+        Assets.stopSound("knight_jump_quick")
+        Assets.playSound("knight_jump_quick", 0.5, 1.3)
     end
     if self.timer >= 10 and self.timer < 16 then
         self.color[2] = Utils.lerp(1, 0, ((self.timer - 10) / 6))
@@ -85,8 +85,8 @@ function KnightDagger:update()
         elseif self.facing == "up" then
             self.ypos = self.ypos - 300
         end
-        Assets.stopSound("knight_cut")
-        Assets.playSound("knight_cut")
+        Assets.stopSound("knight_cut2")
+        Assets.playSound("knight_cut2", 0.5, 1.3)
         self.alpha = 0
     end
     if self.timer >= 16+(2/self.delay) and self.do_once_phase < 18 then

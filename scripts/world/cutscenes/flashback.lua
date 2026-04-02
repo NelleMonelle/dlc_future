@@ -122,8 +122,6 @@ return {
 		
 		local swords = {}
 		
-		Assets.playSound("t_down")
-		
 		for i=1, 8 do
 			local sword = Sprite("bullets/world/knight_sword")
 			sword:setOrigin(0.5, 0)
@@ -142,7 +140,9 @@ return {
 			swords[i]:remove()
 		end
 		
-		Game.world.music:play("creepychase")
+		Game.world.music:play("creepychase", 1)
+		
+		Assets.playSound("t_down", 0.35)
 		
 		Game.world:addChild(DamageNumber("msg", "down", fvariant.x + 20, fvariant.y - 50))
 		
