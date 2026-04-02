@@ -2,9 +2,9 @@ local DeadMap, super = Class(Map)
 
 function DeadMap:onEnter()
     super.onEnter(self)
-    if not Game.sepia_shader then
-		Game.sepia_shader = Game.stage:addFX(ShaderFX("sepia", {intensity = 1}))
-	end
+    if not Game.sepia_shader or not TableUtils.contains(Game.stage.draw_fx, Game.sepia_shader) then
+		  Game.sepia_shader = Game.stage:addFX(ShaderFX("sepia", {intensity = 1}))
+	  end
 end
 
 return DeadMap

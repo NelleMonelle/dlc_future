@@ -37,10 +37,10 @@ function actor:init()
     -- Table of sprite offsets (indexed by sprite name)
     self.offsets = {
         -- Movement offsets
-        ["walk/left"] = {0, 0},
-        ["walk/right"] = {0, 0},
-        ["walk/up"] = {0, 0},
-        ["walk/down"] = {0, 0},
+        ["walk/left"] = {0, 2},
+        ["walk/right"] = {0, 2},
+        ["walk/up"] = {0, 2},
+        ["walk/down"] = {0, 2},
     }
 
     -- self.menu_anim = "bs_win"		-- TODO
