@@ -660,6 +660,10 @@ return {
 	
 	chase_end = function(cutscene)
 		-- TODO: FP chase no-hit achievement
+		local in_the_running
+		if (Game.party[1].health == Game.party[1]:getStat("health")) and (Game.party[2].health == Game.party[2]:getStat("health")) and (Game.party[3].health == Game.party[3]:getStat("health")) then
+			in_the_running = true
+		end
 		
         local jamm = cutscene:getCharacter("jamm")
 		local susie = cutscene:getCharacter("susie")
@@ -848,6 +852,10 @@ return {
 
 		if robashield then robashield:remove() end
 		variant:resetSprite()
+		
+		if in_the_running and (Game.party[1].health == Game.party[1]:getStat("health")) then
+            DP:completeAchievement("chase_fparty_nohit")
+		end
 		
 		cutscene:showNametag("Jamm")
 		cutscene:text("* Susie![wait:10] Snap out of it!", "speechless", "jamm")

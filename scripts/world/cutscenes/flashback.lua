@@ -197,6 +197,8 @@ return {
 		if Game.party[1].health == 1800 then
 			-- TODO: Knight chase no-hit achievement
 			cutscene:text("* Made it through unharmed,[wait:5] sure,[wait:5] but still...", "neutral", "fmarcy")
+            
+            DP:completeAchievement("chase_knight_nohit")
 		end
 		cutscene:text("* ...Hope that made the Knight more tired.", "closed", "fmarcy")
 		cutscene:hideNametag()
