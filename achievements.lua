@@ -11,7 +11,7 @@ local achievements = {
 		name = "No-Hit: Future Party Chase",
 		desc = "Complete the Future Party chase sequence, including the Future Marcy encounter, without getting hit.",
 		hint = "Complete something without getting hit.",
-		border = "NoHit",
+		border = "nohit",
 		icon = "fp_chase",
 		hidden = true
 	},
@@ -21,7 +21,7 @@ local achievements = {
 		name = "No-Hit: Knight Chase",
 		desc = "Complete the Knight chase sequence without getting hit.",
 		hint = "Complete something without getting hit.",
-		border = "NoHit",
+		border = "nohit",
 		icon = "knight_chase",
 		hidden = true
 	},
@@ -31,7 +31,7 @@ local achievements = {
 		name = "A Good Samaritan",
 		desc = "Get 100% positive reputation.",
 		hint = "Get 100% positive reputation.",
-		border = "Unique"
+		border = "common"
 	},
 	
 	{
@@ -39,7 +39,7 @@ local achievements = {
 		name = "Get lost, you freak!",
 		desc = "Get 100% negative reputation.",
 		hint = "Get 100% negative reputation.",
-		border = "Common"
+		border = "common"
 	},
 	
 	-- {
