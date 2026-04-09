@@ -338,9 +338,183 @@ return {
 		cutscene:look(fvariant, "right")
 		
 		cutscene:showNametag("Marcy")
-		cutscene:text("* I don't know, but one thing's for sure...", "neutral", "fmarcy")
+		cutscene:text("* I don't know,[wait:5] but one thing's for sure...", "neutral", "fmarcy")
 		cutscene:text("* We have to--", "neutral", "fmarcy", {auto = true})
 		cutscene:hideNametag()
+		
+		local sword = Sprite("bullets/world/knight_sword")
+		sword:setOrigin(0.5, 0)
+		sword.x = 600
+		sword.y = 600
+		sword.alpha = 0
+		sword.rotation = math.rad(90)
+		sword:setScale(2)
+		sword:setLayer(WORLD_LAYERS["above_events"])
+		Game.world:addChild(sword)
+		
+		local sword2 = Sprite("bullets/world/knight_sword")
+		sword2:setOrigin(0.5, 0)
+		sword2.x = 40
+		sword2.y = 600
+		sword2.alpha = 0
+		sword2.rotation = math.rad(270)
+		sword2:setScale(2)
+		sword2:setLayer(WORLD_LAYERS["above_events"])
+		Game.world:addChild(sword2)
+		
+		Assets.playSound("knight_jump_quick")
+		
+		Game.world.timer:tween(0.4, sword, {alpha = 1})
+		Game.world.timer:tween(0.4, sword2, {alpha = 1})
+		cutscene:wait(0.5)
+		
+		Game.world.timer:tween(0.3, sword, {color = {1, 0, 0}})
+		Game.world.timer:tween(0.3, sword, {x = 640}, "out-quad")
+		Game.world.timer:tween(0.3, sword2, {color = {1, 0, 0}})
+		Game.world.timer:tween(0.3, sword2, {x = 0}, "out-quad")
+		cutscene:wait(0.3)
+		
+		sword:remove()
+		sword2:remove()
+		
+		local swords = {}
+		
+		for i=1, 8 do
+			local sword = Sprite("bullets/world/knight_sword")
+			sword:setOrigin(0.5, 0)
+			sword.x = 600 - ((i-1) * 60)
+			sword.y = 600
+			sword.alpha = (1/9) * i
+			sword:setScale(2)
+			sword.rotation = math.rad(90)
+			sword:setLayer(WORLD_LAYERS["above_events"])
+			Game.world:addChild(sword)
+			table.insert(swords, sword)
+			local sword2 = Sprite("bullets/world/knight_sword")
+			sword2:setOrigin(0.5, 0)
+			sword2.x = 40 + ((i-1) * 60)
+			sword2.y = 600
+			sword2.alpha = (1/9) * i
+			sword2:setScale(2)
+			sword2.rotation = math.rad(270)
+			sword2:setLayer(WORLD_LAYERS["above_events"])
+			Game.world:addChild(sword2)
+			table.insert(swords, sword2)
+		end
+		
+		cutscene:wait(0.1)
+		
+		for i=16, 1, -1 do
+			swords[i]:remove()
+		end
+		
+		Assets.playSound("hurt")
+		
+		Game.world.music:play("GALLERY", 0.7, 0.75)
+		
+		fmarcy:setAnimation("battle/defeat")
+		-- fnoelle:setAnimation("battle/defeat")
+		-- fvariant:setAnimation("battle/defeat")
+		
+		cutscene:slideTo(fmarcy, 380, 600, 0.5, "out-cubic")
+		cutscene:slideTo(fnoelle, 340, 660, 0.5, "out-cubic")
+		cutscene:wait(cutscene:slideTo(fvariant, 300, 600, 0.6, "out-cubic"))
+		knight.sprite.aetrail = false
+		
+		cutscene:wait(0.3)
+		
+		cutscene:shakeCharacter(fmarcy, 3)
+		Assets.playSound("wing")
+		
+		cutscene:wait(0.8)
+		
+		cutscene:shakeCharacter(fmarcy, 3)
+		Assets.playSound("wing")
+		
+		cutscene:wait(0.3)
+		
+		cutscene:shakeCharacter(fmarcy, 3)
+		Assets.playSound("wing")
+		cutscene:setSprite(fmarcy, "threaten")
+		
+		cutscene:wait(0.8)
+		
+		cutscene:showNametag("Marcy")
+		cutscene:text("* You...", "closed", "fmarcy")
+		cutscene:hideNametag()
+		
+		cutscene:wait(cutscene:panTo(320, 320, 2))
+		
+		cutscene:resetSprite(fmarcy)
+		cutscene:wait(cutscene:walkToSpeed(fmarcy, knight.x, knight.y + 60, 3, "up"))
+		
+		cutscene:wait(0.3)
+		
+		knight:setAnimation({"turn", 0.2, false})
+		
+		cutscene:wait(2.4)
+		
+		cutscene:showNametag("Marcy", {top = false})
+		cutscene:text("* There's only one way this will end,[wait:5] Knight.", "neutral", "fmarcy", {top = false})
+		cutscene:text("* One way or another,[wait:5] you've already lost...", "neutral", "fmarcy", {top = false})
+		cutscene:setSprite(fmarcy, "threaten")
+		cutscene:text("* So will this go the easy way or the hard way?", "neutral", "fmarcy", {top = false})
+		cutscene:hideNametag()
+		
+		local laugh = Assets.playSound("knight_laugh")
+		laugh:setLooping(true)
+		knight:setAnimation("laughing_anim")
+		knight.sprite.floating = false
+		
+		cutscene:wait(1.2)
+		
+		cutscene:resetSprite(fnoelle)
+		cutscene:resetSprite(fvariant)
+		
+		cutscene:walkToSpeed(fnoelle, fmarcy.x - 40, fmarcy.y + 40, 6, "up")
+		cutscene:wait(cutscene:walkToSpeed(fvariant, fmarcy.x + 40, fmarcy.y + 40, 6, "up"))
+
+		if Game:getFlag("future_variable") == "ceroba" then
+			cutscene:showNametag("Kanako", {top = false})
+			cutscene:text("* It's laughing...[wait:10]\n* Wh-why is it laughing!?", "shock", "fkanako", {top = false})
+		end
+		
+		cutscene:showNametag("Noelle", {top = false})
+		cutscene:text("* I-I...[wait:10]\n* I don't think it's giving in...", "tense/guilty_2", "fnoelle", {top = false})
+		
+		cutscene:showNametag("Marcy", {top = false})
+		cutscene:text("* Then you two know what we must do,[wait:5] don't you?", "closed", "fmarcy", {top = false})
+		knight:setAnimation({"laugh_stop", 1, false})
+		laugh:stop()
+		cutscene:text("* It's as I always say.[wait:10]\n* If you don't see the dawn...", "closed", "fmarcy", {top = false})
+		cutscene:hideNametag()
+		
+		cutscene:resetSprite(fmarcy)
+		
+		cutscene:walkToSpeed(fmarcy, 120, 280, 6, "right")
+		cutscene:walkToSpeed(fnoelle, 100, 340, 6, "right")
+		cutscene:wait(cutscene:walkToSpeed(fvariant, 80, 400, 6, "right"))
+		
+		knight:setSprite("idle")
+		
+		fmarcy:setAnimation("battle/attack")
+		-- fnoelle:setAnimation("battle/attack")
+		-- fvariant:setAnimation("battle/attack")
+		
+		Assets.playSound("laz_c")
+		
+		cutscene:wait(1.2)
+		
+		cutscene:showNametag("Marcy", {top = false})
+		cutscene:text("* [speed:0.5]...then make it worth fighting for.", "mad", "fmarcy", {top = false})
+		cutscene:hideNametag()
+		
+		fmarcy:setAnimation("battle/idle")
+		-- fnoelle:setAnimation("battle/idle")
+		-- fvariant:setAnimation("battle/idle")
+		
+		Game.world.timer:tween(0.8, knight, {x = 540}, "in-out-back")
+		cutscene:wait(1)
     end,
 	
 	wip = function(cutscene, event)
