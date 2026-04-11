@@ -515,6 +515,36 @@ return {
 		
 		Game.world.timer:tween(0.8, knight, {x = 540}, "in-out-back")
 		cutscene:wait(1)
+		
+		Game.world.music:stop()
+		
+		cutscene:text("* TODO: Fight intro and encounter")
+		
+		cutscene:resetSprite(fmarcy)
+		cutscene:resetSprite(fnoelle)
+		cutscene:resetSprite(fvariant)
+		
+		knight.sprite.aetrail = true
+		
+		Game.world.music:play("wind_highplace", 0, 0.5)
+		
+		cutscene:wait(1)
+		
+		Game.world.timer:tween(2, Game.world.music, {volume = 1})
+		
+		cutscene:wait(2)
+		
+		cutscene:showNametag("Marcy")
+		cutscene:text("* Noelle,[wait:5] now's our chance!", "mad", "fmarcy")
+		
+		if not Game:getFlag("POST_SNOWGRAVE") then
+			cutscene:showNametag("Noelle")
+			cutscene:text("* Marcy,[wait:5] are you sure?", "normal/neutral", "fnoelle")
+			cutscene:showNametag("Marcy")
+			cutscene:text("* I'm not about to let this freak go,[wait:5] Noelle.", "mad", "fmarcy")
+			cutscene:text("* Freeze them in a Frostcrypt![wait:10]\n* Hurry!", "mad", "fmarcy")
+		end
+		cutscene:hideNametag()
     end,
 	
 	wip = function(cutscene, event)
