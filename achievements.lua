@@ -27,6 +27,26 @@ local achievements = {
 	},
 	
 	{
+		id = "future_marcy_nohit",
+		name = "No-Hit: Future Marcy",
+		desc = "Complete the Future Marcy spar without getting hit.",
+		hint = "Complete something without getting hit.",
+		border = "nohit",
+		icon = "fmarcy_battle",
+		hidden = true
+	},
+	
+	{
+		id = "collapse_ralsei_nohit",
+		name = "No-Hit: Collapse Ralsei",
+		desc = "Complete the Collapse Ralsei fight without getting hit.",
+		hint = "Complete something without getting hit.",
+		border = "nohit",
+		icon = "collapse_ralsei",
+		hidden = true
+	},
+	
+	{
 		id = "reputation_good",
 		name = "A Good Samaritan",
 		desc = "Get 100% positive reputation.",
