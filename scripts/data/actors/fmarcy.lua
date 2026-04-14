@@ -55,6 +55,7 @@ function actor:init()
 
         ["battle/hurt"]         		= {"battle/hurt", 1/15, false, temp=true, duration=0.5},
         ["battle/defeat"]       		= {"battle/defeat", 0.5, true},
+		["battle/critical"] 			= {"battle/defeat", 1/15, true},	-- TODO: Critical animation
 
         ["battle/transition"]   		= {"walk/right", 0.2, true},
         ["battle/intro"]        		= {"battle/attack", 1/20, false},

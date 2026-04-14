@@ -483,8 +483,9 @@ return {
 		cutscene:text("* ...Our ticket to getting back to our time.", "closed_grin", "susie")
 		if Game:getFlag("future_variable") == "ceroba" then
 			cutscene:showNametag("Kanako")
-			cutscene:text("* Before you do that...", "unimpressed", "fkanako")
-			cutscene:text("* People could use your help around town first.", "unimpressed", "fkanako")
+			cutscene:text("* We know where it is.", "unimpressed", "fkanako")
+			cutscene:text("* However,[wait:5] think you could help out around Hometown first?", "unimpressed", "fkanako")
+			cutscene:text("* It's your call,[wait:5] but I think it'll help you too.", "unimpressed", "fkanako")
 		end
 		cutscene:showNametag("Susie")
 		cutscene:text("* ...Okay.", "nervous", "susie")

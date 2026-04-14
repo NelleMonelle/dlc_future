@@ -2,6 +2,8 @@ local actor, super = HookSystem.hookScript("jamm")
 
 function actor:init()
     super.init(self)
+	
+	self.animations["battle/critical"] = {"battle/defeat", 1/15, true}	-- TODO: Critical animation
 
     self.offsets["carry_f_marcy/down"] = {-12, 0}
     self.offsets["carry_f_marcy/left"] = {-12, 0}

@@ -7,6 +7,36 @@ local achievements = {
 	-- },
 	
 	{
+		id = "reputation_good",
+		name = "A Good Samaritan",
+		desc = "End Dark Future Part 1 with 100% positive reputation.",
+		hint = "End Dark Future Part 1 in some way.",
+		border = "common"
+	},
+	
+	{
+		id = "reputation_bad",
+		name = "Get lost, you freak!",
+		desc = "End Dark Future Part 1 with 100% negative reputation.",
+		hint = "End Dark Future Part 1 in some way.",
+		border = "common"
+	},
+	
+	-- {
+		-- id = "ending_good",
+		-- name = "Our Two Homes",
+		-- desc = "Spare Future Noelle in the final battle.",
+		-- hint = "Spare ???."
+	-- },
+	
+	-- {
+		-- id = "ending_bad",
+		-- name = "Won't Affect Me",
+		-- desc = "Kill Future Noelle in the final battle.",
+		-- hint = "Kill ???."
+	-- },
+	
+	{
 		id = "chase_fparty_nohit",
 		name = "No-Hit: Future Party Chase",
 		desc = "Complete the Future Party chase sequence, including the Future Marcy encounter, without getting hit.",
@@ -45,36 +75,6 @@ local achievements = {
 		icon = "collapse_ralsei",
 		hidden = true
 	},
-	
-	{
-		id = "reputation_good",
-		name = "A Good Samaritan",
-		desc = "Get 100% positive reputation.",
-		hint = "Get 100% positive reputation.",
-		border = "common"
-	},
-	
-	{
-		id = "reputation_bad",
-		name = "Get lost, you freak!",
-		desc = "Get 100% negative reputation.",
-		hint = "Get 100% negative reputation.",
-		border = "common"
-	},
-	
-	-- {
-		-- id = "ending_good",
-		-- name = "Our Two Homes",
-		-- desc = "Spare Future Noelle in the final battle.",
-		-- hint = "Spare ???."
-	-- },
-	
-	-- {
-		-- id = "ending_bad",
-		-- name = "Won't Affect Me",
-		-- desc = "Kill Future Noelle in the final battle.",
-		-- hint = "Kill ???."
-	-- },
 }
 
 return achievements
