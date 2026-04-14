@@ -49,9 +49,28 @@ function FrostcryptContoller:onExplosion()
 	self.snowflake_big:flash()
 	Game.battle.timer:tween(0.5, self.snowflake_big, {scale_x = 0, scale_y = 0, alpha = 0, rotation = (self.snowflake_big.rotation + math.rad(180))})
 	Assets.playSound("scytheburst")
+	Assets.playSound("frostdamage")
 	local snowflakes_total = 8
 	for i = 1, snowflakes_total do
 		self:boomSnowflake(360*(i/snowflakes_total))
+	end
+	for i = 0, 5 do
+        local effect = IceSpellEffect(0, 0)
+		effect:setScale(0.75)
+		effect.physics.direction = math.rad(60 * i)
+		effect.physics.speed = 8
+		effect.physics.friction = 0.2
+		effect.layer = BATTLE_LAYERS["above_battlers"] - 1
+		self:addChild(effect)
+	end
+	for i = 0, 5 do
+        local effect = IceSpellEffect(0, 0)
+		effect:setScale(0.75)
+		effect.physics.direction = math.rad(-60 * i)
+		effect.physics.speed = 12
+		effect.physics.friction = 0.2
+		effect.layer = BATTLE_LAYERS["above_battlers"] - 1
+		self:addChild(effect)
 	end
 	if self.callback then
 		self.callback()
