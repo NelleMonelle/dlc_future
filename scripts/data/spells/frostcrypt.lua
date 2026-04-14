@@ -22,15 +22,13 @@ function spell:init()
 end
 
 function spell:getTPCost(chara)
-    -- remove the line below when the spell is finished (and un-comment stuff below)
-    return 500
-    --[[local cost = super.getTPCost(self, chara)
+    local cost = super.getTPCost(self, chara)
     if chara and chara:checkWeapon("thornring") then
         cost = MathUtils.round(cost / 2)
     elseif chara and chara:checkWeapon("crimsonspire") then
         cost = MathUtils.round(cost / 4)
     end
-    return cost]]
+    return cost
 end
 
 function spell:getCastMessage(user, target)
@@ -38,7 +36,19 @@ function spell:getCastMessage(user, target)
 end
 
 function spell:onCast(user, target)
-    -- WIP
+    Game.battle.timer:after(1/3, function()
+        Game.battle:addChild(FrostcryptController(target.x, target.y-target.height, function()
+            local damage = math.floor(user.chara:getStat("magic") * 10)
+
+            target:hurt(damage, user, function() target:freeze() end)
+            if target.health > 0 then
+                target:flash()
+            end
+
+            Game.battle:finishAction()
+        end))
+    end)
+    return false
 end
 
 return spell
