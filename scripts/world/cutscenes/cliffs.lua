@@ -1206,6 +1206,7 @@ return {
 		Game:setFlag("future_chase_done", true)
 		
 		Game.party[1]:addSpell("rage")
+		Game:getPartyMember("susie").title = "Barbarian\nTackles problems\nhead-on."
 		
 		Game.world.music:play("deltarune/wind_highplace", 1, 1)
 	end,
