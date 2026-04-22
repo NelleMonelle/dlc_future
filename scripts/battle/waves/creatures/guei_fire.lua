@@ -32,13 +32,12 @@ function Basic:onStart()
             bullet.physics.direction = spr.rotation - math.rad(90 * (i-1) + 22.5)
         end
     end)
-
 end
 
 function Basic:update()
     -- Code here gets called every frame
     super.update(self)
-    spr.rotation = spr.rotation + (DTMULT/60)
+    spr.rotation = spr.rotation + (DTMULT/80)
 end
 
 return Basic
