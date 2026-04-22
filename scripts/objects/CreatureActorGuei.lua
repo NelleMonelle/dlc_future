@@ -6,9 +6,6 @@ function CreatureActorGuei:init(actor)
     self.body.debug_select = true
     self:addChild(self.body)
 
-    self.eye = RoaringEye(17, 15, 10)
-    self:addChild(self.eye)
-
     self.hand = Sprite(self:getTexturePath("hand"), -15, 30)
     self.hand.debug_select = false
     self:addChild(self.hand)

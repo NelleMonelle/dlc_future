@@ -52,10 +52,16 @@ function actor:init()
 
     self.parts = {
         ["body"] = {"body"},
-        ["eye"] = {"eye"},
         ["hand"] = {"hand"}
     }
 end
+
+function actor:onSpriteInit(sprite)
+	sprite.eye = RoaringEye(17, 15, 10)
+    sprite:addChild(sprite.eye)
+	sprite.eye:setLayer(sprite.layer + 1)
+end
+
 
 function actor:createSprite()
     return CreatureActorGuei(self)

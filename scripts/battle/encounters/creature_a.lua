@@ -10,7 +10,7 @@ function Dummy:init()
 ]]
 
     -- Battle music ("battle" is rude buster)
-    self.music = "titan_spawn2"
+    self.music = "battle_collapse"
     -- Enables the purple grid battle background
     self.background = true
 
@@ -19,6 +19,12 @@ function Dummy:init()
 
     --- Uncomment this line to add another!
     --self:addEnemy("dummy")
+end
+
+function Dummy:onBattleStart(battler)
+    if Game:getFlag("susie_got_soul_xacts") then
+        Game.battle:registerXAction("susie", "SoulShine", "Reveal\nweakspot", 64)
+    end
 end
 
 return Dummy

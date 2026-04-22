@@ -12,13 +12,15 @@ function Dummy:init()
     self.max_health = 4000
     self.health = 4000
     -- Enemy attack (determines bullet damage)
-    self.attack = 15
+    self.attack = 18
     -- Enemy defense (usually 0)
     self.defense = 0
     -- Enemy reward
     self.money = 100
     self.t_siner = 0
-
+	
+	-- for sealing the eye
+	self.collapse = true
     	
 	self.tired_percentage = 0
     self.low_health_percentage = 0
@@ -31,7 +33,6 @@ function Dummy:init()
     -- List of possible wave ids, randomly picked each turn
     self.waves = {
         "creatures/guei_fire",
-
     }
 
     -- Dialogue randomly displayed in the enemy's speech bubble
@@ -39,7 +40,7 @@ function Dummy:init()
 
     -- Check text (automatically has "ENEMY NAME - " at the start)
     self.check = {
-        "AT 37 DF 6\n* You can feel an unholy presence.",
+        "AT 18 DF 0\n* You can feel an unholy presence.",
         "The more time passes,[wait:5] the more it feels like darkness entraps your SOUL."
     }
 
@@ -47,43 +48,37 @@ function Dummy:init()
     self.text = {
         "* It screams, but there's no sound.",
         "* Smells like rot.",
-        "* Creature Ψ's hand spasms wildly.",
-        "* When did you start being yourself?",
+        "* Creature Ψ's hand spasms wildly."
         
     }
 end
 
-function Dummy:update()
-    super.update(self)
-    
-    if Game.battle.soul then
-        self.sprite.eye.target = Game.battle.soul
-    else
-        self.sprite.eye.target = Game.battle.party[1]
-    end
-end
-
-function Dummy:onHurt(damage, battler)
-	super.onHurt(self, damage, battler)
-
-    Assets.stopAndPlaySound("spawn_weaker")
-end
-
-function Dummy:getAttackDamage(damage, battler, points)
-    if battler.chara:checkWeapon("blackshard") or battler.chara:checkWeapon("twistedswd") then
-        local dmg = super.getAttackDamage(self, damage, battler, points)
-        return math.ceil(dmg * 10)
-    else
-        local dmg = super.getAttackDamage(self, damage, battler, points)
-        return math.ceil(dmg/1.5)
-    end
-    --return super.getAttackDamage(self, damage, battler, points)
-end
-
 function Dummy:onAct(battler, name)
     if name == "Standard" then
-        Game.battle:startActCutscene(function(cutscene)
-            cutscene:text("* "..battler.chara:getName().." tried to \"[color:yellow]ACT[color:reset]\"...\n* But, the enemy couldn't understand!")
+        return "* But "..battler.chara:getName().." didn't know what to do."
+    elseif name == "SoulShine" then
+        battler:setAnimation("act")
+        Game.battle:startCutscene(function(cutscene)
+            cutscene:text("* "..battler.chara:getName().."'s SOUL emitted a brilliant \nlight!")
+            battler:flash()
+
+            local bx, by = battler:getRelativePos(battler.width/2 + 4, battler.height/2 + 4)
+
+            local texture = "player/heart_centered"
+            if battler.chara.id == "susie" then texture = "player/heart_centered_flip" end -- hacky
+            local soul = Game.battle:addChild(TitanSpawnPurifySoul(texture, bx, by, true, self))
+            soul.color = battler.chara.soul_color or { 1, 0, 0 }
+            soul.layer = 501
+
+            cutscene:wait(function() return soul.t >= 500 end)
+            cutscene:after(function()
+                if #Game.battle.enemies == 0 then
+                    Game.battle:setState("VICTORY")
+                else
+                    Game.battle:finishAction()
+                    Game.battle:setState("ACTIONS", "CUTSCENE")
+                end
+            end)
         end)
         return
     end
@@ -93,8 +88,52 @@ function Dummy:onAct(battler, name)
     return super.onAct(self, battler, name)
 end
 
+function Dummy:update()
+	super.update(self)
+	
+	if Game.battle.soul then
+		self.sprite.eye.target = Game.battle.soul
+	else
+		self.sprite.eye.target = Game.battle.party[1]
+	end
+end
+
 function Dummy:getSpareText(battler, success)
     return "* But,[wait:20] it was not something that\ncan understand MERCY."
+end
+
+function Dummy:getEncounterText()
+	if self.weakspot then
+		return "* Creature Ψ's weak spot has been revealed! It's defense dropped dramatically!"
+	else
+		return super.getEncounterText(self)
+	end
+end
+
+function Dummy:getAttackDamage(damage, battler, points)
+    if self.weakspot then
+        local dmg = super.getAttackDamage(self, damage, battler, points)
+        return math.ceil(dmg * 3)
+    end
+    return super.getAttackDamage(self, damage, battler, points)
+end
+
+function Dummy:onHurt(damage, battler)
+	super.onHurt(self, damage, battler)
+
+    if self.weakspot then
+        self.weakspot_will_close = true
+        Assets.playSound("punch_lower_heavy")
+    end
+end
+
+function Dummy:onTurnEnd()
+	if self.weakspot and self.weakspot_will_close then
+        self.sprite.eye.rotating = true
+        self.sprite.eye.sprite:fadeTo(1, 0.2)
+        self.weakspot = false
+        self.weakspot_will_close = false
+    end
 end
 
 return Dummy

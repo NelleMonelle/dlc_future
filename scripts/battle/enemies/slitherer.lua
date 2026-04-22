@@ -17,6 +17,9 @@ function Dummy:init()
     self.defense = 0
     -- Enemy reward
     self.money = 100
+	
+	-- for sealing the eye
+	self.collapse = true
 
     -- Mercy given when sparing this enemy before its spareable (20% for basic enemies)
     self.spare_points = 0
@@ -65,7 +68,7 @@ function Dummy:onAct(battler, name)
             local texture = "player/heart_centered"
             if battler.chara.id == "susie" then texture = "player/heart_centered_flip" end -- hacky
             local soul = Game.battle:addChild(TitanSpawnPurifySoul(texture, bx, by, true, self))
-            soul.color = Game:getPartyMember(Game.party[1].id).soul_color or { 1, 0, 0 }
+            soul.color = battler.chara.soul_color or { 1, 0, 0 }
             soul.layer = 501
 
             cutscene:wait(function() return soul.t >= 500 end)
