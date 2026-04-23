@@ -266,6 +266,7 @@
   <object id="43" name="script" x="560" y="560" width="80" height="80">
    <properties>
     <property name="cutscene" value="hometown.not_yet_church"/>
+    <property name="once" type="bool" value="false"/>
    </properties>
   </object>
   <object id="52" name="dryzone" x="988" y="200" width="360" height="139"/>

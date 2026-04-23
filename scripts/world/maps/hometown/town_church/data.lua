@@ -816,7 +816,8 @@ return {
           rotation = 0,
           visible = true,
           properties = {
-            ["cutscene"] = "hometown.not_yet_church"
+            ["cutscene"] = "hometown.not_yet_church",
+            ["once"] = false
           }
         },
         {
