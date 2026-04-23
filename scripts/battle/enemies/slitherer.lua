@@ -122,6 +122,8 @@ end
 function Dummy:onHurt(damage, battler)
 	super.onHurt(self, damage, battler)
 
+    Assets.stopAndPlaySound("creature_hurt", 1, MathUtils.random(0.8, 1.3))
+
     if self.weakspot then
         self.weakspot_will_close = true
         Assets.playSound("punch_lower_heavy")

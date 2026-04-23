@@ -51,4 +51,18 @@ function PartyBattler:heal(amount, sparkle_color, show_up)
     return super.heal(self, amount, sparkle_color, show_up)
 end
 
+function PartyBattler:fakeSwoon()
+    self.is_down = true
+    self.sleeping = false
+    self.hurting = false
+    self:toggleOverlay(true)
+    self.overlay_sprite:setAnimation("battle/swooned")
+    if self.action then
+        Game.battle:removeAction(Game.battle:getPartyIndex(self.chara.id), true)
+    end
+	self.chara.health = -999
+	self:statusMessage("msg", "swoon", nil, true)
+	Game.battle:shakeCamera(8)
+end
+
 return PartyBattler
