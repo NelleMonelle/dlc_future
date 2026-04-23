@@ -17,12 +17,26 @@ function Dummy:init()
 	self.phase = 1
 end
 
+function Dummy:onGameOver()
+	if self.phase == 1 then
+		Game.battle:startCutscene("neo_knight.lol_skill_issue", self)
+		return true
+	end
+end
+
+function Dummy:isAutoHealingEnabled(battler)
+    if self.phase == 1 then
+		return false
+	end
+	return true
+end
+
 function Dummy:onBattleStart(battler)
 	Game.battle:registerXAction("fmarcy", "Check")
 end
 
 function Dummy:getDialogueCutscene()
-	if self.phase == 1 then
+	if self.phase == 1 and Game.battle.enemies[1].health <= 8000 then
 		return "neo_knight", "skilled_phase_transition", self
 	end
 end

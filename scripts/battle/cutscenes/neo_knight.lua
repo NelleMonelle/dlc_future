@@ -136,5 +136,88 @@ return {
 		Game.battle:registerXAction("susie", "Check")
 		
 		Game.battle.music:play(encounter.music, 1, 1)
-    end
+    end,
+	
+    ---@param cutscene BattleCutscene
+    lol_skill_issue = function(cutscene, encounter)
+        local hadrian = cutscene:getCharacter("neo_knight")
+		
+		cutscene:after(function()
+			Game.battle:setState("ACTIONSELECT")
+		end)
+		
+		cutscene:battlerText(hadrian, "...That takes care of that.", {x=hadrian.x - 40, y=hadrian.y - 50})
+		
+		local fmarcy = Game.battle.party[1]
+        local fnoelle = Game.battle.party[2]
+        local fvariable = Game.battle.party[3]
+		
+		Game:setPartyMembers("susie", "jamm", Game:getFlag("third_party_member_future", "ceroba"))
+		
+		Game.battle.party[1] = PartyBattler(Game.party[1], -30, fmarcy.y)
+		Game.battle.party[2] = PartyBattler(Game.party[2], -30, fnoelle.y)
+		Game.battle.party[3] = PartyBattler(Game.party[3], -30, fvariable.y)
+		Game.battle:addChild(Game.battle.party[1])
+		Game.battle:addChild(Game.battle.party[2])
+		Game.battle:addChild(Game.battle.party[3])
+		
+		Game.battle.party[1]:setAnimation({"walk/right", 1/4, true})
+		Game.battle.party[2]:setAnimation({"walk/right", 1/4, true})
+		Game.battle.party[3]:setAnimation({"walk/right", 1/4, true})
+		Game.battle.timer:tween(0.6, Game.battle.party[1], {x = fmarcy.x})
+		Game.battle.timer:tween(0.6, Game.battle.party[2], {x = fnoelle.x})
+		Game.battle.timer:tween(0.6, Game.battle.party[3], {x = fvariable.x})
+		cutscene:wait(0.6)
+		
+		for i=1, 3 do
+			local box = Game.battle.battle_ui.action_boxes[i]
+            box.battler = Game.battle.party[i]
+            box:createButtons()
+            if box.battler.chara:getNameSprite() then
+                if not box.name_sprite then
+                    box.name_sprite = Sprite(box.battler.chara:getNameSprite(), 51 + box.name_offset_x, 14 + box.name_offset_y)
+                    box.box:addChild(box.name_sprite)
+                end
+                box.name_sprite:setSprite(box.battler.chara:getNameSprite())
+            elseif box.name_sprite then
+                box.name_sprite:remove()
+                box.name_sprite = nil
+            end
+		end
+		
+		Game.battle.party[1]:setAnimation("battle/attack")
+		Game.battle.party[2]:setAnimation("battle/attack")
+		Game.battle.party[3]:setAnimation("battle/attack")
+		
+		Assets.playSound("laz_c")
+		
+		Game.battle.timer:tween(0.6, fmarcy, {x = fmarcy.x - 80}, "out-sine")
+		Game.battle.timer:tween(0.6, fnoelle, {x = fnoelle.x - 80}, "out-sine")
+		Game.battle.timer:tween(0.6, fvariable, {x = fvariable.x - 80}, "out-sine")
+		cutscene:wait(1)
+		
+		local susie = cutscene:getCharacter("susie")
+		local jamm = cutscene:getCharacter("jamm")
+		
+		cutscene:battlerText(hadrian, "I take down your\nstrongest warriors,[wait:5]\nand yet...", {x=hadrian.x - 40, y=hadrian.y - 50})
+		
+		Game.battle.party[1]:setAnimation("battle/idle")
+		Game.battle.party[2]:setAnimation("battle/idle")
+		Game.battle.party[3]:setAnimation("battle/idle")
+		
+		cutscene:battlerText(susie, "You still have to\ngo through us.", {x=susie.x + 40, y=susie.y - 50, right=true})
+		cutscene:battlerText(jamm, "Hadrian,[wait:5] we can't\nlet you go past.", {x=jamm.x + 40, y=jamm.y - 50, right=true})
+		cutscene:battlerText(jamm, "If you do,[wait:5] our world\nwill...", {x=jamm.x + 40, y=jamm.y - 50, right=true})
+		
+		cutscene:battlerText(hadrian, "Very well then...", {x=hadrian.x - 40, y=hadrian.y - 50})
+		cutscene:battlerText(hadrian, "Let it be so.", {x=hadrian.x - 40, y=hadrian.y - 50})
+		
+		Game.battle.enemies[1].just_weakened = true
+		encounter.phase = 2
+		
+		Game.battle:registerXAction("susie", "Check")
+		
+		Game.battle.music:play(encounter.music, 1, 1)
+    end,
+	
 }
