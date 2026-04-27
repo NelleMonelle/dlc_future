@@ -26,19 +26,9 @@ function Marcy:beforeStateChange(old, new)
 		Game.battle:showUI()
 		Game.battle.music:play(self.music)
 		Game.battle.started = true
-		Game.battle:startCutscene(function(cutscene)
-			local susie = cutscene:getCharacter("susie")
-				
-			cutscene:after(function()
-				Game.battle:pushAction("SPELL", nil, {data = Registry.createSpell("rage")}, 1)
-				Game.battle:setState("ACTIONS")
-			end)
-				
-			cutscene:battlerText(susie, "Man,[wait:5] I don't know\nwhat it is...", {x=susie.x + 40, y=susie.y - 50, right=true})
-			cutscene:battlerText(susie, "But something about\nyou is REALLY\npissing me off.", {x=susie.x + 40, y=susie.y - 50, right=true})
-			
-			self.cutscenes = 1
-		end)
+		self.cutscenes = 1
+		Game.battle:pushAction("SPELL", nil, {data = Registry.createSpell("rage")}, 1)
+		Game.battle:setState("ACTIONS")
 		return true
 	elseif new == "ACTIONS" and Game.battle.turn_count == 1 and self.cutscenes < 2 then
 		Game.battle:startCutscene(function(cutscene)
@@ -111,8 +101,12 @@ function Marcy:beforeStateChange(old, new)
 			cutscene:battlerText(susie, "[shake:2]And just...", {x=susie.x + 40, y=susie.y - 50, right=true})
 			cutscene:battlerText(susie, "[shake:2]JUST DI--", {x=susie.x + 40, y=susie.y - 50, right=true, auto=true})
 			
+			Game.world:getEvent(15).sprite.color = {1, 1, 1}
 			Game.world.player:setSprite("battle_serious/idle_2")
 			Game.world:getEvent(14):resetSprite()
+			Game.world:getEvent(14):setFacing("right")
+			Game.world:getEvent(13):resetSprite()
+			Game.world:getEvent(13):setFacing("right")
 			Assets.playSound("noise")
 			Game.world:getEvent(14).x = Game.world.player.x - 80
 			Game.world:getEvent(14).y = Game.world.player.y

@@ -671,6 +671,8 @@ return {
 		local fmarcy = cutscene:getCharacter("fmarcy")
 		local fnoelle = cutscene:getCharacter("fnoelle")
 		local fvariant = cutscene:getCharacter(Mod:getVariableFuture(Game.party[3].id))
+
+		fmarcy.sprite.color = {0, 0, 0}
 		
 		cutscene:wait(cutscene:walkToSpeed(susie, "susie_meetup", 8, "down"))
 		
@@ -684,32 +686,47 @@ return {
 		susie:walkToSpeed("susie_walkto", 8, nil, false, function()
 			Assets.playSound("jump")
 			susie:resetSprite()
-			susie:jumpTo(840, 260, 20, 0.5, "ball", "landed_2")
+			susie:jumpTo(840, 260, 20, 0.5, "jump_ball", "landed_2")
 			Game.world.timer:after(0.5, function()
 				susie_available = true
 			end)
 		end)
 		if Game:getFlag("future_variable") == "ceroba" then
 			variant:setSprite("run")
-			cutscene:walkToSpeed(variant, "variant_walkto", 8, nil, false, function()
+			cutscene:walkToSpeed(variant, "variant_walkto", 8, "down", false, function()
 				variant:resetSprite()
 			end)
 		else
-			cutscene:walkToSpeed(variant, "variant_walkto", 8)
+			cutscene:walkToSpeed(variant, "variant_walkto", 8, "down")
 		end
-		cutscene:wait(cutscene:walkToSpeed(jamm, "jamm_walkto", 8))
+		cutscene:wait(cutscene:walkToSpeed(jamm, "jamm_walkto", 8, "up"))
+
+		cutscene:wait(function() return susie_available end)
+
+		susie:setFacing("down")
+
+		cutscene:showNametag("Jamm", {top=true})
+		cutscene:text("* Everyone here?[wait:5] Now we just gotta-", "determined", "jamm", {top=true, auto=true})
+		cutscene:hideNametag()
 		
-		local attack_fx = Sprite("effects/attack/cut_ceroba_1", jamm.x, jamm.y - 20)
+		local attack_fx = Sprite("effects/attack/cut_ceroba", jamm.x, jamm.y - 20)
 		attack_fx:setScale(2)
 		attack_fx:setOrigin(0.5)
 		attack_fx:setLayer(jamm.layer+0.1)
 		Game.world:addChild(attack_fx)
-		attack_fx:setAnimation({"effects/attack/cut_ceroba", 1/10, false})
+		attack_fx:play(1/10, false, function() attack_fx:remove() end)
 		Assets.playSound("laz_c")
 		
 		cutscene:wait(3/10)
 		
-		attack_fx:remove()
+		susie:alert()
+		susie:shake()
+		susie:setSprite("shock_down")
+		if Game:getFlag("future_variable") == "ceroba" then
+			variant:alert(nil, {play_sound=false})
+			variant:shake()
+			variant:setSprite("shock_closed")
+		end
 		cutscene:setSprite(jamm, "landed_1")
 		Assets.playSound("damage", 1)
 		jamm:statusMessage("msg", "critical")
@@ -726,30 +743,26 @@ return {
 				end)
 			end)
 		end)
-		
-		cutscene:wait(function() return susie_available end)
-		
-		susie:setSprite("walk_unhappy")
-		cutscene:look(susie, "down")
-		cutscene:look(variant, "down")
-		
-		cutscene:alert(susie)
-		
+
 		cutscene:wait(1)
 		
+		susie:setSprite("walk_unhappy")
+		if Game:getFlag("future_variable") == "ceroba" then variant:setSprite("walk") end
+		
+		cutscene:wait(0.5)
+		
+		cutscene:walkToSpeed(variant, jamm.x, jamm.y - 80, 8)
 		cutscene:wait(cutscene:walkToSpeed(susie, jamm.x, jamm.y - 40, 8))
 		
 		cutscene:setSprite(susie, "landed_2")
 		
 		cutscene:showNametag("Susie", {top=true})
-		cutscene:text("* H-hey![wait:10]\n* Get up!", "sad", "susie", {top=true})
+		cutscene:text("* H-hey![wait:10]\n* Jamm![wait:5] Jamm,[wait:5] are you okay!?", "sad", "susie", {top=true})
 		cutscene:hideNametag()
-		
-		cutscene:wait(cutscene:walkToSpeed(variant, susie.x, susie.y - 40, 8))
 		
 		if Game:getFlag("future_variable") == "ceroba" then
 			cutscene:showNametag("Ceroba", {top=true})
-			cutscene:text("* ...[wait:5] I don't think he can,[wait:5] Susie.", "sorrowful", "ceroba", {top=true})
+			cutscene:text("* ...[wait:5] I don't think he is,[wait:5] Susie.", "sorrowful", "ceroba", {top=true})
 		end
 		cutscene:showNametag("Susie", {top=true})
 		cutscene:text("* ...", "bangs/down", "susie", {top=true})
@@ -757,53 +770,163 @@ return {
 		
 		Game.world.music:fade(0, 1)
 		cutscene:wait(1)
-		
-		Game.world.player.actor.default = "walk_bangs_unhappy"
-		
-		cutscene:setAnimation(susie, {"landed", 1/10, false})
-		cutscene:wait(0.5)
-		cutscene:resetSprite(susie)
-		
-		cutscene:showNametag("Susie", {top=true})
-		
-		cutscene:showNametag("Susie", {top=true})
-		cutscene:text("* ...", "bangs/down", "susie", {top=true})
-		local thirdpartyname = Game.party[3]:getName()
-		cutscene:text("* "..thirdpartyname..".", "bangs/down", "susie", {top=true})
-		cutscene:text("* Protect Jamm.", "bangs/down", "susie", {top=true})
+
+		Assets.playSound("step1", 2, 0.9)
+		variant:alert(nil, {play_sound=false})
+		variant:setFacing("right")
+
+		cutscene:wait(1)
+		cutscene:wait(cutscene:panTo(Game.world.camera.x + 200, Game.world.camera.y, 2))
+		cutscene:wait(1)
+
 		if Game:getFlag("future_variable") == "ceroba" then
-			cutscene:showNametag("Ceroba", {top=true})
-			cutscene:text("* On it.", "neutral", "ceroba", {top=true})
+			cutscene:showNametag("Ceroba")
+			cutscene:text("* ...[wait:5] uh,[wait:5] Susie?", "nervous", "ceroba")
 		end
-		local robashield
-		if Game:getFlag("future_variable") == "ceroba" then
-			cutscene:walkToSpeed(variant, jamm.x + 100, jamm.y, 4, "right", nil, function()
-				variant:setAnimation("guard")
-				Game.world.timer:after(0.4, function()
-					local shield = Sprite("world/cutscenes/ceroba_guard_shield", jamm.x+20, jamm.y-jamm.height/2)
-					shield:setScale(2)
-					shield:setOrigin(0.5, 0.5)
-					shield.layer = jamm.layer + 0.1
-					Game.world:addChild(shield)
-					shield:play(1/10, false)
-					robashield = shield
-				end)
-			end)
-		else
-			cutscene:walkToSpeed(variant, jamm.x + 100, jamm.y, 4, "right")
-		end
-		cutscene:showNametag("Susie", {top=true})
-		cutscene:look(susie, "right")
-		cutscene:text("* You.", "bangs/neutral", "susie", {top=true})
 		cutscene:hideNametag()
+
+		Assets.playSound("noise")
+		jamm:shake()
+		cutscene:wait(1)
+		cutscene:showNametag("Susie")
+		cutscene:text("* Come on...[wait:5] Jamm.", "bangs/down", "susie")
+		cutscene:hideNametag()
+
+		Assets.playSound("step2", 2, 0.9)
+		cutscene:wait(cutscene:walkToSpeed(fmarcy, fmarcy.x - 40, fmarcy.y, 1))
+
+		Assets.playSound("noise")
+		jamm:shake()
+		cutscene:wait(1)
+		cutscene:showNametag("Susie")
+		cutscene:text("* We gotta go...", "bangs/down", "susie")
+		cutscene:hideNametag()
+
+		Assets.playSound("step1", 2, 0.9)
+		cutscene:wait(cutscene:walkToSpeed(fmarcy, fmarcy.x - 40, fmarcy.y, 1))
+
+		Assets.playSound("noise")
+		jamm:shake()
+		cutscene:wait(1)
+		cutscene:showNametag("Susie")
+		cutscene:text("* Please...[wait:5] get up...", "bangs/down", "susie")
+		cutscene:hideNametag()
+
+		local fmarcy_origlayer = fmarcy.layer
+		fmarcy.layer = WORLD_LAYERS["below_ui"] + 1
+		local fade = Rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
+		fade.alpha = 0.35
+		fade:setParallax(0)
+		fade.color = {0, 0, 0}
+		fade.layer = WORLD_LAYERS["below_ui"]
+		Game.world:addChild(fade)
+		Assets.playSound("noise")
+		cutscene:wait(1)
+		if Game:getFlag("future_variable") == "ceroba" then
+			variant.flip_x = true
+			variant:setSprite("shock")
+		end
+		Assets.playSound("motor_swing_down", 1, 1.1)
+		fmarcy.flip_x = true
+		fmarcy:setAnimation("battle/attack_ready")
+		cutscene:wait(cutscene:slideTo(fmarcy, jamm.x + 120, jamm.y - 40, 0.3, "out-cubic"))
+		cutscene:slideTo(fmarcy, jamm.x + 80, jamm.y - 20, 1.5)
+		Game.world.music:play("strongwind_loop", 0, 0.5)
+		Game.world.timer:tween(1.5, Game.world.music, {volume = 1})
+		cutscene:wait(1.5)
+		Game.world.music:pause()
+		Assets.playSound("noise")
+		fmarcy.layer = fmarcy_origlayer
+		fade.alpha = 1
+		cutscene:wait(1)
+		variant:setPosition(jamm.x + 60, jamm.y)
+		susie:setSprite("surprised_step_back_2")
+		fade:remove()
+
+		-- third party parries/blocks/deflects/whatever Marcy's attack
+		if Game:getFlag("future_variable") == "ceroba" then
+			local parry_fx = Sprite("world/cutscenes/parry_impact", variant.x + 40, variant.y - 40)
+			parry_fx:setScale(2)
+			parry_fx:setOrigin(0.5)
+			parry_fx.layer = variant.layer - 0.1
+			Game.world:addChild(parry_fx)
+			Game.world.timer:after(0.1, function() parry_fx:remove() end)
+			variant.flip_x = false
+			local s = Assets.playSound("weaponpull", 1, 2)
+			s:seek(0.06)
+			s = Assets.playSound("weaponpull", 1, 0.8)
+			s:seek(0.06)
+			variant:setAnimation("battle/attack")
+			fmarcy:setAnimation("battle/attack")
+			cutscene:wait(cutscene:slideTo(fmarcy, fmarcy.x + 100, fmarcy.y + 20, 0.3))
+			cutscene:wait(cutscene:slideTo(fmarcy, fmarcy.x + 40, fmarcy.y, 0.8))
+		end
+
+		cutscene:wait(2)
+
+		cutscene:showNametag("Susie", {top=true})
+		cutscene:text("* ...", "shock", "susie", {top=true})
+		cutscene:hideNametag()
+		cutscene:wait(1)
+		fmarcy.flip_x = false
+		fmarcy:setSprite("walk")
+		fmarcy:setFacing("left")
+		cutscene:walkToSpeed(fmarcy, fmarcy.x + 40, fmarcy.y, 1, "left", true)
+		cutscene:wait(1)
+		if Game:getFlag("future_variable") == "ceroba" then
+			Assets.playSound("noise")
+			variant:setSprite("walk")
+			variant:setFacing("right")
+		end
+		cutscene:wait(1)
+		susie:setSprite("walk_angry/right")
+		cutscene:look(susie, "right")
+		cutscene:text("* Oh you're dead to me now!", "angry_b_alt", "susie", {top=true})
+		cutscene:hideNametag()
+
+		Game.world.music:play("tense", 1, 1)
+		susie:setAnimation("battle/attack")
+		Assets.playSound("laz_c", 1, 0.9)
+		local attack = Sprite("effects/attack/mash", fmarcy.x, fmarcy.y-fmarcy.height)
+		attack:setScale(2)
+		attack:setOrigin(0.5)
+		attack.layer = WORLD_LAYERS["below_ui"]
+		Game.world:addChild(attack)
+		attack:play(1/15, false, function() attack:remove() end)
+
+		cutscene:walkToSpeed(fmarcy, fmarcy.x, fmarcy.y - 60, 6, "down", true)
+		cutscene:wait(1.5)
+
+		-- third party helps out Jamm while Susie distracts the attacker
+		if Game:getFlag("future_variable") == "ceroba" then
+			variant:setFacing("left")
+			variant:alert(nil, {play_sound=false})
+			Game.world.timer:after(1, function()
+				variant:setAnimation("crouch")
+			end)
+		end
+
+		cutscene:panTo(1040, 260, 1.5)
+		cutscene:walkToSpeed(fmarcy, fmarcy.x, 260, 8, "left")
+		susie:setSprite("run_serious")
+		cutscene:wait(cutscene:walkToSpeed(susie, susie.x, 260, 8, "right"))
+
+		susie:setAnimation("battle/rude_buster")
+		cutscene:wait(15/30)
+		Assets.playSound("rudebuster_swing")
+		local x, y = susie:getRelativePos(susie.width, susie.height/2 - 10, Game.world)
+		local blast = RudeBusterBeam(false, x, y, fmarcy.x + 160, fmarcy.y-fmarcy.height)
+		blast.layer = WORLD_LAYERS["below_ui"]
+		Game.world:addChild(blast)
+		cutscene:walkToSpeed(fmarcy, fmarcy.x, fmarcy.y - 100, 8, "down", true)
 		
-		Game.world.music:play("susie", 1, 1)
+		cutscene:wait(2)
 		
-		cutscene:wait(cutscene:panTo("camera_to"))
+		cutscene:walkToSpeed(fmarcy, 1240, 260, 4, "left", true)
+		susie:setSprite("walk_bangs")
+		cutscene:wait(cutscene:walkToSpeed(susie, susie.x, 260, 4, "right"))
 		
-		cutscene:wait(cutscene:walkToSpeed(susie, susie.x, fmarcy.y, 4, "right"))
-		
-		cutscene:look(variant, "right")
+		susie:setSprite("walk_bangs")
 		cutscene:showNametag("Susie")
 		cutscene:text("* I don't know who the hell you think you are...", "bangs/neutral", "susie")
 		cutscene:hideNametag()
@@ -850,7 +973,6 @@ return {
 		Game:addPartyMember("jamm")
 		Game:addPartyMember(party_id)
 
-		if robashield then robashield:remove() end
 		variant:resetSprite()
 		
 		if in_the_running and (Game.party[1].health == Game.party[1]:getStat("health")) then
@@ -1064,7 +1186,7 @@ return {
 		cutscene:look(jamm, "down")
 		
 		if Game:getFlag("future_variable") == "ceroba" then
-			variant:setSprite("fall")
+			variant:setSprite("shock_angry")
 			variant.flip_x = true
 			cutscene:showNametag("Ceroba", {left=true})
 			cutscene:text("* What?![wait:10] I disappeared?!", "surprised", "ceroba")
