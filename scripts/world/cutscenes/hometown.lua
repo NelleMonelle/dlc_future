@@ -525,4 +525,156 @@ return {
 		
 		cutscene:wait(cutscene:fadeIn(0.75))
     end,
+	
+	no_enter_tent = function(cutscene, event)
+		cutscene:text("* You get the feeling you shouldn't enter this tent.")
+		cutscene:wait(cutscene:walkToSpeed(Game.world.player, Game.world.player.x, Game.world.player.y + 40, 4))
+	end,
+	
+	fmarcy_training = function(cutscene, event)
+		local fmarcy = cutscene:getCharacter("fmarcy")
+		
+		local jamm = cutscene:getCharacter("jamm")
+		local susie = cutscene:getCharacter("susie")
+		local variant = cutscene:getCharacter(Game:getFlag("future_variable"))
+		
+		local choice = 1
+		
+		if not Game:getFlag("fmarcy_do_rematch") then
+			Game:setFlag("fmarcy_do_rematch", true)
+			cutscene:detachFollowers()
+			cutscene:detachCamera()
+			
+			cutscene:wait(cutscene:panTo("camto", 2))
+			
+			jamm.x = fmarcy.x
+			susie.x = jamm.x - 80
+			variant.x = jamm.x + 80
+			jamm.y = susie.y
+			variant.y = susie.y
+			
+			cutscene:walkToSpeed(jamm, jamm.x, 360, 4)
+			cutscene:walkToSpeed(susie, susie.x, 360, 4)
+			cutscene:wait(cutscene:walkToSpeed(variant, variant.x, 360, 4))
+			
+			cutscene:showNametag("Marcy")
+			cutscene:text("* ...I'm almost glad you actually came here.", "closed", "fmarcy")
+			cutscene:showNametag("Susie")
+			cutscene:text("* Where even is this place?", "nervous_side", "susie")
+			cutscene:text("* I mean,[wait:5] when we come from,[wait:5] this path didn't even exist...", "nervous", "susie")
+			cutscene:showNametag("Marcy")
+			cutscene:text("* This...[wait:10] is where I've set up camp.", "neutral", "fmarcy")
+			cutscene:text("* " .. Game:getPartyMember(Mod:getVariableFuture(Game.party[3].id)):getName() .. " and I sleep in those tents over there.", "neutral", "fmarcy")
+			cutscene:text("* As for Noelle,[wait:5] she sleeps in what remains of her family's home...", "closed", "fmarcy")
+			cutscene:text("* Trust me,[wait:5] she insisted.", "neutral", "fmarcy")
+			if Game:getFlag("future_variable") == "ceroba" then
+				cutscene:showNametag("Ceroba")
+				cutscene:text("* Did you need anything from us?", "neutral", "ceroba")
+			end
+			cutscene:showNametag("Marcy")
+			cutscene:text("* ...There is one thing.", "closed", "fmarcy")
+			cutscene:text("* Dad,[wait:5] I need you to duel me.", "upset", "fmarcy")
+			cutscene:showNametag("Jamm")
+			cutscene:text("* ...You said what now?", "speechless", "jamm")
+			cutscene:showNametag("Marcy")
+			cutscene:text("* There was this one curiosity I've always had about you.", "closed", "fmarcy")
+			cutscene:text("* One thing I remember is that you were always persistent...", "closed", "fmarcy")
+			cutscene:text("* I need to see if that will work for you now.", "neutral", "fmarcy")
+			cutscene:showNametag("Jamm")
+			cutscene:text("* I mean,[wait:5] okay,[wait:5] I guess I can do that...", "nervous", "jamm")
+			cutscene:hideNametag()
+			
+			cutscene:walkToSpeed(jamm, 320, 300, 4, "right")
+			cutscene:walkToSpeed(susie, susie.x - 40, 380, 4, "up")
+			cutscene:walkToSpeed(variant, variant.x + 40, 380, 4, "up")
+			cutscene:wait(cutscene:walkToSpeed(fmarcy, 760, 300, 4, "left"))
+			
+			Game:setPartyMembers("jamm")
+			susie = susie:convertToCharacter()
+			jamm = jamm:convertToPlayer()
+			
+			cutscene:showNametag("Susie")
+			cutscene:text("* Kick her ass,[wait:5] Jamm!", "teeth_smile", "susie")
+			cutscene:showNametag("Marcy")
+			cutscene:text("* Ready,[wait:5] dad?", "neutral", "fmarcy")
+			cutscene:showNametag("Jamm")
+			cutscene:text("* Let's do this,[wait:5] Marcy.", "sling_ready", "jamm")
+			cutscene:hideNametag()
+		else
+			cutscene:showNametag("Marcy")
+			cutscene:text("* As many times as you need,[wait:5] dad...", "closed", "fmarcy")
+			cutscene:text("* You ready?", "upset", "fmarcy")
+			cutscene:showNametag("Jamm")
+			cutscene:text("* Think I can do this,[wait:5] Susie?", "sling_ready", "jamm")
+			cutscene:hideNametag()
+			
+			choice = cutscene:choicer({"Kick her\nass, Jamm!", "Not yet."})
+			
+			if choice == 1 then
+				cutscene:detachFollowers()
+				cutscene:detachCamera()
+				
+				cutscene:panTo("camto", 1)
+				
+				cutscene:walkToSpeed(jamm, 320, 300, 4, "right")
+				cutscene:walkToSpeed(susie, susie.x - 40, 380, 4, "up")
+				cutscene:walkToSpeed(variant, variant.x + 40, 380, 4, "up")
+				cutscene:wait(cutscene:walkToSpeed(fmarcy, 760, 300, 4, "left"))
+				
+				Game:setPartyMembers("jamm")
+				susie = susie:convertToCharacter()
+				jamm = jamm:convertToPlayer()
+				
+				cutscene:showNametag("Marcy")
+				cutscene:text("* Then let us begin.", "upset", "fmarcy")
+				cutscene:hideNametag()
+			else
+				cutscene:showNametag("Marcy")
+				cutscene:text("* Then make all the preparations you need.", "closed", "fmarcy")
+			end
+		end
+		
+		if choice == 1 then
+			cutscene:startEncounter("fmarcy_training", false, {fmarcy})
+				
+			Game:setPartyMembers("susie", "jamm", Game:getFlag("third_party_member_future", "ceroba"))
+			jamm = jamm:convertToFollower(1)
+			susie = susie:convertToPlayer()
+			Game.party[2].health = Game.party[2]:getStat("health")
+			
+			if not Game:getFlag("fmarcy_spar_complete") then
+				jamm:setSprite("landed_1")
+				cutscene:wait(1)
+				cutscene:fadeIn(2, {global = true})
+				cutscene:wait(3)
+				if not Game:getFlag("fmarcy_first_loss") then
+					cutscene:showNametag("Jamm")
+					cutscene:text("* J-jeez,[wait:5] Marcy...", "ouch", "jamm")
+					cutscene:showNametag("Marcy")
+					cutscene:text("* Of course you wouldn't win the first time...", "closed", "fmarcy")
+				end
+				cutscene:showNametag("Marcy")
+				cutscene:text("* Well,[wait:5] dust yourself off and try again.", "neutral", "fmarcy")
+				if not Game:getFlag("fmarcy_first_loss") then
+					Game:setFlag("fmarcy_first_loss", true)
+					cutscene:showNametag("Jamm")
+					cutscene:text("* You're giving me another try?", "nervous_left", "jamm")
+					cutscene:showNametag("Marcy")
+					cutscene:text("* Like I said,[wait:5] I want to see how far that persistence can go.", "neutral", "fmarcy")
+					cutscene:text("* Give it another shot when you're ready.", "neutral", "fmarcy")
+				end
+				jamm:shake(2)
+				jamm:resetSprite()
+				cutscene:wait(0.5)
+				
+				cutscene:walkTo(fmarcy, 540, 240, 1, "down")
+				
+				cutscene:attachCamera(1)
+				cutscene:attachFollowers(8)
+				cutscene:wait(1)
+			else
+			
+			end
+		end
+	end,
 }

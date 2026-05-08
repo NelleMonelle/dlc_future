@@ -23,7 +23,7 @@ return {
   },
   properties = {},
   wangsets = {},
-  tilecount = 68,
+  tilecount = 70,
   tiles = {
     {
       id = 14,
@@ -432,6 +432,18 @@ return {
       image = "../../../assets/sprites/world/events/graves/grave_blank.png",
       width = 31,
       height = 36
+    },
+    {
+      id = 157,
+      image = "../../../assets/sprites/world/maps/hometown/fmarcy_tent.png",
+      width = 200,
+      height = 320
+    },
+    {
+      id = 158,
+      image = "../../../assets/sprites/world/maps/hometown/tent.png",
+      width = 200,
+      height = 320
     }
   }
 }

@@ -215,7 +215,7 @@ return {
 		Game.battle.enemies[1].just_weakened = true
 		encounter.phase = 2
 		
-		Game.battle:registerXAction("susie", "Check")
+		Game.battle:registerXAction("susie", "Check", "Useless\nanalysis")
 		
 		Game.battle.music:play(encounter.music, 1, 1)
     end,

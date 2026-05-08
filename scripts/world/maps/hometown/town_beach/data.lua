@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 17,
-  nextobjectid = 19,
+  nextobjectid = 21,
   properties = {
     ["border"] = "leaves",
     ["music"] = "future_world"
@@ -296,18 +296,20 @@ return {
           }
         },
         {
-          id = 18,
-          name = "rift_transition",
+          id = 19,
+          name = "transition",
           type = "",
-          shape = "point",
-          x = 720,
-          y = 240,
-          width = 0,
-          height = 0,
+          shape = "rectangle",
+          x = 360,
+          y = -40,
+          width = 120,
+          height = 40,
           rotation = 0,
           visible = true,
           properties = {
-            ["map"] = "cliffs_2"
+            ["facing"] = "up",
+            ["map"] = "hometown/fmarcy_camp",
+            ["marker"] = "beach"
           }
         }
       }
@@ -333,6 +335,19 @@ return {
           shape = "point",
           x = 40,
           y = 280,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 20,
+          name = "fmarcy_camp",
+          type = "",
+          shape = "point",
+          x = 420,
+          y = 40,
           width = 0,
           height = 0,
           rotation = 0,

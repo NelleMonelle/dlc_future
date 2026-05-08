@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.10" tiledversion="1.11.2" name="hometownobjects" tilewidth="1758" tileheight="1240" tilecount="68" columns="0">
+<tileset version="1.10" tiledversion="1.11.2" name="hometownobjects" tilewidth="1758" tileheight="1240" tilecount="70" columns="0">
  <editorsettings>
   <export target="hometownobjects.lua" format="lua"/>
  </editorsettings>
@@ -207,5 +207,11 @@
  </tile>
  <tile id="156">
   <image source="../../../assets/sprites/world/events/graves/grave_blank.png" width="31" height="36"/>
+ </tile>
+ <tile id="157">
+  <image source="../../../assets/sprites/world/maps/hometown/fmarcy_tent.png" width="200" height="320"/>
+ </tile>
+ <tile id="158">
+  <image source="../../../assets/sprites/world/maps/hometown/tent.png" width="200" height="320"/>
  </tile>
 </tileset>

@@ -32,7 +32,7 @@ function Dummy:isAutoHealingEnabled(battler)
 end
 
 function Dummy:onBattleStart(battler)
-	Game.battle:registerXAction("fmarcy", "Check")
+	Game.battle:registerXAction("fmarcy", "Check", "Useless\nanalysis")
 end
 
 function Dummy:getDialogueCutscene()

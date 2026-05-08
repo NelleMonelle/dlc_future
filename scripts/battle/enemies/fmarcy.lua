@@ -27,16 +27,14 @@ function Marcy:init()
 
     -- List of possible wave ids, randomly picked each turn
     self.waves = {
-        "basic",
-        "aiming",
-        "movingarena"
+        "scythe_gravity"
     }
 
     -- Dialogue randomly displayed in the enemy's speech bubble
     self.dialogue = {}
 
     -- Check text (automatically has "ENEMY NAME - " at the start)
-    self.check = {"AT " .. Game:getPartyMember("fmarcy").stats.attack .. " DF " .. Game:getPartyMember("fmarcy").stats.defense .. "\n* A resistance member once known as a sweet girl.", "Testing your abilities to see if you're worth bringing along."}
+    self.check = {"AT " .. Game:getPartyMember("fmarcy").stats.attack .. " DF " .. Game:getPartyMember("fmarcy").stats.defense .. "\n* A resistance member once known as a sweet girl."}
 
     -- Text randomly displayed at the bottom of the screen each turn
     self.text = {
@@ -92,6 +90,16 @@ function Marcy:onAct(battler, name)
 			end
 			self.times_smiled = self.times_smiled + 1
 		end)
+    elseif name == "Reach" then
+        Game.battle:startActCutscene(function(cutscene)
+			cutscene:text("* Jamm reaches for his slingshot...")
+			if not self.ever_reached then
+				self.ever_reached = true
+				cutscene:text("* (My hands are kinda sweaty right now...)", "nervous_left", "jamm")
+				cutscene:text("* (It may take a few tries to pick it up.)", "nervous", "jamm")
+			end
+			Game.battle.encounter.reaching = true
+		end)
     end
 
     -- If the act is none of the above, run the base onAct function
@@ -107,7 +115,7 @@ function Marcy:getAttackDamage(damage, battler, points)
 	if self.health == self.max_health then
 		return 1
 	end
-	return super.getAttackDamage(self, damage, battler, points)
+	return super.getAttackDamage(self, damage, battler, points)/2
 end
 
 function Marcy:onHurt(damage, battler)
