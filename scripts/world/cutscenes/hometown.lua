@@ -455,7 +455,7 @@ return {
 		cutscene:showNametag("Susie")
 		cutscene:text("* ...", "annoyed_down", "susie")
 		cutscene:text("* I mean,[wait:5] it's great that the Knight was taken down,[wait:5] but...", "annoyed_down_alt", "susie")
-		cutscene:text("* Somehow,[wait:5] I feel...[wait:10] awful.", "scared", "susie")
+		cutscene:text("* Somehow,[wait:5] I feel...[wait:10] awful.", "concerned", "susie")
 		cutscene:showNametag("Jamm")
 		cutscene:text("* Yeah...[wait:10] It's...", "nervous_left", "jamm")
 		cutscene:text("* It's like something is...[wait:10] missing.", "nervous", "jamm")
