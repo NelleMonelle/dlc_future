@@ -544,7 +544,7 @@ return {
           visible = true,
           properties = {
             ["facing"] = "up",
-            ["map"] = "light/hometown/school/school_lobby",
+            ["map"] = "hometown/school/school_lobby",
             ["marker"] = "spawn"
           }
         }

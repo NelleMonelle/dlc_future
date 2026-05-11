@@ -653,7 +653,7 @@ return {
             ["exit_delay"] = 0.3,
             ["exit_sound"] = "doorclose",
             ["facing"] = "up",
-            ["map"] = "light/hometown/interior/hospital_lobby",
+            ["map"] = "hometown/interior/hospital_lobby",
             ["marker"] = "spawn",
             ["sound"] = "dooropen"
           }
@@ -673,7 +673,7 @@ return {
             ["exit_delay"] = 0.3,
             ["exit_sound"] = "doorclose",
             ["facing"] = "up",
-            ["map"] = "light/hometown/interior/library_lobby",
+            ["map"] = "hometown/interior/library_lobby",
             ["marker"] = "spawn",
             ["sound"] = "dooropen"
           }
