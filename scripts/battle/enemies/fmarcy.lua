@@ -139,7 +139,7 @@ end
 function Marcy:getEncounterText()
 	if self.health == self.max_health and self.times_smiled >= 3 and not Game:getFlag("marcy_training_ever_attacked") and not self.jamm_should_attack_line then
 		self.jamm_should_attack_line = true
-		return "* (Doesn't seem like mercy will work. Maybe I should try [color:yellow]attacking[color:reset].)", "look_left", "jamm"
+		return "* (Doesn't seem like mercy will work.[wait:5] Maybe I should try [color:yellow]attacking[color:reset] instead.)", "look_left", "jamm"
 	end
 
 	if self.strong_attack_incoming then
