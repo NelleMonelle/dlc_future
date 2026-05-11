@@ -20,7 +20,9 @@ return {
 				fkanako.quest_hint:remove()
 				-- start the quest here
 			else
+				cutscene:showNametag("Marcy")
 				cutscene:text("* We should still have some time before she arrives.", "closed", "fmarcy")
+				cutscene:showNametag("Kanako")
 				cutscene:text("* Alright.[wait:5] Just tell me if you change your mind.", "neutral", "fkanako")
 			end
 		end
