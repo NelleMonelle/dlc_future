@@ -11,7 +11,7 @@ function actor:init()
     self.height = 47
 
     -- Hitbox for this actor in the overworld (optional, uses width and height by default)
-    self.hitbox = {5, 44, 14, 8}
+    self.hitbox = {5, 37, 15, 10}
 
     -- Color for this actor used in outline areas (optional, defaults to red)
     self.color = {0, 1, 1}
@@ -42,7 +42,18 @@ function actor:init()
     self.animations = {}
 
     -- Table of sprite offsets (indexed by sprite name)
-    self.offsets = {}
+    self.offsets = {
+        -- Movement offsets
+        ["talk/down"] = {0, 0},
+        ["talk/right"] = {3, 0},
+        ["talk/left"] = {3, 0},
+        ["talk/up"] = {0, 0},
+
+        ["walk/down"] = {1, 0},
+        ["walk/right"] = {3, 0},
+        ["walk/left"] = {3, 0},
+        ["walk/up"] = {1, 0},
+    }
 
     self.directional_talking = true
 end
