@@ -585,8 +585,8 @@ return {
 			cutscene:hideNametag()
 			
 			cutscene:walkToSpeed(jamm, 320, 300, 4, "right")
-			cutscene:walkToSpeed(susie, susie.x - 40, 380, 4, "up")
-			cutscene:walkToSpeed(variant, variant.x + 40, 380, 4, "up")
+			cutscene:walkToSpeed(susie, 420, 380, 4, "up")
+			cutscene:walkToSpeed(variant, 660, 380, 4, "up")
 			cutscene:wait(cutscene:walkToSpeed(fmarcy, 760, 300, 4, "left"))
 			
 			Game:setPartyMembers("jamm")
@@ -617,8 +617,8 @@ return {
 				cutscene:panTo("camto", 1)
 				
 				cutscene:walkToSpeed(jamm, 320, 300, 4, "right")
-				cutscene:walkToSpeed(susie, susie.x - 40, 380, 4, "up")
-				cutscene:walkToSpeed(variant, variant.x + 40, 380, 4, "up")
+				cutscene:walkToSpeed(susie, 420, 380, 6, "up")
+				cutscene:walkToSpeed(variant, 660, 380, 6, "up")
 				cutscene:wait(cutscene:walkToSpeed(fmarcy, 760, 300, 4, "left"))
 				
 				Game:setPartyMembers("jamm")
@@ -663,6 +663,7 @@ return {
 					cutscene:text("* Like I said,[wait:5] I want to see how far that persistence can go.", "neutral", "fmarcy")
 					cutscene:text("* Give it another shot when you're ready.", "neutral", "fmarcy")
 				end
+				cutscene:hideNametag()
 				jamm:shake(2)
 				jamm:resetSprite()
 				cutscene:wait(0.5)
@@ -670,6 +671,7 @@ return {
 				cutscene:walkTo(fmarcy, 540, 240, 1, "down")
 				
 				cutscene:attachCamera(1)
+				cutscene:interpolateFollowers()
 				cutscene:attachFollowers(8)
 				cutscene:wait(1)
 			else

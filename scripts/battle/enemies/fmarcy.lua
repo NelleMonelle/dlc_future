@@ -14,16 +14,20 @@ function Marcy:init()
     -- Enemy health
     self.max_health = 1800
     self.health = 1800
-    -- Enemy attack (determines bullet damage)
-    self.attack = 10
-    -- Enemy defense (usually 0)
-    self.defense = 4
+	if not Game:getFlag("marcy_training_distracted") then
+		self.attack = 10
+		self.defense = 4
+	else
+		self.attack = 8
+		self.defense = 0
+	end
     -- Enemy reward
     self.money = 100
 
     -- Mercy given when sparing this enemy before its spareable (20% for basic enemies)
     self.spare_points = 0
     self.service_mercy = 0
+	self.tired_percentage = 0
 
     -- List of possible wave ids, randomly picked each turn
     self.waves = {
@@ -65,26 +69,32 @@ function Marcy:init()
 	
 	self.has_weapon = true
 	self.disarm_chance = 0.7
+
+	self.weakened = false
+	self.strong_attack_incoming = false
+	self.jamm_should_attack_line = false
 end
 
 function Marcy:onAct(battler, name)
     if name == "Smile" then
         Game.battle:startActCutscene(function(cutscene)
 			cutscene:text("* Jamm gives a warm smile to Marcy.")
-			if self.times_smiled == 0 then
-				cutscene:text("* The hell are you doing,[wait:5] dad?", "neutral", "fmarcy")
-				cutscene:text("* You realize mercy won't get you anywhere,[wait:5] right?", "lookright", "fmarcy")
-			elseif self.times_smiled == 1 then
-				cutscene:text("* I don't remember how it was back when you came from...", "upset", "fmarcy")
-				cutscene:text("* But now,[wait:5] the world is cruel.[wait:10]\n* Merciless.", "upset", "fmarcy")
-				cutscene:text("* So why the hell are you hesitating!?", "mad", "fmarcy")
-			elseif self.times_smiled == 2 then
-				cutscene:text("* ...", "closed", "fmarcy")
-				cutscene:text("* Marcy,[wait:5] for a quick second,[wait:5] seems as if she feels nostalgia...")
-				cutscene:text("* Marcy's ATTACK and DEFENSE dropped!")
-				Game:setFlag("marcy_training_distracted", true)
-				self.attack = 8
-				self.defense = 0
+			if self.times_smiled < 3 and not Game:getFlag("marcy_training_distracted") then
+				if self.times_smiled == 0 then
+					cutscene:text("* The hell are you doing,[wait:5] dad?", "neutral", "fmarcy")
+					cutscene:text("* You realize mercy won't get you anywhere,[wait:5] right?", "lookright", "fmarcy")
+				elseif self.times_smiled == 1 then
+					cutscene:text("* I don't remember how it was back when you came from...", "upset", "fmarcy")
+					cutscene:text("* But now,[wait:5] the world is cruel.[wait:10]\n* Merciless.", "upset", "fmarcy")
+					cutscene:text("* So why the hell are you hesitating!?", "mad", "fmarcy")
+				elseif self.times_smiled == 2 then
+					cutscene:text("* ...", "closed", "fmarcy")
+					cutscene:text("* Marcy,[wait:5] for a quick second,[wait:5] seems as if she feels nostalgia...")
+					cutscene:text("* Marcy's ATTACK and DEFENSE dropped!")
+					Game:setFlag("marcy_training_distracted", true)
+					self.attack = 8
+					self.defense = 0
+				end
 			else
 				cutscene:text("* ...But nothing happened.")
 			end
@@ -112,7 +122,7 @@ function Marcy:getXAction(battler)
 end
 
 function Marcy:getAttackDamage(damage, battler, points)
-	if self.health == self.max_health then
+	if self.health == self.max_health and not Game:getFlag("marcy_training_ever_attacked") then
 		return 1
 	end
 	return super.getAttackDamage(self, damage, battler, points)/2
@@ -120,10 +130,27 @@ end
 
 function Marcy:onHurt(damage, battler)
 	super.onHurt(self, damage, battler)
-	
-	if self.health == self.max_health - 1 then
+
+	if self.health == self.max_health - 1 and not Game:getFlag("marcy_training_ever_attacked") then
 		Game.battle.encounter.do_first_cutscene = true
 	end
+end
+
+function Marcy:getEncounterText()
+	if self.health == self.max_health and self.times_smiled >= 3 and not Game:getFlag("marcy_training_ever_attacked") and not self.jamm_should_attack_line then
+		self.jamm_should_attack_line = true
+		return "* (Doesn't seem like mercy will work. Maybe I should try [color:yellow]attacking[color:reset].)", "look_left", "jamm"
+	end
+
+	if self.strong_attack_incoming then
+		return self.strong_text
+	end
+
+	if self.weakened then
+		return TableUtils.pick(self.weakened_text)
+	end
+
+	return TableUtils.pick(self.text)
 end
 
 return Marcy
