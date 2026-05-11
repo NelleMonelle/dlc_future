@@ -11,6 +11,8 @@ function Marcy:init()
     -- Enables the purple grid battle background
     self.background = false
 
+	self.flee = false
+
     -- Add the dummy enemy to the encounter
     self.marcy = self:addEnemy("fmarcy", 540, 260)
 
@@ -24,8 +26,12 @@ end
 
 function Marcy:onGameOver()
 	Game.battle:startCutscene(function(cutscene)
+		Game.battle.tension_bar:hide()
+		Game.battle.battle_ui:transitionOut()
+		Game.battle.party[1]:toggleOverlay(false)
 		Game.battle.party[1]:setSprite("landed_1")
-		cutscene:fadeOut(1, {color={1,1,1,1}})
+		Game.battle.party[1].chara.disarmed = false
+		cutscene:wait(cutscene:fadeOut(1, {color={1,1,1,1}}))
 		cutscene:wait(1)
 		Game.battle:returnToWorld()
 	end)
@@ -52,14 +58,17 @@ function Marcy:getDialogueCutscene()
 			cutscene:battlerText(marcy, "I can take a bit\nof thrashing,[wait:5] dad.[wait:10]\nIt's fine.", {x=marcy.x - 40, y=marcy.y - 60})
 			cutscene:battlerText(marcy, "You want to prove\nyourself?", {x=marcy.x - 40, y=marcy.y - 60})
 			cutscene:battlerText(marcy, "Then show me what\nyou can really do.", {x=marcy.x - 40, y=marcy.y - 60})
+			Game:setFlag("marcy_training_ever_attacked", true)
         end
 	elseif self.marcy.health < 1500 and not self.jamm_disarmed then
 		self.jamm_disarmed = true
 		return function(cutscene)
 			local jamm = cutscene:getCharacter("jamm")
 			local marcy = cutscene:getCharacter("fmarcy")
-			cutscene:battlerText(marcy, "You've got a\ndecent aim...", {x=marcy.x - 40, y=marcy.y - 60})
-			cutscene:battlerText(marcy, "However,[wait:5] it's\nnot enough.", {x=marcy.x - 40, y=marcy.y - 60})
+			if not Game:getFlag("marcy_training_ever_disarmed") then
+				cutscene:battlerText(marcy, "You've got a\ndecent aim...", {x=marcy.x - 40, y=marcy.y - 60})
+				cutscene:battlerText(marcy, "However,[wait:5] it's\nnot enough.", {x=marcy.x - 40, y=marcy.y - 60})
+			end
 			marcy:setAnimation("battle/attack")
 			Assets.playSound("laz_c")
 			jamm.chara.disarmed = true
@@ -78,11 +87,16 @@ function Marcy:getDialogueCutscene()
 			sling.physics.speed_y = -0.5
 			cutscene:wait(0.5)
 			marcy:setAnimation("battle/idle")
-			cutscene:battlerText(jamm, "What the!?", {x=jamm.x + 40, y=jamm.y - 50, right=true})
-			cutscene:battlerText(marcy, "That ought to make\nthings more\ninteresting...", {x=marcy.x - 40, y=marcy.y - 60})
+			if not Game:getFlag("marcy_training_ever_disarmed") then
+				cutscene:battlerText(jamm, "What the!?", {x=jamm.x + 40, y=jamm.y - 50, right=true})
+				cutscene:battlerText(marcy, "That ought to make\nthings more\ninteresting...", {x=marcy.x - 40, y=marcy.y - 60})
+			else
+				cutscene:battlerText(jamm, "Not again!", {x=jamm.x + 40, y=jamm.y - 50, right=true})
+			end
 			jamm:setAnimation("battle/idle")
 			cutscene:battlerText(jamm, "I'll find it,[wait:5]\nno sweat!", {x=jamm.x + 40, y=jamm.y - 50, right=true})
 			Game.battle:registerXAction("jamm", "Reach", "Grab\nslingshot")
+			Game:setFlag("marcy_training_ever_disarmed", true)
         end
 	elseif self.marcy.health < 300 and not self.special_ready then
 		self.special_ready = true
