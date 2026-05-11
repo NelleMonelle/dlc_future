@@ -523,6 +523,10 @@ return {
 		
 		cutscene:loadMap("hometown/town_graveyard", "deep", "down")
 		
+		Game:addFollower("fmarcy")
+		Game:addFollower("fnoelle")
+		Game:addFollower(Mod:getVariableFuture(Game.party[3].id))
+		
 		cutscene:wait(cutscene:fadeIn(0.75))
     end,
 	
