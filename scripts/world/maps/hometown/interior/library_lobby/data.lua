@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -9,8 +9,8 @@ return {
   height = 12,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 8,
-  nextobjectid = 43,
+  nextlayerid = 9,
+  nextobjectid = 44,
   properties = {
     ["border"] = "leaves",
     ["music"] = "future_world"
@@ -57,6 +57,7 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -70,6 +71,7 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -83,6 +85,7 @@ return {
           width = 160,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -96,6 +99,7 @@ return {
           width = 160,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -109,6 +113,7 @@ return {
           width = 40,
           height = 440,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -122,6 +127,7 @@ return {
           width = 480,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -135,6 +141,7 @@ return {
           width = 40,
           height = 280,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -148,6 +155,7 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -161,6 +169,7 @@ return {
           width = 40,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -174,6 +183,7 @@ return {
           width = 48,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -187,6 +197,7 @@ return {
           width = 42,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -200,6 +211,7 @@ return {
           width = 34,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -213,6 +225,7 @@ return {
           width = 168,
           height = 62,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -226,6 +239,7 @@ return {
           width = 104,
           height = 62,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -239,6 +253,7 @@ return {
           width = 48,
           height = 30,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -248,7 +263,7 @@ return {
       type = "objectgroup",
       draworder = "topdown",
       id = 4,
-      name = "objects",
+      name = "objects_party",
       class = "",
       visible = true,
       opacity = 1,
@@ -268,6 +283,7 @@ return {
           width = 72,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["exit_delay"] = 0.3,
@@ -287,6 +303,7 @@ return {
           width = 84,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["exit_delay"] = 0.3,
@@ -307,6 +324,7 @@ return {
           width = 80,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["facing"] = "down",
@@ -324,6 +342,7 @@ return {
           width = 58,
           height = 82,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["solid"] = true,
@@ -342,6 +361,7 @@ return {
           width = 78,
           height = 86,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["solid"] = true,
@@ -361,6 +381,7 @@ return {
           width = 78,
           height = 86,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["solid"] = true,
@@ -378,6 +399,7 @@ return {
           width = 68,
           height = 86,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["solid"] = true,
@@ -395,6 +417,7 @@ return {
           width = 78,
           height = 86,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["solid"] = true,
@@ -412,9 +435,9 @@ return {
           width = 52,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
-            ["flagcheck"] = "!hometown_digisetup",
             ["solid"] = true,
             ["text1"] = "* (Computer Lab.)\n[wait:5]* (Please surf the web responsibly.)",
             ["text2"] = "* (In fact,[wait:5] maybe don't do it at all.)"
@@ -430,6 +453,7 @@ return {
           width = 104,
           height = 82,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["solid"] = true,
@@ -438,145 +462,19 @@ return {
           }
         },
         {
-          id = 32,
-          name = "npc",
-          type = "",
-          shape = "point",
-          x = 420,
-          y = 180,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["actor"] = "susie_lw",
-            ["cutscene"] = "hometown.digi_susie",
-            ["facing"] = "down",
-            ["flagcheck"] = "hometown_digisetup",
-            ["sprite"] = "chill"
-          }
-        },
-        {
-          id = 34,
-          name = "npc",
-          type = "",
-          shape = "point",
-          x = 460,
-          y = 330,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["actor"] = "dess",
-            ["cutscene"] = "hometown.digi_dess",
-            ["facing"] = "up",
-            ["flagcheck"] = "hometown_digisetup"
-          }
-        },
-        {
-          id = 35,
-          name = "npc",
-          type = "",
-          shape = "point",
-          x = 470,
-          y = 200,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["actor"] = "ceroba",
-            ["cutscene"] = "hometown.digi_ceroba",
-            ["facing"] = "left",
-            ["flagcheck"] = "hometown_digisetup"
-          }
-        },
-        {
-          id = 36,
-          name = "npc",
-          type = "",
-          shape = "point",
-          x = 390,
-          y = 380,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["actor"] = "brenda_lw",
-            ["cutscene"] = "hometown.digi_brenda",
-            ["facing"] = "right",
-            ["flagcheck"] = "hometown_digisetup"
-          }
-        },
-        {
-          id = 37,
-          name = "npc",
-          type = "",
-          shape = "point",
-          x = 250,
-          y = 170,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["actor"] = "noelle_lw",
-            ["cutscene"] = "hometown.digi_noelle",
-            ["facing"] = "down",
-            ["flagcheck"] = "hometown_digisetup"
-          }
-        },
-        {
-          id = 39,
-          name = "npc",
-          type = "",
-          shape = "point",
-          x = 180,
-          y = 320,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["actor"] = "jammarcy_light",
-            ["cutscene"] = "hometown.digi_jammarcy",
-            ["facing"] = "up",
-            ["flagcheck"] = "hometown_digisetup"
-          }
-        },
-        {
-          id = 40,
-          name = "script",
+          id = 43,
+          name = "interactable",
           type = "",
           shape = "rectangle",
-          x = 300,
-          y = 420,
-          width = 40,
-          height = 40,
+          x = 160,
+          y = 338,
+          width = 80,
+          height = 62,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
-            ["cutscene"] = "hometown.digi_library",
-            ["flagcheck"] = "hometown_digisetup"
-          }
-        },
-        {
-          id = 41,
-          name = "script",
-          type = "",
-          shape = "rectangle",
-          x = 278.5,
-          y = 462.5,
-          width = 82.5,
-          height = 15,
-          rotation = 0,
-          visible = true,
-          properties = {
-            ["cutscene"] = "hometown.digiwrongway_library",
-            ["flagcheck"] = "!digi_complete",
-            ["once"] = false
+            ["cutscene"] = "hometown.fberdly"
           }
         }
       }
@@ -605,6 +503,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -618,6 +517,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -631,6 +531,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -651,6 +552,40 @@ return {
       repeatx = false,
       repeaty = false,
       properties = {}
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 8,
+      name = "objects_berdly",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 36,
+          name = "npc",
+          type = "",
+          shape = "point",
+          x = 176,
+          y = 392,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["actor"] = "fberdly",
+            ["facing"] = "up",
+            ["flagcheck"] = "!POST_SNOWGRAVE"
+          }
+        }
+      }
     },
     {
       type = "objectgroup",
@@ -676,6 +611,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }

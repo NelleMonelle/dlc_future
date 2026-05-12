@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 7,
-  nextobjectid = 14,
+  nextobjectid = 15,
   properties = {
     ["border"] = "leaves",
     ["music"] = "future_world"
@@ -57,6 +57,7 @@ return {
           width = 468,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -70,6 +71,7 @@ return {
           width = 40,
           height = 118,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -83,6 +85,7 @@ return {
           width = 354,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -96,6 +99,7 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -109,6 +113,7 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -122,6 +127,7 @@ return {
           width = 40,
           height = 78,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -135,6 +141,7 @@ return {
           width = 74,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -164,9 +171,26 @@ return {
           width = 78,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["cutscene"] = "hometown.librarybook2"
+          }
+        },
+        {
+          id = 14,
+          name = "interactable",
+          type = "",
+          shape = "rectangle",
+          x = 320,
+          y = 320,
+          width = 78,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["cutscene"] = "hometown.librarybook3"
           }
         },
         {
@@ -179,6 +203,7 @@ return {
           width = 78,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["cutscene"] = "hometown.librarybook1"
@@ -194,6 +219,7 @@ return {
           width = 80,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["exit_delay"] = 0.3,
@@ -229,6 +255,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -258,6 +285,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
