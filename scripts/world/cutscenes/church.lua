@@ -14,7 +14,7 @@ return {
     end,
 
     fire_extinguisher = function(cutscene, event, player)
-        if cutscene:getCharacter("susie_lw") then
+        if cutscene:getCharacter("susie") then
             cutscene:text("* (It's a fire extinguisher.)[wait:10]\n* (For some reason you have the\nfeeling...)")
             cutscene:text("* (...[wait:5] Susie will say something\nstupid about it.)[react:1]", nil, nil, {reactions={{"They should make one of these\nthat shoots whip cream", "mid", "bottom", "smile", "susie"}}})
         else
