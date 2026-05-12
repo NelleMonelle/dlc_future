@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="16" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="7" nextobjectid="4">
+ <editorsettings>
+  <export target="data.lua" format="lua"/>
+ </editorsettings>
+ <imagelayer id="2" name="tent">
+  <image source="../../../../../assets/sprites/world/maps/hometown/interior/tent.png" width="640" height="480"/>
+ </imagelayer>
+ <objectgroup id="3" name="objects">
+  <object id="1" name="chest" x="320" y="160" width="40" height="40"/>
+  <object id="2" name="npc" x="420" y="228">
+   <properties>
+    <property name="actor" value="fmarcy"/>
+    <property name="facing" value="left"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="3" name="npc" x="220" y="200">
+   <properties>
+    <property name="actor" value="jamm"/>
+    <property name="sprite" value="read"/>
+   </properties>
+   <point/>
+  </object>
+ </objectgroup>
+ <imagelayer id="5" name="tent_upper">
+  <image source="../../../../../assets/sprites/world/maps/hometown/interior/tent_upper.png" width="640" height="480"/>
+ </imagelayer>
+</map>

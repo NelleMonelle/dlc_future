@@ -679,7 +679,226 @@ return {
 				cutscene:attachFollowers(8)
 				cutscene:wait(1)
 			else
-			
+				cutscene:detachFollowers()
+				fmarcy:setSprite("defeat")
+				fmarcy.flip_x = true
+				jamm:setAnimation("battle/idle")
+				cutscene:wait(1)
+				cutscene:fadeIn(2, {global = true})
+				cutscene:wait(3)
+				cutscene:showNametag("Jamm")
+				cutscene:text("* H-hah...", "shaded_pissed", "jamm")
+				jamm:resetSprite()
+				cutscene:text("* I...[wait:10] won...?", "nervous_left", "jamm")
+				cutscene:showNametag("Susie")
+				cutscene:text("* Hell yeah you did!", "smile", "susie")
+				cutscene:hideNametag()
+				cutscene:walkToSpeed(variant, 320, 360, 8, "up")
+				cutscene:wait(cutscene:walkToSpeed(susie, 376, 300, 8, "up"))
+				cutscene:look(jamm, "down")
+				susie:setSprite("playful_punch_1")
+				cutscene:wait(0.3)
+				susie:setSprite("playful_punch_2")
+				jamm:shake(2)
+				Assets.playSound("impact")
+				cutscene:wait(0.6)
+				cutscene:showNametag("Susie")
+				cutscene:text("* You were freaking awesome out there!", "sincere_smile", "susie")
+				cutscene:showNametag("Jamm")
+				cutscene:text("* I was,[wait:5] wasn't I?", "smirk", "jamm")
+				cutscene:text("* But what about...", "nervous", "jamm")
+				cutscene:hideNametag()
+				
+				cutscene:look(jamm, "right")
+				cutscene:look(susie, "right")
+				susie:resetSprite()
+				cutscene:look(variant, "right")
+				cutscene:wait(1)
+				
+				if Game:getFlag("future_variable") == "ceroba" then
+					cutscene:showNametag("Ceroba")
+					cutscene:text("* Do you think she's okay?", "nervous", "ceroba")
+				end
+				cutscene:showNametag("Jamm")
+				cutscene:text("* Well,[wait:5] why wouldn't she be?", "nervous", "jamm")
+				cutscene:hideNametag()
+				cutscene:walkToSpeed(susie, 380, 260, 4, "down", true)
+				cutscene:wait(cutscene:walkToSpeed(jamm, 760, 320, 4, "up"))
+				cutscene:look(susie, "right")
+				cutscene:showNametag("Jamm")
+				cutscene:text("* I'm sure all she needs is a little rest.", "nostalgia", "jamm")
+				cutscene:hideNametag()
+				
+				Game:setFlag("future_carrying_marcy", true)
+				jamm:resetSprite()
+				jamm:shake(2)
+				fmarcy:remove()
+				Assets.playSound("noise")
+				
+				cutscene:wait(1)
+				cutscene:look(jamm, "left")
+				cutscene:wait(1)
+				
+				cutscene:showNametag("Jamm")
+				cutscene:text("* I'm going to bring her to her tent.", "neutral", "jamm")
+				cutscene:text("* Stay safe,[wait:5] you two.", "worried", "jamm")
+				cutscene:hideNametag()
+				
+				cutscene:walkToSpeed(jamm, jamm.x, jamm.y + 200, 4)
+				
+				cutscene:wait(cutscene:fadeOut(1))
+				
+				Game:setFlag("future_carrying_marcy", false)
+				
+				cutscene:loadMap("hometown/fmarcy_tent", 98, 1840)
+				
+				jamm = Game.world:getEvent(3)
+				fmarcy = Game.world:getEvent(2)
+				
+				fmarcy.actor.default = "walk_noarmor"
+				fmarcy:resetSprite()
+				
+				cutscene:wait(cutscene:fadeIn(2))
+				
+				cutscene:showNametag("Marcy", {top = false})
+				cutscene:text("* Ugh...", "closed", "fmarcy", {top = false})
+				cutscene:hideNametag()
+				
+				cutscene:wait(cutscene:walkToSpeed(fmarcy, fmarcy.x - 80, fmarcy.y, 4, "up"))
+				
+				Game.world:getEvent(1).sprite:setFrame(2)
+				Assets.playSound("locker")
+				cutscene:wait(0.5)
+				Assets.playSound("noise")
+				fmarcy.actor.default = "walk"
+				fmarcy:resetSprite()
+				cutscene:wait(1)
+				cutscene:look(fmarcy, "left")
+				cutscene:wait(0.5)
+				cutscene:showNametag("Marcy", {top = false})
+				cutscene:text("* ...Dad...?", "neutral", "fmarcy", {top = false})
+				Game:setFlag("jamm_has_glasses", true)
+				jamm:setSprite("read_notice")
+				cutscene:showNametag("Jamm", {top = false})
+				cutscene:text("* Oh, you're awake!", "look_left", "jamm", {top = false})
+				cutscene:hideNametag()
+				Game:setFlag("jamm_has_glasses", false)
+				
+				cutscene:look(jamm, "right")
+				jamm:resetSprite()
+				
+				cutscene:wait(cutscene:walkToSpeed(jamm, fmarcy.x - 80, fmarcy.y, 4))
+				cutscene:showNametag("Jamm", {top = false})
+				cutscene:text("* How are you feeling?", "relief", "jamm", {top = false})
+				cutscene:showNametag("Marcy", {top = false})
+				cutscene:text("* I...[wait:5] My head's kinda hurting...", "neutral", "fmarcy", {top = false})
+				cutscene:text("* What happened?[wait:10]\n* Last I remember,[wait:5] we were sparring...", "closed", "fmarcy", {top = false})
+				cutscene:showNametag("Jamm", {top = false})
+				cutscene:text("* And I hit you with my Numbshot spell.", "neutral", "jamm", {top = false})
+				cutscene:hideNametag()
+				
+				cutscene:wait(cutscene:walkToSpeed(fmarcy, fmarcy.x, fmarcy.y + 40, 2))
+				
+				cutscene:showNametag("Marcy", {top = false})
+				cutscene:text("* That's...[wait:10] that's right...", "neutral", "fmarcy", {top = false})
+				cutscene:showNametag("Jamm", {top = false})
+				cutscene:text("* ...", "nervous", "jamm", {top = false})
+				Game.world.music:play("noelle_normal")
+				cutscene:text("* So...[wait:10] you live like this,[wait:5] Marcy?", "nervous_left", "jamm", {top = false})
+				cutscene:showNametag("Marcy", {top = false})
+				cutscene:text("* I know.[wait:10]\n* It's not much,[wait:5] is it?", "neutral", "fmarcy", {top = false})
+				cutscene:text("* I built a bed of straw and a chair from some sticks...", "neutral", "fmarcy", {top = false})
+				cutscene:look(fmarcy, "left")
+				cutscene:text("* ...And the rest came from Noelle.", "closed", "fmarcy", {top = false})
+				cutscene:text("* When her family disappeared,[wait:5] she started treating us like family.", "closed", "fmarcy", {top = false})
+				cutscene:text("* She insisted on giving me some of her parents' stuff...", "closed", "fmarcy", {top = false})
+				cutscene:look(fmarcy, "up")
+				cutscene:text("* It makes this place feel a little more alive,[wait:5] actually.", "neutral", "fmarcy", {top = false})
+				cutscene:showNametag("Jamm", {top = false})
+				cutscene:text("* ...That's...[wait:10] really cute,[wait:5] actually.", "relief", "jamm", {top = false})
+				cutscene:look(fmarcy, "left")
+				cutscene:showNametag("Marcy", {top = false})
+				cutscene:text("* If you think so...", "neutral", "fmarcy", {top = false})
+				cutscene:text("* You should get going.[wait:10]\n* I'm gonna need a minute.", "neutral", "fmarcy", {top = false})
+				cutscene:hideNametag()
+				Game.world.music:fade(0, 1)
+				cutscene:wait(cutscene:walkToSpeed(jamm, jamm.x + 40, jamm.y + 160, 4))
+				cutscene:wait(1)
+				cutscene:look(fmarcy, "down")
+				cutscene:look(jamm, "up")
+				cutscene:showNametag("Jamm")
+				cutscene:text("* Before that...[wait:10]\n* I have one more thing to ask.", "neutral", "jamm")
+				cutscene:hideNametag()
+				
+				Game:getPartyMember("jamm"):addSpell("disarm")
+				
+				cutscene:wait(cutscene:fadeOut(1))
+				
+				cutscene:loadMap("hometown/fmarcy_camp", 98, 1840)
+				
+				cutscene:detachFollowers()
+				cutscene:panTo("tentcam", 0)
+				
+				local jamm = cutscene:getCharacter("jamm")
+				local susie = cutscene:getCharacter("susie")
+				local variant = cutscene:getCharacter(Game:getFlag("future_variable"))
+				
+				susie.x = 660
+				susie.y = 1090
+				variant.x = 660
+				variant.y = 1200
+				jamm.x = 740
+				jamm.y = 1080
+				jamm.alpha = 0
+				
+				variant:setFacing("up")
+				jamm:setFacing("down")
+				
+				susie:setSprite("chuckle_2")
+				
+				cutscene:wait(cutscene:fadeIn(2))
+				
+				if Game:getFlag("future_variable") == "ceroba" then
+					cutscene:showNametag("Susie")
+					cutscene:text("* Hey,[wait:5] all I'm saying is,[wait:5] we've got this in the bag.", "sincere_smile", "susie")
+				end
+				cutscene:hideNametag()
+				
+				Game.world.timer:tween(1, jamm, {alpha = 1})
+				
+				cutscene:wait(1)
+				
+				cutscene:wait(cutscene:walkToSpeed(jamm, jamm.x, jamm.y + 40, 4, "left"))
+				
+				cutscene:look(susie, "right")
+				susie:resetSprite()
+				cutscene:look(variant, "right")
+				
+				cutscene:showNametag("Jamm")
+				cutscene:text("* Did I miss anything?", "side_smile", "jamm")
+				cutscene:hideNametag()
+				cutscene:wait(cutscene:walkToSpeed(susie, susie.x, susie.y + 40, 4, "right"))
+				cutscene:showNametag("Susie")
+				cutscene:text("* Nah,[wait:5] we were just talkin' about stuff.", "smile", "susie")
+				
+				if Game:getFlag("future_variable") == "ceroba" then
+					cutscene:showNametag("Ceroba")
+					cutscene:text("* Did you learn the ability?", "default", "ceroba")
+				end
+				cutscene:showNametag("Jamm")
+				cutscene:text("* Yeah,[wait:5] I did!", "smirk", "jamm")
+				cutscene:text("* I even made Marcy drop her weapon!", "sling_ready", "jamm")
+				cutscene:showNametag("Susie")
+				cutscene:text("* Dude,[wait:5] that's awesome!", "surprise", "susie")
+				cutscene:hideNametag()
+				cutscene:look(susie, "left")
+				
+				Game:addFlag("future_reputation", 5)
+				
+				cutscene:attachCamera(1)
+				cutscene:alignFollowers("left")
+				cutscene:attachFollowers(8)
+				cutscene:wait(1)
 			end
 		end
 	end,

@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 8,
-  nextobjectid = 18,
+  nextobjectid = 21,
   properties = {
     ["border"] = "leaves",
     ["music"] = "future_world",
@@ -263,7 +263,8 @@ return {
           visible = true,
           properties = {
             ["actor"] = "fmarcy",
-            ["cutscene"] = "hometown.fmarcy_training"
+            ["cutscene"] = "hometown.fmarcy_training",
+            ["flagcheck"] = "!fmarcy_spar_complete"
           }
         },
         {
@@ -379,6 +380,45 @@ return {
           shape = "point",
           x = 520,
           y = 1000,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 18,
+          name = "tentcam",
+          type = "",
+          shape = "point",
+          x = 740,
+          y = 1080,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 19,
+          name = "susto",
+          type = "",
+          shape = "point",
+          x = 660,
+          y = 1090,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 20,
+          name = "varto",
+          type = "",
+          shape = "point",
+          x = 660,
+          y = 1160,
           width = 0,
           height = 0,
           rotation = 0,
