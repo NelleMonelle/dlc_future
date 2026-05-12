@@ -25,7 +25,7 @@
     <property name="cutscene" value="hometown.librarybook2"/>
    </properties>
   </object>
-  <object id="14" name="interactable" x="320" y="320" width="78" height="40">
+  <object id="14" name="interactable" x="326" y="322" width="78" height="40">
    <properties>
     <property name="cutscene" value="hometown.librarybook3"/>
    </properties>
