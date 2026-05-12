@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="32" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="11" nextobjectid="30">
+<map version="1.11" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="32" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="11" nextobjectid="32">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -79,6 +79,13 @@
     <property name="cutscene" value="church.fire_extinguisher"/>
    </properties>
   </object>
+  <object id="31" name="interactable" x="728" y="240" width="106" height="26">
+   <properties>
+    <property name="cutscene" value="church.candles"/>
+    <property name="solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="30" gid="89" x="728" y="266" width="106" height="74"/>
  </objectgroup>
  <objectgroup color="#ff00ff" id="5" name="markers">
   <object id="1" name="spawn" x="640" y="320">
