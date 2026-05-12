@@ -348,7 +348,7 @@ return {
 		else
 			cutscene:wait(0.2)
 			Assets.playSound("hurt")
-			susie:setSprite("battle/idle_serious_1")
+			susie:setSprite("battle_serious/idle_1")
 			cutscene:shakeCharacter(susie, 2)
 			cutscene:wait(0.2)
 			jamm:setSprite("landed_2")

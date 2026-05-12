@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="47" height="21" tilewidth="40" tileheight="40" infinite="0" nextlayerid="10" nextobjectid="47">
+<map version="1.11" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="47" height="21" tilewidth="40" tileheight="40" infinite="0" nextlayerid="10" nextobjectid="47">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -161,9 +161,6 @@
  </objectgroup>
  <imagelayer id="8" name="sunset">
   <image source="../../../../../../assets/sprites/world/maps/hometown/school/school_lobby_sunset.png" width="1880" height="840"/>
-  <properties>
-   <property name="cond" value="Game:getFlag(&quot;hometown_time&quot;, &quot;day&quot;) == &quot;sunset&quot;"/>
-  </properties>
  </imagelayer>
  <objectgroup color="#00aa00" id="9" name="controllers">
   <object id="46" name="hometowndaynight" x="40" y="40">
