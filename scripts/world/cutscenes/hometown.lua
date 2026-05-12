@@ -902,4 +902,73 @@ return {
 			end
 		end
 	end,
+
+	hospitalpiano = function(cutscene, event)
+        cutscene:text("* (It's an obligatory hospital piano,[wait:5] shrunk to fit in the corner.)")
+        cutscene:text("* (As a result,[wait:5] it's missing most of the good keys.)")
+        cutscene:text("* (Play it?)")
+        local opinion = cutscene:choicer({"Yes", "No"})
+        if opinion == 1 then
+            Assets.playSound("pianonoise")
+            cutscene:text("* (Plink...)")
+        else
+            cutscene:text("* (Your hands linger over the keys doing nothing.)")
+        end
+    end,
+
+	hospitaltoy = function(cutscene, event)
+        cutscene:text("* (It's a toy with beads on a track.)")
+        if Game:getFlag("POST_SNOWGRAVE") then
+            cutscene:text("* (One of the beads seems to be completely missing,[wait:5] however.)")
+        else
+            cutscene:text("* (The beads of the toy march on.)")
+        end
+    end,
+
+	librarybook1 = function(cutscene, event)
+      	cutscene:text("* How To Care For A Human")
+      	cutscene:text("* (It's a book for monsters about how to care for humans.)")
+      	local opinion = cutscene:choicer({"Look in\nthe back", "Look inside"})
+        if opinion == 1 then
+          	cutscene:text("* (According to the card in the back...)")
+          	cutscene:text("* (... looks like your mother took it repeatedly many years ago.)")
+        else
+            cutscene:text("* (There are photos of unfamiliar humans inside.)")
+        end
+    end,
+
+    librarybook2 = function(cutscene, event)
+      	cutscene:text("* (It's BOOK 1 about SOULS. Read it?)")
+      	local opinion = cutscene:choicer({"Read", "Don't"})
+        if opinion == 1 then
+          	cutscene:text("* The SOUL has been called many things.")
+          	cutscene:text("* The font of our compassion. The source of our will.")
+          	cutscene:text("* The container of our \"life force.\"")
+          	cutscene:text("* But even now,[wait:5] the true function of it is unknown.")
+        end
+    end,
+
+	librarybook3 = function(cutscene, event)
+      	cutscene:text("* (It's a book about Monster Funerals. Read it?)")
+      	local opinion = cutscene:choicer({"Read", "Do not"})
+        if opinion == 1 then
+          	cutscene:text("* ...[wait:5] When monsters die,[wait:5] their dust will be spread over what they loved.")
+          	cutscene:text("* An object that symbolizes their existence. That object will be buried...")
+          	cutscene:text("* And in such a way,[wait:5] their soul be able to rest,[wait:5] within that object,[wait:5] and the earth.")
+          	cutscene:text("* Of course,[wait:5] everyone knows that. That's why this is the introduction...")
+        end
+    end,
+
+	fberdly = function(cutscene, event)
+		if Game:getFlag("POST_SNOWGRAVE") then
+			cutscene:text("* (No librarian in sight.)")
+			return
+		end
+		local fberdly = cutscene:getCharacter("fberdly")
+		fberdly:facePlayer()
+		cutscene:showNametag("Berdly")
+        cutscene:text("* Placeholder", "glorious", "fberdly")
+		cutscene:hideNametag()
+		fberdly:setFacing("up")
+    end,
 }
