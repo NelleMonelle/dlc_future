@@ -64,13 +64,13 @@ function TitanSpawn:onBattleStart(battler)
 		end
 	end
 
-    if Game:getFlag("susie_got_soul_xacts") then -- in case of a rematch
+    if Game:getFlag("susie_got_soul_xacts") and Game:hasPartyMember("susie") then -- in case of a rematch
         self.default_xactions = false -- because we aleady know ACTs don't work on those creatures
         Game.battle:registerXAction("susie", "Brighten", "Powerup\nlight", 4)
         Game.battle:registerXAction("susie", "Semi-Banish", "Defeat one\nenemy", 64)
     end
 	
-	if Game:getPartyMember("jamm"):checkArmor("flowerbrace") then
+	if Game:getPartyMember("jamm"):checkArmor("flowerbrace") and Game:hasPartyMember("jamm") then
         Game.battle:registerXAction("jamm", "J-Strike", "Strike\nbullets", 2)
 	end
 end
