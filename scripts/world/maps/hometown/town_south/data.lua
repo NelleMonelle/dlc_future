@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -12,7 +12,7 @@ return {
   nextlayerid = 23,
   nextobjectid = 56,
   properties = {
-    ["border"] = "leaves",
+    ["border"] = "leaves_night",
     ["music"] = "future_world"
   },
   tilesets = {
@@ -293,6 +293,7 @@ return {
           width = 1600,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -306,6 +307,7 @@ return {
           width = 440,
           height = 220,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -319,6 +321,7 @@ return {
           width = 198,
           height = 220,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -332,6 +335,7 @@ return {
           width = 120,
           height = 200,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -345,6 +349,7 @@ return {
           width = 120,
           height = 200,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -358,6 +363,7 @@ return {
           width = 240,
           height = 220,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -371,6 +377,7 @@ return {
           width = 840,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -384,6 +391,7 @@ return {
           width = 88,
           height = 218,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -397,6 +405,7 @@ return {
           width = 332,
           height = 218,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -410,6 +419,7 @@ return {
           width = 194,
           height = 226,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -423,6 +433,7 @@ return {
           width = 194,
           height = 226,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -436,6 +447,7 @@ return {
           width = 28,
           height = 216,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -449,6 +461,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           polygon = {
             { x = 0, y = 0 },
@@ -468,6 +481,7 @@ return {
           width = 302,
           height = 216,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -497,6 +511,7 @@ return {
           width = 302,
           height = 242,
           rotation = 0,
+          opacity = 1,
           gid = 342,
           visible = true,
           properties = {}
@@ -511,6 +526,7 @@ return {
           width = 468,
           height = 234,
           rotation = 0,
+          opacity = 1,
           gid = 336,
           visible = true,
           properties = {}
@@ -525,6 +541,7 @@ return {
           width = 462,
           height = 218,
           rotation = 0,
+          opacity = 1,
           gid = 340,
           visible = true,
           properties = {}
@@ -539,6 +556,7 @@ return {
           width = 102,
           height = 200,
           rotation = 0,
+          opacity = 1,
           gid = 344,
           visible = true,
           properties = {}
@@ -553,6 +571,7 @@ return {
           width = 102,
           height = 200,
           rotation = 0,
+          opacity = 1,
           gid = 344,
           visible = true,
           properties = {}
@@ -567,6 +586,7 @@ return {
           width = 104,
           height = 266,
           rotation = 0,
+          opacity = 1,
           gid = 343,
           visible = true,
           properties = {}
@@ -597,6 +617,7 @@ return {
           width = 200,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["facing"] = "up",
@@ -614,6 +635,7 @@ return {
           width = 200,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["facing"] = "down",
@@ -631,6 +653,7 @@ return {
           width = 40,
           height = 220,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["facing"] = "right",
@@ -648,6 +671,7 @@ return {
           width = 80,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["exit_delay"] = 0.3,
@@ -668,6 +692,7 @@ return {
           width = 60,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["exit_delay"] = 0.3,
@@ -688,6 +713,7 @@ return {
           width = 80,
           height = 240,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["text1"] = "* (There's more police tape.)",
@@ -705,6 +731,7 @@ return {
           width = 40,
           height = 200,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["text1"] = "* (There's more police tape.)",
@@ -722,6 +749,7 @@ return {
           width = 32,
           height = 119,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["text1"] = "* (There's more police tape.)",
@@ -739,6 +767,7 @@ return {
           width = 80,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["text"] = "* (Seems like the police station is closed.)"
@@ -770,6 +799,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -783,6 +813,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -796,6 +827,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -809,6 +841,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -822,6 +855,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -835,6 +869,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -896,6 +931,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }

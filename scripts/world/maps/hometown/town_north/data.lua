@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -12,7 +12,7 @@ return {
   nextlayerid = 48,
   nextobjectid = 101,
   properties = {
-    ["border"] = "leaves",
+    ["border"] = "leaves_night",
     ["music"] = "future_world"
   },
   tilesets = {
@@ -643,6 +643,7 @@ return {
           width = 472,
           height = 218,
           rotation = 0,
+          opacity = 1,
           gid = 332,
           visible = true,
           properties = {}
@@ -657,6 +658,7 @@ return {
           width = 180,
           height = 242,
           rotation = 0,
+          opacity = 1,
           gid = 341,
           visible = true,
           properties = {}
@@ -671,6 +673,7 @@ return {
           width = 434,
           height = 316,
           rotation = 0,
+          opacity = 1,
           gid = 334,
           visible = true,
           properties = {}
@@ -685,6 +688,7 @@ return {
           width = 134,
           height = 344,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -714,6 +718,7 @@ return {
           width = 760,
           height = 240,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -727,6 +732,7 @@ return {
           width = 110,
           height = 240,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -740,6 +746,7 @@ return {
           width = 110,
           height = 220,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -753,6 +760,7 @@ return {
           width = 246,
           height = 170,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -766,6 +774,7 @@ return {
           width = 114,
           height = 240,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -779,6 +788,7 @@ return {
           width = 606,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -792,6 +802,7 @@ return {
           width = 400,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -805,6 +816,7 @@ return {
           width = 2160,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -818,6 +830,7 @@ return {
           width = 1240,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -831,6 +844,7 @@ return {
           width = 348,
           height = 186,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -844,6 +858,7 @@ return {
           width = 124,
           height = 94,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -857,6 +872,7 @@ return {
           width = 358,
           height = 190,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -870,6 +886,7 @@ return {
           width = 106,
           height = 44,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -883,6 +900,7 @@ return {
           width = 560,
           height = 200,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -896,6 +914,7 @@ return {
           width = 64,
           height = 160,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -909,6 +928,7 @@ return {
           width = 600,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -922,6 +942,7 @@ return {
           width = 308,
           height = 160,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -935,6 +956,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           polygon = {
             { x = 0, y = 0 },
@@ -953,6 +975,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           polygon = {
             { x = 17.7656, y = -19.9922 },
@@ -987,6 +1010,7 @@ return {
           width = 358,
           height = 190,
           rotation = 0,
+          opacity = 1,
           gid = 357,
           visible = true,
           properties = {
@@ -1019,6 +1043,7 @@ return {
           width = 80,
           height = 38,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["solid"] = true,
@@ -1036,6 +1061,7 @@ return {
           width = 200,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["facing"] = "down",
@@ -1053,6 +1079,7 @@ return {
           width = 40,
           height = 200,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["facing"] = "right",
@@ -1070,6 +1097,7 @@ return {
           width = 200,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["facing"] = "up",
@@ -1087,6 +1115,7 @@ return {
           width = 132,
           height = 38,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["text"] = "* (There's some kind of scratching and hissing from inside.)"
@@ -1102,6 +1131,7 @@ return {
           width = 40,
           height = 240,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["text"] = "* (It's an ornate gate.)\n[wait:5]* (It appears to be locked.)"
@@ -1117,6 +1147,7 @@ return {
           width = 80,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["text1"] = "* (There's a cat flap.)",
@@ -1134,6 +1165,7 @@ return {
           width = 132,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["text1"] = "* (Various cat-themed junk is piled up inside the house.)",
@@ -1150,6 +1182,7 @@ return {
           width = 62,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["text1"] = "* (It's locked...)",
@@ -1166,6 +1199,7 @@ return {
           width = 44,
           height = 66,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["text1"] = "* (It's locked...)",
@@ -1182,6 +1216,7 @@ return {
           width = 58,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["exit_delay"] = 0.3,
@@ -1202,6 +1237,7 @@ return {
           width = 40,
           height = 160,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["text"] = "* (It's an ornate gate.)\n[wait:5]* (It appears to be locked.)"
@@ -1217,6 +1253,7 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["text"] = "* (It's an ornate gate.)\n[wait:5]* (It appears to be locked.)"
@@ -1232,6 +1269,7 @@ return {
           width = 78,
           height = 50,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -1261,6 +1299,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -1274,6 +1313,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -1287,6 +1327,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -1300,6 +1341,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -1361,6 +1403,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }

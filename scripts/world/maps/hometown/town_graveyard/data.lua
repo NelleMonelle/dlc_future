@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -12,7 +12,7 @@ return {
   nextlayerid = 21,
   nextobjectid = 32,
   properties = {
-    ["border"] = "leaves",
+    ["border"] = "leaves_night",
     ["music"] = "future_world"
   },
   tilesets = {
@@ -293,6 +293,7 @@ return {
           width = 1200,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -306,6 +307,7 @@ return {
           width = 40,
           height = 440,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -319,6 +321,7 @@ return {
           width = 360,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -332,6 +335,7 @@ return {
           width = 280,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -345,6 +349,7 @@ return {
           width = 440,
           height = 240,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -358,6 +363,7 @@ return {
           width = 26,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -371,6 +377,7 @@ return {
           width = 25,
           height = 34,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -384,6 +391,7 @@ return {
           width = 234,
           height = 28,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -397,6 +405,7 @@ return {
           width = 10,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -410,6 +419,7 @@ return {
           width = 234,
           height = 28,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -423,6 +433,7 @@ return {
           width = 10,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -452,6 +463,7 @@ return {
           width = 54,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["solid"] = true,
@@ -468,6 +480,7 @@ return {
           width = 62,
           height = 22,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["solid"] = true,
@@ -484,6 +497,7 @@ return {
           width = 66,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["solid"] = true,
@@ -500,6 +514,7 @@ return {
           width = 72,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["solid"] = true,
@@ -516,6 +531,7 @@ return {
           width = 78,
           height = 42,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["solid"] = true,
@@ -534,6 +550,7 @@ return {
           width = 40,
           height = 200,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["facing"] = "right",
@@ -551,6 +568,7 @@ return {
           width = 78,
           height = 50,
           rotation = 0,
+          opacity = 1,
           gid = 330,
           visible = true,
           properties = {}
@@ -565,6 +583,7 @@ return {
           width = 40,
           height = 200,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["cutscene"] = "hometown.berdly_graveyard"
@@ -580,6 +599,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "fmarcy",
@@ -597,6 +617,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "fberdly",
@@ -614,6 +635,7 @@ return {
           width = 80,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["map"] = "hometown/deep_graveyard"
@@ -645,6 +667,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -658,6 +681,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -766,6 +790,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }

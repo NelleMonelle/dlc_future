@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -12,7 +12,7 @@ return {
   nextlayerid = 17,
   nextobjectid = 21,
   properties = {
-    ["border"] = "leaves",
+    ["border"] = "leaves_night",
     ["music"] = "future_world"
   },
   tilesets = {
@@ -150,6 +150,7 @@ return {
           width = 40,
           height = 480,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -163,6 +164,7 @@ return {
           width = 394,
           height = 200,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -176,6 +178,7 @@ return {
           width = 356,
           height = 200,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -189,6 +192,7 @@ return {
           width = 800,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -202,6 +206,7 @@ return {
           width = 134,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -215,6 +220,7 @@ return {
           width = 134,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -244,6 +250,7 @@ return {
           width = 40,
           height = 200,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["facing"] = "left",
@@ -261,6 +268,7 @@ return {
           width = 134,
           height = 90,
           rotation = 0,
+          opacity = 1,
           gid = 329,
           visible = true,
           properties = {}
@@ -275,6 +283,7 @@ return {
           width = 134,
           height = 90,
           rotation = 0,
+          opacity = 1,
           gid = 329,
           visible = true,
           properties = {}
@@ -289,6 +298,7 @@ return {
           width = 120,
           height = 480,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["text1"] = "* Pure darkness...",
@@ -305,6 +315,7 @@ return {
           width = 120,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["facing"] = "up",
@@ -338,6 +349,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -351,6 +363,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -427,6 +440,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }

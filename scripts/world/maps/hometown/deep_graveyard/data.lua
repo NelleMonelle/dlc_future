@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -12,7 +12,7 @@ return {
   nextlayerid = 10,
   nextobjectid = 14,
   properties = {
-    ["border"] = "leaves",
+    ["border"] = "leaves_night",
     ["music"] = "future_world"
   },
   tilesets = {
@@ -270,6 +270,7 @@ return {
           width = 160,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["facing"] = "down",
@@ -287,6 +288,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "fnoelle",
@@ -304,6 +306,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "fmarcy",
@@ -321,6 +324,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "fkanako",
@@ -338,6 +342,7 @@ return {
           width = 62,
           height = 72,
           rotation = 0,
+          opacity = 1,
           gid = 441,
           visible = true,
           properties = {}
@@ -352,6 +357,7 @@ return {
           width = 62,
           height = 72,
           rotation = 0,
+          opacity = 1,
           gid = 442,
           visible = true,
           properties = {}
@@ -366,6 +372,7 @@ return {
           width = 760,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["cutscene"] = "hometown.our_graves"
@@ -381,6 +388,7 @@ return {
           width = 62,
           height = 72,
           rotation = 0,
+          opacity = 1,
           gid = 443,
           visible = true,
           properties = {}
@@ -411,6 +419,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -424,6 +433,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -453,6 +463,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           polygon = {
             { x = 0, y = 0 },
@@ -514,6 +525,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }

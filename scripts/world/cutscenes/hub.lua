@@ -411,6 +411,8 @@ local hub = {
 	escape = function(cutscene, event)
 		cutscene:fadeOut(0.5)
 		cutscene:wait(0.5)
+		Game:addPartyMember("susie")
+		Game:addPartyMember(Game:getFlag("future_variable"))
 		cutscene:loadMap("hometown/town_church", "player_spawn_tower")
 		cutscene:panTo("camera_to_tower", 0)
 		cutscene:fadeIn(0.5)
