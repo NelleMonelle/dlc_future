@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 11,
-  nextobjectid = 30,
+  nextobjectid = 32,
   properties = {
     ["border"] = "leaves",
     ["music"] = "future_world"
@@ -80,6 +80,7 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -93,6 +94,7 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -106,6 +108,7 @@ return {
           width = 480,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -119,6 +122,7 @@ return {
           width = 480,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -132,6 +136,7 @@ return {
           width = 40,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -145,6 +150,7 @@ return {
           width = 240,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -158,6 +164,7 @@ return {
           width = 40,
           height = 120,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -171,6 +178,7 @@ return {
           width = 240,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -184,6 +192,7 @@ return {
           width = 120,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -197,6 +206,7 @@ return {
           width = 120,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -226,6 +236,7 @@ return {
           width = 80,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["exit_sound"] = "doorclose",
@@ -245,6 +256,7 @@ return {
           width = 80,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["exit_sound"] = "doorclose",
@@ -264,6 +276,7 @@ return {
           width = 80,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["exit_sound"] = "doorclose",
@@ -283,6 +296,7 @@ return {
           width = 80,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["exit_sound"] = "doorclose",
@@ -302,6 +316,7 @@ return {
           width = 120,
           height = 26,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["cutscene"] = "church.entrance_bookshelf",
@@ -318,6 +333,7 @@ return {
           width = 52,
           height = 26,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["cutscene"] = "church.holy_water"
@@ -333,10 +349,43 @@ return {
           width = 26,
           height = 26,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["cutscene"] = "church.fire_extinguisher"
           }
+        },
+        {
+          id = 31,
+          name = "interactable",
+          type = "",
+          shape = "rectangle",
+          x = 728,
+          y = 240,
+          width = 106,
+          height = 26,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["cutscene"] = "church.candles",
+            ["solid"] = true
+          }
+        },
+        {
+          id = 30,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 728,
+          y = 266,
+          width = 106,
+          height = 74,
+          rotation = 0,
+          opacity = 1,
+          gid = 89,
+          visible = true,
+          properties = {}
         }
       }
     },
@@ -364,6 +413,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -377,6 +427,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -390,6 +441,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -403,6 +455,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -416,6 +469,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -461,6 +515,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }

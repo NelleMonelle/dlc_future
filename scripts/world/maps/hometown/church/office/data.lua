@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 8,
-  nextobjectid = 26,
+  nextobjectid = 30,
   properties = {
     ["border"] = "leaves",
     ["music"] = "future_world"
@@ -80,6 +80,7 @@ return {
           width = 80,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -93,6 +94,7 @@ return {
           width = 240,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -106,6 +108,7 @@ return {
           width = 400,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -119,6 +122,7 @@ return {
           width = 40,
           height = 200,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -132,6 +136,7 @@ return {
           width = 40,
           height = 200,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -145,6 +150,7 @@ return {
           width = 114,
           height = 52,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -158,6 +164,7 @@ return {
           width = 134,
           height = 58,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -171,6 +178,7 @@ return {
           width = 40,
           height = 108,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -184,6 +192,7 @@ return {
           width = 18,
           height = 52,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -213,6 +222,7 @@ return {
           width = 80,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["exit_sound"] = "doorclose",
@@ -232,6 +242,7 @@ return {
           width = 80,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["cutscene"] = "church.office_bookshelf",
@@ -248,6 +259,7 @@ return {
           width = 66,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["cutscene"] = "church.plaque"
@@ -263,6 +275,7 @@ return {
           width = 46,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["cutscene"] = "church.hanging"
@@ -278,6 +291,7 @@ return {
           width = 40,
           height = 58,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["cutscene"] = "church.drinks"
@@ -293,6 +307,7 @@ return {
           width = 50,
           height = 52,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["cutscene"] = "church.pitcher"
@@ -308,11 +323,72 @@ return {
           width = 40,
           height = 116,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["cutscene"] = "church.cupboard",
             ["solid"] = true
           }
+        },
+        {
+          id = 26,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 164,
+          y = 400,
+          width = 118,
+          height = 60,
+          rotation = 0,
+          opacity = 1,
+          gid = 120,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 27,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 80,
+          y = 400,
+          width = 62,
+          height = 126,
+          rotation = 0,
+          opacity = 1,
+          gid = 87,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 28,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 358,
+          y = 358,
+          width = 42,
+          height = 132,
+          rotation = 0,
+          opacity = 1,
+          gid = 121,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 29,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 174,
+          y = 288,
+          width = 142,
+          height = 124,
+          rotation = 0,
+          opacity = 1,
+          gid = 90,
+          visible = true,
+          properties = {}
         }
       }
     },
@@ -340,6 +416,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -369,6 +446,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }

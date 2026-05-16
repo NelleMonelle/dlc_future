@@ -28,12 +28,11 @@ function HometownDayNight:postLoad()
 		Game.world:addChild(self.callback)
 		---@type love.Shader
 		if Game.world.map.image_layers["overlay"] then
-			Game.world.map.image_layers["overlay"].color = ColorUtils.mergeColor(COLORS["black"], COLORS["navy"], 0.5)
-			self.callback:setParent(Game.world.map.image_layers["overlay"])
-			Game.world:addChild(Game.world.map.image_layers["overlay"])
-		end
+            Game.world.map.image_layers["overlay"].color = ColorUtils.mergeColor(COLORS["black"], COLORS["navy"], 0.5)
+			--self.callback:setParent(Game.world.map.image_layers["overlay"])
+            --Game.world:addChild(Game.world.map.image_layers["overlay"])
+        end
     end
--- >>>>>>> 8c94661e (Finally, Church palette.)
 end
 
 function HometownDayNight:onRemove(parent)
