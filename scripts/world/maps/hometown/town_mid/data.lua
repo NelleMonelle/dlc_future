@@ -12,7 +12,7 @@ return {
   nextlayerid = 32,
   nextobjectid = 73,
   properties = {
-    ["border"] = "leaves",
+    ["border"] = "leaves_night",
     ["music"] = "future_world",
     ["name"] = "Future Hometown"
   },

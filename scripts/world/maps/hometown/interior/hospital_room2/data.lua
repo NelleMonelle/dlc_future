@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -12,7 +12,7 @@ return {
   nextlayerid = 8,
   nextobjectid = 18,
   properties = {
-    ["border"] = "leaves",
+    ["border"] = "leaves_night",
     ["music"] = "future_world"
   },
   tilesets = {},
@@ -73,6 +73,7 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -86,6 +87,7 @@ return {
           width = 360,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -99,6 +101,7 @@ return {
           width = 40,
           height = 280,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -112,6 +115,7 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -125,6 +129,7 @@ return {
           width = 160,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -138,6 +143,7 @@ return {
           width = 40,
           height = 320,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -151,6 +157,7 @@ return {
           width = 280,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -180,6 +187,7 @@ return {
           width = 40,
           height = 74,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["solid"] = true,
@@ -196,6 +204,7 @@ return {
           width = 40,
           height = 74,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["solid"] = true,
@@ -213,6 +222,7 @@ return {
           width = 82,
           height = 100,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["cutscene"] = "hometown.hospitalroom2bed",
@@ -229,6 +239,7 @@ return {
           width = 54,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["solid"] = true,
@@ -246,6 +257,7 @@ return {
           width = 76,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["text1"] = "* (It's a classic 1-to-10 pain scale,[wait:5] using ICE-E as a model.)",
@@ -262,6 +274,7 @@ return {
           width = 52,
           height = 36,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["flagcheck"] = "POST_SNOWGRAVE",
@@ -279,6 +292,7 @@ return {
           width = 80,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["exit_delay"] = 0.3,
@@ -315,6 +329,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -344,6 +359,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }

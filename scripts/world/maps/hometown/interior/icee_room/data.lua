@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -12,7 +12,7 @@ return {
   nextlayerid = 7,
   nextobjectid = 19,
   properties = {
-    ["border"] = "leaves",
+    ["border"] = "leaves_night",
     ["music"] = "future_world"
   },
   tilesets = {
@@ -64,6 +64,7 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -77,6 +78,7 @@ return {
           width = 240,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -90,6 +92,7 @@ return {
           width = 40,
           height = 332,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -103,6 +106,7 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -116,6 +120,7 @@ return {
           width = 258,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -129,6 +134,7 @@ return {
           width = 40,
           height = 332,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -142,6 +148,7 @@ return {
           width = 498,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -155,6 +162,7 @@ return {
           width = 130,
           height = 112,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -168,6 +176,7 @@ return {
           width = 130,
           height = 112,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -197,6 +206,7 @@ return {
           width = 130,
           height = 124,
           rotation = 0,
+          opacity = 1,
           gid = 22,
           visible = true,
           properties = {}
@@ -211,6 +221,7 @@ return {
           width = 130,
           height = 124,
           rotation = 0,
+          opacity = 1,
           gid = 21,
           visible = true,
           properties = {}
@@ -225,6 +236,7 @@ return {
           width = 36,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["text1"] = "* (There's some condiments at the table.)",
@@ -241,6 +253,7 @@ return {
           width = 94,
           height = 17,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["cutscene"] = "hometown.iceesoda"
@@ -256,6 +269,7 @@ return {
           width = 122,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["text1"] = "* (Try our new CHOCCOLATE PEZZA)",
@@ -272,6 +286,7 @@ return {
           width = 80,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["facing"] = "down",
@@ -305,6 +320,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -334,6 +350,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }

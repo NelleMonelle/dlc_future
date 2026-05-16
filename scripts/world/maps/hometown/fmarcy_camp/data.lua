@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -12,7 +12,7 @@ return {
   nextlayerid = 8,
   nextobjectid = 21,
   properties = {
-    ["border"] = "leaves",
+    ["border"] = "leaves_night",
     ["music"] = "future_world",
     ["name"] = "Marcy's Base Camp"
   },
@@ -217,6 +217,7 @@ return {
           width = 200,
           height = 320,
           rotation = 0,
+          opacity = 1,
           gid = 444,
           visible = true,
           properties = {}
@@ -231,6 +232,7 @@ return {
           width = 200,
           height = 320,
           rotation = 0,
+          opacity = 1,
           gid = 445,
           visible = true,
           properties = {}
@@ -245,6 +247,7 @@ return {
           width = 840,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["cutscene"] = "hometown.fmarcy_training"
@@ -260,6 +263,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "fmarcy",
@@ -277,6 +281,7 @@ return {
           width = 120,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["facing"] = "up",
@@ -294,6 +299,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["text1"] = "* The power of sparring sessions shines within you."
@@ -309,6 +315,7 @@ return {
           width = 120,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["cutscene"] = "hometown.no_enter_tent",
@@ -325,6 +332,7 @@ return {
           width = 120,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["cutscene"] = "hometown.no_enter_tent",
@@ -357,6 +365,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -370,6 +379,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -383,6 +393,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -396,6 +407,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -409,6 +421,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -422,6 +435,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -451,6 +465,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           polygon = {
             { x = 0, y = 0 },
@@ -490,6 +505,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           polygon = {
             { x = 0, y = 0 },
@@ -515,6 +531,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           polygon = {
             { x = 0, y = 0 },
@@ -556,6 +573,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }

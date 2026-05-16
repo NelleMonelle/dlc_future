@@ -26,6 +26,12 @@ end
 
 return {
 	talk_1 = function(script, chara)
+		if not Game:getFlag("towerSpawnClimbParty", false) then
+			Game:setFlag("towerSpawnClimbParty", true)
+			Game:removePartyMember("susie")
+			Game:removePartyMember(Game:getFlag("future_variable"))
+			Game.world.map:spawnClimbingParty(false)
+		end
 		genText("[voice:susie]Jamm,[wait:5] seriously.[wait:10] Are you okay?", 1)
 	end,
 	
@@ -62,6 +68,11 @@ return {
 	end,
 	
 	talk_9 = function(script, chara)
+		-- There's probably a better way to do this...
+		Game:addPartyMember("susie")
+		Game:addPartyMember(Game:getFlag("future_variable"))
 		genText("[voice:jamm]No,[wait:5] " .. Game.party[3]:getName() .. ",[wait:5] I see it too!", 1)
+		Game:removePartyMember("susie")
+		Game:removePartyMember(Game:getFlag("future_variable"))
 	end,
 }

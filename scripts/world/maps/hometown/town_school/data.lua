@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -12,7 +12,7 @@ return {
   nextlayerid = 20,
   nextobjectid = 19,
   properties = {
-    ["border"] = "leaves",
+    ["border"] = "leaves_night",
     ["music"] = "future_world"
   },
   tilesets = {
@@ -373,6 +373,7 @@ return {
           width = 440,
           height = 380,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -386,6 +387,7 @@ return {
           width = 1160,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -399,6 +401,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           polygon = {
             { x = 0, y = 0 },
@@ -417,6 +420,7 @@ return {
           width = 80,
           height = 600,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -430,6 +434,7 @@ return {
           width = 64,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -443,6 +448,7 @@ return {
           width = 124,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -456,6 +462,7 @@ return {
           width = 124,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -469,6 +476,7 @@ return {
           width = 94,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -482,6 +490,7 @@ return {
           width = 90,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -495,6 +504,7 @@ return {
           width = 66,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -524,6 +534,7 @@ return {
           width = 40,
           height = 220,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["facing"] = "left",
@@ -541,6 +552,7 @@ return {
           width = 80,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["facing"] = "up",
@@ -574,6 +586,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -587,6 +600,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -652,6 +666,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }

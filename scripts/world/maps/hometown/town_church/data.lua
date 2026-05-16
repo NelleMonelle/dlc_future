@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -12,7 +12,7 @@ return {
   nextlayerid = 27,
   nextobjectid = 75,
   properties = {
-    ["border"] = "leaves",
+    ["border"] = "leaves_night",
     ["music"] = "future_world"
   },
   tilesets = {
@@ -360,6 +360,7 @@ return {
           width = 96,
           height = 276,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -373,6 +374,7 @@ return {
           width = 98,
           height = 276,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -386,6 +388,7 @@ return {
           width = 76,
           height = 180,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -399,6 +402,7 @@ return {
           width = 440,
           height = 680,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -412,6 +416,7 @@ return {
           width = 280,
           height = 320,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -425,6 +430,7 @@ return {
           width = 486,
           height = 360,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -438,6 +444,7 @@ return {
           width = 406,
           height = 200,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -451,6 +458,7 @@ return {
           width = 360,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -464,6 +472,7 @@ return {
           width = 80,
           height = 640,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -477,6 +486,7 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -490,6 +500,7 @@ return {
           width = 18,
           height = 328,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -503,6 +514,7 @@ return {
           width = 112,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -516,6 +528,7 @@ return {
           width = 46,
           height = 42,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -529,6 +542,7 @@ return {
           width = 18,
           height = 328,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -542,6 +556,7 @@ return {
           width = 114,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -555,6 +570,7 @@ return {
           width = 48,
           height = 42,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -568,6 +584,7 @@ return {
           width = 720,
           height = 400,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -581,6 +598,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           polygon = {
             { x = 0, y = 0 },
@@ -599,6 +617,7 @@ return {
           width = 440,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -612,6 +631,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           polygon = {
             { x = 0, y = 0 },
@@ -630,6 +650,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           polygon = {
             { x = 0, y = 0 },
@@ -648,6 +669,7 @@ return {
           width = 46,
           height = 360,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -661,6 +683,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           polygon = {
             { x = 0, y = 0 },
@@ -679,6 +702,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           polygon = {
             { x = 0, y = 0 },
@@ -729,6 +753,7 @@ return {
           width = 312,
           height = 656,
           rotation = 0,
+          opacity = 1,
           gid = 353,
           visible = true,
           properties = {
@@ -761,6 +786,7 @@ return {
           width = 40,
           height = 200,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["facing"] = "left",
@@ -778,6 +804,7 @@ return {
           width = 240,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["facing"] = "up",
@@ -795,6 +822,7 @@ return {
           width = 62,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["exit_delay"] = 1,
@@ -814,6 +842,7 @@ return {
           width = 80,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["cutscene"] = "hometown.not_yet_church",
@@ -830,6 +859,7 @@ return {
           width = 360,
           height = 139,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -843,6 +873,7 @@ return {
           width = 240,
           height = 100,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["text"] = "* The fall from here would surely kill you..."
@@ -858,6 +889,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "fnoelle",
@@ -875,6 +907,7 @@ return {
           width = 400,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["cutscene"] = "hometown.not_yet",
@@ -908,6 +941,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -921,6 +955,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -934,6 +969,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -947,6 +983,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -960,6 +997,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -973,6 +1011,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -986,6 +1025,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -999,6 +1039,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -1163,6 +1204,7 @@ return {
           width = 312,
           height = 656,
           rotation = 0,
+          opacity = 1,
           gid = 355,
           visible = true,
           properties = {
@@ -1195,6 +1237,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }

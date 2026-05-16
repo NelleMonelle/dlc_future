@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 15,
-  nextobjectid = 90,
+  nextobjectid = 132,
   properties = {
     ["music"] = "future_world",
     ["playerstate"] = "CLIMB"
@@ -428,6 +428,34 @@ return {
           shape = "point",
           x = 420,
           y = 2480,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 98,
+          name = "susie",
+          type = "",
+          shape = "point",
+          x = 420,
+          y = 2520,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 99,
+          name = "variable",
+          type = "",
+          shape = "point",
+          x = 420,
+          y = 2600,
           width = 0,
           height = 0,
           rotation = 0,
@@ -1553,6 +1581,420 @@ return {
             ["usetiles"] = true,
             ["verttiles"] = 61,
             ["width"] = 260
+          }
+        },
+        {
+          id = 100,
+          name = "climbnpccontroller",
+          type = "",
+          shape = "rectangle",
+          x = 40,
+          y = 1880,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["climbid"] = 1,
+            ["deactivate"] = true,
+            ["waitevent"] = 1
+          }
+        },
+        {
+          id = 101,
+          name = "climbnpccontroller",
+          type = "",
+          shape = "rectangle",
+          x = 40,
+          y = 1960,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["climbid"] = 2,
+            ["deactivate"] = true,
+            ["waitevent"] = 1
+          }
+        },
+        {
+          id = 102,
+          name = "climbnpccontroller",
+          type = "",
+          shape = "rectangle",
+          x = 560,
+          y = 1920,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["waitevent"] = 1
+          }
+        },
+        {
+          id = 106,
+          name = "climbnpccontroller",
+          type = "",
+          shape = "rectangle",
+          x = 760,
+          y = 1240,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["climbid"] = 1,
+            ["deactivate"] = true,
+            ["type"] = "npc",
+            ["waitevent"] = 3
+          }
+        },
+        {
+          id = 107,
+          name = "climbnpccontroller",
+          type = "",
+          shape = "rectangle",
+          x = 760,
+          y = 1320,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["climbid"] = 2,
+            ["deactivate"] = true,
+            ["waitevent"] = 3
+          }
+        },
+        {
+          id = 108,
+          name = "climbnpccontroller",
+          type = "",
+          shape = "rectangle",
+          x = 80,
+          y = 1120,
+          width = 80,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["waitevent"] = 4
+          }
+        },
+        {
+          id = 109,
+          name = "climbnpccontroller",
+          type = "",
+          shape = "rectangle",
+          x = 40,
+          y = 880,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["waitevent"] = 5
+          }
+        },
+        {
+          id = 110,
+          name = "climbnpccontroller",
+          type = "",
+          shape = "rectangle",
+          x = 0,
+          y = 800,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["climbid"] = 2,
+            ["deactivate"] = true,
+            ["dir"] = "right",
+            ["waitevent"] = 5
+          }
+        },
+        {
+          id = 111,
+          name = "climbnpccontroller",
+          type = "",
+          shape = "rectangle",
+          x = 80,
+          y = 800,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["climbid"] = 1,
+            ["deactivate"] = true,
+            ["dir"] = "right",
+            ["waitevent"] = 5
+          }
+        },
+        {
+          id = 114,
+          name = "climbnpccontroller",
+          type = "",
+          shape = "rectangle",
+          x = 160,
+          y = 400,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["climbid"] = 1,
+            ["deactivate"] = true,
+            ["type"] = "npc",
+            ["waitevent"] = 6
+          }
+        },
+        {
+          id = 115,
+          name = "climbnpccontroller",
+          type = "",
+          shape = "rectangle",
+          x = 160,
+          y = 480,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["climbid"] = 2,
+            ["deactivate"] = true,
+            ["type"] = "npc",
+            ["waitevent"] = 6
+          }
+        },
+        {
+          id = 116,
+          name = "climbnpccontroller",
+          type = "",
+          shape = "rectangle",
+          x = 160,
+          y = 600,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["type"] = "player",
+            ["waitevent"] = 6
+          }
+        },
+        {
+          id = 119,
+          name = "climbnpccontroller",
+          type = "",
+          shape = "rectangle",
+          x = 120,
+          y = 1400,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["waitevent"] = 3
+          }
+        },
+        {
+          id = 120,
+          name = "climbnpccontroller",
+          type = "",
+          shape = "rectangle",
+          x = 760,
+          y = 960,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["climbid"] = 1,
+            ["deactivate"] = true,
+            ["waitevent"] = 4
+          }
+        },
+        {
+          id = 121,
+          name = "climbnpccontroller",
+          type = "",
+          shape = "rectangle",
+          x = 760,
+          y = 1040,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["climbid"] = 2,
+            ["deactivate"] = true,
+            ["waitevent"] = 4
+          }
+        },
+        {
+          id = 122,
+          name = "climbnpccontroller",
+          type = "",
+          shape = "point",
+          x = 780,
+          y = 1860,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["dir"] = "up"
+          }
+        },
+        {
+          id = 123,
+          name = "climbnpccontroller",
+          type = "",
+          shape = "point",
+          x = 420,
+          y = 2060,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["dir"] = "left"
+          }
+        },
+        {
+          id = 124,
+          name = "climbnpccontroller",
+          type = "",
+          shape = "point",
+          x = 60,
+          y = 2060,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["dir"] = "up"
+          }
+        },
+        {
+          id = 125,
+          name = "climbnpccontroller",
+          type = "",
+          shape = "point",
+          x = 60,
+          y = 1860,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["dir"] = "left"
+          }
+        },
+        {
+          id = 126,
+          name = "climbnpccontroller",
+          type = "",
+          shape = "point",
+          x = 780,
+          y = 820,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["dir"] = "right"
+          }
+        },
+        {
+          id = 127,
+          name = "climbnpccontroller",
+          type = "",
+          shape = "point",
+          x = 180,
+          y = 820,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["dir"] = "up"
+          }
+        },
+        {
+          id = 128,
+          name = "climbnpccontroller",
+          type = "",
+          shape = "rectangle",
+          x = 760,
+          y = 1680,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["climbid"] = 2,
+            ["deactivate"] = true,
+            ["waitevent"] = 2
+          }
+        },
+        {
+          id = 129,
+          name = "climbnpccontroller",
+          type = "",
+          shape = "rectangle",
+          x = 760,
+          y = 1600,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["climbid"] = 1,
+            ["deactivate"] = true,
+            ["waitevent"] = 2
+          }
+        },
+        {
+          id = 130,
+          name = "climbnpccontroller",
+          type = "",
+          shape = "rectangle",
+          x = 560,
+          y = 1760,
+          width = 40,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["waitevent"] = 2
           }
         }
       }

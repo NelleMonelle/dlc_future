@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -12,7 +12,7 @@ return {
   nextlayerid = 8,
   nextobjectid = 20,
   properties = {
-    ["border"] = "leaves",
+    ["border"] = "leaves_night",
     ["music"] = "future_world"
   },
   tilesets = {},
@@ -57,6 +57,7 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -70,6 +71,7 @@ return {
           width = 200,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -83,6 +85,7 @@ return {
           width = 40,
           height = 400,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -96,6 +99,7 @@ return {
           width = 480,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -109,6 +113,7 @@ return {
           width = 40,
           height = 400,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -122,6 +127,7 @@ return {
           width = 200,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -135,6 +141,7 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -148,6 +155,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           polygon = {
             { x = 0, y = 0 },
@@ -166,6 +174,7 @@ return {
           width = 200,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -179,6 +188,7 @@ return {
           width = 40,
           height = 50,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -192,6 +202,7 @@ return {
           width = 480,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -221,6 +232,7 @@ return {
           width = 60,
           height = 52,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["cutscene"] = "hometown.town_hall_chair"
@@ -236,6 +248,7 @@ return {
           width = 148,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["text"] = "* (It's a painting of the town.)\n* (It's very faded...)"
@@ -251,6 +264,7 @@ return {
           width = 44,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["text"] = "* (It was a small pine tree.)"
@@ -266,6 +280,7 @@ return {
           width = 80,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["facing"] = "down",
@@ -284,6 +299,7 @@ return {
           width = 78,
           height = 52,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["cutscene"] = "hometown.town_hall_door"
@@ -315,6 +331,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -360,6 +377,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }

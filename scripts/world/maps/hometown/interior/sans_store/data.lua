@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -12,7 +12,7 @@ return {
   nextlayerid = 8,
   nextobjectid = 35,
   properties = {
-    ["border"] = "leaves",
+    ["border"] = "leaves_night",
     ["music"] = "future_world"
   },
   tilesets = {
@@ -64,6 +64,7 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -77,6 +78,7 @@ return {
           width = 500,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -90,6 +92,7 @@ return {
           width = 40,
           height = 360,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -103,6 +106,7 @@ return {
           width = 820,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -116,6 +120,7 @@ return {
           width = 40,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -129,6 +134,7 @@ return {
           width = 160,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -142,6 +148,7 @@ return {
           width = 40,
           height = 360,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -155,6 +162,7 @@ return {
           width = 20,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -168,6 +176,7 @@ return {
           width = 578,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -181,6 +190,7 @@ return {
           width = 330,
           height = 78,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -210,6 +220,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "sans",
@@ -242,6 +253,7 @@ return {
           width = 344,
           height = 150,
           rotation = 0,
+          opacity = 1,
           gid = 20,
           visible = true,
           properties = {}
@@ -256,6 +268,7 @@ return {
           width = 52,
           height = 56,
           rotation = 0,
+          opacity = 1,
           gid = 19,
           visible = true,
           properties = {}
@@ -270,6 +283,7 @@ return {
           width = 58,
           height = 166,
           rotation = 0,
+          opacity = 1,
           gid = 17,
           visible = true,
           properties = {}
@@ -284,6 +298,7 @@ return {
           width = 28,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["cutscene"] = "hometown.sansplin"
@@ -299,6 +314,7 @@ return {
           width = 142,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["solid"] = true,
@@ -315,6 +331,7 @@ return {
           width = 58,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["text1"] = "* Ice-E's Pizza Pin-Ups Mangazine.",
@@ -331,6 +348,7 @@ return {
           width = 60,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["text1"] = "* There're some car magazines on the racks.",
@@ -348,6 +366,7 @@ return {
           width = 60,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["text"] = "* It's a zine for Jockington fans. Seems popular."
@@ -363,6 +382,7 @@ return {
           width = 104,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["text1"] = "* It's a bunch of cards and heart shaped chocolates.",
@@ -379,6 +399,7 @@ return {
           width = 42,
           height = 42,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["solid"] = true,
@@ -395,6 +416,7 @@ return {
           width = 58,
           height = 58,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["solid"] = true,
@@ -412,6 +434,7 @@ return {
           width = 80,
           height = 18,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["text"] = "* (It's a rack of candy[wait:5], jerky,[wait:5] and various nuts.)"
@@ -427,6 +450,7 @@ return {
           width = 80,
           height = 16,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["text1"] = "* LOOSE EGGS $1",
@@ -443,6 +467,7 @@ return {
           width = 58,
           height = 16,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["text1"] = "* (It looks like a normal basket of fruit,[wait:5] but when you reach in...)",
@@ -459,6 +484,7 @@ return {
           width = 58,
           height = 16,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["text"] = "* (Grapes,[wait:5] melons,,[wait:5] oranges,,[wait:5] and the scent of fresh pineapples...)"
@@ -474,6 +500,7 @@ return {
           width = 36,
           height = 16,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["text"] = "* (It looks like a normal palm tree,[wait:5] but it's chock-full of useful groceries.)"
@@ -489,6 +516,7 @@ return {
           width = 80,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["facing"] = "down",
@@ -506,6 +534,7 @@ return {
           width = 228,
           height = 98,
           rotation = 0,
+          opacity = 1,
           gid = 66,
           visible = true,
           properties = {}
@@ -536,6 +565,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -565,6 +595,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }

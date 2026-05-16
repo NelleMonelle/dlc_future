@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.12.1",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -12,7 +12,7 @@ return {
   nextlayerid = 7,
   nextobjectid = 30,
   properties = {
-    ["border"] = "leaves",
+    ["border"] = "leaves_night",
     ["music"] = "future_world"
   },
   tilesets = {
@@ -64,6 +64,7 @@ return {
           width = 164,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -77,6 +78,7 @@ return {
           width = 40,
           height = 372,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -90,6 +92,7 @@ return {
           width = 400,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -103,6 +106,7 @@ return {
           width = 200,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -116,6 +120,7 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -129,6 +134,7 @@ return {
           width = 200,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -142,6 +148,7 @@ return {
           width = 40,
           height = 372,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -155,6 +162,7 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -168,6 +176,7 @@ return {
           width = 94,
           height = 104,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -181,6 +190,7 @@ return {
           width = 94,
           height = 74,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -194,6 +204,7 @@ return {
           width = 238,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -207,6 +218,7 @@ return {
           width = 160,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -220,6 +232,7 @@ return {
           width = 60,
           height = 96,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -233,6 +246,7 @@ return {
           width = 138,
           height = 72,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         },
@@ -246,6 +260,7 @@ return {
           width = 162,
           height = 14,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -275,6 +290,7 @@ return {
           width = 166,
           height = 138,
           rotation = 0,
+          opacity = 1,
           gid = 13,
           visible = true,
           properties = {}
@@ -289,6 +305,7 @@ return {
           width = 170,
           height = 118,
           rotation = 0,
+          opacity = 1,
           gid = 12,
           visible = true,
           properties = {}
@@ -303,6 +320,7 @@ return {
           width = 56,
           height = 32,
           rotation = 0,
+          opacity = 1,
           gid = 11,
           visible = true,
           properties = {}
@@ -317,6 +335,7 @@ return {
           width = 80,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["facing"] = "up",
@@ -334,6 +353,7 @@ return {
           width = 40,
           height = 40,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["solid"] = true,
@@ -350,6 +370,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["actor"] = "napstablook",
@@ -366,6 +387,7 @@ return {
           width = 85,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["text1"] = "* (You skimmed a news article about Undyne.)",
@@ -386,6 +408,7 @@ return {
           width = 80,
           height = 80,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {
             ["text1"] = "* (Photos of Chief Undyne and \nDeputy Napstablook.)",
@@ -419,6 +442,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
@@ -448,6 +472,7 @@ return {
           width = 0,
           height = 0,
           rotation = 0,
+          opacity = 1,
           visible = true,
           properties = {}
         }
