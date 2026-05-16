@@ -29,9 +29,10 @@ function Marcy:init()
     self.service_mercy = 0
 	self.tired_percentage = 0
 
-    -- List of possible wave ids, randomly picked each turn
+    -- Temporarily random. Once I'm confident on the waves, I'll give them an order.
     self.waves = {
-        "scythe_gravity"
+        "fmarcy/scythe_gravity",
+        "fmarcy/stab_lifesteal",
     }
 
     -- Dialogue randomly displayed in the enemy's speech bubble

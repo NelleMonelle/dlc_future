@@ -28,7 +28,7 @@ function Marcy:init()
 
     -- List of possible wave ids, randomly picked each turn
     self.waves = {
-        "scythe_gravity"
+        "fmarcy/scythe_gravity"
     }
 
     -- Dialogue randomly displayed in the enemy's speech bubble

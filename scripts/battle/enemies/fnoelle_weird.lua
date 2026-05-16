@@ -107,7 +107,7 @@ function FNoelle:onAct(battler, name)
             Game.battle:startCutscene(function(cutscene)
 				if not self.talk_susie then
 					self.talk_susie = true
-					-- TODO: Write Ceroba's dialogue to F!Noelle
+					-- TODO: Write Susie's's dialogue to F!Noelle
 				end
 				cutscene:text("* But Susie's words couldn't reach her.")
 				Game.battle:finishAction()
