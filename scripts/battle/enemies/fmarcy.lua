@@ -74,6 +74,8 @@ function Marcy:init()
 	self.weakened = false
 	self.strong_attack_incoming = false
 	self.jamm_should_attack_line = false
+	
+	self.holding_back = true
 end
 
 function Marcy:onAct(battler, name)
