@@ -35,6 +35,11 @@ function ScytheBullet:update()
 end
 
 function ScytheBullet:onDamage(soul)
+	if Game.pp > 0 then
+		super.onDamage(self, soul)
+		return
+	end
+
     local all_at_one = true
 	for k,v in pairs(Game.party) do
 		if v.health ~= 1 then
