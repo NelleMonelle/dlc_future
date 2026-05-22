@@ -517,22 +517,41 @@ return {
 		cutscene:wait(1)
 		
 		Game.world.music:stop()
-		
-		cutscene:text("* TODO: Fight intro and encounter")
+
+		cutscene:wait(0.5)
+		knight:setSprite("shift_ol_2")
+		Assets.playSound("knight_stretch", 1, 0.75)
+
+		-- TODO: add roar visuals here
+		cutscene:wait(3)
+		knight:setAnimation("pose")
+		Assets.playSound("knightroar")
+
+		cutscene:wait(5)
+		cutscene:resetSprite(knight)
+
+		cutscene:startEncounter("knight", true, {knight})
 		
 		cutscene:resetSprite(fmarcy)
 		cutscene:resetSprite(fnoelle)
 		cutscene:resetSprite(fvariant)
 		
 		knight.sprite.aetrail = true
-		
+		cutscene:wait(cutscene:fadeIn(1, {global = true}))
+
+		-- the whole chunk below is ported from Deltarune
 		Game.world.music:play("wind_highplace", 0, 0.5)
-		
+		Game.world.music:fade(1, 2)
+		cutscene:wait(4)
+		knight.sprite.aetrail = false
+		--knight.sprite.floating = false
+		cutscene:wait(0.5)
+		Game.world.music:stop()
+		knight.sprite.warp = true
 		cutscene:wait(1)
-		
-		Game.world.timer:tween(2, Game.world.music, {volume = 1})
-		
-		cutscene:wait(2)
+		cutscene:wait(function() return knight.sprite.warp == false end)
+		cutscene:wait(3)
+		-- end of the Deltarune chunk
 		
 		cutscene:showNametag("Marcy")
 		cutscene:text("* Noelle,[wait:5] now's our chance!", "mad", "fmarcy")
@@ -549,6 +568,8 @@ return {
 		local continue_var = false
 		
 		local fc = FrostcryptController(knight.x, knight.y - knight.height/2 - 50, function()
+			knight:setSprite("static")
+			knight.sprite.state = 0
 			knight.sprite.frozen = true
 			knight.sprite.freeze_progress = 1
 			knight.sprite.aetrail = false
