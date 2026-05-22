@@ -40,6 +40,10 @@ function spell:onCast(user, target)
         Game.battle:addChild(FrostcryptController(target.x, target.y-target.height, function()
             local damage = math.floor(user.chara:getStat("magic") * 10)
 
+            if target.id == "knight" then
+                damage = math.ceil(damage * target.damagereduction)
+            end
+
             target:hurt(damage, user, function() target:freeze() end)
             if target.health > 0 then
                 target:flash()

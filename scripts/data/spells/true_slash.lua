@@ -50,6 +50,10 @@ function spell:onCast(user, target)
 		if ph.pressed then
 			damage = damage + 200
 		end
+
+        if target.id == "knight" then
+            damage = math.ceil(damage * target.damagereduction)
+        end
 		
 		ph:remove()
 		

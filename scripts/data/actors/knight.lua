@@ -33,6 +33,8 @@ function actor:init()
 		
 		["laughing_anim"]  = {"laugh_body", 1, true},
 
+        ["pose"]           = {"pose_ol", 1/10, true},
+
 		--unused animations in Deltarune
         ["block"]          = {"block_ol", 1/25, true},
         ["sword_glow"]     = {"sword_glow", 0.1, true},
@@ -49,6 +51,20 @@ function actor:init()
 
         ["block_ol"]  = {14, 26},
         ["sword_glow"]  = {7, 23},
+
+        ["shift_ol"] = {7, 23},
+
+        -- this one may be inaccurate(?)
+        ["pose_ol"] = {18, 12},
+
+        ["sword_appear"] = {12, 6},
+        ["sword_appear_new"] = {17, -7},
+
+        ["overworld_warp"] = {7, 23},
+
+        ["static"] = {0, 0},
+
+        ["ball_transition"]  = {7, 23},
     }
 end
 

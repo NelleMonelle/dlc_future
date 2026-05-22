@@ -30,6 +30,10 @@ end
 function spell:onCast(user, target)
 	local damage = math.floor((((user.chara:getStat("attack") * 150) / 20) + 20 * (target.defense)) * 1.3)
 
+	if target.id == "knight" then
+        damage = math.ceil(damage * target.damagereduction)
+    end
+
 	local function generateSlash(scale_x)
 		local cutAnim = Sprite("effects/attack/cut")
 		Assets.playSound("scytheburst")
