@@ -207,7 +207,7 @@ return {
           height = 62,
           rotation = 0,
           opacity = 1,
-          gid = 6,
+          gid = 162,
           visible = true,
           properties = {}
         },
@@ -222,7 +222,7 @@ return {
           height = 62,
           rotation = 0,
           opacity = 1,
-          gid = 5,
+          gid = 161,
           visible = true,
           properties = {}
         },
@@ -237,7 +237,7 @@ return {
           height = 62,
           rotation = 0,
           opacity = 1,
-          gid = 9,
+          gid = 168,
           visible = true,
           properties = {}
         },
@@ -252,7 +252,7 @@ return {
           height = 62,
           rotation = 0,
           opacity = 1,
-          gid = 4,
+          gid = 160,
           visible = true,
           properties = {}
         },
@@ -267,7 +267,7 @@ return {
           height = 62,
           rotation = 0,
           opacity = 1,
-          gid = 8,
+          gid = 165,
           visible = true,
           properties = {}
         },
@@ -282,7 +282,7 @@ return {
           height = 62,
           rotation = 0,
           opacity = 1,
-          gid = 7,
+          gid = 164,
           visible = true,
           properties = {}
         },
@@ -297,7 +297,7 @@ return {
           height = 62,
           rotation = 0,
           opacity = 1,
-          gid = 10,
+          gid = 163,
           visible = true,
           properties = {}
         },

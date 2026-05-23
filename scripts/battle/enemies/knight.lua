@@ -110,7 +110,7 @@ end
 function Knight:freeze() self:onDefeat() end
 
 function Knight:update()
-    if self.holdbreath and Game.battle.soul and Game.battle.soul < 5 then
+    if self.holdbreath and Game.battle.soul and Game.battle.soul.speed < 5 then
         Game.battle.soul.speed = 5
     end
 

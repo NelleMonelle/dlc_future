@@ -125,8 +125,6 @@
   <object id="16" x="1002" y="100" width="192" height="140"/>
   <object id="17" x="530" y="100" width="190" height="134"/>
   <object id="18" x="720" y="100" width="118" height="134"/>
-  <object id="19" x="1880" y="100" width="292" height="120"/>
-  <object id="20" x="2258" y="100" width="40" height="120"/>
  </objectgroup>
  <objectgroup id="29" name="objects_deco">
   <object id="53" gid="345" x="1000" y="240" width="446" height="280"/>
@@ -134,9 +132,8 @@
   <object id="55" gid="326" x="3200" y="232" width="280" height="372"/>
   <object id="56" gid="327" x="2920" y="232" width="280" height="372"/>
   <object id="57" gid="328" x="3640" y="232" width="280" height="372"/>
-  <object id="58" gid="347" x="1880" y="234" width="424" height="334"/>
  </objectgroup>
- <objectgroup color="#ff00ff" id="20" name="objects">
+ <objectgroup color="#ff00ff" id="20" name="objects_party">
   <object id="26" name="transition" x="1560" y="-40" width="200" height="40">
    <properties>
     <property name="facing" value="up"/>
@@ -168,19 +165,9 @@
     <property name="sound" value="dooropen"/>
    </properties>
   </object>
-  <object id="32" name="interactable" x="2360" y="80" width="400" height="160">
+  <object id="32" name="interactable" x="1880" y="80" width="880" height="160">
    <properties>
     <property name="text1" value="* (You could've sworn something used to be here.)"/>
-   </properties>
-  </object>
-  <object id="33" name="transition" x="2172" y="168" width="86" height="40">
-   <properties>
-    <property name="exit_delay" type="float" value="0.3"/>
-    <property name="exit_sound" value="doorclose"/>
-    <property name="facing" value="up"/>
-    <property name="map" value="hometown/interior/sans_store"/>
-    <property name="marker" value="spawn"/>
-    <property name="sound" value="dooropen"/>
    </properties>
   </object>
   <object id="48" name="interactable" x="744" y="194" width="70" height="40">
@@ -196,14 +183,12 @@
   </object>
   <object id="50" name="interactable" x="3036" y="174" width="48" height="66">
    <properties>
-    <property name="text1" value="* (It's locked...)"/>
-    <property name="text2" value="* (...[wait:5] the town it's pretty empty today.)"/>
+    <property name="text" value="* (It's locked.)"/>
    </properties>
   </object>
   <object id="51" name="interactable" x="3316" y="174" width="48" height="66">
    <properties>
-    <property name="text1" value="* (It's locked...)"/>
-    <property name="text2" value="* (...[wait:5] the town it's pretty empty today.)"/>
+    <property name="text" value="* (It's locked.)"/>
    </properties>
   </object>
   <object id="52" name="interactable" x="3756" y="174" width="48" height="66">
@@ -225,9 +210,6 @@
    <point/>
   </object>
   <object id="30" name="entrydiner" x="1222" y="260">
-   <point/>
-  </object>
-  <object id="34" name="entrysans" x="2220" y="260">
    <point/>
   </object>
   <object id="36" name="entrypizza" x="664" y="260">

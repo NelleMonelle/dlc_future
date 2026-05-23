@@ -925,6 +925,26 @@ return {
         end
     end,
 
+	asgorefridge = function(cutscene, event)
+        cutscene:text("* (It's a rusty fridge with some photos on it.)")
+        local opinion = cutscene:choicer({"Open\nFridge\n", "Don't", "See photos"})
+        if opinion == 1 then
+            cutscene:text("* (All that's inside is a jar with a single pickle in it...)")
+        elseif opinion == 3 then
+            cutscene:text("* (A photo of Toriel and Asgore on their wedding day.)")
+            cutscene:text("* (She's holding a bouquet of seven flowers.)")
+            cutscene:text("* (A reindeer-looking monster stands nearby in a tuxedo.)")
+            cutscene:text("* (They all look happy.)")
+        else
+            cutscene:text("* (You decide not to look.)")
+        end
+    end,
+
+    asgoretruck = function(cutscene, event)
+        cutscene:text("* (It's a blue pickup truck.)")
+        cutscene:text("* (The floor of the front seat is littered with old papers and country CDs...)")
+    end,
+
 	librarybook1 = function(cutscene, event)
       	cutscene:text("* How To Care For A Human")
       	cutscene:text("* (It's a book for monsters about how to care for humans.)")

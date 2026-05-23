@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 48,
-  nextobjectid = 101,
+  nextobjectid = 103,
   properties = {
     ["border"] = "leaves_night",
     ["music"] = "future_world"
@@ -691,6 +691,21 @@ return {
           opacity = 1,
           visible = true,
           properties = {}
+        },
+        {
+          id = 101,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 2883,
+          y = 198,
+          width = 146,
+          height = 110,
+          rotation = 0,
+          opacity = 1,
+          gid = 455,
+          visible = true,
+          properties = {}
         }
       }
     },
@@ -1173,6 +1188,23 @@ return {
           }
         },
         {
+          id = 102,
+          name = "interactable",
+          type = "",
+          shape = "rectangle",
+          x = 2883,
+          y = 88,
+          width = 146,
+          height = 110,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["cutscene"] = "hometown.asgoretruck",
+            ["solid"] = true
+          }
+        },
+        {
           id = 40,
           name = "interactable",
           type = "",
@@ -1185,8 +1217,7 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["text1"] = "* (It's locked...)",
-            ["text2"] = "* (...[wait:5] the town it's pretty empty today.)"
+            ["text"] = "* (It's locked.)"
           }
         },
         {
@@ -1202,8 +1233,7 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["text1"] = "* (It's locked...)",
-            ["text2"] = "* (...[wait:5] the town it's pretty empty today.)"
+            ["text"] = "* (It's locked.)"
           }
         },
         {

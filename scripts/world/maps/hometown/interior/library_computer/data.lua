@@ -223,27 +223,13 @@ return {
           properties = {}
         },
         {
-          id = 17,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 80,
-          y = 126,
-          width = 24,
-          height = 44,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        },
-        {
           id = 18,
           name = "",
           type = "",
           shape = "rectangle",
-          x = 104,
+          x = 80,
           y = 86,
-          width = 472,
+          width = 496,
           height = 40,
           rotation = 0,
           opacity = 1,
@@ -280,7 +266,7 @@ return {
           visible = true,
           properties = {
             ["solid"] = true,
-            ["text"] = "* (It's full of many backup devices,[wait:5] like extra mice,[wait:5] extra keyboards,[wait:5] or extra maracas.)"
+            ["text"] = "* (It's empty. Seems like someone took everything inside.)"
           }
         },
         {
@@ -288,16 +274,15 @@ return {
           name = "interactable",
           type = "",
           shape = "rectangle",
-          x = 100,
+          x = 92,
           y = 86,
-          width = 42,
+          width = 50,
           height = 40,
           rotation = 0,
           opacity = 1,
           visible = true,
           properties = {
-            ["text1"] = "* (The closet is spacious and full of old electronics.)",
-            ["text2"] = "* (A large person could easily fit inside.)"
+            ["text"] = "* (It's a door. A large person could fit inside.)"
           }
         },
         {

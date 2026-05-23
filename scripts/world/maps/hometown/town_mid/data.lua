@@ -475,34 +475,6 @@ return {
           opacity = 1,
           visible = true,
           properties = {}
-        },
-        {
-          id = 19,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 1880,
-          y = 100,
-          width = 292,
-          height = 120,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 20,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 2258,
-          y = 100,
-          width = 40,
-          height = 120,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
         }
       }
     },
@@ -594,21 +566,6 @@ return {
           gid = 328,
           visible = true,
           properties = {}
-        },
-        {
-          id = 58,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 1880,
-          y = 234,
-          width = 424,
-          height = 334,
-          rotation = 0,
-          opacity = 1,
-          gid = 347,
-          visible = true,
-          properties = {}
         }
       }
     },
@@ -616,7 +573,7 @@ return {
       type = "objectgroup",
       draworder = "topdown",
       id = 20,
-      name = "objects",
+      name = "objects_party",
       class = "",
       visible = true,
       opacity = 1,
@@ -706,36 +663,15 @@ return {
           name = "interactable",
           type = "",
           shape = "rectangle",
-          x = 2360,
+          x = 1880,
           y = 80,
-          width = 400,
+          width = 880,
           height = 160,
           rotation = 0,
           opacity = 1,
           visible = true,
           properties = {
             ["text1"] = "* (You could've sworn something used to be here.)"
-          }
-        },
-        {
-          id = 33,
-          name = "transition",
-          type = "",
-          shape = "rectangle",
-          x = 2172,
-          y = 168,
-          width = 86,
-          height = 40,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {
-            ["exit_delay"] = 0.3,
-            ["exit_sound"] = "doorclose",
-            ["facing"] = "up",
-            ["map"] = "hometown/interior/sans_store",
-            ["marker"] = "spawn",
-            ["sound"] = "dooropen"
           }
         },
         {
@@ -784,8 +720,7 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["text1"] = "* (It's locked...)",
-            ["text2"] = "* (...[wait:5] the town it's pretty empty today.)"
+            ["text"] = "* (It's locked.)"
           }
         },
         {
@@ -801,8 +736,7 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["text1"] = "* (It's locked...)",
-            ["text2"] = "* (...[wait:5] the town it's pretty empty today.)"
+            ["text"] = "* (It's locked.)"
           }
         },
         {
@@ -914,20 +848,6 @@ return {
           type = "",
           shape = "point",
           x = 1222,
-          y = 260,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 34,
-          name = "entrysans",
-          type = "",
-          shape = "point",
-          x = 2220,
           y = 260,
           width = 0,
           height = 0,

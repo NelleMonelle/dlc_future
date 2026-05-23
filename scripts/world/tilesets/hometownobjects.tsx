@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.10" tiledversion="1.11.2" name="hometownobjects" tilewidth="1758" tileheight="1240" tilecount="70" columns="0">
+<tileset version="1.11" tiledversion="1.12.1" name="hometownobjects" tilewidth="1758" tileheight="1240" tilecount="67" columns="0">
  <editorsettings>
   <export target="hometownobjects.lua" format="lua"/>
  </editorsettings>
@@ -9,21 +9,6 @@
  </tile>
  <tile id="15">
   <image source="../../../assets/sprites/tilesets/objects/computer_table_long.png" width="222" height="148"/>
- </tile>
- <tile id="16">
-  <image source="../../../assets/sprites/tilesets/objects/sans_basket.png" width="58" height="166"/>
- </tile>
- <tile id="18">
-  <image source="../../../assets/sprites/tilesets/objects/sans_trash.png" width="52" height="56"/>
- </tile>
- <tile id="19">
-  <image source="../../../assets/sprites/tilesets/objects/sans_shelf.png" width="344" height="150"/>
- </tile>
- <tile id="20">
-  <image source="../../../assets/sprites/tilesets/objects/icee_table.png" width="130" height="124"/>
- </tile>
- <tile id="21">
-  <image source="../../../assets/sprites/tilesets/objects/icee_tableketchup.png" width="130" height="124"/>
  </tile>
  <tile id="22">
   <image source="../../../assets/sprites/tilesets/objects/school_table.png" width="78" height="56"/>
@@ -112,9 +97,6 @@
  <tile id="58">
   <image source="../../../assets/sprites/world/maps/hometown/qcdiner.png" width="446" height="280"/>
  </tile>
- <tile id="60">
-  <image source="../../../assets/sprites/world/maps/hometown/sansstore.png" width="424" height="334"/>
- </tile>
  <tile id="61">
   <image source="../../../assets/sprites/world/maps/hometown/school.png" width="686" height="508"/>
  </tile>
@@ -124,20 +106,11 @@
  <tile id="63">
   <image source="../../../assets/sprites/world/maps/hometown/graves.png" width="570" height="198"/>
  </tile>
- <tile id="65">
-  <image source="../../../assets/sprites/tilesets/objects/sans_counter.png" width="114" height="49"/>
- </tile>
  <tile id="86">
   <image source="../../../assets/sprites/tilesets/objects/cabinet.png" width="62" height="126"/>
  </tile>
- <tile id="87">
-  <image source="../../../assets/sprites/tilesets/objects/candle.png" width="30" height="78"/>
- </tile>
  <tile id="88">
   <image source="../../../assets/sprites/tilesets/objects/candles.png" width="106" height="74"/>
- </tile>
- <tile id="118">
-  <image source="../../../assets/sprites/tilesets/objects/church_table.png" width="276" height="100"/>
  </tile>
  <tile id="119">
   <image source="../../../assets/sprites/tilesets/objects/church_table_bottom.png" width="118" height="60"/>
@@ -148,20 +121,8 @@
  <tile id="89">
   <image source="../../../assets/sprites/tilesets/objects/desk.png" width="142" height="124"/>
  </tile>
- <tile id="95">
-  <image source="../../../assets/sprites/tilesets/objects/kitchen_chairs.png" width="200" height="46"/>
- </tile>
- <tile id="96">
-  <image source="../../../assets/sprites/tilesets/objects/kitchen_counter_left.png" width="80" height="76"/>
- </tile>
- <tile id="112">
-  <image source="../../../assets/sprites/tilesets/objects/pew.png" width="200" height="68"/>
- </tile>
  <tile id="113">
   <image source="../../../assets/sprites/tilesets/objects/piano.png" width="48" height="146"/>
- </tile>
- <tile id="114">
-  <image source="../../../assets/sprites/tilesets/objects/podium.png" width="80" height="96"/>
  </tile>
  <tile id="142">
   <image source="../../../assets/sprites/world/maps/hometown/church/main_night.png" width="1758" height="1240"/>
@@ -213,5 +174,35 @@
  </tile>
  <tile id="158">
   <image source="../../../assets/sprites/world/maps/hometown/tent.png" width="200" height="320"/>
+ </tile>
+ <tile id="159">
+  <image source="../../../assets/sprites/tilesets/objects/flowerblue.png" width="46" height="62"/>
+ </tile>
+ <tile id="160">
+  <image source="../../../assets/sprites/tilesets/objects/flowercyan.png" width="46" height="62"/>
+ </tile>
+ <tile id="161">
+  <image source="../../../assets/sprites/tilesets/objects/flowergolden.png" width="46" height="62"/>
+ </tile>
+ <tile id="162">
+  <image source="../../../assets/sprites/tilesets/objects/flowergreen.png" width="46" height="62"/>
+ </tile>
+ <tile id="163">
+  <image source="../../../assets/sprites/tilesets/objects/flowerorange.png" width="46" height="62"/>
+ </tile>
+ <tile id="164">
+  <image source="../../../assets/sprites/tilesets/objects/flowerpurple.png" width="46" height="62"/>
+ </tile>
+ <tile id="165">
+  <image source="../../../assets/sprites/tilesets/objects/flowerregister.png" width="244" height="114"/>
+ </tile>
+ <tile id="166">
+  <image source="../../../assets/sprites/tilesets/objects/flowersfs.png" width="166" height="76"/>
+ </tile>
+ <tile id="167">
+  <image source="../../../assets/sprites/tilesets/objects/floweryellow.png" width="46" height="62"/>
+ </tile>
+ <tile id="168">
+  <image source="../../../assets/sprites/tilesets/objects/asgore_car.png" width="146" height="110"/>
  </tile>
 </tileset>
