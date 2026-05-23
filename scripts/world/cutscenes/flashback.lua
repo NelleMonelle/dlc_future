@@ -519,15 +519,18 @@ return {
 		Game.world.music:stop()
 
 		cutscene:wait(0.5)
-		knight:setSprite("shift_ol_2")
-		Assets.playSound("knight_stretch", 1, 0.75)
-
-		-- TODO: add roar visuals here
-		cutscene:wait(3)
-		knight:setAnimation("pose")
-		Assets.playSound("knightroar")
-
-		cutscene:wait(5)
+		knight.visible = false
+		local roaring_fx = KnightRoaringFX(knight.x + 20, knight.y - 20)
+		roaring_fx.layer = knight.layer
+		Game.world:addChild(roaring_fx)
+		cutscene:wait(function()
+			return roaring_fx:isRemoved()
+		end)
+		knight.visible = true
+		knight:addFX(ShaderFX("sepia", {intensity = 1}), "fake_sepia")
+		Game.stage.timer:after(0.5, function()
+			knight:removeFX("fake_sepia")
+		end)
 		cutscene:resetSprite(knight)
 
 		cutscene:startEncounter("knight", true, {knight})
