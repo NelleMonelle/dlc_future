@@ -165,16 +165,18 @@ function KnightRoaringFX:update()
 				end
 				
 				for i = 0, 8 do
-					local screenafterimage = AfterImageScreen(px + MathUtils.randomInt(-30, 30), py + MathUtils.random(-30, 30), 0.5, 0.00625)
-					screenafterimage.graphics.grow_x = 0.01
-					screenafterimage.graphics.grow_y = 0.01
-					screenafterimage.draw_end = true
-					if Game.state == "BATTLE" then
-						Game.battle:addChild(screenafterimage)
-					else
-						screenafterimage:setLayer(WORLD_LAYERS["top"])
-						Game.world:addChild(screenafterimage)
-					end
+					Game.stage.timer:after((2*i)/30, function()
+						local screenafterimage = AfterImageScreen(px + MathUtils.randomInt(-30, 30), py + MathUtils.random(-30, 30), 0.5, 0.00625)
+						screenafterimage.graphics.grow_x = 0.01
+						screenafterimage.graphics.grow_y = 0.01
+						screenafterimage.draw_end = true
+						if Game.state == "BATTLE" then
+							Game.battle:addChild(screenafterimage)
+						else
+							screenafterimage:setLayer(WORLD_LAYERS["top"])
+							Game.world:addChild(screenafterimage)
+						end
+					end)
 				end
 				local circle = KnightCircle(px, py)
 				circle.r = 255
