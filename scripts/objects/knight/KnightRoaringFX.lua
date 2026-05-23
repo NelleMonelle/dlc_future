@@ -190,7 +190,7 @@ function KnightRoaringFX:update()
 					Game.world:addChild(circle)
 				end
             else
-                Assets.playSound("knight_puff", 1, 0.15)
+                Assets.playSound("knight/puff", 1, 0.15)
             end
 			
             if self.createbullets == true then
