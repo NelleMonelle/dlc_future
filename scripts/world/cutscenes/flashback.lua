@@ -527,6 +527,10 @@ return {
 			return roaring_fx:isRemoved()
 		end)
 		knight.visible = true
+		knight:addFX(ShaderFX("sepia", {intensity = 1}), "fake_sepia")
+		Game.stage.timer:after(0.5, function()
+			knight:removeFX("fake_sepia")
+		end)
 		cutscene:resetSprite(knight)
 
 		cutscene:startEncounter("knight", true, {knight})
