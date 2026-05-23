@@ -223,7 +223,7 @@ function KnightRoaringFX:update()
 			if self.knightcrushfx then
 				self.knightcrushfx:remove()
 			end
-			Game.stage.timer:after(1, function()
+			Game.stage.timer:after(0.5, function()
 				for _, sepia in ipairs(Game.stage:getObjects(FakeSepiaManager)) do
 					sepia:remove()
 				end
