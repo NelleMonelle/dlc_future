@@ -235,7 +235,7 @@ end
 function KnightRoaringFX:draw()
     super.draw(self)
 
-    local px, py = self:getRelativePos(self.width * 0.42, self.height * 0.5)
+    local px, py = self:getRelativePos(self.width * 0.42, 0)
     
     love.graphics.push()
     love.graphics.origin()
