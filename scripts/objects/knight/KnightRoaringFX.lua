@@ -36,7 +36,7 @@ function KnightRoaringFX:init(x, y)
     self.highlight:setColor(1, 1, 1)
     self.highlight.amount = 0
 	self.intro_con = 0
-	self.attack_con = -1
+	self.attack_con = 0
 end
 
 function KnightRoaringFX:update()
@@ -117,13 +117,10 @@ function KnightRoaringFX:update()
     if self.state == "roaring" then
         self.timer = self.timer + DTMULT
 		
-		if self.timer >= 0 and self.attack_con == -1 then
+        if self.timer >= 16 and self.attack_speed == 0 and self.attack_con == 0 then
 			if Game.sepia_shader and Game.sepia_shader.active then
 				Game.world:addChild(FakeSepiaManager())
 			end
-			self.attack_con = 0
-		end
-        if self.timer >= 16 and self.attack_speed == 0 and self.attack_con == 0 then
             self.bar = 24
 			self.attack_con = 1
         end
