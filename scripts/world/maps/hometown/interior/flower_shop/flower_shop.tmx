@@ -28,7 +28,7 @@
  <objectgroup color="#ff00ff" id="4" name="objects">
   <object id="13" name="interactable" x="280" y="120" width="80" height="40">
    <properties>
-    <property name="text" value="&quot;* (It's an expertly trimmed arrangement.)"/>
+    <property name="text" value="* (It's an expertly trimmed arrangement.)"/>
    </properties>
   </object>
   <object id="14" name="interactable" x="136" y="120" width="130" height="40">
@@ -75,9 +75,9 @@
     <property name="sound" value="escaped"/>
    </properties>
   </object>
-  <object id="26" gid="2" x="398" y="240" width="166" height="76"/>
-  <object id="27" gid="2" x="398" y="348" width="166" height="76"/>
-  <object id="28" gid="3" x="40" y="320" width="244" height="114"/>
+  <object id="26" gid="167" x="398" y="240" width="166" height="76"/>
+  <object id="27" gid="167" x="398" y="348" width="166" height="76"/>
+  <object id="28" gid="166" x="40" y="320" width="244" height="114"/>
   <object id="29" name="transition" x="280" y="480" width="80" height="40">
    <properties>
     <property name="map" value="hometown/town_north"/>

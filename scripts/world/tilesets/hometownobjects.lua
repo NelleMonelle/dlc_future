@@ -1,7 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.11.2",
+  tiledversion = "1.12.1",
   name = "hometownobjects",
   class = "",
   tilewidth = 1758,
@@ -23,7 +23,7 @@ return {
   },
   properties = {},
   wangsets = {},
-  tilecount = 70,
+  tilecount = 67,
   tiles = {
     {
       id = 14,
@@ -36,36 +36,6 @@ return {
       image = "../../../assets/sprites/tilesets/objects/computer_table_long.png",
       width = 222,
       height = 148
-    },
-    {
-      id = 16,
-      image = "../../../assets/sprites/tilesets/objects/sans_basket.png",
-      width = 58,
-      height = 166
-    },
-    {
-      id = 18,
-      image = "../../../assets/sprites/tilesets/objects/sans_trash.png",
-      width = 52,
-      height = 56
-    },
-    {
-      id = 19,
-      image = "../../../assets/sprites/tilesets/objects/sans_shelf.png",
-      width = 344,
-      height = 150
-    },
-    {
-      id = 20,
-      image = "../../../assets/sprites/tilesets/objects/icee_table.png",
-      width = 130,
-      height = 124
-    },
-    {
-      id = 21,
-      image = "../../../assets/sprites/tilesets/objects/icee_tableketchup.png",
-      width = 130,
-      height = 124
     },
     {
       id = 22,
@@ -242,12 +212,6 @@ return {
       height = 280
     },
     {
-      id = 60,
-      image = "../../../assets/sprites/world/maps/hometown/sansstore.png",
-      width = 424,
-      height = 334
-    },
-    {
       id = 61,
       image = "../../../assets/sprites/world/maps/hometown/school.png",
       width = 686,
@@ -266,34 +230,16 @@ return {
       height = 198
     },
     {
-      id = 65,
-      image = "../../../assets/sprites/tilesets/objects/sans_counter.png",
-      width = 114,
-      height = 49
-    },
-    {
       id = 86,
       image = "../../../assets/sprites/tilesets/objects/cabinet.png",
       width = 62,
       height = 126
     },
     {
-      id = 87,
-      image = "../../../assets/sprites/tilesets/objects/candle.png",
-      width = 30,
-      height = 78
-    },
-    {
       id = 88,
       image = "../../../assets/sprites/tilesets/objects/candles.png",
       width = 106,
       height = 74
-    },
-    {
-      id = 118,
-      image = "../../../assets/sprites/tilesets/objects/church_table.png",
-      width = 276,
-      height = 100
     },
     {
       id = 119,
@@ -314,34 +260,10 @@ return {
       height = 124
     },
     {
-      id = 95,
-      image = "../../../assets/sprites/tilesets/objects/kitchen_chairs.png",
-      width = 200,
-      height = 46
-    },
-    {
-      id = 96,
-      image = "../../../assets/sprites/tilesets/objects/kitchen_counter_left.png",
-      width = 80,
-      height = 76
-    },
-    {
-      id = 112,
-      image = "../../../assets/sprites/tilesets/objects/pew.png",
-      width = 200,
-      height = 68
-    },
-    {
       id = 113,
       image = "../../../assets/sprites/tilesets/objects/piano.png",
       width = 48,
       height = 146
-    },
-    {
-      id = 114,
-      image = "../../../assets/sprites/tilesets/objects/podium.png",
-      width = 80,
-      height = 96
     },
     {
       id = 142,
@@ -444,6 +366,66 @@ return {
       image = "../../../assets/sprites/world/maps/hometown/tent.png",
       width = 200,
       height = 320
+    },
+    {
+      id = 159,
+      image = "../../../assets/sprites/tilesets/objects/flowerblue.png",
+      width = 46,
+      height = 62
+    },
+    {
+      id = 160,
+      image = "../../../assets/sprites/tilesets/objects/flowercyan.png",
+      width = 46,
+      height = 62
+    },
+    {
+      id = 161,
+      image = "../../../assets/sprites/tilesets/objects/flowergolden.png",
+      width = 46,
+      height = 62
+    },
+    {
+      id = 162,
+      image = "../../../assets/sprites/tilesets/objects/flowergreen.png",
+      width = 46,
+      height = 62
+    },
+    {
+      id = 163,
+      image = "../../../assets/sprites/tilesets/objects/flowerorange.png",
+      width = 46,
+      height = 62
+    },
+    {
+      id = 164,
+      image = "../../../assets/sprites/tilesets/objects/flowerpurple.png",
+      width = 46,
+      height = 62
+    },
+    {
+      id = 165,
+      image = "../../../assets/sprites/tilesets/objects/flowerregister.png",
+      width = 244,
+      height = 114
+    },
+    {
+      id = 166,
+      image = "../../../assets/sprites/tilesets/objects/flowersfs.png",
+      width = 166,
+      height = 76
+    },
+    {
+      id = 167,
+      image = "../../../assets/sprites/tilesets/objects/floweryellow.png",
+      width = 46,
+      height = 62
+    },
+    {
+      id = 168,
+      image = "../../../assets/sprites/tilesets/objects/asgore_car.png",
+      width = 146,
+      height = 110
     }
   }
 }

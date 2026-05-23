@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 15,
-  nextobjectid = 58,
+  nextobjectid = 59,
   properties = {
     ["border"] = "leaves_night",
     ["music"] = "future_world"
@@ -750,6 +750,20 @@ return {
             ["solid"] = true,
             ["text"] = "* Sounds like grounding in progress."
           }
+        },
+        {
+          id = 58,
+          name = "torcar",
+          type = "",
+          shape = "rectangle",
+          x = 460,
+          y = 220,
+          width = 156,
+          height = 148,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
         }
       }
     },

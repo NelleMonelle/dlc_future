@@ -251,7 +251,7 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["text"] = "\"* (It's an expertly trimmed arrangement.)"
+            ["text"] = "* (It's an expertly trimmed arrangement.)"
           }
         },
         {
@@ -385,7 +385,7 @@ return {
           height = 76,
           rotation = 0,
           opacity = 1,
-          gid = 2,
+          gid = 167,
           visible = true,
           properties = {}
         },
@@ -400,7 +400,7 @@ return {
           height = 76,
           rotation = 0,
           opacity = 1,
-          gid = 2,
+          gid = 167,
           visible = true,
           properties = {}
         },
@@ -415,7 +415,7 @@ return {
           height = 114,
           rotation = 0,
           opacity = 1,
-          gid = 3,
+          gid = 166,
           visible = true,
           properties = {}
         },
