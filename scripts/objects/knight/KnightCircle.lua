@@ -62,7 +62,7 @@ function KnightCircle:draw()
 	if self.draw_in_box then
 	else
 		love.graphics.setBlendMode("add")
-		Draw.setColor(self.r/255, self.g/255, self.b/255, 1)
+		Draw.setColor(self.r/255, self.g/255, self.b/255, self.alpha)
 		Draw.draw(self.circle_mesh, 0, 0, 0, self.circle_size, self.circle_size)
 		love.graphics.setBlendMode("alpha")
 	end
