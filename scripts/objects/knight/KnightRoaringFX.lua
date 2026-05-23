@@ -190,7 +190,7 @@ function KnightRoaringFX:update()
 					Game.world:addChild(circle)
 				end
             else
-                Assets.playSound("knight/puff", 1, 0.15)
+                Assets.playSound("knight_puff", 1, 0.15)
             end
 			
             if self.createbullets == true then
@@ -202,18 +202,18 @@ function KnightRoaringFX:update()
             if self.createbullets == true then
             end
 
-            self.spin = self.spin * -DTMULT
-            self.counter = self.counter + DTMULT
-            self.attack_speed = MathUtils.approach(self.attack_speed, 14, DTMULT)
+            self.spin = self.spin * -1
+            self.counter = self.counter + 1
+            self.attack_speed = MathUtils.approach(self.attack_speed, 14, 1)
 
             if ((self.counter % 3) == 0) then
-                self.density = MathUtils.approach(self.density, 6, DTMULT)
+                self.density = MathUtils.approach(self.density, 6, 1)
             end
 
 			self.attack_con = 3
             if self.counter < 30 then
                 self.timer = 0
-				self.attack_con = 0
+				self.attack_con = 1
             end
         end
 		
