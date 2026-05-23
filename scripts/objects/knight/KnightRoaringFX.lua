@@ -108,6 +108,9 @@ function KnightRoaringFX:update()
 			self.intro_con = self.intro_con + 1
         end
         if self.timer >= 64 and self.intro_con == 4 then
+			if Game.sepia_shader and Game.sepia_shader.active then
+				Game.world:addChild(FakeSepiaManager())
+			end
             self.state = "roaring"
             self.timer = -20
 			self.intro_con = 5
@@ -161,6 +164,18 @@ function KnightRoaringFX:update()
 					particle:remove()
 				end
 				
+				for i = 0, 8 do
+					local screenafterimage = AfterImageScreen(px + MathUtils.randomInt(-30, 30), py + MathUtils.random(-30, 30), 0.5, 0.00625)
+					screenafterimage.graphics.grow_x = 0.01
+					screenafterimage.graphics.grow_y = 0.01
+					screenafterimage.draw_end = true
+					if Game.state == "BATTLE" then
+						Game.battle:addChild(screenafterimage)
+					else
+						screenafterimage:setLayer(WORLD_LAYERS["top"])
+						Game.world:addChild(screenafterimage)
+					end
+				end
 				local circle = KnightCircle(px, py)
 				circle.r = 255
 				circle.g = 255
@@ -205,6 +220,11 @@ function KnightRoaringFX:update()
 			if self.knightcrushfx then
 				self.knightcrushfx:remove()
 			end
+			Game.stage.timer:after(0.5, function()
+				for _, sepia in ipairs(Game.stage:getObjects(FakeSepiaManager)) do
+					sepia:remove()
+				end
+			end)
             self:remove()
         end
     end
