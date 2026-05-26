@@ -2,11 +2,7 @@ local Soul, super = Class(Soul)
 
 function Soul:init(x, y, color)
 	super.init(self, x, y, color)
-	
-	if not Game.battle.bells then
-		Game.battle.bells = {0, 0, 0}
-	end
-	
+
     self.bells = {}
     self.fluffy_timer = 0
 	self.radius = 25
