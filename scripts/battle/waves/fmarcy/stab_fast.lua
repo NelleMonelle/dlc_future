@@ -28,7 +28,7 @@ function Basic:onStart()
 			Assets.playSound("laz_c")
 			
 			-- Spawn smallbullet going left with speed 8 (see scripts/battle/bullets/smallbullet.lua)
-			self:spawnBullet("placebulletinstant_ls", x, y, w, h)
+			self:spawnBullet("placebulletinstant", x, y, w, h)
 			Game.battle.enemies[1]:setAnimation("battle/attack")
 			
 			local a = 1

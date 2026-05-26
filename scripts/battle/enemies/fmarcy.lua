@@ -32,7 +32,7 @@ function Marcy:init()
     -- Temporarily random. Once I'm confident on the waves, I'll give them an order.
     self.waves = {
         "fmarcy/scythe_gravity",
-        "fmarcy/stab_lifesteal",
+        "fmarcy/stab_fast",
     }
 
     -- Dialogue randomly displayed in the enemy's speech bubble

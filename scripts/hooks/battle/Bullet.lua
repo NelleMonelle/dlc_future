@@ -18,6 +18,12 @@ function Bullet:onDamage(soul)
     local battlers = Game.battle:hurt(damage, false, target, self:shouldSwoon(damage, target, soul))
     soul.inv_timer = self:getInvulnTime()
     soul:onDamage(self, damage)
+	if Game.battle.enemy_v_slash then
+		Game.battle.enemies[1]:heal(self:getDamage()/2)
+	end
+	if Game.battle.enemy_ultra_break then
+		Game.battle.party[1]:inflictStatus("break")
+	end
     return battlers
 end
 

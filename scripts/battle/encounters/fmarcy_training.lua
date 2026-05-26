@@ -43,6 +43,8 @@ end
 
 function Marcy:onTurnEnd()
 	self.reaching = false
+	Game.battle.enemy_v_slash = false
+	Game.battle.enemy_ultra_break = false
 end
 
 function Marcy:getDialogueCutscene()
@@ -58,6 +60,7 @@ function Marcy:getDialogueCutscene()
 			cutscene:battlerText(marcy, "You want to prove\nyourself?", {x=marcy.x - 40, y=marcy.y - 60})
 			cutscene:battlerText(marcy, "Then show me what\nyou can really do.", {x=marcy.x - 40, y=marcy.y - 60})
 			Game:setFlag("marcy_training_ever_attacked", true)
+			cutscene:gotoCutscene("fmarcy_spells")
         end
 	elseif self.marcy.health < 1500 and not self.jamm_disarmed then
 		self.jamm_disarmed = true
@@ -104,8 +107,10 @@ function Marcy:getDialogueCutscene()
 			local marcy = cutscene:getCharacter("fmarcy")
 			cutscene:battlerText(marcy, "I'm about to go\nall out, dad.", {x=marcy.x - 40, y=marcy.y - 60})
 			cutscene:battlerText(marcy, "You'd better prepare.", {x=marcy.x - 40, y=marcy.y - 60})
+			cutscene:gotoCutscene("fmarcy_spells")
         end
 	end
+	return "fmarcy_spells"
 end
 
 return Marcy
