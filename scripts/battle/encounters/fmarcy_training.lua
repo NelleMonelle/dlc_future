@@ -16,11 +16,10 @@ function Marcy:init()
     -- Add the dummy enemy to the encounter
     self.marcy = self:addEnemy("fmarcy", 540, 260)
 
-    --- Uncomment this line to add another!
-    --self:addEnemy("dummy")
-	
+    self.enemy_tension_bar_on_start = true
+
 	Game.battle:registerXAction("jamm", "Check", "Useless\nanalysis")
-	
+
 	self.reaches = 0
 end
 

@@ -9,7 +9,7 @@ function Noelle_Battle:init()
     self.turns = -1
 
     -- Battle music ("battle" is rude buster)
-    -- self.music = nil
+    self.music = "snowgrave"
     -- Enables the purple grid battle background
     self.background = false
 
@@ -17,11 +17,15 @@ function Noelle_Battle:init()
     self.susie_dead = false
 
     -- Add the dummy enemy to the encounter
-    self.noelle=self:addEnemy("fnoelle_weird", 550, 228)
+    self.noelle = self:addEnemy("fnoelle_weird", 550, 228)
 
-    Game.battle:registerXAction("susie", "Pull")
-    Game.battle:registerXAction("jamm", "Pull")
-    Game.battle:registerXAction(Game.battle.party[3].chara.id, "Pull")
+    self.enemy_tension_bar_on_start = true
+end
+
+function Noelle_Battle:onBattleStart(battler)
+    for _, battler in ipairs(Game.battle.party) do
+        Game.battle:registerXAction(battler.chara.id, "Pull")
+    end
 end
 
 return Noelle_Battle
