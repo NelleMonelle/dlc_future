@@ -991,4 +991,42 @@ return {
 		cutscene:hideNametag()
 		fberdly:setFacing("up")
     end,
+
+	school_closet = function(cutscene, event)
+		if not Game:getFlag("future_schoolcloset_dialogue") then
+			cutscene:showNametag("Susie")
+			cutscene:text("* Hey,[wait:5] uh,[wait:5] is the Castle Town still down there?[wait:5] Can we go in?", "nervous_side", "susie")
+			cutscene:showNametag("Marcy")
+			cutscene:text("* It is there,[wait:5] but be careful.", "closed", "fmarcy")
+			cutscene:text("* There's a giant pit right behind the door.", "neutral", "fmarcy")
+			cutscene:text("* As for going in,[wait:5] there's not much to look at there.", "lookright", "fmarcy")
+			cutscene:text("* But,[wait:5] I suppose we can pay a quick visit there.", "closed", "fmarcy")
+			cutscene:showNametag("Susie")
+			cutscene:text("* ...[wait:5] alright.", "annoyed_down", "susie")
+			cutscene:hideNametag()
+			Game:setFlag("future_schoolcloset_dialogue", true)
+		end
+		local go_in = cutscene:textChoicer("* Go to Castle Town?", {"Yes", "No"})
+		if go_in == 1 then
+			Game.world.music:fade(0, 0.5)
+			cutscene:wait(0.5)
+			Assets.playSound("locker")
+			Game.world:getEvent("darkdoor").sprite:setFrame(2)
+			cutscene:wait(1)
+			cutscene:wait(cutscene:fadeOut(0.75))
+			cutscene:wait(0.5)
+			Assets.playSound("wing")
+            cutscene:wait(0.3)
+            Assets.playSound("wing")
+            cutscene:wait(0.3)
+            Assets.playSound("wing")
+            cutscene:wait(1)
+            Assets.playSound("jump")
+            cutscene:wait(0.75)
+            Assets.playSound("noise")
+            cutscene:wait(1.5)
+			cutscene:loadMap("castletown/area_1", 320, 280)
+			cutscene:wait(cutscene:fadeIn(0.75))
+		end
+    end,
 }

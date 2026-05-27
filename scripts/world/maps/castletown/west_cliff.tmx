@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.11" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="16" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="6" nextobjectid="7">
+ <editorsettings>
+  <export target="west_cliff.lua" format="lua"/>
+ </editorsettings>
+ <properties>
+  <property name="music" value="castletown_empty"/>
+ </properties>
+ <imagelayer id="2" name="bg">
+  <image source="../../../../assets/sprites/world/maps/castletown/darkwest.png" width="640" height="480"/>
+ </imagelayer>
+ <objectgroup color="#0000ff" id="3" name="collision">
+  <object id="1" x="120" y="240" width="40" height="160"/>
+  <object id="2" x="160" y="240" width="480" height="40"/>
+  <object id="3" x="160" y="360" width="480" height="40"/>
+ </objectgroup>
+ <objectgroup color="#ff00ff" id="4" name="objects">
+  <object id="4" name="transition" x="620" y="280" width="40" height="80">
+   <properties>
+    <property name="map" value="castletown/town"/>
+    <property name="marker" value="left"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup color="#7f00ff" id="5" name="markers">
+  <object id="5" name="right" x="560" y="326">
+   <point/>
+  </object>
+  <object id="6" name="spawn" x="320" y="310">
+   <point/>
+  </object>
+ </objectgroup>
+</map>

@@ -4,13 +4,22 @@ function Mod:init()
 	-- iirc all Deltarune music is 0.7 volume
 	TableUtils.merge(MUSIC_VOLUMES, {
 		berdly_theme = 0.7,
+		castletown_empty = 0.7,
         creepychase = 0.7,
 		fanfare = 0.7,
+		knight = 0.7,
+		knight_pre = 0.7,
+		noelle_normal = 0.7,
 		susie = 0.7,
 		vs_susie = 0.7,
 		wind = 0.7,
+		wind_highplace = 0.7
     })
-	
+
+	TableUtils.merge(MUSIC_PITCHES, {
+		castletown_empty = 0.8
+    })
+
 	Game:registerEvent("rift_transition", function(data)
         return RiftTransition(data.x, data.y, data.properties)
     end)

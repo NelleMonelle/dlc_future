@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.11" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="16" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="6" nextobjectid="9">
+ <editorsettings>
+  <export target="east_door.lua" format="lua"/>
+ </editorsettings>
+ <properties>
+  <property name="music" value="castletown_empty"/>
+ </properties>
+ <tileset firstgid="1" source="../../tilesets/castle.tsx"/>
+ <layer id="1" name="Tile Layer 1" width="16" height="12">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+7,7,7,7,7,7,7,7,7,7,7,7,7,8,0,0,
+15,15,15,15,15,15,15,15,15,15,15,15,15,16,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup color="#ff00ff" id="5" name="objects_bg">
+  <object id="7" name="greatdoor" x="250" y="10" width="360" height="310"/>
+ </objectgroup>
+ <objectgroup color="#0000ff" id="2" name="collision">
+  <object id="1" x="0" y="400" width="560" height="40"/>
+  <object id="2" x="0" y="280" width="560" height="40"/>
+  <object id="3" x="560" y="280" width="40" height="160"/>
+ </objectgroup>
+ <objectgroup color="#ff00ff" id="3" name="objects">
+  <object id="4" name="transition" x="-20" y="320" width="40" height="80">
+   <properties>
+    <property name="map" value="castletown/tutorial"/>
+    <property name="marker" value="right"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup color="#7f00ff" id="4" name="markers">
+  <object id="5" name="left" x="60" y="368">
+   <point/>
+  </object>
+  <object id="8" name="spawn" x="120" y="350">
+   <point/>
+  </object>
+ </objectgroup>
+</map>

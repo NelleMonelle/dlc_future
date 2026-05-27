@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 32,
-  nextobjectid = 73,
+  nextobjectid = 74,
   properties = {
     ["border"] = "leaves_night",
     ["music"] = "future_world",
@@ -802,7 +802,7 @@ return {
       objects = {
         {
           id = 24,
-          name = "spawn",
+          name = "entrynorth",
           type = "",
           shape = "point",
           x = 1660,
@@ -863,6 +863,20 @@ return {
           shape = "point",
           x = 664,
           y = 260,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 73,
+          name = "spawn",
+          type = "",
+          shape = "point",
+          x = 1500,
+          y = 252,
           width = 0,
           height = 0,
           rotation = 0,

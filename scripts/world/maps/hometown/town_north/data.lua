@@ -1081,7 +1081,7 @@ return {
           properties = {
             ["facing"] = "down",
             ["map"] = "hometown/town_mid",
-            ["marker"] = "spawn"
+            ["marker"] = "entrynorth"
           }
         },
         {
