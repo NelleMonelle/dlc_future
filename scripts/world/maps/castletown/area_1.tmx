@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.11" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="16" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="6" nextobjectid="17">
+ <editorsettings>
+  <export target="area_1.lua" format="lua"/>
+ </editorsettings>
+ <tileset firstgid="1" source="../../tilesets/castle.tsx"/>
+ <tileset firstgid="41" source="../../tilesets/rounded_edges.tsx"/>
+ <layer id="1" name="Tile Layer 1" width="16" height="12">
+  <data encoding="csv">
+0,0,0,0,0,23,23,23,23,23,23,0,0,0,0,0,
+0,0,0,0,0,23,23,23,23,23,23,0,0,0,0,0,
+0,0,0,0,0,23,23,23,23,23,23,0,0,0,0,0,
+0,0,0,0,0,23,23,23,23,23,23,0,0,0,0,0,
+0,0,0,0,23,23,23,23,23,23,23,23,0,0,0,0,
+0,0,0,23,23,23,23,23,23,23,23,23,23,0,0,0,
+0,0,0,23,23,23,23,23,23,23,23,23,23,0,0,0,
+0,0,0,23,23,23,23,23,23,23,23,23,23,0,0,0,
+0,0,0,23,23,23,23,23,23,23,23,23,23,0,0,0,
+0,0,0,0,23,23,23,23,23,23,23,23,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="5" name="Tile Layer 2" width="16" height="12">
+  <data encoding="csv">
+0,0,0,0,0,44,0,0,0,0,46,0,0,0,0,0,
+0,0,0,0,0,44,0,0,0,0,46,0,0,0,0,0,
+0,0,0,0,0,44,0,0,0,0,46,0,0,0,0,0,
+0,0,0,0,0,44,0,0,0,0,46,0,0,0,0,0,
+0,0,0,0,41,0,0,0,0,0,0,43,0,0,0,0,
+0,0,0,41,0,0,0,0,0,0,0,0,43,0,0,0,
+0,0,0,44,0,0,0,0,0,0,0,0,46,0,0,0,
+0,0,0,44,0,0,0,0,0,0,0,0,46,0,0,0,
+0,0,0,47,0,0,0,0,0,0,0,0,49,0,0,0,
+0,0,0,0,47,48,48,48,48,48,48,49,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup color="#0000ff" id="2" name="collision">
+  <object id="2" x="120" y="400" width="400" height="40"/>
+  <object id="4" x="520" y="120" width="40" height="280"/>
+  <object id="6" x="80" y="120" width="40" height="280"/>
+  <object id="9" x="160" y="0" width="40" height="120"/>
+  <object id="10" x="440" y="0" width="40" height="120"/>
+  <object id="11" x="520" y="120">
+   <polygon points="0,0 -80,0 0,80"/>
+  </object>
+  <object id="12" x="120" y="120">
+   <polygon points="0,0 0,80 80,0"/>
+  </object>
+  <object id="13" x="120" y="360">
+   <polygon points="0,0 0,40 40,40"/>
+  </object>
+  <object id="14" x="480" y="400">
+   <polygon points="0,0 40,0 40,-40"/>
+  </object>
+ </objectgroup>
+ <objectgroup color="#ff00ff" id="3" name="objects">
+  <object id="1" name="castletown_exit" x="320" y="400">
+   <point/>
+  </object>
+  <object id="15" name="transition" x="200" y="0" width="240" height="40">
+   <properties>
+    <property name="map" value="castletown/town"/>
+    <property name="marker" value="down"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup color="#7f00ff" id="4" name="markers">
+  <object id="16" name="up" x="320" y="80">
+   <point/>
+  </object>
+ </objectgroup>
+</map>

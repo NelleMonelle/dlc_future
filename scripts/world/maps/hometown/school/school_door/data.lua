@@ -311,7 +311,7 @@ return {
           opacity = 1,
           visible = true,
           properties = {
-            ["text"] = "* (It's locked.)"
+            ["cutscene"] = "hometown.school_closet"
           }
         }
       }

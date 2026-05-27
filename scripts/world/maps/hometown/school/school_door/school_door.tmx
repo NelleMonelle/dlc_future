@@ -76,7 +76,7 @@
   </object>
   <object id="24" name="interactable" x="560" y="200" width="120" height="40">
    <properties>
-    <property name="text" value="* (It's locked.)"/>
+    <property name="cutscene" value="hometown.school_closet"/>
    </properties>
   </object>
  </objectgroup>
