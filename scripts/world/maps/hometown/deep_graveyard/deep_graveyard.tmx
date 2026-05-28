@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="41" height="52" tilewidth="40" tileheight="40" infinite="0" nextlayerid="10" nextobjectid="14">
+<map version="1.11" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="41" height="52" tilewidth="40" tileheight="40" infinite="0" nextlayerid="10" nextobjectid="17">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -209,14 +209,26 @@
    </properties>
    <point/>
   </object>
-  <object id="9" gid="441" x="248" y="560" width="62" height="72"/>
-  <object id="10" gid="442" x="430" y="560" width="62" height="72"/>
   <object id="11" name="script" x="80" y="960" width="760">
    <properties>
     <property name="cutscene" value="hometown.our_graves"/>
    </properties>
   </object>
-  <object id="13" gid="443" x="608" y="560" width="62" height="72"/>
+  <object id="14" name="grave" x="608" y="488" width="62" height="72">
+   <properties>
+    <property name="special" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="15" name="grave" x="430" y="488" width="62" height="72">
+   <properties>
+    <property name="sprite" value="susie"/>
+   </properties>
+  </object>
+  <object id="16" name="grave" x="248" y="488" width="62" height="72">
+   <properties>
+    <property name="sprite" value="jamm"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup id="5" name="markers">
   <object id="2" name="spawn" x="1480" y="2040">
