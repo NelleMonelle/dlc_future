@@ -23,9 +23,9 @@ end
 function Grave:onInteract(player, dir)
     Game.world:startCutscene(function(cutscene)
         if self.properties["sprite"] == "susie" then
-            cutscene:text("")
+            cutscene:text("* SUSIE\n* STRONG-WILLED GIRL WHO BROUGHT US HOPE")
         elseif self.properties["sprite"] == "jamm" then
-            cutscene:text("")
+            cutscene:text("* LUTHANE JAMM\n* WISE, HOPEFUL, AND A HOPEFUL FATHER")
         elseif self.properties["special"] then
             -- inspired by Hometown graves
             if Game:getFlag("future_variable") == "ceroba" then
