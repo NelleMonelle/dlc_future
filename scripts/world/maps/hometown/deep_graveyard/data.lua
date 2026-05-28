@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 10,
-  nextobjectid = 14,
+  nextobjectid = 17,
   properties = {
     ["border"] = "leaves_night",
     ["music"] = "future_world"
@@ -333,36 +333,6 @@ return {
           }
         },
         {
-          id = 9,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 248,
-          y = 560,
-          width = 62,
-          height = 72,
-          rotation = 0,
-          opacity = 1,
-          gid = 441,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 10,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 430,
-          y = 560,
-          width = 62,
-          height = 72,
-          rotation = 0,
-          opacity = 1,
-          gid = 442,
-          visible = true,
-          properties = {}
-        },
-        {
           id = 11,
           name = "script",
           type = "",
@@ -379,19 +349,52 @@ return {
           }
         },
         {
-          id = 13,
-          name = "",
+          id = 14,
+          name = "grave",
           type = "",
           shape = "rectangle",
           x = 608,
-          y = 560,
+          y = 488,
           width = 62,
           height = 72,
           rotation = 0,
           opacity = 1,
-          gid = 443,
           visible = true,
-          properties = {}
+          properties = {
+            ["special"] = true
+          }
+        },
+        {
+          id = 15,
+          name = "grave",
+          type = "",
+          shape = "rectangle",
+          x = 430,
+          y = 488,
+          width = 62,
+          height = 72,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["sprite"] = "susie"
+          }
+        },
+        {
+          id = 16,
+          name = "grave",
+          type = "",
+          shape = "rectangle",
+          x = 248,
+          y = 488,
+          width = 62,
+          height = 72,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["sprite"] = "jamm"
+          }
         }
       }
     },
