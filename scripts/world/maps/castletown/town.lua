@@ -1,7 +1,7 @@
 return {
   version = "1.11",
   luaversion = "5.1",
-  tiledversion = "1.12.1",
+  tiledversion = "1.12.2",
   class = "",
   orientation = "orthogonal",
   renderorder = "right-down",
@@ -9,8 +9,8 @@ return {
   height = 40,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 7,
-  nextobjectid = 26,
+  nextlayerid = 9,
+  nextobjectid = 42,
   properties = {
     ["music"] = "castletown_empty",
     ["name"] = "Future Castle Town"
@@ -21,6 +21,12 @@ return {
       firstgid = 1,
       filename = "../../tilesets/castle_town.tsx",
       exportfilename = "../../tilesets/castle_town.lua"
+    },
+    {
+      name = "castletown_stuff",
+      firstgid = 341,
+      filename = "../../tilesets/castletown_stuff.tsx",
+      exportfilename = "../../tilesets/castletown_stuff.lua"
     }
   },
   layers = {
@@ -397,6 +403,232 @@ return {
     {
       type = "objectgroup",
       draworder = "topdown",
+      id = 7,
+      name = "objects_bg",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 27,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 86,
+          y = 586,
+          width = 30,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          gid = 341,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 28,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = -16,
+          y = 586,
+          width = 30,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          gid = 341,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 29,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 86,
+          y = 1066,
+          width = 30,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          gid = 341,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 30,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = -16,
+          y = 1066,
+          width = 30,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          gid = 341,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 31,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1406,
+          y = 586,
+          width = 30,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          gid = 341,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 32,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1506,
+          y = 586,
+          width = 30,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          gid = 341,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 33,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1404,
+          y = 1066,
+          width = 30,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          gid = 341,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 34,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1506,
+          y = 1066,
+          width = 30,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          gid = 341,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 35,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 70,
+          y = 1228,
+          width = 30,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          gid = 341,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 36,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 210,
+          y = 1228,
+          width = 30,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          gid = 341,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 37,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 378,
+          y = 1228,
+          width = 30,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          gid = 341,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 38,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1114,
+          y = 1228,
+          width = 30,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          gid = 341,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 39,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1242,
+          y = 1228,
+          width = 30,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          gid = 341,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 40,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 1382,
+          y = 1228,
+          width = 30,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          gid = 341,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
       id = 3,
       name = "objects",
       class = "",
@@ -438,6 +670,7 @@ return {
           opacity = 1,
           visible = true,
           properties = {
+            ["map"] = "castletown/castle/front",
             ["marker"] = "down"
           }
         },
@@ -560,6 +793,20 @@ return {
           opacity = 1,
           visible = true,
           properties = {}
+        },
+        {
+          id = 26,
+          name = "up",
+          type = "",
+          shape = "point",
+          x = 760,
+          y = 276,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
         }
       }
     },
@@ -621,6 +868,36 @@ return {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 8,
+      name = "controllers",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 41,
+          name = "castletownnight",
+          type = "",
+          shape = "point",
+          x = 0,
+          y = 0,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        }
       }
     }
   }

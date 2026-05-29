@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 7,
-  nextobjectid = 8,
+  nextobjectid = 13,
   properties = {
     ["music"] = "castletown_empty"
   },
@@ -18,7 +18,7 @@ return {
   layers = {
     {
       type = "imagelayer",
-      image = "../../../../assets/sprites/world/maps/castletown/darkwest.png",
+      image = "../../../../../../assets/sprites/world/maps/castletown/susie_room.png",
       id = 2,
       name = "bg",
       class = "",
@@ -52,9 +52,9 @@ return {
           type = "",
           shape = "rectangle",
           x = 120,
-          y = 240,
-          width = 40,
-          height = 160,
+          y = 406,
+          width = 152,
+          height = 74,
           rotation = 0,
           opacity = 1,
           visible = true,
@@ -65,10 +65,10 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 160,
-          y = 240,
-          width = 480,
-          height = 40,
+          x = 346,
+          y = 408,
+          width = 214,
+          height = 72,
           rotation = 0,
           opacity = 1,
           visible = true,
@@ -79,10 +79,38 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 160,
-          y = 360,
-          width = 480,
+          x = 100,
+          y = 160,
+          width = 40,
+          height = 246,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 4,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 120,
+          y = 120,
+          width = 440,
           height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 5,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 520,
+          y = 160,
+          width = 40,
+          height = 248,
           rotation = 0,
           opacity = 1,
           visible = true,
@@ -105,20 +133,91 @@ return {
       properties = {},
       objects = {
         {
-          id = 4,
+          id = 7,
           name = "transition",
           type = "",
           shape = "rectangle",
-          x = 620,
-          y = 280,
-          width = 40,
-          height = 80,
+          x = 272,
+          y = 460,
+          width = 74,
+          height = 40,
           rotation = 0,
           opacity = 1,
           visible = true,
           properties = {
-            ["map"] = "castletown/town",
-            ["marker"] = "left"
+            ["exit_delay"] = 0.2,
+            ["exit_sound"] = "doorclose",
+            ["map"] = "castletown/castle/2f",
+            ["marker"] = "susie",
+            ["sound"] = "dooropen"
+          }
+        },
+        {
+          id = 8,
+          name = "interactable",
+          type = "",
+          shape = "rectangle",
+          x = 148,
+          y = 160,
+          width = 92,
+          height = 116,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["cutscene"] = "castletown.susie_bed",
+            ["solid"] = true
+          }
+        },
+        {
+          id = 9,
+          name = "interactable",
+          type = "",
+          shape = "rectangle",
+          x = 250,
+          y = 160,
+          width = 68,
+          height = 48,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["cutscene"] = "castletown.susie_fridge",
+            ["solid"] = true
+          }
+        },
+        {
+          id = 10,
+          name = "interactable",
+          type = "",
+          shape = "rectangle",
+          x = 354,
+          y = 160,
+          width = 78,
+          height = 38,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["cutscene"] = "castletown.susie_shelf",
+            ["solid"] = true
+          }
+        },
+        {
+          id = 11,
+          name = "interactable",
+          type = "",
+          shape = "rectangle",
+          x = 434,
+          y = 160,
+          width = 62,
+          height = 38,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["cutscene"] = "castletown.susie_wardrobe",
+            ["solid"] = true
           }
         }
       }
@@ -138,26 +237,12 @@ return {
       properties = {},
       objects = {
         {
-          id = 5,
-          name = "right",
-          type = "",
-          shape = "point",
-          x = 560,
-          y = 326,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        },
-        {
           id = 6,
           name = "spawn",
           type = "",
           shape = "point",
-          x = 320,
-          y = 310,
+          x = 310,
+          y = 438,
           width = 0,
           height = 0,
           rotation = 0,
@@ -182,7 +267,7 @@ return {
       properties = {},
       objects = {
         {
-          id = 7,
+          id = 12,
           name = "castletownnight",
           type = "",
           shape = "point",

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="16" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="6" nextobjectid="7">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="16" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="7" nextobjectid="8">
  <editorsettings>
   <export target="west_cliff.lua" format="lua"/>
  </editorsettings>
@@ -27,6 +27,11 @@
    <point/>
   </object>
   <object id="6" name="spawn" x="320" y="310">
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup color="#00aa00" id="6" name="controllers">
+  <object id="7" name="castletownnight" x="0" y="0">
    <point/>
   </object>
  </objectgroup>

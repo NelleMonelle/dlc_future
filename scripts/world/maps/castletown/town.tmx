@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="38" height="40" tilewidth="40" tileheight="40" infinite="0" nextlayerid="7" nextobjectid="26">
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="38" height="40" tilewidth="40" tileheight="40" infinite="0" nextlayerid="9" nextobjectid="42">
  <editorsettings>
   <export target="town.lua" format="lua"/>
  </editorsettings>
@@ -8,6 +8,7 @@
   <property name="name" value="Future Castle Town"/>
  </properties>
  <tileset firstgid="1" source="../../tilesets/castle_town.tsx"/>
+ <tileset firstgid="341" source="../../tilesets/castletown_stuff.tsx"/>
  <layer id="1" name="Tile Layer 1" width="38" height="40">
   <data encoding="csv">
 64,64,64,64,64,64,259,64,64,64,64,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,64,64,258,64,64,64,64,64,64,64,64,
@@ -118,6 +119,22 @@
    <polygon points="0,0 0,-40 40,-40"/>
   </object>
  </objectgroup>
+ <objectgroup id="7" name="objects_bg">
+  <object id="27" gid="341" x="86" y="586" width="30" height="40"/>
+  <object id="28" gid="341" x="-16" y="586" width="30" height="40"/>
+  <object id="29" gid="341" x="86" y="1066" width="30" height="40"/>
+  <object id="30" gid="341" x="-16" y="1066" width="30" height="40"/>
+  <object id="31" gid="341" x="1406" y="586" width="30" height="40"/>
+  <object id="32" gid="341" x="1506" y="586" width="30" height="40"/>
+  <object id="33" gid="341" x="1404" y="1066" width="30" height="40"/>
+  <object id="34" gid="341" x="1506" y="1066" width="30" height="40"/>
+  <object id="35" gid="341" x="70" y="1228" width="30" height="40"/>
+  <object id="36" gid="341" x="210" y="1228" width="30" height="40"/>
+  <object id="37" gid="341" x="378" y="1228" width="30" height="40"/>
+  <object id="38" gid="341" x="1114" y="1228" width="30" height="40"/>
+  <object id="39" gid="341" x="1242" y="1228" width="30" height="40"/>
+  <object id="40" gid="341" x="1382" y="1228" width="30" height="40"/>
+ </objectgroup>
  <objectgroup color="#ff00ff" id="3" name="objects">
   <object id="1" name="transition" x="720" y="1580" width="80" height="40">
    <properties>
@@ -127,6 +144,7 @@
   </object>
   <object id="25" name="transition" x="720" y="180" width="80" height="40">
    <properties>
+    <property name="map" value="castletown/castle/front"/>
     <property name="marker" value="down"/>
    </properties>
   </object>
@@ -157,6 +175,9 @@
    <point/>
   </object>
   <object id="24" name="spawn" x="806" y="344">
+   <point/>
+  </object>
+  <object id="26" name="up" x="760" y="276">
    <point/>
   </object>
  </objectgroup>
@@ -204,4 +225,9 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
+ <objectgroup color="#00aa00" id="8" name="controllers">
+  <object id="41" name="castletownnight" x="0" y="0">
+   <point/>
+  </object>
+ </objectgroup>
 </map>
