@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.11" tiledversion="1.12.2" orientation="orthogonal" renderorder="right-down" width="52" height="12" tilewidth="40" tileheight="40" infinite="0" nextlayerid="7" nextobjectid="27">
+ <editorsettings>
+  <export target="3f.lua" format="lua"/>
+ </editorsettings>
+ <properties>
+  <property name="music" value="castletown_empty"/>
+ </properties>
+ <tileset firstgid="1" source="../../../tilesets/castle_town_inside.tsx"/>
+ <tileset firstgid="232" source="../../../tilesets/castletown_stuff.tsx"/>
+ <layer id="1" name="Tile Layer 1" width="52" height="12">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,114,136,136,136,136,136,136,136,136,136,136,136,136,136,136,118,136,136,136,136,136,136,116,136,136,136,115,136,136,136,115,136,136,136,136,136,118,136,136,136,136,136,136,136,136,136,136,136,118,137,0,
+0,135,136,136,136,136,136,136,136,136,118,136,136,117,136,136,136,118,136,136,136,136,136,136,115,136,136,136,136,136,136,116,136,136,136,136,118,136,116,136,136,136,118,136,136,13,14,15,16,12,137,0,
+0,135,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,117,136,136,136,136,116,136,136,136,136,118,136,136,136,136,136,136,136,117,136,136,136,136,136,116,34,35,36,37,33,119,0,
+0,135,136,136,136,136,136,136,136,118,136,136,118,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,136,117,136,136,136,136,136,136,136,118,136,136,136,136,136,118,136,136,56,57,58,117,137,0,
+0,159,160,160,160,160,160,160,160,160,160,160,160,160,160,160,160,157,160,160,160,160,160,157,160,160,160,160,160,160,157,160,160,160,160,157,160,160,160,160,160,160,160,160,157,160,77,78,79,160,161,0,
+0,142,142,142,142,142,142,142,142,142,100,142,142,142,142,142,142,142,142,142,142,142,142,142,100,142,142,142,100,142,142,142,142,142,142,142,122,142,142,142,142,142,142,100,122,142,142,142,142,101,102,0,
+0,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,142,122,142,142,142,101,142,142,142,100,142,142,142,142,100,142,142,142,142,142,142,142,122,100,142,123,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup color="#ff00ff" id="5" name="objects_bg">
+  <object id="20" gid="240" x="1548" y="280" width="158" height="156"/>
+  <object id="21" gid="243" x="1242" y="280" width="192" height="192"/>
+  <object id="22" gid="241" x="440" y="280" width="86" height="122"/>
+  <object id="25" name="castle_gradient" x="40" y="80">
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup color="#0000ff" id="2" name="collision">
+  <object id="1" x="80" y="360" width="1960" height="40"/>
+  <object id="2" x="2040" y="240" width="40" height="160"/>
+  <object id="3" x="1940" y="240" width="100" height="40"/>
+  <object id="4" x="40" y="240" width="40" height="160"/>
+  <object id="12" x="80" y="240" width="370" height="40"/>
+  <object id="13" x="520" y="240" width="1340" height="40"/>
+ </objectgroup>
+ <objectgroup color="#ff00ff" id="3" name="objects">
+  <object id="18" name="transition" x="1860" y="220" width="80" height="40">
+   <properties>
+    <property name="exit_delay" type="float" value="0.2"/>
+    <property name="map" value="castletown/castle/2f"/>
+    <property name="marker" value="3f"/>
+    <property name="sound" value="escaped"/>
+   </properties>
+  </object>
+  <object id="14" name="transition" x="450" y="230" width="70" height="40">
+   <properties>
+    <property name="exit_delay" type="float" value="0.2"/>
+    <property name="exit_sound" value="doorclose"/>
+    <property name="map" value="castletown/castle/rooms/ralsei"/>
+    <property name="marker" value="spawn"/>
+    <property name="sound" value="dooropen"/>
+   </properties>
+  </object>
+  <object id="23" name="interactable" x="1548" y="240" width="158" height="40">
+   <properties>
+    <property name="cutscene" value="castletown.queen_door"/>
+   </properties>
+  </object>
+  <object id="24" name="interactable" x="1258" y="240" width="158" height="40">
+   <properties>
+    <property name="cutscene" value="castletown.tenna_door"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup color="#7f00ff" id="4" name="markers">
+  <object id="7" name="spawn" x="1900" y="320">
+   <point/>
+  </object>
+  <object id="15" name="ralsei" x="480" y="320">
+   <point/>
+  </object>
+  <object id="19" name="2f" x="1900" y="296">
+   <point/>
+  </object>
+ </objectgroup>
+ <objectgroup color="#00aa00" id="6" name="controllers">
+  <object id="26" name="castletownnight" x="0" y="0">
+   <point/>
+  </object>
+ </objectgroup>
+</map>

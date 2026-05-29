@@ -9,8 +9,8 @@ return {
   height = 12,
   tilewidth = 40,
   tileheight = 40,
-  nextlayerid = 7,
-  nextobjectid = 8,
+  nextlayerid = 8,
+  nextobjectid = 11,
   properties = {
     ["music"] = "castletown_empty"
   },
@@ -18,7 +18,7 @@ return {
   layers = {
     {
       type = "imagelayer",
-      image = "../../../../assets/sprites/world/maps/castletown/darkwest.png",
+      image = "../../../../../../assets/sprites/world/maps/castletown/ralsei_room.png",
       id = 2,
       name = "bg",
       class = "",
@@ -35,6 +35,36 @@ return {
     {
       type = "objectgroup",
       draworder = "topdown",
+      id = 6,
+      name = "objects_bg",
+      class = "",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      parallaxx = 1,
+      parallaxy = 1,
+      properties = {},
+      objects = {
+        {
+          id = 1,
+          name = "ralsei_room_window",
+          type = "",
+          shape = "point",
+          x = 255,
+          y = 48,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
       id = 3,
       name = "collision",
       class = "",
@@ -47,26 +77,12 @@ return {
       properties = {},
       objects = {
         {
-          id = 1,
-          name = "",
-          type = "",
-          shape = "rectangle",
-          x = 120,
-          y = 240,
-          width = 40,
-          height = 160,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        },
-        {
           id = 2,
           name = "",
           type = "",
           shape = "rectangle",
-          x = 160,
-          y = 240,
+          x = 80,
+          y = 120,
           width = 480,
           height = 40,
           rotation = 0,
@@ -79,10 +95,52 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 160,
-          y = 360,
-          width = 480,
-          height = 40,
+          x = 80,
+          y = 400,
+          width = 200,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 4,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 360,
+          y = 400,
+          width = 200,
+          height = 80,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 5,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 80,
+          y = 160,
+          width = 40,
+          height = 240,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 6,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 520,
+          y = 160,
+          width = 40,
+          height = 240,
           rotation = 0,
           opacity = 1,
           visible = true,
@@ -105,20 +163,39 @@ return {
       properties = {},
       objects = {
         {
-          id = 4,
+          id = 8,
           name = "transition",
           type = "",
           shape = "rectangle",
-          x = 620,
-          y = 280,
-          width = 40,
-          height = 80,
+          x = 280,
+          y = 460,
+          width = 80,
+          height = 40,
           rotation = 0,
           opacity = 1,
           visible = true,
           properties = {
-            ["map"] = "castletown/town",
-            ["marker"] = "left"
+            ["exit_delay"] = 0.2,
+            ["exit_sound"] = "doorclose",
+            ["map"] = "castletown/castle/3f",
+            ["marker"] = "ralsei",
+            ["sound"] = "dooropen"
+          }
+        },
+        {
+          id = 9,
+          name = "interactable",
+          type = "",
+          shape = "rectangle",
+          x = 280,
+          y = 120,
+          width = 80,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["cutscene"] = "castletown.ralsei_window"
           }
         }
       }
@@ -138,26 +215,12 @@ return {
       properties = {},
       objects = {
         {
-          id = 5,
-          name = "right",
-          type = "",
-          shape = "point",
-          x = 560,
-          y = 326,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 6,
+          id = 7,
           name = "spawn",
           type = "",
           shape = "point",
-          x = 320,
-          y = 310,
+          x = 322,
+          y = 440,
           width = 0,
           height = 0,
           rotation = 0,
@@ -170,7 +233,7 @@ return {
     {
       type = "objectgroup",
       draworder = "topdown",
-      id = 6,
+      id = 7,
       name = "controllers",
       class = "",
       visible = true,
@@ -182,7 +245,7 @@ return {
       properties = {},
       objects = {
         {
-          id = 7,
+          id = 10,
           name = "castletownnight",
           type = "",
           shape = "point",

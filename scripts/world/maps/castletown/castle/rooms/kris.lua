@@ -10,7 +10,7 @@ return {
   tilewidth = 40,
   tileheight = 40,
   nextlayerid = 7,
-  nextobjectid = 8,
+  nextobjectid = 13,
   properties = {
     ["music"] = "castletown_empty"
   },
@@ -18,7 +18,7 @@ return {
   layers = {
     {
       type = "imagelayer",
-      image = "../../../../assets/sprites/world/maps/castletown/darkwest.png",
+      image = "../../../../../../assets/sprites/world/maps/castletown/kris_room.png",
       id = 2,
       name = "bg",
       class = "",
@@ -51,10 +51,10 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 120,
-          y = 240,
-          width = 40,
-          height = 160,
+          x = 80,
+          y = 408,
+          width = 214,
+          height = 72,
           rotation = 0,
           opacity = 1,
           visible = true,
@@ -65,10 +65,10 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 160,
-          y = 240,
-          width = 480,
-          height = 40,
+          x = 368,
+          y = 406,
+          width = 172,
+          height = 74,
           rotation = 0,
           opacity = 1,
           visible = true,
@@ -79,10 +79,38 @@ return {
           name = "",
           type = "",
           shape = "rectangle",
-          x = 160,
-          y = 360,
-          width = 480,
+          x = 500,
+          y = 166,
+          width = 40,
+          height = 240,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 4,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 80,
+          y = 126,
+          width = 460,
           height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 5,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 80,
+          y = 166,
+          width = 40,
+          height = 242,
           rotation = 0,
           opacity = 1,
           visible = true,
@@ -105,20 +133,91 @@ return {
       properties = {},
       objects = {
         {
-          id = 4,
+          id = 7,
           name = "transition",
           type = "",
           shape = "rectangle",
-          x = 620,
-          y = 280,
-          width = 40,
-          height = 80,
+          x = 294,
+          y = 460,
+          width = 74,
+          height = 40,
           rotation = 0,
           opacity = 1,
           visible = true,
           properties = {
-            ["map"] = "castletown/town",
-            ["marker"] = "left"
+            ["exit_delay"] = 0.2,
+            ["exit_sound"] = "doorclose",
+            ["map"] = "castletown/castle/2f",
+            ["marker"] = "kris",
+            ["sound"] = "dooropen"
+          }
+        },
+        {
+          id = 8,
+          name = "interactable",
+          type = "",
+          shape = "rectangle",
+          x = 144,
+          y = 166,
+          width = 62,
+          height = 34,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["cutscene"] = "castletown.kris_wardrobe",
+            ["solid"] = true
+          }
+        },
+        {
+          id = 9,
+          name = "interactable",
+          type = "",
+          shape = "rectangle",
+          x = 208,
+          y = 166,
+          width = 78,
+          height = 32,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["cutscene"] = "castletown.kris_shelf",
+            ["solid"] = true
+          }
+        },
+        {
+          id = 10,
+          name = "interactable",
+          type = "",
+          shape = "rectangle",
+          x = 302,
+          y = 166,
+          width = 94,
+          height = 40,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["cutscene"] = "castletown.kris_stand",
+            ["solid"] = true
+          }
+        },
+        {
+          id = 11,
+          name = "interactable",
+          type = "",
+          shape = "rectangle",
+          x = 400,
+          y = 166,
+          width = 92,
+          height = 110,
+          rotation = 0,
+          opacity = 1,
+          visible = true,
+          properties = {
+            ["cutscene"] = "castletown.kris_bed",
+            ["solid"] = true
           }
         }
       }
@@ -138,26 +237,12 @@ return {
       properties = {},
       objects = {
         {
-          id = 5,
-          name = "right",
-          type = "",
-          shape = "point",
-          x = 560,
-          y = 326,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          opacity = 1,
-          visible = true,
-          properties = {}
-        },
-        {
           id = 6,
           name = "spawn",
           type = "",
           shape = "point",
-          x = 320,
-          y = 310,
+          x = 336,
+          y = 436,
           width = 0,
           height = 0,
           rotation = 0,
@@ -182,7 +267,7 @@ return {
       properties = {},
       objects = {
         {
-          id = 7,
+          id = 12,
           name = "castletownnight",
           type = "",
           shape = "point",

@@ -1025,7 +1025,7 @@ return {
             cutscene:wait(0.75)
             Assets.playSound("noise")
             cutscene:wait(1.5)
-			cutscene:loadMap("castletown/area_1", 320, 280)
+			cutscene:loadMap("castletown/area_1", 320, 360)
 			cutscene:wait(cutscene:fadeIn(0.75))
 		end
     end,
