@@ -8,7 +8,7 @@ function actor:init()
 
     -- Width and height for this actor, used to determine its center
     self.width = 25
-    self.height = 59
+    self.height = 56
 
     -- Hitbox for this actor in the overworld (optional, uses width and height by default)
     self.hitbox = {4, 50, 17, 9}
@@ -37,8 +37,8 @@ function actor:init()
     -- Table of sprite offsets (indexed by sprite name)
     self.offsets = {
         -- Movement offsets
-        ["walk/left"] = {0, 0},
-        ["walk/right"] = {0, 0},
+        ["walk/left"] = {0, 1},
+        ["walk/right"] = {0, 1},
         ["walk/up"] = {0, 0},
         ["walk/down"] = {0, 0},
     }
