@@ -47,7 +47,7 @@ function item:init()
 
     -- Character reactions
     self.reactions = {
-        susie = "Maybe I can give it a few more battles.",
+        susie = "Guess we better end battles quickly...",
         ralsei = "It's breaking as I speak!",
         noelle = "Oops! I... Oh wait, it does that?",
         jamm = "How do I reattach the head...?",
