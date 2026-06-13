@@ -22,6 +22,7 @@ function Dummy:init()
 
     -- Mercy given when sparing this enemy before its spareable (20% for basic enemies)
     self.spare_points = 0
+	self.service_mercy = 0
 
     -- List of possible wave ids, randomly picked each turn
     self.waves = {
