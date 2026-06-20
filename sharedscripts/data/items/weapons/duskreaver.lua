@@ -53,4 +53,14 @@ function item:init()
     }
 end
 
+function item:onEquip(character, replacement)
+    character:addSpell("blackheart_charge")
+    return true
+end
+
+function item:onUnequip(character, replacement)
+    character:removeSpell("blackheart_charge")
+    return true
+end
+
 return item
