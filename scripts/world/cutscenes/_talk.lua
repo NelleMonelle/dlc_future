@@ -154,13 +154,46 @@ return {
 		        end
                 cutscene:hideNametag()
             elseif map == "main_hub" or map == "hub_prefountain" or map == "hub_fountain" then
-                cutscene:showNametag("Susie")
-                cutscene:text("* ...", "nervous_side", "susie") -- yeah erm placeholder
+				if not Game:getFlag("future_hub_talk") then
+					Game:setFlag("future_hub_talk", true)
+					cutscene:showNametag("Susie")
+					cutscene:text("* Heh.[wait:10] Some welcome home,[wait:5] am I right?", "nervous_side", "susie")
+					cutscene:text("* I mean,[wait:5] this place looks like it's been hit by a truck.", "nervous", "susie")
+					cutscene:showNametag("Jamm")
+					cutscene:text("* A...[wait:10] A truck...?", "look_left", "jamm")
+					cutscene:showNametag("Susie")
+					cutscene:text("* Like,[wait:5] a really big truck.", "smirk", "susie")
+					if Game:getFlag("future_variable") == "ceroba" then
+						cutscene:showNametag("Ceroba")
+						cutscene:text("* There's no lights,[wait:5] no sound,[wait:5] no movement...", "pensive", "ceroba")
+						cutscene:showNametag("Susie")
+						cutscene:text("* Yeah,[wait:5] thanks,[wait:5] I noticed.", "annoyed", "susie")
+					end
+				else
+					cutscene:showNametag("Jamm")
+					cutscene:text("* ...Ten years.[wait:10] Ten Angel-damned years.", "worried", "jamm")
+					cutscene:text("* I still can't wrap my head around that...", "worried_down", "jamm")
+					cutscene:showNametag("Susie")
+					cutscene:text("* I mean,[wait:5] I almost don't want to,[wait:5] but...", "nervous_side", "susie")
+				end
                 cutscene:hideNametag()
             elseif map == "hub_marketplace" then
                 cutscene:showNametag("Susie")
-                cutscene:text("* ...", "nervous_side", "susie") -- yeah erm placeholder
+                cutscene:text("* ...You think any of these shops still have their stuff?", "nervous_side", "susie")
+				if Game:getFlag("future_variable") == "ceroba" then
+					cutscene:showNametag("Ceroba")
+					cutscene:text("* I wouldn't count on it...", "default", "ceroba")
+				end
+				cutscene:showNametag("Jamm")
+				cutscene:text("* Well,[wait:5] sure,[wait:5] but this place is abandoned.", "neutral", "jamm")
+				cutscene:text("* Surely a little looting wouldn't hurt,[wait:5] right?[react:1]", "smirk", "jamm", {reactions={
+                    {"Jamm???", "right", "bottom", "surprise_smile", "susie"}
+                }})
                 cutscene:hideNametag()
+            elseif map == "hub_passage_1" or map == "hub_passage_2" or map == "hub_passage_3" or map == "hub_passage_4" or map == "hub_passage_5" then
+                cutscene:text("* (But your voice echoed through the halls.)")
+			elseif string.sub(map, 1, 9) == "flashback" then
+				cutscene:text("* (But your voice couldn't reach them.)")
             else
                 cutscene:text("* (But your voice echoed aimlessly.)")
             end
