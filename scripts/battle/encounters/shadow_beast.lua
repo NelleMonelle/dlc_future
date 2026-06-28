@@ -17,6 +17,10 @@ function Dummy:init()
 	
 	self.reduced_tension = true
 	self.light_radius = 48
+	
+	self.phase = 1
+	self.smoke = 0
+	self.smoke_active = false
 end
 
 function Dummy:onBattleStart(battler)
@@ -35,6 +39,14 @@ function Dummy:onBattleStart(battler)
 				Game.battle:registerXAction("celestial", "Guardian Angel", "Call\nBrenda", 10)
 			end
 		end
+	end
+	
+	self.smoke_bar = Game.battle:addChild(SmokeBar())
+end
+
+function Dummy:update()
+	if self.smoke_active then
+		self.smoke = math.min(self.smoke + DT, 100)
 	end
 end
 

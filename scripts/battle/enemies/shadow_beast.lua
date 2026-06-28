@@ -50,6 +50,33 @@ function Dummy:onAct(battler, name)
 		return "* Guardian Angel X-ACT WIP"
     elseif name == "ReviveSusie" then
 		return "* ReviveSusie X-ACT WIP"
+    elseif name == "Purify" then
+		battler:setAnimation("act")
+        Game.battle:startCutscene(function(cutscene)
+			Game.battle.encounter.smoke = math.max(Game.battle.encounter.smoke - 70, 0)
+			Assets.playSound("great_shine", 1, 1.2)
+            battler:flash()
+
+            local bx, by = battler:getRelativePos(battler.width/2 + 4, battler.height/2 + 4)
+
+            local texture = "player/heart_centered_flip"
+            local soul = Game.battle:addChild(Sprite(texture, bx, by))
+			soul:setOrigin(0.5)
+            soul.layer = 501
+			local waiter = false
+			local elip = Game.battle:addChild(Ellipse(bx, by, 10, 10))
+			Game.battle.timer:tween(1, elip, {width=180, height=180, alpha=0}, "in-linear", function()
+				Game.battle.timer:tween(1, soul, {alpha=0}, "in-linear", function()
+					soul:remove()
+					elip:remove()
+					waiter = true
+				end)
+			end)
+            cutscene:text("* "..battler.chara:getName().."'s SOUL weakened the Shadow Beast's smoke!")
+			cutscene:wait(function() return waiter end)
+			Game.battle:finishActionBy(battler)
+        end)
+        return
 	elseif name == "Brighten" then
         for _,party in ipairs(Game.battle.party) do
             party:flash()
