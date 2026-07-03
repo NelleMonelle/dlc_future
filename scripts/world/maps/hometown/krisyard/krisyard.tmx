@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.11" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="16" height="21" tilewidth="40" tileheight="40" infinite="0" nextlayerid="15" nextobjectid="59">
+<map version="1.10" tiledversion="1.12.1" orientation="orthogonal" renderorder="right-down" width="16" height="21" tilewidth="40" tileheight="40" infinite="0" nextlayerid="15" nextobjectid="59">
  <editorsettings>
   <export target="data.lua" format="lua"/>
  </editorsettings>
@@ -137,8 +137,8 @@
   </object>
   <object id="56" name="interactable" x="308" y="348" width="60" height="40">
    <properties>
+    <property name="cutscene" value="hometown.tori_house"/>
     <property name="solid" type="bool" value="true"/>
-    <property name="text" value="* Sounds like grounding in progress."/>
    </properties>
   </object>
   <object id="58" name="torcar" x="460" y="220" width="156" height="148"/>

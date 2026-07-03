@@ -535,6 +535,10 @@ return {
 		cutscene:wait(cutscene:walkToSpeed(Game.world.player, Game.world.player.x, Game.world.player.y + 40, 4))
 	end,
 	
+	tori_house = function(cutscene, event)
+		cutscene:text("* You don't think it's a good idea to talk to her.")
+	end,
+	
 	fmarcy_training = function(cutscene, event)
 		local fmarcy = cutscene:getCharacter("fmarcy")
 		
