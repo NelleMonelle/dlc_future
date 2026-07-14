@@ -27,7 +27,7 @@ function Marcy:beforeStateChange(old, new)
 		Game.battle.music:play(self.music)
 		Game.battle.started = true
 		self.cutscenes = 1
-		Game.battle:pushAction("SPELL", nil, {data = Registry.createSpell("rage")}, 1)
+		Game.battle:pushAction("SPELL", {Game.battle.enemies[1]}, {data = Registry.createSpell("rage")}, 1)
 		Game.battle:setState("ACTIONS")
 		return true
 	elseif new == "ACTIONS" and Game.battle.turn_count == 1 and self.cutscenes < 2 then
