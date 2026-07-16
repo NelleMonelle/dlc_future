@@ -1,0 +1,17 @@
+local item, super = Class("old_tome", true)
+
+function item:init()
+    super.init(self)
+
+    self.reactions = TableUtils.merge(self.reactions, {
+		fmarcy = "",
+		fbrenda = ""
+    })
+
+	--self.reactions["jamm"] = {
+		--jamm = "",
+		--fmarcy = ""
+	--}
+end
+
+return item
