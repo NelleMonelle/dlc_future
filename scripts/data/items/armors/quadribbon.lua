@@ -1,4 +1,4 @@
-local item, super = Class("triribbon", true)
+local item, super = Class("quadribbon", true)
 
 function item:init()
     super.init(self)
