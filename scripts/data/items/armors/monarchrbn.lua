@@ -3,13 +3,13 @@ local item, super = Class("monarchrbn", true)
 function item:init()
     super.init(self)
 
-	--self.can_equip = TableUtils.merge(self.can_equip, {
-        --fmarcy = false
-    --})
+	self.can_equip = TableUtils.merge(self.can_equip, {
+        fmarcy = false
+    })
 
     -- Character reactions
     self.reactions = TableUtils.merge(self.reactions, {
-		fmarcy = "",
+		fmarcy = "...You know they're not my thing.",
 		fbrenda = ""
     })
 

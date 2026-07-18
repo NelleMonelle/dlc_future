@@ -11,10 +11,7 @@ function item:init()
     self.reactions = TableUtils.merge(self.reactions, {
 		fmarcy = "It tastes like... water."
     })
-end
-
-function item:getReactions()
-	local reactions = super.getReactions(self)
+	
     if Game:isDessMode() then
 		reactions["fmarcy"] = {
 			fmarcy = "...Is this Sprite?"

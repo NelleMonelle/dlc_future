@@ -9,7 +9,7 @@ function item:init()
 
     -- Character reactions
     self.reactions = TableUtils.merge(self.reactions, {
-		fmarcy = "",
+		fmarcy = "So long as they're not blurry...",
 		fbrenda = ""
     })
 

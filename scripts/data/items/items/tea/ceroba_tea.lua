@@ -11,10 +11,7 @@ function item:init()
     self.reactions = TableUtils.merge(self.reactions, {
 		fmarcy = "It tastes like... water."
     })
-end
-
-function item:getReactions()
-	local reactions = super.getReactions(self)
+	
     if Game:getFlag("future_variable") == "ceroba" then
 		reactions["fmarcy"] = {
 			fmarcy = "...Iced tea.",

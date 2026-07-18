@@ -9,14 +9,15 @@ function item:init()
 
     -- Character reactions
     self.reactions = TableUtils.merge(self.reactions, {
-		fmarcy = "",
+		fmarcy = "Must be quite the relic...",
 		fbrenda = ""
     })
-
-	--self.reactions["jamm"] = {
-		--jamm = "",
-		--fmarcy = ""
-	--}
+	
+    if Game:getFlag("future_variable") == "celestial" then
+		reactions["fmarcy"] = {
+			fmarcy = "Brenda won't like this..."
+		}
+	end
 end
 
 return item

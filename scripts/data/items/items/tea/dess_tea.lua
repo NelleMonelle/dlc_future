@@ -14,10 +14,7 @@ function item:init()
 			jamm = "I can see why you think that."
 		}
     })
-end
-
-function item:getReactions()
-	local reactions = super.getReactions(self)
+	
     if Game:isDessMode() then
 		reactions["fmarcy"] = {
 			fmarcy = "This MUST be expired by now...!"
